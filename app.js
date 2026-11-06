@@ -1,9 +1,10 @@
 'use strict';
 const $=id=>document.getElementById(id), KEY='feifei-python-club-2026-v1'+(new URLSearchParams(location.search).has('qa')?'-qa':'');
-let meta,questions=[],current=null,editor=null,fallback=null,monacoReady=false,editorQuestionId=null,language='en',chapter='lecture1',topic='all',type='all',level=0,review='all',search='',answerOpen=false,selected=null,checked=false,worker=null,busy=false,timer=null,runID=0,filtered=[];
+let meta,questions=[],current=null,editor=null,fallback=null,monacoReady=false,editorQuestionId=null,language='en',chapter='lecture1',topic='all',type='all',level=0,review='all',search='',answerOpen=false,selected=null,checked=false,worker=null,busy=false,timer=null,runID=0,filtered=[],cuteFont=true;
 let saved={version:1,records:{},drafts:{},language:'en',chapter:'lecture1',last:{},resetAt:0};
 try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&x.version===1&&x.records&&x.drafts)saved={...saved,...x};}catch{}
 language=saved.language==='zh'?'zh':'en';chapter=saved.chapter||chapter;
+cuteFont=saved.cuteFont!==false;document.documentElement.classList.toggle('cute-font',cuteFont);
 const bilingual=(value)=>typeof value==='string'?value:(value?.[language]??value?.en??'');
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels={1:'基础',2:'进阶',3:'挑战'};
@@ -50,7 +51,9 @@ function explanationTerms(q){if(!q)return [];if(q.__explanationTerms)return q.__
 function termPattern(terms,flags=''){const parts=[...new Set(terms)].sort((a,b)=>b.length-a.length).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));return new RegExp('(^|[^A-Za-z0-9_])('+parts.join('|')+')(?![A-Za-z0-9_])','g'+flags);}
 function bareAIsVariable(text,index){const after=text.slice(index+1).replace(/\*\*/g,'');const first=(/^\s*(.)/.exec(after)||[])[1];if(!first)return true;if(/[.,;:!?)\]}"'#]/.test(first)||/[=+\-*/%<>!&|^~]/.test(first))return true;const nextWord=/^\s+([A-Za-z]+)/.exec(after);return !!(nextWord&&EN_VAR_NEXT.has(nextWord[1]));}
 function highlightedExplanation(q){const text=bilingual(q.explanation),terms=explanationTerms(q);if(!terms.length)return md(text);const multi=terms.filter(t=>t.length>1),single=terms.filter(t=>t.length===1),multiPattern=multi.length?termPattern(multi,'i'):null,singlePattern=single.length?termPattern(single):null;return md(text.split(/(```[\s\S]*?```|`[^`\n]+`)/g).map((part,index)=>{if(index%2)return part;let out=part;if(multiPattern)out=out.replace(multiPattern,(match,prefix,term)=>prefix+'**'+term+'**');if(singlePattern)out=out.replace(singlePattern,(match,prefix,term,offset,whole)=>{if(language==='en'&&term==='a'&&!bareAIsVariable(whole,offset+prefix.length))return match;return prefix+'**'+term+'**';});return out;}).join(''));}
-function save(){saved.language=language;saved.chapter=chapter;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{toast('浏览器存储空间不足，请导出学习记录。');}}
+function save(){saved.language=language;saved.chapter=chapter;saved.cuteFont=cuteFont;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{toast('浏览器存储空间不足，请导出学习记录。');}}
+function updateCuteFontButton(){const b=$('cuteFontBtn');if(!b)return;b.setAttribute('aria-pressed',String(cuteFont));b.title=cuteFont?'点击切换为默认字体':'点击切换为可爱字体';}
+function applyCuteFont(on,notify=false){cuteFont=!!on;document.documentElement.classList.toggle('cute-font',cuteFont);saved.cuteFont=cuteFont;save();updateCuteFontButton();if(notify)toast(cuteFont?'已开启可爱字体':'已恢复默认字体');}
 function record(id=current?.id){return saved.records[id]||{};}
 function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toast.timeout);toast.timeout=setTimeout(()=>$('toast').classList.remove('show'),3300);}
 function chapterItems(){return questions.filter(q=>q.chapter===chapter);}
@@ -98,6 +101,7 @@ function replaceStudyRecords(nextState){
  cancelRun();
  disposeEditor();
  saved=nextState;
+ cuteFont=saved.cuteFont!==false;document.documentElement.classList.toggle('cute-font',cuteFont);updateCuteFontButton();
  selected=null;
  checked=false;
  answerOpen=false;
@@ -105,7 +109,7 @@ function replaceStudyRecords(nextState){
  clearFilters();
 }
 function clearStudyRecords(){
- replaceStudyRecords({version:1,records:{},drafts:{},last:{},language,chapter,resetAt:Date.now()});
+ replaceStudyRecords({version:1,records:{},drafts:{},last:{},language,chapter,cuteFont,resetAt:Date.now()});
  save();
  toast('做题记录已清空，可以重新开始练习了。');
 }
@@ -118,7 +122,7 @@ function finishRun(){clearTimeout(timer);busy=false;document.querySelectorAll('[
 function runCode(check){if(busy||!current||current.type!=='code')return;saveDraft();busy=true;runID++;const q=current;document.querySelectorAll('[data-action="run"],[data-action="test"]').forEach(b=>b.disabled=true);$('stopRun').hidden=false;$('outputPanel').hidden=false;$('outputPanel').classList.remove('error');$('codeOutput').textContent='正在准备 Python 环境，第一次运行稍等片刻…';$('runtimeStatus').textContent='准备中…';timer=setTimeout(()=>cancelRun('Python 环境准备超时。请重新点击运行；如果持续出现，请刷新页面或检查网络后重试。'),60000);ensureWorker().postMessage({id:runID,questionId:q.id,code:saved.drafts[q.id]??q.starter,setup:q.setup||'',tests:q.tests||'',packages:q.packages||[],check});}
 function initEvents(){
  $('chapterNav').addEventListener('click',e=>{const b=e.target.closest('[data-chapter]');if(b)changeChapter(b.dataset.chapter);});
- $('langEn').onclick=()=>changeLanguage('en');$('langZh').onclick=()=>changeLanguage('zh');
+ $('langEn').onclick=()=>changeLanguage('en');$('langZh').onclick=()=>changeLanguage('zh');$('cuteFontBtn').onclick=()=>applyCuteFont(!cuteFont,true);updateCuteFontButton();
  $('typeTabs').onclick=e=>{const b=e.target.closest('[data-type]');if(!b)return;saveDraft();type=b.dataset.type;document.querySelectorAll('[data-type]').forEach(x=>x.classList.toggle('active',x===b));render();};
  $('levelFilter').onclick=e=>{const b=e.target.closest('[data-level]');if(!b)return;saveDraft();level=Number(b.dataset.level);document.querySelectorAll('[data-level]').forEach(x=>x.classList.toggle('active',x===b));render();};
  $('topicFilters').onclick=e=>{const b=e.target.closest('[data-topic]');if(b){saveDraft();topic=b.dataset.topic;render();}};
