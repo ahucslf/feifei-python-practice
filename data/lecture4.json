@@ -1,0 +1,2851 @@
+[
+  {
+    "id": "L4-001",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Defining is not calling",
+      "zh": "定义不等于调用"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef welcome():\n    print(\"hello\")\n\nprint(\"ready\")\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef welcome():\n    print(\"hello\")\n\nprint(\"ready\")\n```"
+    },
+    "explanation": {
+      "en": "def creates a function but does not execute its body. Only the print outside the function runs here. To print hello as well, the program must call welcome().",
+      "zh": "def只是建立函数，并不会立即执行里面的语句。这里真正执行的只有函数外的print。想输出hello，还需要调用welcome()。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "ready",
+        "zh": "ready"
+      },
+      {
+        "en": "hello",
+        "zh": "hello"
+      },
+      {
+        "en": "hello\nready",
+        "zh": "hello\nready"
+      },
+      {
+        "en": "Nothing",
+        "zh": "无输出"
+      }
+    ],
+    "answer": 0,
+    "verification": "import io, contextlib\nbuffer=io.StringIO()\nwith contextlib.redirect_stdout(buffer):\n exec('def welcome():\\n    print(\"hello\")\\nprint(\"ready\")')\nassert buffer.getvalue()==\"ready\\n\""
+  },
+  {
+    "id": "L4-002",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Capture a returned value",
+      "zh": "接住返回值"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef double(x):\n    return 2 * x\n\nanswer = double(4)\nprint(answer)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef double(x):\n    return 2 * x\n\nanswer = double(4)\nprint(answer)\n```"
+    },
+    "explanation": {
+      "en": "Calling double(4) replaces the call expression with the returned value 8. Assignment saves it in answer, so it can be used later. A return value is different from merely displaying a value inside the function.",
+      "zh": "调用double(4)后，这个调用表达式得到返回值8。赋值把它保存到answer中，之后还能继续使用。返回一个值和在函数里把它打印出来，是两件不同的事。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "8",
+        "zh": "8"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      }
+    ],
+    "answer": 1,
+    "verification": "def double(x):return 2*x\nassert double(4)==8"
+  },
+  {
+    "id": "L4-003",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "No explicit return",
+      "zh": "没有return的结果"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef notify():\n    message = \"done\"\n\nprint(notify())\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef notify():\n    message = \"done\"\n\nprint(notify())\n```"
+    },
+    "explanation": {
+      "en": "A function that reaches its end without return returns None automatically. Merely assigning a local variable does not send that value to the caller. Write return message if the caller needs the string.",
+      "zh": "函数走到结尾还没有return时，会自动返回None。仅在函数里给局部变量赋值，不等于把它交给调用者。若调用者需要这个字符串，应明确写return message。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "message",
+        "zh": "message"
+      },
+      {
+        "en": "Nothing",
+        "zh": "无输出"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      },
+      {
+        "en": "done",
+        "zh": "done"
+      }
+    ],
+    "answer": 2,
+    "verification": "def notify():message=\"done\"\nassert notify() is None"
+  },
+  {
+    "id": "L4-004",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Return stops the call",
+      "zh": "return结束本次调用"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef sample():\n    return 5\n    print(\"later\")\n\nprint(sample())\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef sample():\n    return 5\n    print(\"later\")\n\nprint(sample())\n```"
+    },
+    "explanation": {
+      "en": "return immediately ends the current function call. The following print in the same body is never reached. Execution resumes at the caller with the returned value 5.",
+      "zh": "return会立刻结束当前这次函数调用。它后面的print无法执行。程序回到调用处，并带回返回值5。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "later\n5",
+        "zh": "later\n5"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      },
+      {
+        "en": "5\nlater",
+        "zh": "5\nlater"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      }
+    ],
+    "answer": 3,
+    "verification": "def sample():\n return 5\n print(\"later\")\nassert sample()==5"
+  },
+  {
+    "id": "L4-005",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Returning two values",
+      "zh": "返回两个值"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef bounds():\n    return 2, 9\n\nresult = bounds()\nprint(result)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef bounds():\n    return 2, 9\n\nresult = bounds()\nprint(result)\n```"
+    },
+    "explanation": {
+      "en": "Comma-separated return values are packed into a tuple. The caller may keep that tuple or unpack it with low, high = bounds(). Returning two values does not make a list automatically.",
+      "zh": "逗号分隔的多个返回值会组成元组。调用者可以保存这个元组，也可以用low,high=bounds()拆开。返回两个值并不自动产生列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 2; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "(2, 9)",
+        "zh": "(2, 9)"
+      },
+      {
+        "en": "[2, 9]",
+        "zh": "[2, 9]"
+      },
+      {
+        "en": "2 9",
+        "zh": "2 9"
+      },
+      {
+        "en": "9",
+        "zh": "9"
+      }
+    ],
+    "answer": 0,
+    "verification": "def bounds():return 2,9\nassert bounds()==(2,9) and isinstance(bounds(),tuple)"
+  },
+  {
+    "id": "L4-006",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Use a default",
+      "zh": "省略默认参数"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef total(a, b=10):\n    return a + b\n\nprint(total(3))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef total(a, b=10):\n    return a + b\n\nprint(total(3))\n```"
+    },
+    "explanation": {
+      "en": "The supplied 3 is assigned to a. Since no value is supplied for b, its default 10 is used. A default makes that argument optional; it does not replace values explicitly passed by the caller.",
+      "zh": "传入的3对应a。b没有收到实参，于是使用默认值10。默认值表示这个实参可以省略，不代表调用者不能主动给它别的值。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "13",
+        "zh": "13"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "10",
+        "zh": "10"
+      }
+    ],
+    "answer": 1,
+    "verification": "def total(a,b=10):return a+b\nassert total(3)==13"
+  },
+  {
+    "id": "L4-007",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Keywords name their destination",
+      "zh": "关键字按名字对应"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef subtract(a, b):\n    return a - b\n\nprint(subtract(b=2, a=9))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef subtract(a, b):\n    return a - b\n\nprint(subtract(b=2, a=9))\n```"
+    },
+    "explanation": {
+      "en": "Keyword arguments are matched to parameter names, not their written order. a receives 9 and b receives 2, so the subtraction is 9−2. The names must match the function signature.",
+      "zh": "关键字实参按参数名对应，不按书写先后对应。a收到9，b收到2，所以是9减2。名字必须与函数签名中的参数名一致。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 5; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "11",
+        "zh": "11"
+      },
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "7",
+        "zh": "7"
+      },
+      {
+        "en": "-7",
+        "zh": "-7"
+      }
+    ],
+    "answer": 2,
+    "verification": "def subtract(a,b):return a-b\nassert subtract(b=2,a=9)==7"
+  },
+  {
+    "id": "L4-008",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "One parameter supplied twice",
+      "zh": "同一参数被赋值两次"
+    },
+    "prompt": {
+      "en": "What happens when this call runs?\n```python\ndef add(a, b):\n    return a + b\n\nadd(1, a=2, b=3)\n```",
+      "zh": "运行下面调用时会怎样？\n```python\ndef add(a, b):\n    return a + b\n\nadd(1, a=2, b=3)\n```"
+    },
+    "explanation": {
+      "en": "The positional 1 already fills a. Writing a=2 attempts to fill the same parameter again, so Python rejects the call before entering the function body. Each parameter may receive only one value in a call.",
+      "zh": "位置实参1已经填入a，再写a=2就是给同一参数第二次赋值。Python会在进入函数体之前拒绝这次调用。一次调用中，每个参数只能收到一个值。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "It returns 4.",
+        "zh": "返回4。"
+      },
+      {
+        "en": "It returns 5.",
+        "zh": "返回5。"
+      },
+      {
+        "en": "The keyword a is silently ignored.",
+        "zh": "关键字a会被悄悄忽略。"
+      },
+      {
+        "en": "TypeError: a receives two values.",
+        "zh": "TypeError：a收到了两个值。"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "id": "L4-009",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Order of default parameters",
+      "zh": "默认参数的排列"
+    },
+    "prompt": {
+      "en": "Which definition is valid Python?",
+      "zh": "哪个函数定义符合Python语法？"
+    },
+    "explanation": {
+      "en": "For the ordinary positional parameters shown here, a required parameter cannot follow one with a default. Putting the required a first gives an unambiguous call. Parameters also need commas and Python uses def, not function.",
+      "zh": "这里展示的普通位置参数中，必填参数不能放在带默认值的参数之后。先放必填a，调用时才不会产生歧义。参数之间还需要逗号，Python定义函数使用def而不是function。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "def score(a, b=0):\n    return a + b",
+        "zh": "def score(a, b=0):\n    return a + b"
+      },
+      {
+        "en": "def score(a=0, b):\n    return a + b",
+        "zh": "def score(a=0, b):\n    return a + b"
+      },
+      {
+        "en": "def score(a=0 b=1):\n    return a + b",
+        "zh": "def score(a=0 b=1):\n    return a + b"
+      },
+      {
+        "en": "function score(a, b):\n    return a + b",
+        "zh": "function score(a, b):\n    return a + b"
+      }
+    ],
+    "answer": 0,
+    "verification": "compile('def score(a,b=0):\\n return a+b',\"<q>\",\"exec\")"
+  },
+  {
+    "id": "L4-010",
+    "chapter": "lecture4",
+    "topic": "variadic",
+    "topicLabel": {
+      "en": "Variable arguments",
+      "zh": "可变参数"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "What star arguments collect",
+      "zh": "星号参数收集成什么"
+    },
+    "prompt": {
+      "en": "Inside def gather(*values), what is the type of values?",
+      "zh": "在def gather(*values)内部，values是什么类型？"
+    },
+    "explanation": {
+      "en": "A starred positional parameter collects the extra positional arguments into a tuple. There can be zero, one or many of them. The tuple is iterable, so a for loop can process all collected values.",
+      "zh": "星号位置参数会把收到的实参收集成元组，数量可以是零、一个或多个。元组可以遍历，所以可以用for逐项处理。不要因为它收集了多项就误认为一定是列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "str",
+        "zh": "字符串str"
+      },
+      {
+        "en": "tuple",
+        "zh": "元组tuple"
+      },
+      {
+        "en": "list",
+        "zh": "列表list"
+      },
+      {
+        "en": "dict",
+        "zh": "字典dict"
+      }
+    ],
+    "answer": 1,
+    "verification": "def gather(*values):return type(values)\nassert gather(1,2) is tuple"
+  },
+  {
+    "id": "L4-011",
+    "chapter": "lecture4",
+    "topic": "variadic",
+    "topicLabel": {
+      "en": "Variable arguments",
+      "zh": "可变参数"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Required and extra values",
+      "zh": "必填值与额外值"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef combine(a, b, *others):\n    return a + b + len(others)\n\nprint(combine(2, 3, 10, 20))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef combine(a, b, *others):\n    return a + b + len(others)\n\nprint(combine(2, 3, 10, 20))\n```"
+    },
+    "explanation": {
+      "en": "a and b receive 2 and 3. The remaining two arguments form others=(10,20), and len(others) is 2. The function adds their count, not the values 10 and 20.",
+      "zh": "a和b分别收到2与3，剩下的实参形成others=(10,20)，长度是2。这里加的是额外实参的“个数”，不是10和20本身。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "7",
+        "zh": "7"
+      },
+      {
+        "en": "35",
+        "zh": "35"
+      }
+    ],
+    "answer": 2,
+    "verification": "def combine(a,b,*others):return a+b+len(others)\nassert combine(2,3,10,20)==7"
+  },
+  {
+    "id": "L4-012",
+    "chapter": "lecture4",
+    "topic": "variadic",
+    "topicLabel": {
+      "en": "Variable arguments",
+      "zh": "可变参数"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Print separators",
+      "zh": "print的分隔符"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nprint(\"A\", \"B\", sep=\"-\", end=\"!\")\n```",
+      "zh": "下面代码会输出什么？\n```python\nprint(\"A\", \"B\", sep=\"-\", end=\"!\")\n```"
+    },
+    "explanation": {
+      "en": "sep is placed between printed objects and end is placed after the last object. Here the separator is a hyphen and the usual newline is replaced by an exclamation mark. Neither setting changes the object strings themselves.",
+      "zh": "sep放在两个输出对象之间，end放在最后一个对象之后。这里用连字符分隔，并用感叹号替代默认换行。它们不会修改原来两个字符串的内容。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 8; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "A B!",
+        "zh": "A B!"
+      },
+      {
+        "en": "AB-!",
+        "zh": "AB-!"
+      },
+      {
+        "en": "A-B\n!",
+        "zh": "A-B\n!"
+      },
+      {
+        "en": "A-B!",
+        "zh": "A-B!"
+      }
+    ],
+    "answer": 3,
+    "verification": "import io, contextlib\nb=io.StringIO()\nprint(\"A\",\"B\",sep=\"-\",end=\"!\",file=b)\nassert b.getvalue()==\"A-B!\""
+  },
+  {
+    "id": "L4-013",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A number and a list",
+      "zh": "数字与列表参数的区别"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef change(n, values):\n    n = n + 1\n    values[0] = 99\n\nx = 4\nitems = [4, 5]\nchange(x, items)\nprint(x, items)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef change(n, values):\n    n = n + 1\n    values[0] = 99\n\nx = 4\nitems = [4, 5]\nchange(x, items)\nprint(x, items)\n```"
+    },
+    "explanation": {
+      "en": "n = n+1 rebinds the function’s local name and leaves x unchanged. Assigning values[0] mutates the shared list object, so the caller sees 99. Track the object being changed, not just the parameter name.",
+      "zh": "n=n+1只是让函数内的局部名字指向新数字，外面的x不变。values[0]=99修改的则是共享列表本体，调用者也能看到。关键是分清“重新绑定名字”与“修改对象内容”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 12; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "4 [99, 5]",
+        "zh": "4 [99, 5]"
+      },
+      {
+        "en": "5 [99, 5]",
+        "zh": "5 [99, 5]"
+      },
+      {
+        "en": "4 [4, 5]",
+        "zh": "4 [4, 5]"
+      },
+      {
+        "en": "5 [4, 5]",
+        "zh": "5 [4, 5]"
+      }
+    ],
+    "answer": 0,
+    "verification": "def change(n,values):\n n=n+1;values[0]=99\nx=4;items=[4,5];change(x,items)\nassert x==4 and items==[99,5]"
+  },
+  {
+    "id": "L4-014",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Rebinding a list parameter",
+      "zh": "重新绑定列表参数"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef replace(values):\n    values = [0, 0]\n\nitems = [7, 8]\nreplace(items)\nprint(items)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef replace(values):\n    values = [0, 0]\n\nitems = [7, 8]\nreplace(items)\nprint(items)\n```"
+    },
+    "explanation": {
+      "en": "Assigning a new list to the local parameter only changes that local binding. It does not replace the caller’s items variable. Modifying values[:] or returning a new list would be different operations.",
+      "zh": "给局部参数重新赋一个新列表，只改变函数内部的名字指向，不会替换外面的items变量。修改values[:]的内容或把新列表返回给调用者，才是另外两种操作。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "[]",
+        "zh": "[]"
+      },
+      {
+        "en": "[7, 8]",
+        "zh": "[7, 8]"
+      },
+      {
+        "en": "[0, 0]",
+        "zh": "[0, 0]"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      }
+    ],
+    "answer": 1,
+    "verification": "def replace(values):values=[0,0]\nitems=[7,8];replace(items)\nassert items==[7,8]"
+  },
+  {
+    "id": "L4-015",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A shallow copy before editing",
+      "zh": "先复制再修改"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef edited(values):\n    result = values.copy()\n    result[0] = 0\n    return result\n\nitems = [7, 8]\nnew_items = edited(items)\nprint(items, new_items)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef edited(values):\n    result = values.copy()\n    result[0] = 0\n    return result\n\nitems = [7, 8]\nnew_items = edited(items)\nprint(items, new_items)\n```"
+    },
+    "explanation": {
+      "en": "copy() makes a separate outer list. Replacing its first entry therefore does not replace the original list’s first entry. For these plain numeric elements, that is enough to keep the original data unchanged.",
+      "zh": "copy()建立一个独立的外层列表。因此替换新列表首项，不会替换原列表首项。本题元素都是普通数字，这样的复制就足以保留原数据。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "[7, 8] [7, 8]",
+        "zh": "[7, 8] [7, 8]"
+      },
+      {
+        "en": "None [0, 8]",
+        "zh": "None [0, 8]"
+      },
+      {
+        "en": "[7, 8] [0, 8]",
+        "zh": "[7, 8] [0, 8]"
+      },
+      {
+        "en": "[0, 8] [0, 8]",
+        "zh": "[0, 8] [0, 8]"
+      }
+    ],
+    "answer": 2,
+    "verification": "def edited(v):\n r=v.copy();r[0]=0;return r\nx=[7,8];y=edited(x)\nassert x==[7,8] and y==[0,8]"
+  },
+  {
+    "id": "L4-016",
+    "chapter": "lecture4",
+    "topic": "scope",
+    "topicLabel": {
+      "en": "Local and global scope",
+      "zh": "局部与全局作用域"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A local name shadows a global",
+      "zh": "局部同名变量"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nname = \"global\"\ndef show():\n    name = \"local\"\n    return name\n\nprint(show(), name)\n```",
+      "zh": "下面代码会输出什么？\n```python\nname = \"global\"\ndef show():\n    name = \"local\"\n    return name\n\nprint(show(), name)\n```"
+    },
+    "explanation": {
+      "en": "The assignment inside show creates a local name. Returning it gives local, while the global name still refers to global. Matching spelling alone does not make the two bindings the same variable.",
+      "zh": "show内部的赋值建立局部名字，返回的是local。函数外的全局name仍指向global。名字拼写相同，并不表示它们就是同一个绑定。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 17; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "local local",
+        "zh": "local local"
+      },
+      {
+        "en": "global global",
+        "zh": "global global"
+      },
+      {
+        "en": "global local",
+        "zh": "global local"
+      },
+      {
+        "en": "local global",
+        "zh": "local global"
+      }
+    ],
+    "answer": 3,
+    "verification": "name=\"global\"\ndef show():\n name=\"local\";return name\nassert show()==\"local\" and name==\"global\""
+  },
+  {
+    "id": "L4-017",
+    "chapter": "lecture4",
+    "topic": "scope",
+    "topicLabel": {
+      "en": "Local and global scope",
+      "zh": "局部与全局作用域"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "An explicit global update",
+      "zh": "显式修改全局变量"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ncount = 2\ndef advance():\n    global count\n    count += 3\n\nadvance()\nprint(count)\n```",
+      "zh": "下面代码会输出什么？\n```python\ncount = 2\ndef advance():\n    global count\n    count += 3\n\nadvance()\nprint(count)\n```"
+    },
+    "explanation": {
+      "en": "global tells Python that assignments to count in this function target the module-level name. The update therefore changes 2 into 5 outside the function too. This creates a side effect, so use it deliberately.",
+      "zh": "global说明函数里对count的赋值要作用于模块级名字，因此外面的2也被改成了5。这是一种副作用，使用时应明确知道谁会被修改。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 18; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      }
+    ],
+    "answer": 0,
+    "verification": "count=2\ndef advance():\n global count\n count+=3\nadvance()\nassert count==5"
+  },
+  {
+    "id": "L4-018",
+    "chapter": "lecture4",
+    "topic": "hints",
+    "topicLabel": {
+      "en": "Type hints",
+      "zh": "类型提示"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Hints do not convert values",
+      "zh": "类型提示不会转换值"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef add(x: int, y: int) -> int:\n    return x + y\n\nprint(add(\"sun\", \"rise\"))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef add(x: int, y: int) -> int:\n    return x + y\n\nprint(add(\"sun\", \"rise\"))\n```"
+    },
+    "explanation": {
+      "en": "Type hints describe intended types but ordinary Python does not enforce or convert them automatically. The actual operands are strings, so + concatenates them. A separate type checker could warn about this call.",
+      "zh": "类型提示描述预期类型，但普通Python不会自动执行类型检查或转换。实际传入的是两个字符串，所以+完成拼接。独立类型检查工具可能警告，但这段运行本身会得到sunrise。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 30; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "int",
+        "zh": "int"
+      },
+      {
+        "en": "sunrise",
+        "zh": "sunrise"
+      },
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      }
+    ],
+    "answer": 1,
+    "verification": "def add(x:int,y:int)->int:return x+y\nassert add(\"sun\",\"rise\")==\"sunrise\""
+  },
+  {
+    "id": "L4-019",
+    "chapter": "lecture4",
+    "topic": "hints",
+    "topicLabel": {
+      "en": "Type hints",
+      "zh": "类型提示"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A list of text labels",
+      "zh": "字符串列表的类型提示"
+    },
+    "prompt": {
+      "en": "Which annotation describes a list whose intended elements are strings?",
+      "zh": "哪个标注表达“元素预期为字符串的列表”？"
+    },
+    "explanation": {
+      "en": "The outer name gives the container type, list. The type inside square brackets gives its intended element type, str. This annotation documents the contract; it does not inspect all elements at runtime.",
+      "zh": "外层list表示容器是列表，方括号中的str表示元素预期类型。这个标注是在说明约定，并不会在运行时自动逐项检查。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 28; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "labels: list = str",
+        "zh": "labels: list = str"
+      },
+      {
+        "en": "labels: int[str]",
+        "zh": "labels: int[str]"
+      },
+      {
+        "en": "labels: list[str]",
+        "zh": "labels: list[str]"
+      },
+      {
+        "en": "labels: str[list]",
+        "zh": "labels: str[list]"
+      }
+    ],
+    "answer": 2,
+    "verification": "compile('labels: list[str] = [\"a\"]',\"<q>\",\"exec\")"
+  },
+  {
+    "id": "L4-020",
+    "chapter": "lecture4",
+    "topic": "hints",
+    "topicLabel": {
+      "en": "Type hints",
+      "zh": "类型提示"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A yes-or-no return type",
+      "zh": "真假结果的返回类型"
+    },
+    "prompt": {
+      "en": "A function is_even(n) returns True or False. Which return annotation best documents this?",
+      "zh": "函数is_even(n)返回True或False，哪个返回值类型提示最合适？"
+    },
+    "explanation": {
+      "en": "True and False are Boolean values, so bool describes the return contract directly. A return annotation belongs after the parameter list and before the colon. It describes a value, not printed text.",
+      "zh": "True和False是布尔值，因此应写bool。返回类型提示放在参数列表后、冒号前。它说明返回值的类型，不是在说明打印的文字。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 26; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "-> str",
+        "zh": "-> str"
+      },
+      {
+        "en": "-> None",
+        "zh": "-> None"
+      },
+      {
+        "en": "-> list",
+        "zh": "-> list"
+      },
+      {
+        "en": "-> bool",
+        "zh": "-> bool"
+      }
+    ],
+    "answer": 3,
+    "verification": "def is_even(n:int)->bool:return n%2==0\nassert isinstance(is_even(4),bool)"
+  },
+  {
+    "id": "L4-021",
+    "chapter": "lecture4",
+    "topic": "recursion",
+    "topicLabel": {
+      "en": "Recursion preview",
+      "zh": "递归预览"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "The factorial base case",
+      "zh": "阶乘的递归基例"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(0))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(0))\n```"
+    },
+    "explanation": {
+      "en": "The base case is tested before making another recursive call. At n=0 it returns 1 immediately, matching 0! = 1. A base case is what prevents the chain of calls from continuing forever.",
+      "zh": "先检查基例，再决定是否递归。n为0时直接返回1，符合0!=1。基例正是让递归调用链能够停下来的出口。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 20; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "1",
+        "zh": "1"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      },
+      {
+        "en": "RecursionError",
+        "zh": "RecursionError"
+      }
+    ],
+    "answer": 0,
+    "verification": "def factorial(n):\n if n==0:return 1\n return n*factorial(n-1)\nassert factorial(0)==1"
+  },
+  {
+    "id": "L4-022",
+    "chapter": "lecture4",
+    "topic": "recursion",
+    "topicLabel": {
+      "en": "Recursion preview",
+      "zh": "递归预览"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Make progress toward the base case",
+      "zh": "让递归接近基例"
+    },
+    "prompt": {
+      "en": "For n > 0 in a factorial function with base case n == 0, which recursive expression makes the required progress?",
+      "zh": "阶乘函数以n==0为基例，对于n>0，哪个递归表达式会朝基例推进？"
+    },
+    "explanation": {
+      "en": "Calling factorial(n-1) reduces the non-negative argument on every step until zero is reached. Reusing n makes no progress and increasing it moves away from the base case. The multiplication reconstructs the larger answer while calls return.",
+      "zh": "每次调用factorial(n-1)，非负参数就减少1，最终到达0。一直传n不会推进，传n+1则离基例更远。调用返回时，再逐层乘回原来的数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "factorial(n) - 1",
+        "zh": "factorial(n) - 1"
+      },
+      {
+        "en": "n * factorial(n - 1)",
+        "zh": "n * factorial(n - 1)"
+      },
+      {
+        "en": "n * factorial(n)",
+        "zh": "n * factorial(n)"
+      },
+      {
+        "en": "n * factorial(n + 1)",
+        "zh": "n * factorial(n + 1)"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L4-023",
+    "chapter": "lecture4",
+    "topic": "scope",
+    "topicLabel": {
+      "en": "Local and global scope",
+      "zh": "局部与全局作用域"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Reading before local assignment",
+      "zh": "局部赋值前就读取"
+    },
+    "prompt": {
+      "en": "What happens when f() is called?\n```python\nx = 10\ndef f():\n    x = x + 1\n    return x\n\nf()\n```",
+      "zh": "调用f()会怎样？\n```python\nx = 10\ndef f():\n    x = x + 1\n    return x\n\nf()\n```"
+    },
+    "explanation": {
+      "en": "Because f assigns to x, Python treats x as local throughout that function. The right-hand x is then read before this local name has a value. Pass x as a parameter, use a different local name, or explicitly declare global when that side effect is intended.",
+      "zh": "函数中存在对x的赋值，所以Python会把该函数内的x视为局部名字。等号右边先读x时，这个局部名字却还没有值。通常可改用参数或不同局部名；确实要改全局时才显式用global。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 16; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "It returns 10.",
+        "zh": "返回10。"
+      },
+      {
+        "en": "It silently changes global x to 11.",
+        "zh": "悄悄将全局x改为11。"
+      },
+      {
+        "en": "UnboundLocalError",
+        "zh": "UnboundLocalError"
+      },
+      {
+        "en": "It returns 11.",
+        "zh": "返回11。"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L4-024",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A shared default list",
+      "zh": "被共享的默认列表"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef record(value, history=[]):\n    history.append(value)\n    return history.copy()\n\nprint(record(\"A\"))\nprint(record(\"B\"))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef record(value, history=[]):\n    history.append(value)\n    return history.copy()\n\nprint(record(\"A\"))\nprint(record(\"B\"))\n```"
+    },
+    "explanation": {
+      "en": "The default list is created when def runs, not on every call. Calls that omit history therefore append to the same list. Returning a copy changes the returned object but does not reset the shared default list.",
+      "zh": "默认列表在执行def时创建，不会每次调用都重新建。省略history的两次调用，因此会往同一列表追加。返回一个副本只能复制结果，不能重置那个共享的默认列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "['A']\n['B']",
+        "zh": "['A']\n['B']"
+      },
+      {
+        "en": "[]\n[]",
+        "zh": "[]\n[]"
+      },
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "['A']\n['A', 'B']",
+        "zh": "['A']\n['A', 'B']"
+      }
+    ],
+    "answer": 3,
+    "verification": "def record(v,h=[]):\n h.append(v);return h.copy()\nassert record(\"A\")==[\"A\"] and record(\"B\")==[\"A\",\"B\"]"
+  },
+  {
+    "id": "L4-025",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Printing instead of returning",
+      "zh": "打印不能代替返回"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef add(a, b):\n    print(a + b)\n\nresult = add(2, 3)\nprint(result)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef add(a, b):\n    print(a + b)\n\nresult = add(2, 3)\nprint(result)\n```"
+    },
+    "explanation": {
+      "en": "The first 5 comes from print inside add. The function has no return statement, so result receives None and the second print displays it. Replace the inner print with return when the caller needs the calculated number.",
+      "zh": "第一个5由add内部的print输出。但函数没有return，所以result收到None，第二次print输出None。需要把结果交给调用者时，应使用return而不是仅打印。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "5\nNone",
+        "zh": "5\nNone"
+      },
+      {
+        "en": "5\n5",
+        "zh": "5\n5"
+      },
+      {
+        "en": "None\n5",
+        "zh": "None\n5"
+      },
+      {
+        "en": "10",
+        "zh": "10"
+      }
+    ],
+    "answer": 0,
+    "verification": "import io, contextlib\nimport io, contextlib\nb=io.StringIO()\nwith contextlib.redirect_stdout(b):\n exec('def add(a,b):\\n print(a+b)\\nr=add(2,3)\\nprint(r)')\nassert b.getvalue()=='5\\nNone\\n'"
+  },
+  {
+    "id": "L4-026",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A case-sensitive helper",
+      "zh": "区分大小写的计数函数"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef count_letter(text, letter=\"a\"):\n    count = 0\n    for char in text:\n        if char == letter:\n            count += 1\n    return count\n\nprint(count_letter(\"Aaaba\"))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef count_letter(text, letter=\"a\"):\n    count = 0\n    for char in text:\n        if char == letter:\n            count += 1\n    return count\n\nprint(count_letter(\"Aaaba\"))\n```"
+    },
+    "explanation": {
+      "en": "The omitted letter argument uses lowercase a as its default. Three characters match it exactly; uppercase A does not match. A function’s behavior depends on its actual comparison, not just an informal title such as “count A.”",
+      "zh": "省略letter时使用默认的小写a。文本里有3个字符与它完全相同，大写A不匹配。判断函数行为要看实际比较条件，不能只凭“统计A”这种笼统描述。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 3; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert \"Aaaba\".count(\"a\")==3"
+  },
+  {
+    "id": "L4-027",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Parameter or argument?",
+      "zh": "形参还是实参"
+    },
+    "prompt": {
+      "en": "Given def square(number): return number * number and the call square(7), which statement is correct?",
+      "zh": "给出定义def square(number): return number * number及调用square(7)，哪个说法正确？"
+    },
+    "explanation": {
+      "en": "A parameter is the name written in the function definition. An argument is the actual value supplied by a call. On this call the local parameter number receives the argument value 7.",
+      "zh": "形参是写在函数定义中的名字，实参是调用时实际传入的值。此次调用会让局部形参number接收到实参7。它不因此变成全局变量。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "Both are function names.",
+        "zh": "两者都是函数名。"
+      },
+      {
+        "en": "number is necessarily a global variable.",
+        "zh": "number必定是全局变量。"
+      },
+      {
+        "en": "number is a parameter; 7 is an argument.",
+        "zh": "number是形参，7是实参。"
+      },
+      {
+        "en": "7 is a parameter; number is an argument.",
+        "zh": "7是形参，number是实参。"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L4-028",
+    "chapter": "lecture4",
+    "topic": "integration",
+    "topicLabel": {
+      "en": "Function design",
+      "zh": "函数综合设计"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "One definition, many uses",
+      "zh": "一个定义，多处复用"
+    },
+    "prompt": {
+      "en": "Several parts of a program calculate the same shipping fee. Why place that calculation in a function?",
+      "zh": "程序多个地方都需要计算同一种运费，为什么适合把计算写成函数？"
+    },
+    "explanation": {
+      "en": "A function gives repeated logic a single definition. Fixing that definition updates every call that uses it, reducing inconsistent copies. You still need clear inputs and tests; reuse does not guarantee correctness.",
+      "zh": "函数让重复逻辑有一个统一定义。修改这一处，所有调用都能使用新规则，减少复制代码带来的不一致。但仍需要清楚的输入和测试，封装本身不会自动保证正确。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "Functions guarantee that bugs are impossible.",
+        "zh": "函数保证程序绝不会出错。"
+      },
+      {
+        "en": "A function never needs arguments.",
+        "zh": "函数永远不需要参数。"
+      },
+      {
+        "en": "Every function must modify global variables.",
+        "zh": "每个函数都必须修改全局变量。"
+      },
+      {
+        "en": "The rule can be corrected in one place and reused consistently.",
+        "zh": "规则可在一处修正，并被各处一致复用。"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "id": "L4-029",
+    "chapter": "lecture4",
+    "topic": "hints",
+    "topicLabel": {
+      "en": "Type hints",
+      "zh": "类型提示"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Container annotations at runtime",
+      "zh": "容器标注与实际运行"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nvalues: list[int] = [\"4\", \"5\"]\nprint(values[0] + values[1])\n```",
+      "zh": "下面代码会输出什么？\n```python\nvalues: list[int] = [\"4\", \"5\"]\nprint(values[0] + values[1])\n```"
+    },
+    "explanation": {
+      "en": "The annotation does not convert the elements into integers. They remain strings, so adding them concatenates their characters. Explicit int conversion would be required for arithmetic.",
+      "zh": "类型标注不会把列表元素自动转换成整数。它们仍是字符串，因此相加得到拼接结果45。若要算术相加，必须显式用int转换。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 29; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "45",
+        "zh": "45"
+      },
+      {
+        "en": "9",
+        "zh": "9"
+      },
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "[4, 5]",
+        "zh": "[4, 5]"
+      }
+    ],
+    "answer": 0,
+    "verification": "values:list[int]=[\"4\",\"5\"]\nassert values[0]+values[1]==\"45\""
+  },
+  {
+    "id": "L4-030",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "When a default is evaluated",
+      "zh": "默认值在何时确定"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nrate = 3\ndef read_rate(value=rate):\n    return value\n\nrate = 9\nprint(read_rate())\n```",
+      "zh": "下面代码会输出什么？\n```python\nrate = 3\ndef read_rate(value=rate):\n    return value\n\nrate = 9\nprint(read_rate())\n```"
+    },
+    "explanation": {
+      "en": "The expression rate is evaluated when the definition executes, so the default becomes 3. Later rebinding the global rate to 9 does not rewrite the stored default. Passing read_rate(9) would explicitly choose the new value.",
+      "zh": "默认值表达式在执行函数定义时求值，当时rate是3，所以默认值就记录为3。之后把全局rate改成9，并不会重写已经保存的默认值。需要9时可以主动传入9。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "NameError",
+        "zh": "NameError"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "9",
+        "zh": "9"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      }
+    ],
+    "answer": 1,
+    "verification": "rate=3\ndef read_rate(value=rate):return value\nrate=9\nassert read_rate()==3"
+  },
+  {
+    "id": "L4-031",
+    "chapter": "lecture4",
+    "topic": "recursion",
+    "topicLabel": {
+      "en": "Recursion preview",
+      "zh": "递归预览"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "No reachable base case",
+      "zh": "没有可达的递归出口"
+    },
+    "prompt": {
+      "en": "What normally happens in Python when this function is called?\n```python\ndef forever(n):\n    return forever(n)\n\nforever(1)\n```",
+      "zh": "在通常的Python环境中，调用下面函数会怎样？\n```python\ndef forever(n):\n    return forever(n)\n\nforever(1)\n```"
+    },
+    "explanation": {
+      "en": "Every call immediately creates another call with the same argument. There is no base case and no progress toward stopping. Python normally raises RecursionError when the allowed recursion depth is exceeded.",
+      "zh": "每次调用都会用同样的参数再调用自己，没有基例，也没有朝停止方向推进。通常达到允许的递归深度后，Python会抛出RecursionError。不要指望系统自动替你修改n。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "It returns None after one call.",
+        "zh": "一次调用后返回None。"
+      },
+      {
+        "en": "It automatically changes n to zero.",
+        "zh": "自动把n改为0。"
+      },
+      {
+        "en": "It eventually raises RecursionError.",
+        "zh": "最终触发RecursionError。"
+      },
+      {
+        "en": "It returns 1 immediately.",
+        "zh": "立即返回1。"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L4-032",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "A missing return path",
+      "zh": "有一条路径漏了return"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef positive_double(x):\n    if x > 0:\n        return 2 * x\n\nprint(positive_double(0))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef positive_double(x):\n    if x > 0:\n        return 2 * x\n\nprint(positive_double(0))\n```"
+    },
+    "explanation": {
+      "en": "For x=0 the if body is skipped. The function then reaches its end, which implicitly returns None. If zero should produce zero, add a return for that path rather than relying on the function name.",
+      "zh": "x为0时，if块不会执行，函数直接走到结尾，隐式返回None。如果希望0返回0，应为这条路径补上return，而不是依赖函数名字来表达意图。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "False",
+        "zh": "False"
+      },
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      }
+    ],
+    "answer": 3,
+    "verification": "def positive_double(x):\n if x>0:return 2*x\nassert positive_double(0) is None"
+  },
+  {
+    "id": "L4-033",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "A new result list",
+      "zh": "产生新的结果列表"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef doubled(values):\n    result = []\n    for value in values:\n        result.append(value * 2)\n    return result\n\na = [1, 2]\nb = doubled(a)\nprint(a, b)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef doubled(values):\n    result = []\n    for value in values:\n        result.append(value * 2)\n    return result\n\na = [1, 2]\nb = doubled(a)\nprint(a, b)\n```"
+    },
+    "explanation": {
+      "en": "Appending to a new result list does not mutate a. The function reads each original value and writes the transformed value elsewhere. This design is helpful when callers still need the original data.",
+      "zh": "这里是在新建的result中追加结果，没有修改a。函数只读取原值，把变换后的值写到另一张列表。当调用者还需要原数据时，这种设计很方便。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "[1, 2] [2, 4]",
+        "zh": "[1, 2] [2, 4]"
+      },
+      {
+        "en": "[2, 4] [2, 4]",
+        "zh": "[2, 4] [2, 4]"
+      },
+      {
+        "en": "[1, 2] None",
+        "zh": "[1, 2] None"
+      },
+      {
+        "en": "[1, 2] [1, 2]",
+        "zh": "[1, 2] [1, 2]"
+      }
+    ],
+    "answer": 0,
+    "verification": "def doubled(v):return [x*2 for x in v]\na=[1,2];b=doubled(a)\nassert a==[1,2] and b==[2,4]"
+  },
+  {
+    "id": "L4-034",
+    "chapter": "lecture4",
+    "topic": "variadic",
+    "topicLabel": {
+      "en": "Variable arguments",
+      "zh": "可变参数"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "The extra arguments tuple",
+      "zh": "额外实参组成的元组"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef collect(first, *rest):\n    return first, rest\n\nprint(collect(1, 2, 3))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef collect(first, *rest):\n    return first, rest\n\nprint(collect(1, 2, 3))\n```"
+    },
+    "explanation": {
+      "en": "first receives the first argument 1. The remaining positional arguments are collected as the tuple (2,3). Returning first, rest creates an outer tuple whose second element is that inner tuple.",
+      "zh": "first先接收1，剩下的2和3被收集成元组(2,3)。return first,rest又在外层组成一个元组，因此第二项本身还是元组，括号会嵌套。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "((1, 2, 3), ())",
+        "zh": "((1, 2, 3), ())"
+      },
+      {
+        "en": "(1, (2, 3))",
+        "zh": "(1, (2, 3))"
+      },
+      {
+        "en": "(1, [2, 3])",
+        "zh": "(1, [2, 3])"
+      },
+      {
+        "en": "(1, 2, 3)",
+        "zh": "(1, 2, 3)"
+      }
+    ],
+    "answer": 1,
+    "verification": "def collect(first,*rest):return first,rest\nassert collect(1,2,3)==(1,(2,3))"
+  },
+  {
+    "id": "L4-035",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "Mixing positional and keyword arguments",
+      "zh": "混合位置与关键字实参"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndef bill(price, quantity=1, fee=0):\n    return price * quantity + fee\n\nprint(bill(5, fee=2))\n```",
+      "zh": "下面代码会输出什么？\n```python\ndef bill(price, quantity=1, fee=0):\n    return price * quantity + fee\n\nprint(bill(5, fee=2))\n```"
+    },
+    "explanation": {
+      "en": "The positional 5 fills price, quantity keeps its default 1, and fee is explicitly set to 2. A keyword argument can skip over an optional parameter without changing its default. This differs from bill(5,2), which would set quantity.",
+      "zh": "位置实参5填入price，quantity保留默认1，fee被明确设为2。关键字实参可以越过其他可选参数，而不改变它们的默认值。bill(5,2)则会把2给quantity，含义不同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "12",
+        "zh": "12"
+      },
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "7",
+        "zh": "7"
+      },
+      {
+        "en": "10",
+        "zh": "10"
+      }
+    ],
+    "answer": 2,
+    "verification": "def bill(price,quantity=1,fee=0):return price*quantity+fee\nassert bill(5,fee=2)==7"
+  },
+  {
+    "id": "L4-036",
+    "chapter": "lecture4",
+    "topic": "hints",
+    "topicLabel": {
+      "en": "Type hints",
+      "zh": "类型提示"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "The operation still matters",
+      "zh": "真正报错的是运算"
+    },
+    "prompt": {
+      "en": "What happens when add(\"3\", 2) is called below?\n```python\ndef add(a: int, b: int) -> int:\n    return a + b\n```",
+      "zh": "调用下面的add(\"3\",2)会怎样？\n```python\ndef add(a: int, b: int) -> int:\n    return a + b\n```"
+    },
+    "explanation": {
+      "en": "Type hints do not perform automatic validation or conversion here. The function body still runs, but Python cannot apply + to this string/integer pair. Convert the text deliberately if numeric addition is the intended contract.",
+      "zh": "这里的类型提示不会自动验证或转换。函数体仍会运行，但字符串与整数这一对操作数无法直接用+相加，所以报错。若约定要做数值加法，应明确转换文本。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 30; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "The annotations convert \"3\" into 3, returning 5.",
+        "zh": "类型提示把\"3\"转成3，返回5。"
+      },
+      {
+        "en": "The annotations reject every non-int call before the body runs.",
+        "zh": "类型提示在进入函数体前自动拒绝所有非整数调用。"
+      },
+      {
+        "en": "It returns \"32\" automatically.",
+        "zh": "自动返回\"32\"。"
+      },
+      {
+        "en": "TypeError from trying to add a string and an integer.",
+        "zh": "字符串与整数相加的运算触发TypeError。"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "id": "L4-037",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "A valid rectangle perimeter",
+      "zh": "有效矩形的周长"
+    },
+    "prompt": {
+      "en": "Write perimeter(a: float, b: float) -> float. Return 2*(a+b) if both sides are positive; return 0 if either side is zero or negative. Do not print the answer.",
+      "zh": "编写perimeter(a: float,b: float)->float。两边均为正时返回2*(a+b)，任一边为0或负数时返回0，不打印答案。"
+    },
+    "explanation": {
+      "en": "Reject invalid dimensions before calculating. The or condition rejects either bad side, while a valid rectangle needs both sides positive. return lets the caller use the result in a later calculation.",
+      "zh": "先排除不合法的边长，再计算周长。只要一边不合格就要拒绝，所以用or；有效矩形则要求两边都为正。使用return，调用者才可以继续使用周长。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 14; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def perimeter(a: float, b: float) -> float:\n    # Write your code here.\n    pass\n",
+    "solution": "def perimeter(a: float, b: float) -> float:\n    if a <= 0 or b <= 0:\n        return 0\n    return 2 * (a + b)\n",
+    "tests": "assert perimeter(3,4)==14\nassert perimeter(0,5)==0\nassert perimeter(5,-1)==0\nassert abs(perimeter(1.5,2.5)-8)<1e-9\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Positive sides, zero, a negative side and decimal sides.",
+      "zh": "正边长、0、负边长和小数边长。"
+    }
+  },
+  {
+    "id": "L4-038",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Count an optional character",
+      "zh": "带默认字符的计数"
+    },
+    "prompt": {
+      "en": "Write count_letter(text, letter=\"a\"). Count exact, case-sensitive matches of the single-character letter in text. Return an integer. Use a loop rather than str.count().",
+      "zh": "编写count_letter(text,letter=\"a\")，用循环统计单字符letter在text中完全匹配的次数，区分大小写。返回整数，不使用str.count()。"
+    },
+    "explanation": {
+      "en": "The default supplies lowercase a only when the caller omits letter. Compare each character directly with that chosen argument. Keeping the case-sensitive rule explicit prevents accidental counting of uppercase letters.",
+      "zh": "只有调用者省略letter时，才使用默认的小写a。把每个字符与选定的letter直接比较即可。明确区分大小写，能避免不小心把大写字符也算进去。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 3; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def count_letter(text, letter=\"a\"):\n    # Write your code here.\n    pass\n",
+    "solution": "def count_letter(text, letter=\"a\"):\n    count = 0\n    for char in text:\n        if char == letter:\n            count += 1\n    return count\n",
+    "tests": "assert count_letter(\"Aaaba\")==3\nassert count_letter(\"Aaaba\",\"A\")==1\nassert count_letter(\"\",\"x\")==0\nassert count_letter(\"book\",\"o\")==2\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "The default, an explicit argument, case sensitivity and empty text.",
+      "zh": "默认参数、指定参数、大小写差异和空文本。"
+    }
+  },
+  {
+    "id": "L4-039",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Return both bounds",
+      "zh": "同时返回最小值和最大值"
+    },
+    "prompt": {
+      "en": "Write bounds(values). For a non-empty list of numbers return (minimum, maximum) as a tuple. For an empty list return (None, None). Do not modify the input.",
+      "zh": "编写bounds(values)。非空数字列表返回(最小值,最大值)元组；空列表返回(None,None)。不修改输入列表。"
+    },
+    "explanation": {
+      "en": "Handle empty input before reading the first item. For real data, initialize both bounds from an actual element, then update them while scanning. Starting at zero would fail for lists containing only positive or only negative numbers.",
+      "zh": "先处理空列表，才能安全读取首项。非空时，用真实首项初始化最小值和最大值，然后遍历更新。不能随意从0开始，否则全正数或全负数可能得到错误边界。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 2; Python Programming Exercises, Gently Explained · #12 Smallest & Biggest",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def bounds(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def bounds(values):\n    if not values:\n        return None, None\n    low = high = values[0]\n    for value in values:\n        if value < low:\n            low = value\n        if value > high:\n            high = value\n    return low, high\n",
+    "tests": "assert bounds([4,-2,9,1])==(-2,9)\nassert bounds([])==(None,None)\nassert bounds([5])==(5,5)\nx=[3,1]; bounds(x); assert x==[3,1]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Mixed signs, one item, empty input and no mutation.",
+      "zh": "正负混合、单元素、空列表以及不修改原数据。"
+    }
+  },
+  {
+    "id": "L4-040",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "A configurable greeting",
+      "zh": "可配置的问候语"
+    },
+    "prompt": {
+      "en": "Write greet(name, prefix=\"Hello\"). Return prefix + \", \" + name + \"!\". Support both positional and keyword calls; do not print.",
+      "zh": "编写greet(name,prefix=\"Hello\")，返回prefix+\", \"+name+\"!\"。支持位置和关键字调用，不打印。"
+    },
+    "explanation": {
+      "en": "A default makes prefix optional without changing the required name. Build and return a new string in the exact requested order. Keyword calls match the parameter names, so their order can differ.",
+      "zh": "默认值让prefix可省略，而name仍然必填。按规定顺序组合并返回新字符串即可。关键字调用按参数名匹配，因此书写顺序可以不同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def greet(name, prefix=\"Hello\"):\n    # Write your code here.\n    pass\n",
+    "solution": "def greet(name, prefix=\"Hello\"):\n    return prefix + \", \" + name + \"!\"\n",
+    "tests": "assert greet(\"Ada\")==\"Hello, Ada!\"\nassert greet(\"Ada\",\"Hi\")==\"Hi, Ada!\"\nassert greet(prefix=\"Welcome\",name=\"Bo\")==\"Welcome, Bo!\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Default prefix, positional override and reordered keyword arguments.",
+      "zh": "默认前缀、位置覆盖和调换顺序的关键字实参。"
+    }
+  },
+  {
+    "id": "L4-041",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Price with optional tax",
+      "zh": "带可选税率的金额"
+    },
+    "prompt": {
+      "en": "Write total_price(price, quantity=1, tax_rate=0). Return price*quantity*(1+tax_rate), without rounding. tax_rate is a decimal rate (0.2 means 20%). Assume all arguments are non-negative numbers.",
+      "zh": "编写total_price(price,quantity=1,tax_rate=0)，返回price*quantity*(1+tax_rate)，不舍入。tax_rate使用小数，0.2表示20%。所有实参均为非负数。"
+    },
+    "explanation": {
+      "en": "Calculate the pre-tax subtotal by multiplying price and quantity, then multiply by one plus the decimal rate. A default zero tax leaves the subtotal unchanged. Do not divide 0.2 by 100 again because it already means twenty percent.",
+      "zh": "先用单价乘数量得到税前金额，再乘以1加小数税率。默认税率0不会改变小计。0.2本来就表示百分之二十，不能再除以100。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def total_price(price, quantity=1, tax_rate=0):\n    # Write your code here.\n    pass\n",
+    "solution": "def total_price(price, quantity=1, tax_rate=0):\n    return price * quantity * (1 + tax_rate)\n",
+    "tests": "assert total_price(10)==10\nassert abs(total_price(10,3,0.2)-36)<1e-9\nassert total_price(price=5,tax_rate=0.1,quantity=0)==0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Both defaults, an explicit tax rate and zero quantity.",
+      "zh": "两个默认值、指定税率以及数量为0。"
+    }
+  },
+  {
+    "id": "L4-042",
+    "chapter": "lecture4",
+    "topic": "variadic",
+    "topicLabel": {
+      "en": "Variable arguments",
+      "zh": "可变参数"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Add any extra numbers",
+      "zh": "累加任意数量额外值"
+    },
+    "prompt": {
+      "en": "Write total_values(a, b, *others). Return the sum of the two required numbers and all optional positional numbers. Use a loop over others and do not use sum().",
+      "zh": "编写total_values(a,b,*others)，返回两个必填数与所有额外位置实参之和。用循环遍历others，不使用sum()。"
+    },
+    "explanation": {
+      "en": "The first two numbers fill a and b. Python collects all remaining positional arguments in the tuple others, which may be empty. A for loop naturally handles both zero and many extra values.",
+      "zh": "前两个数先对应a和b，其余位置实参被收集成others元组，它也可能为空。for循环自然适用于没有额外值和有很多额外值两种情况。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def total_values(a, b, *others):\n    # Write your code here.\n    pass\n",
+    "solution": "def total_values(a, b, *others):\n    total = a + b\n    for value in others:\n        total += value\n    return total\n",
+    "tests": "assert total_values(2,3)==5\nassert total_values(2,3,4,5)==14\nassert total_values(-2,2,0,1)==1\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "No extras, several extras and negative values.",
+      "zh": "没有额外值、多个额外值和负数。"
+    }
+  },
+  {
+    "id": "L4-043",
+    "chapter": "lecture4",
+    "topic": "variadic",
+    "topicLabel": {
+      "en": "Variable arguments",
+      "zh": "可变参数"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Join arbitrary text parts",
+      "zh": "连接任意数量文本片段"
+    },
+    "prompt": {
+      "en": "Write join_parts(*parts, sep=\" \"). All parts are strings. Return them joined by sep, with no separator at either end. Return \"\" when no parts are supplied.",
+      "zh": "编写join_parts(*parts,sep=\" \")。parts均为字符串，把它们用sep连接，首尾不要额外分隔符。没有片段时返回空字符串。"
+    },
+    "explanation": {
+      "en": "The separator belongs between parts, not before the first or after the last. Adding it only when the index is greater than zero follows that rule. sep is passed by keyword because it follows the starred positional parameter, just like configurable print options.",
+      "zh": "分隔符只出现在片段之间，而不是首尾。序号大于0时再添加分隔符，就能满足要求。sep放在星号位置参数后，应通过关键字传入，与print的配置参数类似。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 8; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def join_parts(*parts, sep=\" \"):\n    # Write your code here.\n    pass\n",
+    "solution": "def join_parts(*parts, sep=\" \"):\n    result = \"\"\n    for index, part in enumerate(parts):\n        if index > 0:\n            result += sep\n        result += part\n    return result\n",
+    "tests": "assert join_parts(\"A\",\"B\")==\"A B\"\nassert join_parts(\"A\",\"B\",\"C\",sep=\"-\")==\"A-B-C\"\nassert join_parts()==\"\"\nassert join_parts(\"only\",sep=\"-\")==\"only\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Zero, one and several parts, plus a custom separator.",
+      "zh": "零个、一个和多个片段，以及自定义分隔符。"
+    }
+  },
+  {
+    "id": "L4-044",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Increment a list in place",
+      "zh": "原地把列表元素加一"
+    },
+    "prompt": {
+      "en": "Write increment_in_place(values). Add 1 to every numeric list element by modifying the same list object. Return None. Do not create and return a replacement list.",
+      "zh": "编写increment_in_place(values)，直接修改同一个列表，让每个数字元素加1。返回None，不要创建并返回替代列表。"
+    },
+    "explanation": {
+      "en": "Assign through list positions to change the shared object. Reassigning a loop variable would only change that local name, not the list entry. With no explicit return, the function returns None, as requested.",
+      "zh": "通过列表位置赋值，才能修改共享对象。只给循环变量重新赋值，不会改动列表中的对应项。函数没有显式return时会返回None，正好符合约定。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 12; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def increment_in_place(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def increment_in_place(values):\n    for index in range(len(values)):\n        values[index] += 1\n",
+    "tests": "x=[1,4]; alias=x; result=increment_in_place(x); assert x==[2,5] and alias==[2,5] and result is None\nx=[]; assert increment_in_place(x) is None and x==[]\nx=[-1,0]; increment_in_place(x); assert x==[0,1]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Mutation visible through an alias, negatives and empty input.",
+      "zh": "别名也能观察到修改、负数以及空列表。"
+    }
+  },
+  {
+    "id": "L4-045",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Double without mutation",
+      "zh": "翻倍但保留原列表"
+    },
+    "prompt": {
+      "en": "Write doubled_copy(values). Return a new list containing twice every numeric element, without modifying values. The result must be a different list object, even for an empty input.",
+      "zh": "编写doubled_copy(values)，返回每个数字翻倍后的新列表，不修改values。即使输入为空，结果也必须是不同的列表对象。"
+    },
+    "explanation": {
+      "en": "Create the result inside each call and append transformed values to it. The input is only read, so callers retain the original data. Returning the input itself for the empty case would violate the promise of a new list object.",
+      "zh": "每次调用都新建result，再加入变换后的值。只读取输入，调用者就能继续保留原数据。即使输入为空也不能直接返回原列表，否则不符合“新列表”的承诺。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def doubled_copy(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def doubled_copy(values):\n    result = []\n    for value in values:\n        result.append(value * 2)\n    return result\n",
+    "tests": "x=[1,-2]; y=doubled_copy(x); assert y==[2,-4] and x==[1,-2] and y is not x\nx=[]; y=doubled_copy(x); assert y==[] and y is not x\nassert doubled_copy([0,2.5])==[0,5.0]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "No mutation, a genuinely new empty list and decimal values.",
+      "zh": "不修改输入、真正新建的空列表和小数。"
+    }
+  },
+  {
+    "id": "L4-046",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Update a product price",
+      "zh": "修改商品价格字典"
+    },
+    "prompt": {
+      "en": "Write set_price(prices, product, value). Modify the given dictionary so product maps to value, adding the key if necessary. Return that same dictionary object.",
+      "zh": "编写set_price(prices,product,value)，原地修改字典，让product对应value，不存在的键则新增。返回同一个字典对象。"
+    },
+    "explanation": {
+      "en": "Dictionary item assignment changes the shared mapping. The same statement updates an existing key or inserts a new key. Returning prices preserves object identity; returning a copy would not meet this function’s contract.",
+      "zh": "对字典条目赋值会修改原映射。同一语句既可更新旧键，也可新增键。返回prices才能保留对象身份；若返回副本，就不符合“同一个字典”的约定。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 12; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def set_price(prices, product, value):\n    # Write your code here.\n    pass\n",
+    "solution": "def set_price(prices, product, value):\n    prices[product] = value\n    return prices\n",
+    "tests": "d={\"tea\":3}; r=set_price(d,\"tea\",4); assert d=={\"tea\":4} and r is d\nr=set_price(d,\"cake\",5); assert d=={\"tea\":4,\"cake\":5} and r is d\nempty={}; assert set_price(empty,\"a\",0) is empty and empty=={\"a\":0}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "An existing key, a new key and an empty dictionary.",
+      "zh": "旧键、新键和空字典。"
+    }
+  },
+  {
+    "id": "L4-047",
+    "chapter": "lecture4",
+    "topic": "scope",
+    "topicLabel": {
+      "en": "Local and global scope",
+      "zh": "局部与全局作用域"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Read a global rate",
+      "zh": "读取全局费率"
+    },
+    "prompt": {
+      "en": "A global variable SERVICE_RATE is supplied as 0.2. Write service_fee(amount) that reads this global and returns amount*SERVICE_RATE. Do not change SERVICE_RATE. Assume numeric non-negative amount.",
+      "zh": "已提供全局变量SERVICE_RATE=0.2。编写service_fee(amount)，读取该全局值并返回amount*SERVICE_RATE，不修改SERVICE_RATE。amount为非负数。"
+    },
+    "explanation": {
+      "en": "A function may read a global name without declaring global. The declaration is only needed to rebind that global name inside the function. Read the current rate on each call instead of copying 0.2 into the formula.",
+      "zh": "函数读取全局名字时不必写global，只有要在函数内部重新绑定它时才需要。每次调用都应读取当前费率，不要把0.2写死在公式里。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 16; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def service_fee(amount):\n    # Write your code here.\n    pass\n",
+    "solution": "def service_fee(amount):\n    return amount * SERVICE_RATE\n",
+    "tests": "assert abs(service_fee(100)-20)<1e-9\nassert service_fee(0)==0\nassert SERVICE_RATE==0.2\nSERVICE_RATE=0.1\nassert abs(service_fee(50)-5)<1e-9\n",
+    "setup": "SERVICE_RATE = 0.2\n",
+    "packages": [],
+    "testHint": {
+      "en": "The supplied rate, zero amount and a later global-rate change.",
+      "zh": "给定费率、金额为0以及全局费率后续改变。"
+    }
+  },
+  {
+    "id": "L4-048",
+    "chapter": "lecture4",
+    "topic": "scope",
+    "topicLabel": {
+      "en": "Local and global scope",
+      "zh": "局部与全局作用域"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Advance a shared counter",
+      "zh": "更新共享计数器"
+    },
+    "prompt": {
+      "en": "A global variable visit_count starts at 0. Write tick() that increases this global by 1 and returns its new value. No arguments are required.",
+      "zh": "全局变量visit_count初始为0。编写无需实参的tick()，每次将这个全局计数加1，并返回新值。"
+    },
+    "explanation": {
+      "en": "The assignment must target the global counter, so declare global visit_count. Increase it once and return the updated value. A local counter created anew in every call would never remember previous visits.",
+      "zh": "这里要修改外部计数器，因此需要声明global visit_count。每次只增加1，再返回更新后的数。如果每次调用都重新建一个局部计数器，就无法记住之前的访问。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 18; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def tick():\n    # Write your code here.\n    pass\n",
+    "solution": "def tick():\n    global visit_count\n    visit_count += 1\n    return visit_count\n",
+    "tests": "assert tick()==1\nassert tick()==2\nassert visit_count==2\nvisit_count=10\nassert tick()==11\n",
+    "setup": "visit_count = 0\n",
+    "packages": [],
+    "testHint": {
+      "en": "Repeated calls and a reset from outside the function.",
+      "zh": "连续调用以及从函数外重置计数器。"
+    }
+  },
+  {
+    "id": "L4-049",
+    "chapter": "lecture4",
+    "topic": "recursion",
+    "topicLabel": {
+      "en": "Recursion preview",
+      "zh": "递归预览"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Recursive factorial",
+      "zh": "递归计算阶乘"
+    },
+    "prompt": {
+      "en": "Write factorial(n: int) -> int recursively for integer n >= 0. Use the base case 0! = 1 and n! = n*(n-1)!. Do not use math.factorial().",
+      "zh": "递归编写factorial(n:int)->int，n为非负整数。使用0!=1及n!=n*(n-1)!，不使用math.factorial()。"
+    },
+    "explanation": {
+      "en": "The base case returns 1 without calling the function again. Each other call reduces n by one and later multiplies the smaller result by n. This guarantees progress to zero for the allowed non-negative inputs.",
+      "zh": "基例直接返回1，不再继续调用。其他情况先把n减1求较小问题，再把结果乘以n。对允许的非负整数，每次都在接近0，因此递归能结束。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 20; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def factorial(n: int) -> int:\n    # Write your code here.\n    pass\n",
+    "solution": "def factorial(n: int) -> int:\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)\n",
+    "tests": "assert factorial(0)==1\nassert factorial(1)==1\nassert factorial(5)==120\nassert factorial(7)==5040\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "The base case, n=1 and several recursive levels.",
+      "zh": "基例、n=1以及多层递归。"
+    }
+  },
+  {
+    "id": "L4-050",
+    "chapter": "lecture4",
+    "topic": "recursion",
+    "topicLabel": {
+      "en": "Recursion preview",
+      "zh": "递归预览"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Recursive integer sum",
+      "zh": "递归计算整数和"
+    },
+    "prompt": {
+      "en": "Write recursive_sum(n) recursively. For non-negative integer n, return 1+2+...+n, with recursive_sum(0)=0. Do not use a loop or sum().",
+      "zh": "递归编写recursive_sum(n)，对非负整数n返回1+2+...+n，并规定recursive_sum(0)=0。不使用循环或sum()。"
+    },
+    "explanation": {
+      "en": "Separate the last term n from the sum of the smaller range. The base case is zero because an empty sum contributes nothing. Unlike factorial, this recurrence combines results by addition and therefore uses a different base value.",
+      "zh": "把最后一项n与更小范围的和拆开。空范围没有可加的数，所以基例是0。它与阶乘的区别在于使用加法组合结果，因此基例也不同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def recursive_sum(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def recursive_sum(n):\n    if n == 0:\n        return 0\n    return n + recursive_sum(n - 1)\n",
+    "tests": "assert recursive_sum(0)==0\nassert recursive_sum(1)==1\nassert recursive_sum(5)==15\nassert recursive_sum(10)==55\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Zero, one and longer call chains.",
+      "zh": "0、1以及较长调用链。"
+    }
+  },
+  {
+    "id": "L4-051",
+    "chapter": "lecture4",
+    "topic": "recursion",
+    "topicLabel": {
+      "en": "Recursion preview",
+      "zh": "递归预览"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "A recursive power",
+      "zh": "递归计算幂"
+    },
+    "prompt": {
+      "en": "Write power(base, exponent) recursively, where exponent is a non-negative integer. Return base**exponent without using ** or pow(). For exponent=0 return 1, including base=0.",
+      "zh": "递归编写power(base,exponent)，exponent为非负整数。不使用**或pow()返回base的exponent次方。exponent为0时统一返回1，包括base为0。"
+    },
+    "explanation": {
+      "en": "An exponent counts how many factors of base are multiplied. Reduce the count by one on each recursive call, using 1 when no factors remain. Multiplying by 1 is neutral, which makes the base case work.",
+      "zh": "指数表示要乘多少个base。每次递归把这个数量减1，没有因子可乘时返回1。1是乘法的中性值，因此这个基例能让逐层乘回的过程正确完成。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def power(base, exponent):\n    # Write your code here.\n    pass\n",
+    "solution": "def power(base, exponent):\n    if exponent == 0:\n        return 1\n    return base * power(base, exponent - 1)\n",
+    "tests": "assert power(2,0)==1\nassert power(2,5)==32\nassert power(-3,3)==-27\nassert power(0,0)==1\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Zero exponent, a positive exponent, negative base and the stated 0**0 convention.",
+      "zh": "指数为0、正指数、负底数及题目规定的0次幂约定。"
+    }
+  },
+  {
+    "id": "L4-052",
+    "chapter": "lecture4",
+    "topic": "hints",
+    "topicLabel": {
+      "en": "Type hints",
+      "zh": "类型提示"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "A typed membership helper",
+      "zh": "带类型提示的成员判断"
+    },
+    "prompt": {
+      "en": "Write contains_value(values: list[int], target: int) -> bool. Return whether target appears in values. Use a loop and return Boolean values, not the strings \"True\" or \"False\".",
+      "zh": "编写contains_value(values:list[int],target:int)->bool，返回target是否出现在values中。用循环实现，返回布尔值而不是字符串\"True\"或\"False\"。"
+    },
+    "explanation": {
+      "en": "Return True immediately when a match is found. Return False only after every item has been checked, outside the loop. Putting False inside the loop would incorrectly reject a target that appears later.",
+      "zh": "找到匹配项就可以立即返回True。只有全部检查完仍没找到，才能在循环外返回False。若把False放在循环内部，会错误地否定那些出现在后面的目标值。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 26; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def contains_value(values: list[int], target: int) -> bool:\n    # Write your code here.\n    pass\n",
+    "solution": "def contains_value(values: list[int], target: int) -> bool:\n    for value in values:\n        if value == target:\n            return True\n    return False\n",
+    "tests": "assert contains_value([2,4,6],4) is True\nassert contains_value([2,4,6],3) is False\nassert contains_value([],1) is False\nassert contains_value([0],0) is True\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "A match after the first item, no match, zero and empty input.",
+      "zh": "首项之后才命中、无匹配、0以及空列表。"
+    }
+  },
+  {
+    "id": "L4-053",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Count and total together",
+      "zh": "同时返回数量与总和"
+    },
+    "prompt": {
+      "en": "Write summarize(values). Return a tuple (count, total) of the number of numeric values and their sum, using one loop. Return (0,0) for empty input. Do not use len() or sum().",
+      "zh": "编写summarize(values)，用一次循环返回(元素数量,数值总和)元组。空列表返回(0,0)。不使用len()或sum()。"
+    },
+    "explanation": {
+      "en": "Maintain two accumulators because count and total measure different things. Each iteration increases count by one and total by the current value. A tuple returns both results without needing global variables.",
+      "zh": "数量与总和是两种不同指标，因此需要两个累加变量。每轮给数量加1，给总和加当前值。用元组一起返回，无需借助全局变量传递多个结果。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 2; Python Programming Exercises, Gently Explained · #13 Sum & Product, adapted to count and sum",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def summarize(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def summarize(values):\n    count = 0\n    total = 0\n    for value in values:\n        count += 1\n        total += value\n    return count, total\n",
+    "tests": "assert summarize([2,4,6])==(3,12)\nassert summarize([])==(0,0)\nassert summarize([-2,2,0])==(3,0)\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Several values, cancellation to zero and empty input.",
+      "zh": "多个值、正负相抵为0及空列表。"
+    }
+  },
+  {
+    "id": "L4-054",
+    "chapter": "lecture4",
+    "topic": "definition",
+    "topicLabel": {
+      "en": "Definitions and return values",
+      "zh": "函数定义与返回值"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Split values by parity",
+      "zh": "按奇偶拆分列表"
+    },
+    "prompt": {
+      "en": "Write split_parity(values). For a list of integers return (evens, odds), two new lists preserving input order. Zero and negative even integers belong to evens. Do not mutate values.",
+      "zh": "编写split_parity(values)，对整数列表返回(evens,odds)两个新列表，分别保留偶数与奇数的原顺序。0与负偶数属于evens，不修改输入。"
+    },
+    "explanation": {
+      "en": "Remainder zero identifies even integers, including zero and negative evens. Build two new lists and return them as a tuple. Processing input once from left to right preserves the relative order in each group.",
+      "zh": "余数为0能识别偶数，包含0与负偶数。分别建立两个新列表，最后以元组返回。从左往右处理一次，也会自然保留每一组的相对顺序。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 2; Python Programming Exercises, Gently Explained · #3 Odd & Even",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def split_parity(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def split_parity(values):\n    evens = []\n    odds = []\n    for value in values:\n        if value % 2 == 0:\n            evens.append(value)\n        else:\n            odds.append(value)\n    return evens, odds\n",
+    "tests": "assert split_parity([3,0,2,-1,-4])==([0,2,-4],[3,-1])\nassert split_parity([])==([],[])\nx=[1,2]; split_parity(x); assert x==[1,2]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Negative values, zero, empty input and preserving the original.",
+      "zh": "负数、0、空列表以及保留原输入。"
+    }
+  },
+  {
+    "id": "L4-055",
+    "chapter": "lecture4",
+    "topic": "integration",
+    "topicLabel": {
+      "en": "Function design",
+      "zh": "函数综合设计"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "An average with an empty rule",
+      "zh": "明确定义空列表平均值"
+    },
+    "prompt": {
+      "en": "Write safe_average(values) returning the arithmetic mean of a numeric list, or 0 for an empty list. Use a loop, do not use sum(), and do not change the input.",
+      "zh": "编写safe_average(values)，返回数字列表的算术平均值；空列表按本题约定返回0。使用循环，不使用sum()，不修改输入。"
+    },
+    "explanation": {
+      "en": "Handle empty input first to avoid dividing by zero. For the remaining inputs, add the values and divide by their count. The empty-list result is a stated design choice here, not a universal mathematical definition of an empty mean.",
+      "zh": "先处理空列表，就能避免除以0。非空时累加数值，再除以数量。本题对空列表返回0是明确约定，并不是数学上空平均值的普遍定义。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 1; Python Programming Exercises, Gently Explained · #14 Average",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def safe_average(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def safe_average(values):\n    if not values:\n        return 0\n    total = 0\n    for value in values:\n        total += value\n    return total / len(values)\n",
+    "tests": "assert safe_average([2,4,9])==5\nassert safe_average([])==0\nassert safe_average([-2,2])==0\nx=[1,3]; safe_average(x); assert x==[1,3]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "An ordinary mean, cancellation, empty input and no mutation.",
+      "zh": "普通平均值、正负相抵、空列表以及不修改数据。"
+    }
+  },
+  {
+    "id": "L4-056",
+    "chapter": "lecture4",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Mutation and copies",
+      "zh": "可变对象与复制"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "A fresh optional history",
+      "zh": "安全的可选历史列表"
+    },
+    "prompt": {
+      "en": "Write add_history(value, history=None). If history is omitted or None, create a fresh list. Otherwise append to the supplied list. Append value and return that list. Separate calls omitting history must not share a list.",
+      "zh": "编写add_history(value,history=None)。省略history或传入None时，新建列表；否则使用传入列表。追加value并返回该列表。多次省略history的调用不能共享一个列表。"
+    },
+    "explanation": {
+      "en": "Use None as a signal that no history object was supplied. Create a list inside that call only, avoiding a mutable list stored in the function’s defaults. When the caller supplies a real list, keep its identity and append to it.",
+      "zh": "用None表示“调用者没有给历史列表”，并在这次调用内部新建列表。这样就避开了默认值中存放可变列表导致共享的陷阱。若调用者确实传入列表，则按约定在原列表追加。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def add_history(value, history=None):\n    # Write your code here.\n    pass\n",
+    "solution": "def add_history(value, history=None):\n    if history is None:\n        history = []\n    history.append(value)\n    return history\n",
+    "tests": "a=add_history(\"A\"); b=add_history(\"B\"); assert a==[\"A\"] and b==[\"B\"] and a is not b\nh=[]; assert add_history(1,h) is h and h==[1]\nassert add_history(2,None)==[2]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Independent default calls, explicit None and an explicitly supplied list.",
+      "zh": "默认调用相互独立、显式None和传入的原列表。"
+    }
+  },
+  {
+    "id": "L4-057",
+    "chapter": "lecture4",
+    "topic": "integration",
+    "topicLabel": {
+      "en": "Function design",
+      "zh": "函数综合设计"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "Compose a rectangle report",
+      "zh": "组合矩形报告"
+    },
+    "prompt": {
+      "en": "The helper perimeter(a,b) is already provided: it returns 0 for non-positive sides and otherwise 2*(a+b). Write rectangle_report(a,b). Return {\"area\": a*b, \"perimeter\": perimeter(a,b)} for positive sides; otherwise return both entries as 0. Call the helper for the valid perimeter.",
+      "zh": "已提供perimeter(a,b)：非正边长返回0，否则返回2*(a+b)。编写rectangle_report(a,b)。两边为正时返回{\"area\":a*b,\"perimeter\":perimeter(a,b)}，否则两个字段都返回0。合法周长要调用该辅助函数。"
+    },
+    "explanation": {
+      "en": "Validate the sides once so both report fields follow the same rule. Reuse the perimeter helper instead of duplicating its formula in the valid case. Returning a dictionary gives the two values meaningful names.",
+      "zh": "先统一验证边长，确保面积和周长遵守同一条有效性规则。合法时复用周长辅助函数，避免到处复制公式。字典则给两个结果各自配上了清楚的名字。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 14; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def rectangle_report(a, b):\n    # Write your code here.\n    pass\n",
+    "solution": "def rectangle_report(a, b):\n    if a <= 0 or b <= 0:\n        return {\"area\": 0, \"perimeter\": 0}\n    return {\"area\": a * b, \"perimeter\": perimeter(a, b)}\n",
+    "tests": "assert rectangle_report(3,4)=={\"area\":12,\"perimeter\":14}\nassert rectangle_report(0,4)=={\"area\":0,\"perimeter\":0}\nassert rectangle_report(-2,4)=={\"area\":0,\"perimeter\":0}\nassert rectangle_report(1.5,2)=={\"area\":3.0,\"perimeter\":7.0}\n",
+    "setup": "def perimeter(a, b):\n    return 0 if a <= 0 or b <= 0 else 2 * (a + b)\n",
+    "packages": [],
+    "testHint": {
+      "en": "Valid, zero, negative and decimal side lengths.",
+      "zh": "合法、为0、负数及小数边长。"
+    }
+  },
+  {
+    "id": "L4-058",
+    "chapter": "lecture4",
+    "topic": "arguments",
+    "topicLabel": {
+      "en": "Arguments and defaults",
+      "zh": "参数与默认值"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "Exact words with a default",
+      "zh": "带默认值的整词统计"
+    },
+    "prompt": {
+      "en": "Write count_word(text, word=\"and\"). Split text on whitespace and count tokens exactly equal to word. Matches are case-sensitive; punctuation remains part of a token, so \"And\" and \"and,\" do not match the default.",
+      "zh": "编写count_word(text,word=\"and\")。按空白拆分文本，统计与word完全相同的词项。区分大小写，标点保留在词项中，所以And和and,不匹配默认值。"
+    },
+    "explanation": {
+      "en": "split() without an argument handles runs of whitespace, including tabs and newlines. Direct equality checks an entire token and keeps the promised case and punctuation rules. A substring search would incorrectly count matches inside longer words.",
+      "zh": "不带参数的split()能处理连续空格、制表符和换行。直接比较整个词项，便能保留题目规定的大小写和标点规则。若使用子串查找，就可能把长单词里的片段也误算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 4; Tutorial2.ipynb · Exercise 3; Lecture 4 defaults and counting example",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def count_word(text, word=\"and\"):\n    # Write your code here.\n    pass\n",
+    "solution": "def count_word(text, word=\"and\"):\n    count = 0\n    for token in text.split():\n        if token == word:\n            count += 1\n    return count\n",
+    "tests": "assert count_word(\"and And and, and\")==2\nassert count_word(\"cat dog cat\",\"cat\")==2\nassert count_word(\"\")==0\nassert count_word(\"and\\n\\tand\")==2\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Case differences, punctuation, custom words and mixed whitespace.",
+      "zh": "大小写差异、标点、自定义单词和混合空白。"
+    }
+  },
+  {
+    "id": "L4-059",
+    "chapter": "lecture4",
+    "topic": "recursion",
+    "topicLabel": {
+      "en": "Recursion preview",
+      "zh": "递归预览"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "Reverse text recursively",
+      "zh": "递归反转字符串"
+    },
+    "prompt": {
+      "en": "Write reverse_text(text) recursively, without slicing with a negative step or using reversed(). The empty string is the base case. Preserve every character, including spaces and case.",
+      "zh": "递归编写reverse_text(text)，不使用负步长切片或reversed()。空字符串作为基例，空格与大小写等所有字符都要保留。"
+    },
+    "explanation": {
+      "en": "Remove the first character and recursively reverse the shorter remainder. Appending the removed character at the end places it in its reversed position. The empty string stops the chain and adds no extra character.",
+      "zh": "先拿走第一个字符，递归反转剩下更短的部分，再把刚才的字符加到末尾。这样它就处于反转后该在的位置。空字符串负责停止调用，也不会增加多余字符。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 19; Python Programming Exercises, Gently Explained · #36 Reverse String; recursion preview",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def reverse_text(text):\n    # Write your code here.\n    pass\n",
+    "solution": "def reverse_text(text):\n    if text == \"\":\n        return \"\"\n    return reverse_text(text[1:]) + text[0]\n",
+    "tests": "assert reverse_text(\"\")==\"\"\nassert reverse_text(\"A\")==\"A\"\nassert reverse_text(\"Ab c\")==\"c bA\"\nassert reverse_text(\"anna\")==\"anna\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Empty, single-character, spaced and palindromic text.",
+      "zh": "空文本、单字符、带空格文本和回文。"
+    }
+  },
+  {
+    "id": "L4-060",
+    "chapter": "lecture4",
+    "topic": "variadic",
+    "topicLabel": {
+      "en": "Variable arguments",
+      "zh": "可变参数"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "A threshold and star arguments",
+      "zh": "星号参数与关键字门槛"
+    },
+    "prompt": {
+      "en": "Write sum_selected(*values, minimum=0). Return the sum of numeric positional values >= minimum. minimum must be configurable by keyword. Use a loop and do not use sum(). With no values, return 0.",
+      "zh": "编写sum_selected(*values,minimum=0)，返回至少达到minimum的数字位置实参之和。minimum通过关键字配置。使用循环，不使用sum()，没有数值实参时返回0。"
+    },
+    "explanation": {
+      "en": "The starred parameter gathers the data while minimum supplies a separate configuration. Check each collected value against that threshold before adding it. The >= comparison includes equality, and the counter starts at zero so no-data calls work naturally.",
+      "zh": "星号参数负责收集数据，minimum则是单独的配置。先检查每个数是否达到门槛，再决定是否累加。>=包含相等，初始总和0也能自然处理没有数值实参的情况。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def sum_selected(*values, minimum=0):\n    # Write your code here.\n    pass\n",
+    "solution": "def sum_selected(*values, minimum=0):\n    total = 0\n    for value in values:\n        if value >= minimum:\n            total += value\n    return total\n",
+    "tests": "assert sum_selected(-2,0,3,5)==8\nassert sum_selected(1,3,5,minimum=3)==8\nassert sum_selected()==0\nassert sum_selected(-3,-1,2,minimum=-1)==1\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Default and custom thresholds, equality, negative values and no arguments.",
+      "zh": "默认与自定义门槛、相等、负数及没有实参。"
+    }
+  }
+]

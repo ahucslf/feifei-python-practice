@@ -1,0 +1,421 @@
+﻿题号,对应讲义,知识点,题型,难度,具体出题依据,公开参考链接,题目性质
+L1-001,1_Introduction_filled.ipynb,计算思维与开发工具,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 1,,adapted
+L1-002,1_Introduction_filled.ipynb,计算思维与开发工具,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 1,,adapted
+L1-003,1_Introduction_filled.ipynb,计算思维与开发工具,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 2,,adapted
+L1-004,1_Introduction_filled.ipynb,计算思维与开发工具,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 2,,adapted
+L1-005,1_Introduction_filled.ipynb,计算思维与开发工具,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 2,,adapted
+L1-006,1_Introduction_filled.ipynb,Notebook执行顺序,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 3,,adapted
+L1-007,1_Introduction_filled.ipynb,Notebook执行顺序,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 3,,adapted
+L1-008,1_Introduction_filled.ipynb,Notebook执行顺序,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 3,,adapted
+L1-009,1_Introduction_filled.ipynb,Notebook执行顺序,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 3,,adapted
+L1-010,1_Introduction_filled.ipynb,Notebook执行顺序,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 3,,adapted
+L1-011,1_Introduction_filled.ipynb,文本、输入与输出,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-012,1_Introduction_filled.ipynb,文本、输入与输出,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-013,1_Introduction_filled.ipynb,文本、输入与输出,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-014,1_Introduction_filled.ipynb,文本、输入与输出,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 4; Python Fundamentals Challenges · Challenge 3: Seeing Data Types,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L1-015,1_Introduction_filled.ipynb,文本、输入与输出,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-016,1_Introduction_filled.ipynb,语句与注释,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-017,1_Introduction_filled.ipynb,语句与注释,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-018,1_Introduction_filled.ipynb,语句与注释,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 6,,adapted
+L1-019,1_Introduction_filled.ipynb,模块的导入与使用,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 8,,adapted
+L1-020,1_Introduction_filled.ipynb,模块的导入与使用,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 8,,adapted
+L1-021,1_Introduction_filled.ipynb,模块的导入与使用,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 8,,adapted
+L1-022,1_Introduction_filled.ipynb,识别与修复错误,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 11,,adapted
+L1-023,1_Introduction_filled.ipynb,识别与修复错误,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 11,,adapted
+L1-024,1_Introduction_filled.ipynb,识别与修复错误,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 11,,adapted
+L1-025,1_Introduction_filled.ipynb,识别与修复错误,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 11,,adapted
+L1-026,1_Introduction_filled.ipynb,变量与赋值,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 14,,adapted
+L1-027,1_Introduction_filled.ipynb,变量与赋值,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 14; Python Fundamentals Challenges · Challenge 1: Check Your Understanding,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L1-028,1_Introduction_filled.ipynb,变量与赋值,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 14,,adapted
+L1-029,1_Introduction_filled.ipynb,变量与赋值,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 14,,adapted
+L1-030,1_Introduction_filled.ipynb,变量与赋值,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 16; Python Fundamentals Challenges · Challenge 2: Sorting Out References,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L1-031,1_Introduction_filled.ipynb,引用、身份与类型,mcq,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 18; Python Fundamentals Challenges · Challenge 3: Seeing Data Types,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L1-032,1_Introduction_filled.ipynb,引用、身份与类型,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 18,,adapted
+L1-033,1_Introduction_filled.ipynb,引用、身份与类型,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 20,,adapted
+L1-034,1_Introduction_filled.ipynb,引用、身份与类型,mcq,3,Lecture 1 · 1_Introduction_filled.ipynb · cell 20,,adapted
+L1-035,1_Introduction_filled.ipynb,引用、身份与类型,mcq,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 20,,adapted
+L1-036,1_Introduction_filled.ipynb,引用、身份与类型,mcq,3,Lecture 1 · 1_Introduction_filled.ipynb · cell 26,,adapted
+L1-037,1_Introduction_filled.ipynb,文本、输入与输出,code,1,"Lecture 1 · 1_Introduction_filled.ipynb · cell 5; Sweigart · Exercise 1: Hello, World!",https://inventwithpython.com/pythongently/,adapted
+L1-038,1_Introduction_filled.ipynb,文本、输入与输出,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 5,,adapted
+L1-039,1_Introduction_filled.ipynb,变量与赋值,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 14; Python Fundamentals Challenges · Challenge 1: Check Your Understanding,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L1-040,1_Introduction_filled.ipynb,文本、输入与输出,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-041,1_Introduction_filled.ipynb,变量与赋值,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 16,,adapted
+L1-042,1_Introduction_filled.ipynb,变量与赋值,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 6,,adapted
+L1-043,1_Introduction_filled.ipynb,模块的导入与使用,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 8,,adapted
+L1-044,1_Introduction_filled.ipynb,文本、输入与输出,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-045,1_Introduction_filled.ipynb,引用、身份与类型,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 18; Python Fundamentals Challenges · Challenge 3: Seeing Data Types,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L1-046,1_Introduction_filled.ipynb,引用、身份与类型,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 20,,adapted
+L1-047,1_Introduction_filled.ipynb,文本、输入与输出,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-048,1_Introduction_filled.ipynb,文本、输入与输出,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-049,1_Introduction_filled.ipynb,识别与修复错误,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 11,,adapted
+L1-050,1_Introduction_filled.ipynb,变量与赋值,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 16; Python Fundamentals Challenges · Challenge 2: Sorting Out References,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L1-051,1_Introduction_filled.ipynb,变量与赋值,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 16,,adapted
+L1-052,1_Introduction_filled.ipynb,引用、身份与类型,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 20,,adapted
+L1-053,1_Introduction_filled.ipynb,语句与注释,code,1,Lecture 1 · 1_Introduction_filled.ipynb · cell 10,,adapted
+L1-054,1_Introduction_filled.ipynb,模块的导入与使用,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 8,,adapted
+L1-055,1_Introduction_filled.ipynb,文本、输入与输出,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L1-056,1_Introduction_filled.ipynb,识别与修复错误,code,2,Lecture 1 · 1_Introduction_filled.ipynb · cell 11,,adapted
+L1-057,1_Introduction_filled.ipynb,文本、输入与输出,code,3,Lecture 1 · 1_Introduction_filled.ipynb · cell 5,,adapted
+L1-058,1_Introduction_filled.ipynb,变量与赋值,code,3,Lecture 1 · 1_Introduction_filled.ipynb · cell 3,,adapted
+L1-059,1_Introduction_filled.ipynb,引用、身份与类型,code,3,Lecture 1 · 1_Introduction_filled.ipynb · cell 24,,adapted
+L1-060,1_Introduction_filled.ipynb,文本、输入与输出,code,3,Lecture 1 · 1_Introduction_filled.ipynb · cell 4,,adapted
+L2-001,2_Data_Types_filled.ipynb,数值类型与运算,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 2,,adapted
+L2-002,2_Data_Types_filled.ipynb,数值类型与运算,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 7,,adapted
+L2-003,2_Data_Types_filled.ipynb,数值类型与运算,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 7,,adapted
+L2-004,2_Data_Types_filled.ipynb,数值类型与运算,mcq,1,"Lecture 2 · 2_Data_Types_filled.ipynb · cell 7; Sweigart · Exercise 11: Hours, Minutes, Seconds",https://inventwithpython.com/pythongently/,adapted
+L2-005,2_Data_Types_filled.ipynb,数值类型与运算,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 12,,adapted
+L2-006,2_Data_Types_filled.ipynb,布尔逻辑与随机数,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 2,,adapted
+L2-007,2_Data_Types_filled.ipynb,布尔逻辑与随机数,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 14,,adapted
+L2-008,2_Data_Types_filled.ipynb,布尔逻辑与随机数,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 14,,adapted
+L2-009,2_Data_Types_filled.ipynb,布尔逻辑与随机数,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 16,,adapted
+L2-010,2_Data_Types_filled.ipynb,布尔逻辑与随机数,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 19,,adapted
+L2-011,2_Data_Types_filled.ipynb,布尔逻辑与随机数,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 16,,adapted
+L2-012,2_Data_Types_filled.ipynb,列表与切片,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 24; Storing Multiple Values in Lists Challenges · Challenge 1: Slicing From the End,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-013,2_Data_Types_filled.ipynb,列表与切片,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 28; Analyzing Patient Data Challenges · Challenge 1: Slicing Strings,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-014,2_Data_Types_filled.ipynb,列表与切片,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Storing Multiple Values in Lists Challenges · Challenge 2: Non-Continuous Slices,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-015,2_Data_Types_filled.ipynb,列表与切片,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Storing Multiple Values in Lists Challenges · Challenge 3: Overloading,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-016,2_Data_Types_filled.ipynb,列表与切片,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 38,,adapted
+L2-017,2_Data_Types_filled.ipynb,列表与切片,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 40,,adapted
+L2-018,2_Data_Types_filled.ipynb,列表与切片,mcq,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 38,,adapted
+L2-019,2_Data_Types_filled.ipynb,复制与可变性,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 46,,adapted
+L2-020,2_Data_Types_filled.ipynb,复制与可变性,mcq,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 46,,adapted
+L2-021,2_Data_Types_filled.ipynb,复制与可变性,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 50,,adapted
+L2-022,2_Data_Types_filled.ipynb,字符串与元组,mcq,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 52,,adapted
+L2-023,2_Data_Types_filled.ipynb,字符串与元组,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 61; Sweigart · Exercise 10: Find and Replace,https://inventwithpython.com/pythongently/,adapted
+L2-024,2_Data_Types_filled.ipynb,字符串与元组,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 55,,adapted
+L2-025,2_Data_Types_filled.ipynb,字符串与元组,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 52,,adapted
+L2-026,2_Data_Types_filled.ipynb,字典,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 63,,adapted
+L2-027,2_Data_Types_filled.ipynb,字典,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 63,,adapted
+L2-028,2_Data_Types_filled.ipynb,字典,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 63,,adapted
+L2-029,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 68,,adapted
+L2-030,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 68,,adapted
+L2-031,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 68,,adapted
+L2-032,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 74,,adapted
+L2-033,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 69,,adapted
+L2-034,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 71,,adapted
+L2-035,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 71; Analyzing Patient Data Challenges · Challenge 2: Thin slices,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-036,2_Data_Types_filled.ipynb,NumPy向量与矩阵,mcq,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 77,,adapted
+L2-037,2_Data_Types_filled.ipynb,数值类型与运算,code,1,"Lecture 2 · 2_Data_Types_filled.ipynb · cell 7; Sweigart · Exercise 11: Hours, Minutes, Seconds",https://inventwithpython.com/pythongently/,adapted
+L2-038,2_Data_Types_filled.ipynb,布尔逻辑与随机数,code,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 19,,adapted
+L2-039,2_Data_Types_filled.ipynb,数值类型与运算,code,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 2,,adapted
+L2-040,2_Data_Types_filled.ipynb,列表与切片,code,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Storing Multiple Values in Lists Challenges · Challenge 2: Non-Continuous Slices,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-041,2_Data_Types_filled.ipynb,列表与切片,code,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Analyzing Patient Data Challenges · Challenge 1: Slicing Strings,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-042,2_Data_Types_filled.ipynb,复制与可变性,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 38,,adapted
+L2-043,2_Data_Types_filled.ipynb,列表与切片,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 40,,adapted
+L2-044,2_Data_Types_filled.ipynb,列表与切片,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 28; Analyzing Patient Data Challenges · Challenge 1: Slicing Strings,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-045,2_Data_Types_filled.ipynb,复制与可变性,code,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 50,,adapted
+L2-046,2_Data_Types_filled.ipynb,字符串与元组,code,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 52,,adapted
+L2-047,2_Data_Types_filled.ipynb,字符串与元组,code,1,Lecture 2 · 2_Data_Types_filled.ipynb · cell 61; Sweigart · Exercise 10: Find and Replace,https://inventwithpython.com/pythongently/,adapted
+L2-048,2_Data_Types_filled.ipynb,字符串与元组,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 23,,adapted
+L2-049,2_Data_Types_filled.ipynb,字符串与元组,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 55; Sweigart · Exercise 28: Border Drawing (text-construction variant),https://inventwithpython.com/pythongently/,adapted
+L2-050,2_Data_Types_filled.ipynb,字典,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 63,,adapted
+L2-051,2_Data_Types_filled.ipynb,字典,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 63,,adapted
+L2-052,2_Data_Types_filled.ipynb,字典,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 63,,adapted
+L2-053,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 77,,adapted
+L2-054,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 77,,adapted
+L2-055,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 68,,adapted
+L2-056,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 74,,adapted
+L2-057,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 71; Analyzing Patient Data Challenges · Challenge 2: Thin slices,https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March,adapted
+L2-058,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,2,Lecture 2 · 2_Data_Types_filled.ipynb · cell 69,,adapted
+L2-059,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 73,,adapted
+L2-060,2_Data_Types_filled.ipynb,NumPy向量与矩阵,code,3,Lecture 2 · 2_Data_Types_filled.ipynb · cell 68,,adapted
+L3-001,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 3; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-002,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 3; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-003,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-004,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-005,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 25; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-006,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 26; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-007,3_Control_Structures_filled.ipynb,布尔条件,mcq,1,3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-008,3_Control_Structures_filled.ipynb,布尔条件,mcq,1,3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-009,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 7; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-010,3_Control_Structures_filled.ipynb,分支与边界,mcq,1,3_Control_Structures_filled.ipynb · cell 7; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-011,3_Control_Structures_filled.ipynb,计数循环,mcq,1,3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-012,3_Control_Structures_filled.ipynb,计数循环,mcq,1,3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-013,3_Control_Structures_filled.ipynb,计数循环,mcq,1,3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-014,3_Control_Structures_filled.ipynb,计数循环,mcq,1,3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-015,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,mcq,1,3_Control_Structures_filled.ipynb · cell 15; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-016,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,mcq,1,3_Control_Structures_filled.ipynb · cell 17; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-017,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,mcq,1,3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-018,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,mcq,1,3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-019,3_Control_Structures_filled.ipynb,while 循环,mcq,2,3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-020,3_Control_Structures_filled.ipynb,while 循环,mcq,2,3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-021,3_Control_Structures_filled.ipynb,break 与 continue,mcq,2,3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-022,3_Control_Structures_filled.ipynb,break 与 continue,mcq,2,3_Control_Structures_filled.ipynb · cell 23; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-023,3_Control_Structures_filled.ipynb,嵌套循环,mcq,2,3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-024,3_Control_Structures_filled.ipynb,while 循环,mcq,2,3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-025,3_Control_Structures_filled.ipynb,布尔条件,mcq,2,3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-026,3_Control_Structures_filled.ipynb,计数循环,mcq,2,3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-027,3_Control_Structures_filled.ipynb,控制流程综合,mcq,2,3_Control_Structures_filled.ipynb · cell 15; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-028,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,mcq,2,3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-029,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,mcq,2,3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-030,3_Control_Structures_filled.ipynb,while 循环,mcq,2,3_Control_Structures_filled.ipynb · cell 21; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-031,3_Control_Structures_filled.ipynb,布尔条件,mcq,3,3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-032,3_Control_Structures_filled.ipynb,布尔条件,mcq,3,3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-033,3_Control_Structures_filled.ipynb,控制流程综合,mcq,3,"3_Control_Structures_filled.ipynb · cell 13; Python Programming Exercises, Gently Explained · #13 Sum & Product",https://inventwithpython.com/pythongently/,adapted
+L3-034,3_Control_Structures_filled.ipynb,嵌套循环,mcq,3,3_Control_Structures_filled.ipynb · cell 12; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-035,3_Control_Structures_filled.ipynb,break 与 continue,mcq,3,3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-036,3_Control_Structures_filled.ipynb,分支与边界,mcq,3,3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-037,3_Control_Structures_filled.ipynb,分支与边界,code,1,3_Control_Structures_filled.ipynb · cell 6; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-038,3_Control_Structures_filled.ipynb,分支与边界,code,1,3_Control_Structures_filled.ipynb · cell 25; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-039,3_Control_Structures_filled.ipynb,布尔条件,code,1,3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-040,3_Control_Structures_filled.ipynb,分支与边界,code,1,3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb,adapted
+L3-041,3_Control_Structures_filled.ipynb,计数循环,code,1,3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-042,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,code,1,3_Control_Structures_filled.ipynb · cell 17; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-043,3_Control_Structures_filled.ipynb,计数循环,code,1,3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-044,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,code,1,3_Control_Structures_filled.ipynb · cell 16; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-045,3_Control_Structures_filled.ipynb,break 与 continue,code,1,3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-046,3_Control_Structures_filled.ipynb,break 与 continue,code,1,3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-047,3_Control_Structures_filled.ipynb,break 与 continue,code,1,3_Control_Structures_filled.ipynb · cell 23; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-048,3_Control_Structures_filled.ipynb,while 循环,code,1,3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-049,3_Control_Structures_filled.ipynb,while 循环,code,2,3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-050,3_Control_Structures_filled.ipynb,while 循环,code,2,3_Control_Structures_filled.ipynb · cell 21; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-051,3_Control_Structures_filled.ipynb,嵌套循环,code,2,"3_Control_Structures_filled.ipynb · cell 12; Python Programming Exercises, Gently Explained · #25 Multiplication Table",https://inventwithpython.com/pythongently/,adapted
+L3-052,3_Control_Structures_filled.ipynb,嵌套循环,code,2,"3_Control_Structures_filled.ipynb · cell 12; Python Programming Exercises, Gently Explained · #26 Handshakes",https://inventwithpython.com/pythongently/,adapted
+L3-053,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,code,2,3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-054,3_Control_Structures_filled.ipynb,列表、字符串与字典遍历,code,2,3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-055,3_Control_Structures_filled.ipynb,控制流程综合,code,2,3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-056,3_Control_Structures_filled.ipynb,控制流程综合,code,2,3_Control_Structures_filled.ipynb · cell 15; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-057,3_Control_Structures_filled.ipynb,break 与 continue,code,3,3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L3-058,3_Control_Structures_filled.ipynb,分支与边界,code,3,"3_Control_Structures_filled.ipynb · cell 9; Python Programming Exercises, Gently Explained · #5 Fizz Buzz",https://inventwithpython.com/pythongently/,adapted
+L3-059,3_Control_Structures_filled.ipynb,while 循环,code,3,"3_Control_Structures_filled.ipynb · cell 20; Tutorial1_Solutions.ipynb · Exercise 2, compound-interest variant",,adapted
+L3-060,3_Control_Structures_filled.ipynb,嵌套循环,code,3,3_Control_Structures_filled.ipynb · cell 12; 5_for_Loops_Challenges_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb,adapted
+L4-001,4_Functions_filled.ipynb,函数定义与返回值,mcq,1,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-002,4_Functions_filled.ipynb,函数定义与返回值,mcq,1,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-003,4_Functions_filled.ipynb,函数定义与返回值,mcq,1,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-004,4_Functions_filled.ipynb,函数定义与返回值,mcq,1,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-005,4_Functions_filled.ipynb,函数定义与返回值,mcq,1,4_Functions_filled.ipynb · cell 2; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-006,4_Functions_filled.ipynb,参数与默认值,mcq,1,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-007,4_Functions_filled.ipynb,参数与默认值,mcq,1,4_Functions_filled.ipynb · cell 5; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-008,4_Functions_filled.ipynb,参数与默认值,mcq,1,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-009,4_Functions_filled.ipynb,参数与默认值,mcq,1,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-010,4_Functions_filled.ipynb,可变参数,mcq,1,4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-011,4_Functions_filled.ipynb,可变参数,mcq,1,4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-012,4_Functions_filled.ipynb,可变参数,mcq,1,4_Functions_filled.ipynb · cell 8; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-013,4_Functions_filled.ipynb,可变对象与复制,mcq,1,4_Functions_filled.ipynb · cell 12; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-014,4_Functions_filled.ipynb,可变对象与复制,mcq,1,4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-015,4_Functions_filled.ipynb,可变对象与复制,mcq,1,4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-016,4_Functions_filled.ipynb,局部与全局作用域,mcq,1,4_Functions_filled.ipynb · cell 17; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-017,4_Functions_filled.ipynb,局部与全局作用域,mcq,1,4_Functions_filled.ipynb · cell 18; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-018,4_Functions_filled.ipynb,类型提示,mcq,1,4_Functions_filled.ipynb · cell 30; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-019,4_Functions_filled.ipynb,类型提示,mcq,2,4_Functions_filled.ipynb · cell 28; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-020,4_Functions_filled.ipynb,类型提示,mcq,2,4_Functions_filled.ipynb · cell 26; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-021,4_Functions_filled.ipynb,递归预览,mcq,2,4_Functions_filled.ipynb · cell 20; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-022,4_Functions_filled.ipynb,递归预览,mcq,2,4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-023,4_Functions_filled.ipynb,局部与全局作用域,mcq,2,4_Functions_filled.ipynb · cell 16; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-024,4_Functions_filled.ipynb,可变对象与复制,mcq,2,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-025,4_Functions_filled.ipynb,函数定义与返回值,mcq,2,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-026,4_Functions_filled.ipynb,函数定义与返回值,mcq,2,4_Functions_filled.ipynb · cell 3; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-027,4_Functions_filled.ipynb,参数与默认值,mcq,2,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-028,4_Functions_filled.ipynb,函数综合设计,mcq,2,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-029,4_Functions_filled.ipynb,类型提示,mcq,2,4_Functions_filled.ipynb · cell 29; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-030,4_Functions_filled.ipynb,参数与默认值,mcq,2,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-031,4_Functions_filled.ipynb,递归预览,mcq,3,4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-032,4_Functions_filled.ipynb,函数定义与返回值,mcq,3,4_Functions_filled.ipynb · cell 1; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-033,4_Functions_filled.ipynb,可变对象与复制,mcq,3,4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-034,4_Functions_filled.ipynb,可变参数,mcq,3,4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-035,4_Functions_filled.ipynb,参数与默认值,mcq,3,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-036,4_Functions_filled.ipynb,类型提示,mcq,3,4_Functions_filled.ipynb · cell 30; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-037,4_Functions_filled.ipynb,函数定义与返回值,code,1,4_Functions_filled.ipynb · cell 14; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-038,4_Functions_filled.ipynb,参数与默认值,code,1,4_Functions_filled.ipynb · cell 3; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-039,4_Functions_filled.ipynb,函数定义与返回值,code,1,"4_Functions_filled.ipynb · cell 2; Python Programming Exercises, Gently Explained · #12 Smallest & Biggest",https://inventwithpython.com/pythongently/,adapted
+L4-040,4_Functions_filled.ipynb,参数与默认值,code,1,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-041,4_Functions_filled.ipynb,参数与默认值,code,1,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-042,4_Functions_filled.ipynb,可变参数,code,1,4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-043,4_Functions_filled.ipynb,可变参数,code,1,4_Functions_filled.ipynb · cell 8; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-044,4_Functions_filled.ipynb,可变对象与复制,code,1,4_Functions_filled.ipynb · cell 12; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-045,4_Functions_filled.ipynb,可变对象与复制,code,1,4_Functions_filled.ipynb · cell 11; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-046,4_Functions_filled.ipynb,可变对象与复制,code,1,4_Functions_filled.ipynb · cell 12; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-047,4_Functions_filled.ipynb,局部与全局作用域,code,1,4_Functions_filled.ipynb · cell 16; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-048,4_Functions_filled.ipynb,局部与全局作用域,code,1,4_Functions_filled.ipynb · cell 18; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-049,4_Functions_filled.ipynb,递归预览,code,2,4_Functions_filled.ipynb · cell 20; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-050,4_Functions_filled.ipynb,递归预览,code,2,4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-051,4_Functions_filled.ipynb,递归预览,code,2,4_Functions_filled.ipynb · cell 19; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-052,4_Functions_filled.ipynb,类型提示,code,2,4_Functions_filled.ipynb · cell 26; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-053,4_Functions_filled.ipynb,函数定义与返回值,code,2,"4_Functions_filled.ipynb · cell 2; Python Programming Exercises, Gently Explained · #13 Sum & Product, adapted to count and sum",https://inventwithpython.com/pythongently/,adapted
+L4-054,4_Functions_filled.ipynb,函数定义与返回值,code,2,"4_Functions_filled.ipynb · cell 2; Python Programming Exercises, Gently Explained · #3 Odd & Even",https://inventwithpython.com/pythongently/,adapted
+L4-055,4_Functions_filled.ipynb,函数综合设计,code,2,"4_Functions_filled.ipynb · cell 1; Python Programming Exercises, Gently Explained · #14 Average",https://inventwithpython.com/pythongently/,adapted
+L4-056,4_Functions_filled.ipynb,可变对象与复制,code,2,4_Functions_filled.ipynb · cell 4; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-057,4_Functions_filled.ipynb,函数综合设计,code,3,4_Functions_filled.ipynb · cell 14; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L4-058,4_Functions_filled.ipynb,参数与默认值,code,3,4_Functions_filled.ipynb · cell 4; Tutorial2.ipynb · Exercise 3; Lecture 4 defaults and counting example,,adapted
+L4-059,4_Functions_filled.ipynb,递归预览,code,3,"4_Functions_filled.ipynb · cell 19; Python Programming Exercises, Gently Explained · #36 Reverse String; recursion preview",https://inventwithpython.com/pythongently/,adapted
+L4-060,4_Functions_filled.ipynb,可变参数,code,3,4_Functions_filled.ipynb · cell 7; 8_Functions_Challenges.ipynb,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/8_Functions_Challenges.ipynb,adapted
+L5-001,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-002,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-003,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-004,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-005,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-006,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-007,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,2,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-008,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,mcq,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-009,5_Files_Data_Handling_filled.ipynb,表格与CSV读取,mcq,1,Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-010,5_Files_Data_Handling_filled.ipynb,表格与CSV读取,mcq,1,Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-011,5_Files_Data_Handling_filled.ipynb,表格与CSV读取,mcq,1,Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-012,5_Files_Data_Handling_filled.ipynb,表格与CSV读取,mcq,2,Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-013,5_Files_Data_Handling_filled.ipynb,选择行与列,mcq,1,Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-014,5_Files_Data_Handling_filled.ipynb,选择行与列,mcq,1,Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-015,5_Files_Data_Handling_filled.ipynb,选择行与列,mcq,1,Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-016,5_Files_Data_Handling_filled.ipynb,选择行与列,mcq,2,Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-017,5_Files_Data_Handling_filled.ipynb,选择行与列,mcq,1,Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-018,5_Files_Data_Handling_filled.ipynb,条件筛选,mcq,2,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-019,5_Files_Data_Handling_filled.ipynb,条件筛选,mcq,1,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-020,5_Files_Data_Handling_filled.ipynb,条件筛选,mcq,1,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-021,5_Files_Data_Handling_filled.ipynb,条件筛选,mcq,2,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-022,5_Files_Data_Handling_filled.ipynb,条件筛选,mcq,2,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-023,5_Files_Data_Handling_filled.ipynb,新增列、日期与排序,mcq,2,Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-024,5_Files_Data_Handling_filled.ipynb,新增列、日期与排序,mcq,1,Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-025,5_Files_Data_Handling_filled.ipynb,新增列、日期与排序,mcq,2,Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-026,5_Files_Data_Handling_filled.ipynb,新增列、日期与排序,mcq,1,Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-027,5_Files_Data_Handling_filled.ipynb,分组与聚合,mcq,1,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-028,5_Files_Data_Handling_filled.ipynb,分组与聚合,mcq,1,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-029,5_Files_Data_Handling_filled.ipynb,分组与聚合,mcq,2,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-030,5_Files_Data_Handling_filled.ipynb,分组与聚合,mcq,3,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-031,5_Files_Data_Handling_filled.ipynb,缺失值处理,mcq,1,Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-032,5_Files_Data_Handling_filled.ipynb,缺失值处理,mcq,2,Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-033,5_Files_Data_Handling_filled.ipynb,缺失值处理,mcq,1,Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-034,5_Files_Data_Handling_filled.ipynb,图表选择与透视表,mcq,2,Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29,https://github.com/spcourse/pandas/tree/main/pandas-dp,adapted
+L5-035,5_Files_Data_Handling_filled.ipynb,图表选择与透视表,mcq,3,Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29,https://github.com/spcourse/pandas/tree/main/pandas-dp,adapted
+L5-036,5_Files_Data_Handling_filled.ipynb,图表选择与透视表,mcq,2,Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29,https://github.com/spcourse/pandas/tree/main/pandas-dp,adapted
+L5-037,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,code,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-038,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,code,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-039,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,code,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-040,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,code,1,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-041,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,code,2,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-042,5_Files_Data_Handling_filled.ipynb,文本文件与with语句,code,2,"Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",https://inventwithpython.com/pythongently/exercise8/,adapted
+L5-043,5_Files_Data_Handling_filled.ipynb,表格与CSV读取,code,2,Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-044,5_Files_Data_Handling_filled.ipynb,表格与CSV读取,code,1,Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-045,5_Files_Data_Handling_filled.ipynb,选择行与列,code,1,Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-046,5_Files_Data_Handling_filled.ipynb,选择行与列,code,2,Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-047,5_Files_Data_Handling_filled.ipynb,条件筛选,code,1,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-048,5_Files_Data_Handling_filled.ipynb,条件筛选,code,2,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-049,5_Files_Data_Handling_filled.ipynb,条件筛选,code,2,Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1,adapted
+L5-050,5_Files_Data_Handling_filled.ipynb,新增列、日期与排序,code,2,Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-051,5_Files_Data_Handling_filled.ipynb,新增列、日期与排序,code,2,Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-052,5_Files_Data_Handling_filled.ipynb,新增列、日期与排序,code,1,Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-053,5_Files_Data_Handling_filled.ipynb,分组与聚合,code,2,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-054,5_Files_Data_Handling_filled.ipynb,分组与聚合,code,2,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-055,5_Files_Data_Handling_filled.ipynb,分组与聚合,code,3,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-056,5_Files_Data_Handling_filled.ipynb,分组与聚合,code,3,Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-057,5_Files_Data_Handling_filled.ipynb,缺失值处理,code,3,Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-058,5_Files_Data_Handling_filled.ipynb,缺失值处理,code,2,Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15,https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2,adapted
+L5-059,5_Files_Data_Handling_filled.ipynb,图表选择与透视表,code,3,Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29,https://github.com/spcourse/pandas/tree/main/pandas-dp,adapted
+L5-060,5_Files_Data_Handling_filled.ipynb,图表选择与透视表,code,2,Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29,https://github.com/spcourse/pandas/tree/main/pandas-dp,adapted
+T1-001,Tutorial1_Solutions.ipynb,输入与类型转换,mcq,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-002,Tutorial1_Solutions.ipynb,输入与类型转换,mcq,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-003,Tutorial1_Solutions.ipynb,输入与类型转换,mcq,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-004,Tutorial1_Solutions.ipynb,输入与类型转换,mcq,2,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-005,Tutorial1_Solutions.ipynb,输入与类型转换,mcq,2,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-006,Tutorial1_Solutions.ipynb,输入与类型转换,mcq,3,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-007,Tutorial1_Solutions.ipynb,输入与类型转换,code,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-008,Tutorial1_Solutions.ipynb,输入与类型转换,code,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-009,Tutorial1_Solutions.ipynb,输入与类型转换,code,2,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-010,Tutorial1_Solutions.ipynb,输入与类型转换,code,3,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges,https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb,adapted
+T1-011,Tutorial1_Solutions.ipynb,名片与精确格式化,mcq,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-012,Tutorial1_Solutions.ipynb,名片与精确格式化,mcq,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-013,Tutorial1_Solutions.ipynb,名片与精确格式化,mcq,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-014,Tutorial1_Solutions.ipynb,名片与精确格式化,mcq,2,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-015,Tutorial1_Solutions.ipynb,名片与精确格式化,mcq,2,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-016,Tutorial1_Solutions.ipynb,名片与精确格式化,mcq,2,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-017,Tutorial1_Solutions.ipynb,名片与精确格式化,code,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-018,Tutorial1_Solutions.ipynb,名片与精确格式化,code,1,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-019,Tutorial1_Solutions.ipynb,名片与精确格式化,code,2,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-020,Tutorial1_Solutions.ipynb,名片与精确格式化,code,3,Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3),,adapted
+T1-021,Tutorial1_Solutions.ipynb,复利与数值计算,mcq,1,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-022,Tutorial1_Solutions.ipynb,复利与数值计算,mcq,1,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-023,Tutorial1_Solutions.ipynb,复利与数值计算,mcq,1,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-024,Tutorial1_Solutions.ipynb,复利与数值计算,mcq,2,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-025,Tutorial1_Solutions.ipynb,复利与数值计算,mcq,2,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-026,Tutorial1_Solutions.ipynb,复利与数值计算,mcq,3,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-027,Tutorial1_Solutions.ipynb,复利与数值计算,code,1,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-028,Tutorial1_Solutions.ipynb,复利与数值计算,code,1,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-029,Tutorial1_Solutions.ipynb,复利与数值计算,code,2,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-030,Tutorial1_Solutions.ipynb,复利与数值计算,code,3,Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7),,adapted
+T1-031,Tutorial1_Solutions.ipynb,随机样本,mcq,1,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-032,Tutorial1_Solutions.ipynb,随机样本,mcq,1,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-033,Tutorial1_Solutions.ipynb,随机样本,mcq,1,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-034,Tutorial1_Solutions.ipynb,随机样本,mcq,2,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-035,Tutorial1_Solutions.ipynb,随机样本,mcq,2,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-036,Tutorial1_Solutions.ipynb,随机样本,mcq,2,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-037,Tutorial1_Solutions.ipynb,随机样本,code,1,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-038,Tutorial1_Solutions.ipynb,随机样本,code,1,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-039,Tutorial1_Solutions.ipynb,随机样本,code,2,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-040,Tutorial1_Solutions.ipynb,随机样本,code,3,Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10),,adapted
+T1-041,Tutorial1_Solutions.ipynb,均值与中位数,mcq,1,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-042,Tutorial1_Solutions.ipynb,均值与中位数,mcq,1,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-043,Tutorial1_Solutions.ipynb,均值与中位数,mcq,1,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-044,Tutorial1_Solutions.ipynb,均值与中位数,mcq,2,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-045,Tutorial1_Solutions.ipynb,均值与中位数,mcq,2,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-046,Tutorial1_Solutions.ipynb,均值与中位数,mcq,3,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-047,Tutorial1_Solutions.ipynb,均值与中位数,code,1,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-048,Tutorial1_Solutions.ipynb,均值与中位数,code,1,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-049,Tutorial1_Solutions.ipynb,均值与中位数,code,2,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-050,Tutorial1_Solutions.ipynb,均值与中位数,code,3,"Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",https://inventwithpython.com/pythongently/,adapted
+T1-051,Tutorial1_Solutions.ipynb,地址字典,mcq,1,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-052,Tutorial1_Solutions.ipynb,地址字典,mcq,1,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-053,Tutorial1_Solutions.ipynb,地址字典,mcq,1,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-054,Tutorial1_Solutions.ipynb,地址字典,mcq,2,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-055,Tutorial1_Solutions.ipynb,地址字典,mcq,2,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-056,Tutorial1_Solutions.ipynb,地址字典,mcq,3,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-057,Tutorial1_Solutions.ipynb,地址字典,code,1,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-058,Tutorial1_Solutions.ipynb,地址字典,code,1,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-059,Tutorial1_Solutions.ipynb,地址字典,code,2,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T1-060,Tutorial1_Solutions.ipynb,地址字典,code,3,Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples,,adapted
+T2-001,Tutorial2.ipynb,莱布尼茨级数与误差,mcq,1,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-002,Tutorial2.ipynb,莱布尼茨级数与误差,mcq,1,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-003,Tutorial2.ipynb,莱布尼茨级数与误差,mcq,1,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-004,Tutorial2.ipynb,莱布尼茨级数与误差,mcq,2,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-005,Tutorial2.ipynb,莱布尼茨级数与误差,mcq,1,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-006,Tutorial2.ipynb,莱布尼茨级数与误差,mcq,2,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-007,Tutorial2.ipynb,密码规则与重复检查,mcq,1,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-008,Tutorial2.ipynb,密码规则与重复检查,mcq,1,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-009,Tutorial2.ipynb,密码规则与重复检查,mcq,2,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-010,Tutorial2.ipynb,密码规则与重复检查,mcq,1,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-011,Tutorial2.ipynb,密码规则与重复检查,mcq,2,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-012,Tutorial2.ipynb,密码规则与重复检查,mcq,3,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-013,Tutorial2.ipynb,完整单词精确匹配,mcq,1,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-014,Tutorial2.ipynb,完整单词精确匹配,mcq,1,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-015,Tutorial2.ipynb,完整单词精确匹配,mcq,1,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-016,Tutorial2.ipynb,完整单词精确匹配,mcq,1,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-017,Tutorial2.ipynb,完整单词精确匹配,mcq,1,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-018,Tutorial2.ipynb,完整单词精确匹配,mcq,3,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-019,Tutorial2.ipynb,健身数据表统计,mcq,1,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-020,Tutorial2.ipynb,健身数据表统计,mcq,2,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-021,Tutorial2.ipynb,健身数据表统计,mcq,1,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-022,Tutorial2.ipynb,健身数据表统计,mcq,2,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-023,Tutorial2.ipynb,健身数据表统计,mcq,1,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-024,Tutorial2.ipynb,健身数据表统计,mcq,3,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-025,Tutorial2.ipynb,边界规则与分组标签,mcq,1,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-026,Tutorial2.ipynb,边界规则与分组标签,mcq,1,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-027,Tutorial2.ipynb,边界规则与分组标签,mcq,1,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-028,Tutorial2.ipynb,边界规则与分组标签,mcq,2,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-029,Tutorial2.ipynb,边界规则与分组标签,mcq,2,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-030,Tutorial2.ipynb,边界规则与分组标签,mcq,3,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-031,Tutorial2.ipynb,综合应用,mcq,2,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-032,Tutorial2.ipynb,综合应用,mcq,1,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-033,Tutorial2.ipynb,综合应用,mcq,1,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-034,Tutorial2.ipynb,综合应用,mcq,2,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-035,Tutorial2.ipynb,综合应用,mcq,2,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-036,Tutorial2.ipynb,综合应用,mcq,3,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-037,Tutorial2.ipynb,莱布尼茨级数与误差,code,1,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-038,Tutorial2.ipynb,莱布尼茨级数与误差,code,2,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-039,Tutorial2.ipynb,莱布尼茨级数与误差,code,1,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-040,Tutorial2.ipynb,莱布尼茨级数与误差,code,3,"Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",,adapted
+T2-041,Tutorial2.ipynb,密码规则与重复检查,code,1,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-042,Tutorial2.ipynb,密码规则与重复检查,code,1,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-043,Tutorial2.ipynb,密码规则与重复检查,code,2,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-044,Tutorial2.ipynb,密码规则与重复检查,code,3,"Tutorial 2 · exercise 2, cells 4–5",,adapted
+T2-045,Tutorial2.ipynb,完整单词精确匹配,code,1,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-046,Tutorial2.ipynb,完整单词精确匹配,code,1,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-047,Tutorial2.ipynb,完整单词精确匹配,code,2,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-048,Tutorial2.ipynb,完整单词精确匹配,code,3,"Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",,adapted
+T2-049,Tutorial2.ipynb,健身数据表统计,code,1,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-050,Tutorial2.ipynb,健身数据表统计,code,1,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-051,Tutorial2.ipynb,健身数据表统计,code,2,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-052,Tutorial2.ipynb,健身数据表统计,code,3,"Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-053,Tutorial2.ipynb,边界规则与分组标签,code,1,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-054,Tutorial2.ipynb,边界规则与分组标签,code,1,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-055,Tutorial2.ipynb,边界规则与分组标签,code,2,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-056,Tutorial2.ipynb,边界规则与分组标签,code,3,"Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",,adapted
+T2-057,Tutorial2.ipynb,综合应用,code,1,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-058,Tutorial2.ipynb,综合应用,code,1,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-059,Tutorial2.ipynb,综合应用,code,2,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted
+T2-060,Tutorial2.ipynb,综合应用,code,2,Tutorial 2 · exercises 1–4; independent teaching variants,,adapted

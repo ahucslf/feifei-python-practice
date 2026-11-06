@@ -1,0 +1,2873 @@
+[
+  {
+    "id": "L2-001",
+    "chapter": "lecture2",
+    "topic": "numbers",
+    "topicLabel": {
+      "en": "Numbers & arithmetic",
+      "zh": "数值类型与运算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Truncation is not rounding",
+      "zh": "截断不是四舍五入"
+    },
+    "prompt": {
+      "en": "What is the value of `int(-3.9)`?",
+      "zh": "`int(-3.9)`的值是什么？"
+    },
+    "explanation": {
+      "en": "int removes the fractional part by moving towards zero. For a negative value this differs from rounding down, which would give -4. Always distinguish conversion, rounding and floor division.",
+      "zh": "int去掉小数部分时朝0靠近，所以-3.9变成-3，而不是-4。向下取整才会得到-4。类型转换、四舍五入和向下取整不是同一个操作。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 2",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "-3",
+        "zh": "-3"
+      },
+      {
+        "en": "-4",
+        "zh": "-4"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "-3.9",
+        "zh": "-3.9"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert int(-3.9)==-3"
+  },
+  {
+    "id": "L2-002",
+    "chapter": "lecture2",
+    "topic": "numbers",
+    "topicLabel": {
+      "en": "Numbers & arithmetic",
+      "zh": "数值类型与运算"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Floor division below zero",
+      "zh": "负数的地板除法"
+    },
+    "prompt": {
+      "en": "What is `-7 // 3` in Python?",
+      "zh": "Python中`-7 // 3`的结果是什么？"
+    },
+    "explanation": {
+      "en": "Floor division rounds the quotient towards negative infinity. The exact quotient is about -2.33, so its floor is -3. It does not truncate towards zero like int would.",
+      "zh": "地板除法会把商向负无穷取整。-7除以3约等于-2.33，比它小的最近整数是-3。不要把//误当成int那样向0截断。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 7",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "-2",
+        "zh": "-2"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "-2.3333333333333335",
+        "zh": "-2.3333333333333335"
+      },
+      {
+        "en": "-3",
+        "zh": "-3"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert -7//3==-3"
+  },
+  {
+    "id": "L2-003",
+    "chapter": "lecture2",
+    "topic": "numbers",
+    "topicLabel": {
+      "en": "Numbers & arithmetic",
+      "zh": "数值类型与运算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Operator precedence",
+      "zh": "运算优先级"
+    },
+    "prompt": {
+      "en": "What is `2 + 3 * 4 ** 2`?",
+      "zh": "`2 + 3 * 4 ** 2`等于多少？"
+    },
+    "explanation": {
+      "en": "Evaluate the power first: 4 ** 2 is 16. Multiply by 3 to get 48, then add 2. Parentheses would be needed to make addition happen before multiplication.",
+      "zh": "先算乘方4 ** 2得到16，再乘3得到48，最后加2得到50。如果希望先加后乘，就必须写出括号，而不能按从左到右机械计算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 7",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "80",
+        "zh": "80"
+      },
+      {
+        "en": "20",
+        "zh": "20"
+      },
+      {
+        "en": "50",
+        "zh": "50"
+      },
+      {
+        "en": "400",
+        "zh": "400"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert 2+3*4**2==50"
+  },
+  {
+    "id": "L2-004",
+    "chapter": "lecture2",
+    "topic": "numbers",
+    "topicLabel": {
+      "en": "Numbers & arithmetic",
+      "zh": "数值类型与运算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Remainder and complete groups",
+      "zh": "商和余数"
+    },
+    "prompt": {
+      "en": "A box holds 6 items. You have 29 items. Which pair gives (full boxes, leftover items)?",
+      "zh": "每盒装6件，共有29件。哪一对是（完整盒数，剩余件数）？"
+    },
+    "explanation": {
+      "en": "Integer division gives the number of complete groups, 4. The remainder is 5. Their relationship is 29 = 6 * 4 + 5, which is a useful way to check the result.",
+      "zh": "整除得到完整的4盒，取余得到剩下5件。可以用29 = 6 × 4 + 5核对。普通除法得到的小数商并不等于完整盒数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 7; Sweigart · Exercise 11: Hours, Minutes, Seconds",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "(29 ** 6, 29 - 6)",
+        "zh": "(29 ** 6, 29 - 6)"
+      },
+      {
+        "en": "(29 // 6, 29 % 6)",
+        "zh": "(29 // 6, 29 % 6)"
+      },
+      {
+        "en": "(29 / 6, 29 * 6)",
+        "zh": "(29 / 6, 29 * 6)"
+      },
+      {
+        "en": "(29 % 6, 29 // 6)",
+        "zh": "(29 % 6, 29 // 6)"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert (29//6,29%6)==(4,5)"
+  },
+  {
+    "id": "L2-005",
+    "chapter": "lecture2",
+    "topic": "numbers",
+    "topicLabel": {
+      "en": "Numbers & arithmetic",
+      "zh": "数值类型与运算"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Close enough for floating point",
+      "zh": "浮点数的近似比较"
+    },
+    "prompt": {
+      "en": "Which expression is the most appropriate way to test whether `0.1 + 0.2` is close to `0.3`? Assume math is imported.",
+      "zh": "要检查`0.1 + 0.2`是否近似等于`0.3`，哪个表达式最合适？假设已经导入math。"
+    },
+    "explanation": {
+      "en": "Binary floating-point arithmetic cannot represent every decimal exactly. isclose compares with a tolerance instead of demanding identical stored bits. Converting to a string or comparing identities does not solve the numerical question.",
+      "zh": "二进制浮点数不能精确表示所有十进制小数。isclose允许很小的数值误差，不要求存储结果完全一致。比较身份或转成字符串，都不是可靠解决近似数值比较的方法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 12",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "math.isclose(0.1 + 0.2, 0.3)",
+        "zh": "math.isclose(0.1 + 0.2, 0.3)"
+      },
+      {
+        "en": "0.1 + 0.2 == 0.3",
+        "zh": "0.1 + 0.2 == 0.3"
+      },
+      {
+        "en": "id(0.1 + 0.2) == id(0.3)",
+        "zh": "id(0.1 + 0.2) == id(0.3)"
+      },
+      {
+        "en": "str(0.1 + 0.2) == \"0.3\"",
+        "zh": "str(0.1 + 0.2) == \"0.3\""
+      }
+    ],
+    "answer": 0,
+    "verification": "import math\nassert math.isclose(0.1+0.2,0.3) and not (0.1+0.2==0.3)"
+  },
+  {
+    "id": "L2-006",
+    "chapter": "lecture2",
+    "topic": "booleans",
+    "topicLabel": {
+      "en": "Boolean logic & random numbers",
+      "zh": "布尔逻辑与随机数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Truth of numbers",
+      "zh": "数字的真假值"
+    },
+    "prompt": {
+      "en": "What is `(bool(0), bool(-2), bool(3.5))`?",
+      "zh": "`(bool(0), bool(-2), bool(3.5))`的结果是什么？"
+    },
+    "explanation": {
+      "en": "For numbers, zero is false and every nonzero value is true. A negative sign does not mean false. This numerical rule should not be confused with an explicit comparison such as x > 0.",
+      "zh": "对于数值，0为False，非0为True；负号并不意味着False。bool(-2)检查的是它是否为零，而不是检查它是否大于0。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 2",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "(False, False, True)",
+        "zh": "(False, False, True)"
+      },
+      {
+        "en": "(True, False, True)",
+        "zh": "(True, False, True)"
+      },
+      {
+        "en": "(True, True, True)",
+        "zh": "(True, True, True)"
+      },
+      {
+        "en": "(False, True, True)",
+        "zh": "(False, True, True)"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert (bool(0),bool(-2),bool(3.5))==(False,True,True)"
+  },
+  {
+    "id": "L2-007",
+    "chapter": "lecture2",
+    "topic": "booleans",
+    "topicLabel": {
+      "en": "Boolean logic & random numbers",
+      "zh": "布尔逻辑与随机数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Random endpoints",
+      "zh": "随机数区间的端点"
+    },
+    "prompt": {
+      "en": "Which statement correctly describes Python random functions?",
+      "zh": "下面哪项正确描述Python的random函数？"
+    },
+    "explanation": {
+      "en": "random() excludes 1 but includes 0. randint(a, b) includes both integer endpoints. Check which function you are using instead of applying one interval convention to all random functions.",
+      "zh": "random()的区间是左闭右开，不包含1；randint(a,b)则包含两个整数端点。不同函数的端点规则不同，不能一律套用“右端不包含”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 14",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Both functions always exclude their upper endpoints.",
+        "zh": "两个函数都排除右端点。"
+      },
+      {
+        "en": "randint(2, 5) may return 2.5.",
+        "zh": "randint(2,5)可能返回2.5。"
+      },
+      {
+        "en": "random.random() is in [0, 1); random.randint(2, 5) may return 5.",
+        "zh": "random.random()在[0,1)中；random.randint(2,5)可能返回5。"
+      },
+      {
+        "en": "random.random() may return 1; randint(2, 5) never returns 5.",
+        "zh": "random.random()可能返回1；randint(2,5)不会返回5。"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L2-008",
+    "chapter": "lecture2",
+    "topic": "booleans",
+    "topicLabel": {
+      "en": "Boolean logic & random numbers",
+      "zh": "布尔逻辑与随机数"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A repeatable random sequence",
+      "zh": "可重复的随机序列"
+    },
+    "prompt": {
+      "en": "Why set the same random seed before two experiments using the same generator and calls?",
+      "zh": "在使用相同生成器和调用顺序的两次实验前，为什么设置相同随机种子？"
+    },
+    "explanation": {
+      "en": "A pseudo-random generator follows a deterministic process. The same seed and call sequence let you reproduce its results, which helps debugging. This does not make the ordinary random module suitable for security-sensitive passwords.",
+      "zh": "伪随机生成器按照确定的规则工作。种子和调用顺序相同，就能复现同一段序列，便于比较实验和排错。但这并不使普通random模块适合生成安全密码。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 14",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "To make all numbers positive",
+        "zh": "保证所有随机数为正。"
+      },
+      {
+        "en": "To reproduce the same pseudo-random sequence for comparison",
+        "zh": "复现同一段伪随机序列，便于比较。"
+      },
+      {
+        "en": "To guarantee cryptographically secure passwords",
+        "zh": "保证密码达到密码学安全要求。"
+      },
+      {
+        "en": "To make every generated number identical within a run",
+        "zh": "让单次运行中的每个随机数都相同。"
+      }
+    ],
+    "answer": 1,
+    "verification": "import random\na=random.Random(17);b=random.Random(17)\nassert [a.random() for _ in range(5)]==[b.random() for _ in range(5)]"
+  },
+  {
+    "id": "L2-009",
+    "chapter": "lecture2",
+    "topic": "booleans",
+    "topicLabel": {
+      "en": "Boolean logic & random numbers",
+      "zh": "布尔逻辑与随机数"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Combining conditions",
+      "zh": "组合判断条件"
+    },
+    "prompt": {
+      "en": "For x = 5 and y = 12, what is `(x < 10 and y < 10) or (x > 0 and y > 0)`?",
+      "zh": "当x = 5、y = 12时，`(x < 10 and y < 10) or (x > 0 and y > 0)`是什么？"
+    },
+    "explanation": {
+      "en": "The first group is false because y is not below 10. The second group is true because both numbers are positive. False or True is True.",
+      "zh": "第一组因y不小于10而为False；第二组因两个数都大于0而为True。最后False or True得到True。先分别计算括号内的条件，就不容易把逻辑绕乱。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 16",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "True",
+        "zh": "True"
+      },
+      {
+        "en": "False",
+        "zh": "False"
+      },
+      {
+        "en": "12",
+        "zh": "12"
+      },
+      {
+        "en": "SyntaxError",
+        "zh": "SyntaxError"
+      }
+    ],
+    "answer": 0,
+    "verification": "x=5;y=12\nassert ((x<10 and y<10) or (x>0 and y>0)) is True"
+  },
+  {
+    "id": "L2-010",
+    "chapter": "lecture2",
+    "topic": "booleans",
+    "topicLabel": {
+      "en": "Boolean logic & random numbers",
+      "zh": "布尔逻辑与随机数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Strictly greater than 100",
+      "zh": "严格大于100的边界"
+    },
+    "prompt": {
+      "en": "Which input pair makes `x > 100 and y > 100` True?",
+      "zh": "哪组输入能使`x > 100 and y > 100`为True？"
+    },
+    "explanation": {
+      "en": "Both comparisons must be true because they are connected by and. A value of exactly 100 does not satisfy > 100. Boundary tests distinguish > from >=.",
+      "zh": "and要求两个比较都成立。恰好等于100不满足“大于100”，因此101与102这一组才符合要求。测试100这一边界能帮助区分>与>=。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 19",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "x = 100, y = 102",
+        "zh": "x = 100, y = 102"
+      },
+      {
+        "en": "x = 102, y = 100",
+        "zh": "x = 102, y = 100"
+      },
+      {
+        "en": "x = 99, y = 150",
+        "zh": "x = 99, y = 150"
+      },
+      {
+        "en": "x = 101, y = 102",
+        "zh": "x = 101, y = 102"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert 101>100 and 102>100\nassert not (100>100 and 102>100)"
+  },
+  {
+    "id": "L2-011",
+    "chapter": "lecture2",
+    "topic": "booleans",
+    "topicLabel": {
+      "en": "Boolean logic & random numbers",
+      "zh": "布尔逻辑与随机数"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Reversing a condition",
+      "zh": "对条件取反"
+    },
+    "prompt": {
+      "en": "For age = 17, what is `not (age >= 18)`?",
+      "zh": "age = 17时，`not (age >= 18)`是什么？"
+    },
+    "explanation": {
+      "en": "First compare 17 with 18: 17 >= 18 is false. not reverses that truth value to true. Negation applies to the whole parenthesised condition, not just to the number 18.",
+      "zh": "先比较得到17 >= 18为False，再由not把False翻转成True。括号明确表示取反针对整个条件，不是单独对某个数字做操作。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 16",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "17",
+        "zh": "17"
+      },
+      {
+        "en": "18",
+        "zh": "18"
+      },
+      {
+        "en": "True",
+        "zh": "True"
+      },
+      {
+        "en": "False",
+        "zh": "False"
+      }
+    ],
+    "answer": 2,
+    "verification": "age=17\nassert (not(age>=18)) is True"
+  },
+  {
+    "id": "L2-012",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Negative indexing",
+      "zh": "负索引"
+    },
+    "prompt": {
+      "en": "What is `[10, 20, 30, 40][-2]`?",
+      "zh": "`[10, 20, 30, 40][-2]`的结果是什么？"
+    },
+    "explanation": {
+      "en": "Negative indices count from the end: -1 is the last element, -2 the one before it. The list has enough elements, so this is valid. Do not read -2 as the second item from the front.",
+      "zh": "负索引从末尾开始数，-1是最后一个，-2是倒数第二个，因此得到30。列表长度足够，不会越界。它不是从开头数的第二个元素。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 24; Storing Multiple Values in Lists Challenges · Challenge 1: Slicing From the End",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "IndexError",
+        "zh": "IndexError"
+      },
+      {
+        "en": "30",
+        "zh": "30"
+      },
+      {
+        "en": "20",
+        "zh": "20"
+      },
+      {
+        "en": "40",
+        "zh": "40"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert [10,20,30,40][-2]==30"
+  },
+  {
+    "id": "L2-013",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "The stop index is excluded",
+      "zh": "切片不含结束位置"
+    },
+    "prompt": {
+      "en": "What is `[0, 1, 2, 3, 4][1:4]`?",
+      "zh": "`[0, 1, 2, 3, 4][1:4]`的结果是什么？"
+    },
+    "explanation": {
+      "en": "A slice includes the starting position but excludes the stopping position. Positions 1, 2 and 3 are kept here. Thinking in index positions rather than item counts helps avoid off-by-one mistakes.",
+      "zh": "切片包含起点，不包含终点，所以保留索引1、2、3。不要把结束索引4也放进结果。按索引位置逐个确认，是避免切片多取或少取一个元素的好方法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 28; Analyzing Patient Data Challenges · Challenge 1: Slicing Strings",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[1, 2, 3]",
+        "zh": "[1, 2, 3]"
+      },
+      {
+        "en": "[1, 2, 3, 4]",
+        "zh": "[1, 2, 3, 4]"
+      },
+      {
+        "en": "[0, 1, 2, 3]",
+        "zh": "[0, 1, 2, 3]"
+      },
+      {
+        "en": "[2, 3, 4]",
+        "zh": "[2, 3, 4]"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert [0,1,2,3,4][1:4]==[1,2,3]"
+  },
+  {
+    "id": "L2-014",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A reverse slice",
+      "zh": "反向切片"
+    },
+    "prompt": {
+      "en": "What is `\"abcd\"[::-1]`?",
+      "zh": "`\"abcd\"[::-1]`的结果是什么？"
+    },
+    "explanation": {
+      "en": "The omitted start and stop use the full sequence in the direction implied by the step. A step of -1 visits characters backwards. It creates a reversed string rather than modifying the original one.",
+      "zh": "步长-1表示从后向前走，起止都省略时会按这个方向遍历整个序列。结果是一个反转后的新字符串，原字符串不会被原地改变。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Storing Multiple Values in Lists Challenges · Challenge 2: Non-Continuous Slices",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "\"abc\"",
+        "zh": "\"abc\""
+      },
+      {
+        "en": "\"a\"",
+        "zh": "\"a\""
+      },
+      {
+        "en": "\"abcdabcd\"",
+        "zh": "\"abcdabcd\""
+      },
+      {
+        "en": "\"dcba\"",
+        "zh": "\"dcba\""
+      }
+    ],
+    "answer": 3,
+    "verification": "assert \"abcd\"[::-1]==\"dcba\""
+  },
+  {
+    "id": "L2-015",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Repeating a list",
+      "zh": "列表乘法表示重复"
+    },
+    "prompt": {
+      "en": "What is `[2, 5] * 3`?",
+      "zh": "`[2, 5] * 3`的结果是什么？"
+    },
+    "explanation": {
+      "en": "Multiplication repeats a Python list; it does not multiply its elements. The whole pair is copied into the sequence three times. Element-wise numerical multiplication is a different operation, introduced with NumPy.",
+      "zh": "Python列表乘一个整数表示把整个列表重复多次，不是把各元素分别乘3。逐元素数值乘法是NumPy数组的行为，要分清对象的类型再判断运算含义。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Storing Multiple Values in Lists Challenges · Challenge 3: Overloading",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[2, 5, 3]",
+        "zh": "[2, 5, 3]"
+      },
+      {
+        "en": "[5, 8]",
+        "zh": "[5, 8]"
+      },
+      {
+        "en": "[2, 5, 2, 5, 2, 5]",
+        "zh": "[2, 5, 2, 5, 2, 5]"
+      },
+      {
+        "en": "[6, 15]",
+        "zh": "[6, 15]"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert [2,5]*3==[2,5,2,5,2,5]"
+  },
+  {
+    "id": "L2-016",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "append versus extend",
+      "zh": "append与extend的区别"
+    },
+    "prompt": {
+      "en": "After `items = [1]` and `items.append([2, 3])`, what is items?",
+      "zh": "执行`items = [1]`和`items.append([2,3])`后，items是什么？"
+    },
+    "explanation": {
+      "en": "append adds its argument as one new element, so the added list stays nested. extend would iterate over [2, 3] and add the two values separately. Read the method name before deciding the final list shape.",
+      "zh": "append把整个参数当作一个新元素加入，所以[2,3]会作为一个嵌套列表存在。extend才会把其中两个元素逐个加进去。判断结果时先确认用的是哪个方法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 38",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[2, 3]",
+        "zh": "[2, 3]"
+      },
+      {
+        "en": "[1, [2, 3]]",
+        "zh": "[1, [2, 3]]"
+      },
+      {
+        "en": "[1, 2, 3]",
+        "zh": "[1, 2, 3]"
+      },
+      {
+        "en": "[[1], 2, 3]",
+        "zh": "[[1], 2, 3]"
+      }
+    ],
+    "answer": 1,
+    "verification": "items=[1]\nitems.append([2,3])\nassert items==[1,[2,3]]"
+  },
+  {
+    "id": "L2-017",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "pop returns the removed item",
+      "zh": "pop会返回被移除的值"
+    },
+    "prompt": {
+      "en": "What is the pair (removed, values) afterwards?\n```python\nvalues = [8, 4, 9]\nremoved = values.pop(1)\n```",
+      "zh": "执行后（removed，values）是什么？\n```python\nvalues = [8, 4, 9]\nremoved = values.pop(1)\n```"
+    },
+    "explanation": {
+      "en": "pop(1) removes the element at index 1, which is 4, and returns it. The list itself loses that element. The argument is a position, whereas remove(x) searches for a value x.",
+      "zh": "pop(1)按索引删除第二个元素4，并把4返回。列表本身也会少掉这个元素。这里参数是位置，不是值；remove(x)才是查找值为x的元素再删除。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 40",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "(4, [8, 9])",
+        "zh": "(4, [8, 9])"
+      },
+      {
+        "en": "(1, [8, 4, 9])",
+        "zh": "(1, [8, 4, 9])"
+      },
+      {
+        "en": "(8, [4, 9])",
+        "zh": "(8, [4, 9])"
+      },
+      {
+        "en": "(9, [8, 4])",
+        "zh": "(9, [8, 4])"
+      }
+    ],
+    "answer": 0,
+    "verification": "values=[8,4,9]\nremoved=values.pop(1)\nassert (removed,values)==(4,[8,9])"
+  },
+  {
+    "id": "L2-018",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "The return value of sort",
+      "zh": "sort的返回值"
+    },
+    "prompt": {
+      "en": "After `a = [3, 1, 2]` and `b = a.sort()`, which statement is correct?",
+      "zh": "执行`a = [3,1,2]`和`b = a.sort()`后，哪项正确？"
+    },
+    "explanation": {
+      "en": "list.sort changes the list in place and returns None. Assigning its return value does not create a sorted copy. If a separate sorted list is wanted, copy first and sort the copy, or use sorted.",
+      "zh": "list.sort会原地修改列表，返回值是None。把返回值赋给b并不会得到一份排好序的副本。若需要保留原列表，可以先复制再排序，或使用sorted。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 38",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "a is unchanged and b is [1, 2, 3].",
+        "zh": "a不变，b为[1,2,3]。"
+      },
+      {
+        "en": "Both a and b are [1, 2, 3].",
+        "zh": "a与b都为[1,2,3]。"
+      },
+      {
+        "en": "sort raises an error for integer lists.",
+        "zh": "整数列表调用sort会报错。"
+      },
+      {
+        "en": "a is [1, 2, 3] and b is None.",
+        "zh": "a为[1,2,3]，b为None。"
+      }
+    ],
+    "answer": 3,
+    "verification": "a=[3,1,2]\nb=a.sort()\nassert a==[1,2,3] and b is None"
+  },
+  {
+    "id": "L2-019",
+    "chapter": "lecture2",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Copying & mutability",
+      "zh": "复制与可变性"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Aliases share a list",
+      "zh": "别名共享同一列表"
+    },
+    "prompt": {
+      "en": "What is b after this code?\n```python\na = [1, 2]\nb = a\na[0] = 9\n```",
+      "zh": "下面代码执行后b是什么？\n```python\na = [1, 2]\nb = a\na[0] = 9\n```"
+    },
+    "explanation": {
+      "en": "b = a creates another reference to the same list. Item assignment changes that shared list in place, so both names see 9 at the first position. Use a copy when independent lists are required.",
+      "zh": "b = a只是给同一列表增加一个名字。修改元素是在原列表上动手，所以a和b都能看到第一项变成9。想独立修改时需要先创建副本。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 46",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[9]",
+        "zh": "[9]"
+      },
+      {
+        "en": "NameError",
+        "zh": "NameError"
+      },
+      {
+        "en": "[9, 2]",
+        "zh": "[9, 2]"
+      },
+      {
+        "en": "[1, 2]",
+        "zh": "[1, 2]"
+      }
+    ],
+    "answer": 2,
+    "verification": "a=[1,2]\nb=a\na[0]=9\nassert b==[9,2]"
+  },
+  {
+    "id": "L2-020",
+    "chapter": "lecture2",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Copying & mutability",
+      "zh": "复制与可变性"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "A shallow copy and nested rows",
+      "zh": "浅复制与嵌套行"
+    },
+    "prompt": {
+      "en": "What is a after this code?\n```python\na = [[1], [2]]\nb = a[:]\nb[0][0] = 9\n```",
+      "zh": "下面代码执行后a是什么？\n```python\na = [[1], [2]]\nb = a[:]\nb[0][0] = 9\n```"
+    },
+    "explanation": {
+      "en": "The slice copies the outer list, not the inner row objects. Both outer lists still refer to the same first row, so changing its element is visible through a. Copying each row is needed when nested rows must be independent.",
+      "zh": "切片复制的是外层列表，里面的行列表仍然是原来的对象。两份外层列表都引用同一第一行，所以改动行内元素会同时可见。若要让每行独立，需要把行也分别复制。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 46",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[9, 2]",
+        "zh": "[9, 2]"
+      },
+      {
+        "en": "[[9], [2]]",
+        "zh": "[[9], [2]]"
+      },
+      {
+        "en": "[[1], [2]]",
+        "zh": "[[1], [2]]"
+      },
+      {
+        "en": "[[9], [9]]",
+        "zh": "[[9], [9]]"
+      }
+    ],
+    "answer": 1,
+    "verification": "a=[[1],[2]]\nb=a[:]\nb[0][0]=9\nassert a==[[9],[2]]"
+  },
+  {
+    "id": "L2-021",
+    "chapter": "lecture2",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Copying & mutability",
+      "zh": "复制与可变性"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Rows and columns in a list",
+      "zh": "嵌套列表的行列"
+    },
+    "prompt": {
+      "en": "For `matrix = [[3, 4], [5, 6], [7, 8]]`, what are `(len(matrix), len(matrix[0]), matrix[1][0])`?",
+      "zh": "对于`matrix = [[3,4],[5,6],[7,8]]`，`(len(matrix),len(matrix[0]),matrix[1][0])`是什么？"
+    },
+    "explanation": {
+      "en": "There are three row lists, and each row contains two values. Double indexing selects row 1 first, then column 0 within it. Zero-based indexing makes that value 5.",
+      "zh": "外层有3个行列表，每行有2个元素。双索引先取索引1的行，也就是[5,6]，再取其中索引0的元素，因此得到5。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 50",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "(3, 2, 5)",
+        "zh": "(3, 2, 5)"
+      },
+      {
+        "en": "(2, 3, 5)",
+        "zh": "(2, 3, 5)"
+      },
+      {
+        "en": "(3, 2, 4)",
+        "zh": "(3, 2, 4)"
+      },
+      {
+        "en": "(6, 1, 7)",
+        "zh": "(6, 1, 7)"
+      }
+    ],
+    "answer": 0,
+    "verification": "matrix=[[3,4],[5,6],[7,8]]\nassert (len(matrix),len(matrix[0]),matrix[1][0])==(3,2,5)"
+  },
+  {
+    "id": "L2-022",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "An immutable tuple can hold a list",
+      "zh": "元组内的列表仍可变"
+    },
+    "prompt": {
+      "en": "What happens?\n```python\nt = ([1, 2], \"x\")\nt[0].append(3)\n```",
+      "zh": "执行下面代码会怎样？\n```python\nt = ([1, 2], \"x\")\nt[0].append(3)\n```"
+    },
+    "explanation": {
+      "en": "The tuple still contains the same two objects. Its first object is a mutable list, and that list can change internally. Tuple immutability forbids replacing tuple slots; it does not freeze every nested object.",
+      "zh": "元组中的两个位置仍然引用原来两个对象，没有替换位置。第一个对象是可变列表，所以其内部可以append。元组不可变，指的是不能替换元组的槽位，并不等于把里面所有对象都冻结。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 52",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "TypeError: no object inside a tuple may ever change.",
+        "zh": "出现TypeError：元组内的任何对象都不许改变。"
+      },
+      {
+        "en": "t becomes (3, \"x\").",
+        "zh": "t变为(3,\"x\")。"
+      },
+      {
+        "en": "The string \"x\" also changes.",
+        "zh": "字符串\"x\"也会改变。"
+      },
+      {
+        "en": "t becomes ([1, 2, 3], \"x\").",
+        "zh": "t变为([1,2,3],\"x\")。"
+      }
+    ],
+    "answer": 3,
+    "verification": "t=([1,2],\"x\")\nt[0].append(3)\nassert t==([1,2,3],\"x\")"
+  },
+  {
+    "id": "L2-023",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "String replacement creates a new value",
+      "zh": "字符串替换生成新值"
+    },
+    "prompt": {
+      "en": "What is the pair (text, changed)?\n```python\ntext = \"banana\"\nchanged = text.replace(\"a\", \"o\")\n```",
+      "zh": "执行后（text，changed）是什么？\n```python\ntext = \"banana\"\nchanged = text.replace(\"a\", \"o\")\n```"
+    },
+    "explanation": {
+      "en": "replace returns a new string and leaves the original string unchanged. With no count limit, every matching occurrence is replaced. Save the return value when you want to use the changed text.",
+      "zh": "replace返回新字符串，不会原地修改原字符串。没有指定替换次数时，每个匹配的a都会替换。想使用新文本，就要接住返回值。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 61; Sweigart · Exercise 10: Find and Replace",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "(\"banana\", \"bonana\")",
+        "zh": "(\"banana\", \"bonana\")"
+      },
+      {
+        "en": "(\"banana\", None)",
+        "zh": "(\"banana\", None)"
+      },
+      {
+        "en": "(\"banana\", \"bonono\")",
+        "zh": "(\"banana\", \"bonono\")"
+      },
+      {
+        "en": "(\"bonono\", \"bonono\")",
+        "zh": "(\"bonono\", \"bonono\")"
+      }
+    ],
+    "answer": 2,
+    "verification": "text=\"banana\"\nchanged=text.replace(\"a\",\"o\")\nassert (text,changed)==(\"banana\",\"bonono\")"
+  },
+  {
+    "id": "L2-024",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Substring membership is case-sensitive",
+      "zh": "子串判断区分大小写"
+    },
+    "prompt": {
+      "en": "Which expression is True?",
+      "zh": "下面哪个表达式为True？"
+    },
+    "explanation": {
+      "en": "For strings, in checks whether the left text occurs as a substring of the right text. Matching is case-sensitive. The ending of Amsterdam is lowercase dam, not Dam.",
+      "zh": "字符串的in检查左边文本是否出现在右边字符串中，并且区分大小写。Amsterdam末尾是小写dam，不是首字母大写的Dam。左右顺序也不能颠倒。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 55",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "\"hello\" in \"Amsterdam\"",
+        "zh": "\"hello\" in \"Amsterdam\""
+      },
+      {
+        "en": "\"dam\" in \"Amsterdam\"",
+        "zh": "\"dam\" in \"Amsterdam\""
+      },
+      {
+        "en": "\"Dam\" in \"Amsterdam\"",
+        "zh": "\"Dam\" in \"Amsterdam\""
+      },
+      {
+        "en": "\"Amsterdam\" in \"dam\"",
+        "zh": "\"Amsterdam\" in \"dam\""
+      }
+    ],
+    "answer": 1,
+    "verification": "assert \"dam\" in \"Amsterdam\"\nassert \"Dam\" not in \"Amsterdam\""
+  },
+  {
+    "id": "L2-025",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Tuple unpacking",
+      "zh": "元组解包"
+    },
+    "prompt": {
+      "en": "What is second after `first, second, third = (4, 8, 12)`?",
+      "zh": "执行`first,second,third = (4,8,12)`后，second是多少？"
+    },
+    "explanation": {
+      "en": "Unpacking assigns values from left to right to the corresponding names. second receives the second value, 8. The number of names must match the number of values in this simple form.",
+      "zh": "解包会按从左到右把各值交给对应名字，所以second接收第二个值8。这里的简单解包要求左边名字数量和右边值数量匹配。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 52",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "8",
+        "zh": "8"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "12",
+        "zh": "12"
+      },
+      {
+        "en": "(4, 8, 12)",
+        "zh": "(4, 8, 12)"
+      }
+    ],
+    "answer": 0,
+    "verification": "first,second,third=(4,8,12)\nassert second==8"
+  },
+  {
+    "id": "L2-026",
+    "chapter": "lecture2",
+    "topic": "dictionaries",
+    "topicLabel": {
+      "en": "Dictionaries",
+      "zh": "字典"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Dictionary membership checks keys",
+      "zh": "字典成员判断查键"
+    },
+    "prompt": {
+      "en": "For `record = {\"City\": \"Delft\", \"Size\": 24}`, which expression is True?",
+      "zh": "对于`record = {\"City\":\"Delft\",\"Size\":24}`，哪个表达式为True？"
+    },
+    "explanation": {
+      "en": "Membership directly on a dictionary checks its keys. City is a key, while Delft and 24 are values. Dictionary string keys are also case-sensitive, so city is not the same key as City.",
+      "zh": "直接对字典使用in是在查键，不是在查值。City是键，Delft和24是值；字符串键还区分大小写，因此city与City也不是同一个键。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 63",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "\"Delft\" in record",
+        "zh": "\"Delft\" in record"
+      },
+      {
+        "en": "24 in record",
+        "zh": "24 in record"
+      },
+      {
+        "en": "\"city\" in record",
+        "zh": "\"city\" in record"
+      },
+      {
+        "en": "\"City\" in record",
+        "zh": "\"City\" in record"
+      }
+    ],
+    "answer": 3,
+    "verification": "record={\"City\":\"Delft\",\"Size\":24}\nassert \"City\" in record and \"Delft\" not in record"
+  },
+  {
+    "id": "L2-027",
+    "chapter": "lecture2",
+    "topic": "dictionaries",
+    "topicLabel": {
+      "en": "Dictionaries",
+      "zh": "字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A default for a missing key",
+      "zh": "缺失键的默认值"
+    },
+    "prompt": {
+      "en": "What is `{\"stock\": 5}.get(\"price\", 0)`?",
+      "zh": "`{\"stock\":5}.get(\"price\",0)`的结果是什么？"
+    },
+    "explanation": {
+      "en": "get looks for price and returns the supplied default 0 because that key is missing. It does not add a new key to the dictionary. Direct indexing with a missing key would raise KeyError.",
+      "zh": "get查找price，发现没有这个键，就返回指定的默认值0。它不会因此给字典新增price。若用方括号直接读取缺失键，才会出现KeyError。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 63",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "\"price\"",
+        "zh": "\"price\""
+      },
+      {
+        "en": "KeyError",
+        "zh": "KeyError"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert {\"stock\":5}.get(\"price\",0)==0"
+  },
+  {
+    "id": "L2-028",
+    "chapter": "lecture2",
+    "topic": "dictionaries",
+    "topicLabel": {
+      "en": "Dictionaries",
+      "zh": "字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Updating and removing keys",
+      "zh": "更新与删除字典键"
+    },
+    "prompt": {
+      "en": "What is d at the end?\n```python\nd = {\"city\": \"Delft\", \"zip\": \"1234\"}\nd.update({\"city\": \"Leiden\"})\nd.pop(\"zip\")\n```",
+      "zh": "下面代码执行完后d是什么？\n```python\nd = {\"city\":\"Delft\", \"zip\":\"1234\"}\nd.update({\"city\":\"Leiden\"})\nd.pop(\"zip\")\n```"
+    },
+    "explanation": {
+      "en": "update replaces the value for an existing key. pop removes the zip entry and returns its old value, which is ignored here. The remaining dictionary therefore has only the updated city.",
+      "zh": "update会替换已有键的值，pop会移除zip并返回旧值，只是这里没有接收返回值。因此最后只剩更新后的city。更新和删除都是对原字典的修改。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 63",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "{\"city\": \"Leiden\", \"zip\": \"1234\"}",
+        "zh": "{\"city\": \"Leiden\", \"zip\": \"1234\"}"
+      },
+      {
+        "en": "{\"city\": \"Leiden\"}",
+        "zh": "{\"city\": \"Leiden\"}"
+      },
+      {
+        "en": "{\"city\": \"Delft\"}",
+        "zh": "{\"city\": \"Delft\"}"
+      },
+      {
+        "en": "{\"zip\": \"1234\"}",
+        "zh": "{\"zip\": \"1234\"}"
+      }
+    ],
+    "answer": 1,
+    "verification": "d={\"city\":\"Delft\",\"zip\":\"1234\"}\nd.update({\"city\":\"Leiden\"})\nd.pop(\"zip\")\nassert d=={\"city\":\"Leiden\"}"
+  },
+  {
+    "id": "L2-029",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Element-wise addition",
+      "zh": "NumPy逐元素加法"
+    },
+    "prompt": {
+      "en": "With `import numpy as np`, what is `(np.array([1, 2]) + np.array([10, 20])).tolist()`?",
+      "zh": "已经`import numpy as np`，`(np.array([1,2]) + np.array([10,20])).tolist()`的结果是什么？"
+    },
+    "explanation": {
+      "en": "NumPy adds corresponding numeric elements of equally shaped arrays. The first elements give 11 and the second give 22. .tolist() only converts the resulting array into a list for easy display.",
+      "zh": "同形状NumPy数组相加时，会把对应位置的数相加，所以得到11和22。它与Python列表加法的“拼接”不同。.tolist()只是为了把结果转换成便于展示的列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 68",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[11, 22]",
+        "zh": "[11, 22]"
+      },
+      {
+        "en": "[1, 2, 10, 20]",
+        "zh": "[1, 2, 10, 20]"
+      },
+      {
+        "en": "[10, 40]",
+        "zh": "[10, 40]"
+      },
+      {
+        "en": "[33]",
+        "zh": "[33]"
+      }
+    ],
+    "answer": 0,
+    "verification": "import numpy as np\nassert (np.array([1,2])+np.array([10,20])).tolist()==[11,22]"
+  },
+  {
+    "id": "L2-030",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "List repetition versus array multiplication",
+      "zh": "列表重复与数组乘法"
+    },
+    "prompt": {
+      "en": "What is the difference between `[2, 3] * 2` and `np.array([2, 3]) * 2`? Assume NumPy is imported as np.",
+      "zh": "`[2,3] * 2`与`np.array([2,3]) * 2`有什么区别？假设NumPy已以np导入。"
+    },
+    "explanation": {
+      "en": "The meaning of * depends on the operand type. A Python list repeats its sequence, while a NumPy numeric array scales every element. Checking type is essential before interpreting a mathematical-looking expression.",
+      "zh": "运算符的含义取决于对象类型。Python列表乘整数表示重复序列，NumPy数值数组则把每个元素乘以这个数。看上去都是乘号，也要先确认操作对象是什么。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 68",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Both become [4, 6].",
+        "zh": "两者都变为[4,6]。"
+      },
+      {
+        "en": "Both repeat to [2, 3, 2, 3].",
+        "zh": "两者都重复为[2,3,2,3]。"
+      },
+      {
+        "en": "The list becomes [4, 6]; the array repeats.",
+        "zh": "列表变为[4,6]；数组重复。"
+      },
+      {
+        "en": "The list repeats to [2, 3, 2, 3]; the array becomes [4, 6].",
+        "zh": "列表重复为[2,3,2,3]；数组变为[4,6]。"
+      }
+    ],
+    "answer": 3,
+    "verification": "import numpy as np\nassert [2,3]*2==[2,3,2,3]\nassert (np.array([2,3])*2).tolist()==[4,6]"
+  },
+  {
+    "id": "L2-031",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A dot product",
+      "zh": "向量点积"
+    },
+    "prompt": {
+      "en": "With `u = np.array([2, 3])` and `v = np.array([4, 5])`, what is `np.dot(u, v)`?",
+      "zh": "`u = np.array([2,3])`、`v = np.array([4,5])`时，`np.dot(u,v)`是多少？"
+    },
+    "explanation": {
+      "en": "Multiply matching entries, then add the products: 2*4 + 3*5 = 23. A dot product of two one-dimensional vectors is a scalar. u * v would instead keep the two separate element-wise products.",
+      "zh": "点积先把对应项相乘，再把乘积相加：2×4 + 3×5 = 23。两个一维向量的点积得到一个标量，而u * v得到的是保留两项的逐元素乘积数组。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 68",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "54",
+        "zh": "54"
+      },
+      {
+        "en": "[6, 8]",
+        "zh": "[6, 8]"
+      },
+      {
+        "en": "23",
+        "zh": "23"
+      },
+      {
+        "en": "[8, 15]",
+        "zh": "[8, 15]"
+      }
+    ],
+    "answer": 2,
+    "verification": "import numpy as np\nassert np.dot(np.array([2,3]),np.array([4,5]))==23"
+  },
+  {
+    "id": "L2-032",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Matrix product versus element product",
+      "zh": "矩阵乘法与逐元素乘法"
+    },
+    "prompt": {
+      "en": "Let `A = np.array([[1, 2], [3, 4]])` and `B = np.array([[2, 0], [1, 2]])`. What is `(A @ B).tolist()`?",
+      "zh": "设`A = np.array([[1,2],[3,4]])`、`B = np.array([[2,0],[1,2]])`，`(A @ B).tolist()`是什么？"
+    },
+    "explanation": {
+      "en": "For matrix multiplication, each output entry combines a row of A with a column of B. For example the upper-left entry is 1*2 + 2*1 = 4. A * B would multiply matching positions and gives a different answer.",
+      "zh": "矩阵乘法用A的一行与B的一列做点积。例如左上角是1×2 + 2×1 = 4。A * B则只把对应位置相乘，所以不能与@混用。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 74",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[[2, 4], [6, 8]]",
+        "zh": "[[2, 4], [6, 8]]"
+      },
+      {
+        "en": "[[4, 4], [10, 8]]",
+        "zh": "[[4, 4], [10, 8]]"
+      },
+      {
+        "en": "[[2, 0], [3, 8]]",
+        "zh": "[[2, 0], [3, 8]]"
+      },
+      {
+        "en": "[[3, 2], [4, 6]]",
+        "zh": "[[3, 2], [4, 6]]"
+      }
+    ],
+    "answer": 1,
+    "verification": "import numpy as np\nA=np.array([[1,2],[3,4]]);B=np.array([[2,0],[1,2]])\nassert (A@B).tolist()==[[4,4],[10,8]]"
+  },
+  {
+    "id": "L2-033",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Shape of a three-dimensional array",
+      "zh": "三维数组的shape"
+    },
+    "prompt": {
+      "en": "An array contains 4 blocks. Each block contains 2 rows, and each row contains 3 numbers. What is its shape?",
+      "zh": "数组包含4个块，每块2行，每行3个数。它的shape是什么？"
+    },
+    "explanation": {
+      "en": "shape lists the size along each axis in nesting order. There are 4 entries on axis 0, 2 on axis 1 and 3 on axis 2. Multiplying them gives the total number of values, not the shape itself.",
+      "zh": "shape按嵌套层级记录每个轴的长度：最外层4个块，其次每块2行，最内层每行3个数。相乘得到24是元素总数，但不能把总数当作三维形状。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 69",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "(4, 2, 3)",
+        "zh": "(4, 2, 3)"
+      },
+      {
+        "en": "(3, 2, 4)",
+        "zh": "(3, 2, 4)"
+      },
+      {
+        "en": "(4, 6)",
+        "zh": "(4, 6)"
+      },
+      {
+        "en": "(24,)",
+        "zh": "(24,)"
+      }
+    ],
+    "answer": 0,
+    "verification": "import numpy as np\nassert np.array([[[0]*3]*2]*4).shape==(4,2,3)"
+  },
+  {
+    "id": "L2-034",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Two-dimensional indexing",
+      "zh": "二维数组索引"
+    },
+    "prompt": {
+      "en": "For `A = np.array([[5, 6, 7], [8, 9, 10]])`, what is `A[1, 2]`?",
+      "zh": "对于`A = np.array([[5,6,7],[8,9,10]])`，`A[1,2]`是多少？"
+    },
+    "explanation": {
+      "en": "The first index chooses row 1, which is the second row. The second chooses column 2, which is its third item. Both indices start at zero, so the selected entry is 10.",
+      "zh": "第一个索引1取第二行，第二个索引2取这一行的第三项。两个方向都从0开始编号，所以选中的是10，而不是按日常“第一行第二列”理解。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 71",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "9",
+        "zh": "9"
+      },
+      {
+        "en": "7",
+        "zh": "7"
+      },
+      {
+        "en": "IndexError",
+        "zh": "IndexError"
+      },
+      {
+        "en": "10",
+        "zh": "10"
+      }
+    ],
+    "answer": 3,
+    "verification": "import numpy as np\nA=np.array([[5,6,7],[8,9,10]])\nassert A[1,2]==10"
+  },
+  {
+    "id": "L2-035",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Shape after slicing",
+      "zh": "切片后的形状"
+    },
+    "prompt": {
+      "en": "If A has shape (4, 5), what is the shape of `A[1:3, 2:5]`?",
+      "zh": "若A的shape为(4,5)，`A[1:3,2:5]`的shape是什么？"
+    },
+    "explanation": {
+      "en": "Rows 1 and 2 give two rows because stop 3 is excluded. Columns 2, 3 and 4 give three columns. Keeping slices on both axes preserves a two-dimensional rectangular result.",
+      "zh": "行切片取索引1、2，共2行；列切片取索引2、3、4，共3列。结束位置都不包含，两个轴仍用切片，所以结果保持二维的矩形形状。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 71; Analyzing Patient Data Challenges · Challenge 2: Thin slices",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "(4, 5)",
+        "zh": "(4, 5)"
+      },
+      {
+        "en": "(6,)",
+        "zh": "(6,)"
+      },
+      {
+        "en": "(2, 3)",
+        "zh": "(2, 3)"
+      },
+      {
+        "en": "(3, 4)",
+        "zh": "(3, 4)"
+      }
+    ],
+    "answer": 2,
+    "verification": "import numpy as np\nA=np.zeros((4,5))\nassert A[1:3,2:5].shape==(2,3)"
+  },
+  {
+    "id": "L2-036",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Translating a vector formula",
+      "zh": "把向量公式翻译成代码"
+    },
+    "prompt": {
+      "en": "u, v and w are equally long one-dimensional NumPy arrays. Which expression gives the vector whose ith entry is u[i]*v[i] + w[i]?",
+      "zh": "u、v、w是等长的一维NumPy数组。要得到第i项为u[i]*v[i] + w[i]的向量，应使用哪个表达式？"
+    },
+    "explanation": {
+      "en": "The formula asks for a separate product at every position, so use element-wise *. A dot product would add the products into one scalar before multiplying w. Translating one component at a time makes the distinction clear.",
+      "zh": "题目要求每个位置各自相乘再加w，因此应使用逐元素乘法*。点积会先把全部乘积加成一个标量，再乘w，计算含义已经不同。把第i项展开看，就容易选对运算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 77",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "u + v * w",
+        "zh": "u + v * w"
+      },
+      {
+        "en": "u * v + w",
+        "zh": "u * v + w"
+      },
+      {
+        "en": "np.dot(u, v) * w",
+        "zh": "np.dot(u, v) * w"
+      },
+      {
+        "en": "u @ v @ w",
+        "zh": "u @ v @ w"
+      }
+    ],
+    "answer": 1,
+    "verification": "import numpy as np\nu=np.array([2,3]);v=np.array([4,5]);w=np.array([1,2])\nassert (u*v+w).tolist()==[9,17]"
+  },
+  {
+    "id": "L2-037",
+    "chapter": "lecture2",
+    "topic": "numbers",
+    "topicLabel": {
+      "en": "Numbers & arithmetic",
+      "zh": "数值类型与运算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Complete packs and leftovers",
+      "zh": "完整包装与余数"
+    },
+    "prompt": {
+      "en": "Complete packs(items, size), returning a tuple (full_packs, leftovers). items is a non-negative integer and size is a positive integer.",
+      "zh": "补全packs(items,size)，返回（完整包数，剩余件数）元组。items为非负整数，size为正整数。"
+    },
+    "explanation": {
+      "en": "Use // for complete groups and % for what remains. The positive pack size avoids division by zero. Check your result using items = full_packs * size + leftovers.",
+      "zh": "整除求完整包数，取余求剩余件数。题目保证包装大小为正，因此不必另外处理除零。结果可用“总件数 = 完整包数 × 包装大小 + 余数”来核对。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 7; Sweigart · Exercise 11: Hours, Minutes, Seconds",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def packs(items, size):\n    # Write your code here\n    pass\n",
+    "solution": "def packs(items, size):\n    return items // size, items % size\n",
+    "tests": "assert packs(29,6)==(4,5)\nassert packs(0,4)==(0,0)\nassert packs(12,3)==(4,0)\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-038",
+    "chapter": "lecture2",
+    "topic": "booleans",
+    "topicLabel": {
+      "en": "Boolean logic & random numbers",
+      "zh": "布尔逻辑与随机数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Both above the limit",
+      "zh": "两个数都超过阈值"
+    },
+    "prompt": {
+      "en": "Complete both_above(x, y, limit), returning True only when both numbers are strictly greater than limit. Return a Boolean, not text.",
+      "zh": "补全both_above(x,y,limit)，只有两个数都严格大于limit时返回True，否则返回False。请返回布尔值，不要返回字符串。"
+    },
+    "explanation": {
+      "en": "Write one comparison per number and join them with and. Exactly equal to the threshold must fail because the requirement says strictly greater. The result of these comparisons is already a Boolean.",
+      "zh": "分别写出两个比较，再用and连接即可。题目要求严格大于，所以恰好等于阈值应判为False。比较表达式本身已经产生布尔值，不必再拼接True或False字符串。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 19",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def both_above(x, y, limit):\n    # Write your code here\n    pass\n",
+    "solution": "def both_above(x, y, limit):\n    return x > limit and y > limit\n",
+    "tests": "assert both_above(101,102,100) is True\nassert both_above(100,102,100) is False\nassert both_above(9,8,10) is False\nassert both_above(-1,-2,-3) is True\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-039",
+    "chapter": "lecture2",
+    "topic": "numbers",
+    "topicLabel": {
+      "en": "Numbers & arithmetic",
+      "zh": "数值类型与运算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Read a decimal comma",
+      "zh": "转换小数逗号输入"
+    },
+    "prompt": {
+      "en": "Complete decimal_value(text). text is a valid decimal number written with either one comma or one dot, possibly surrounded by spaces. Replace a comma with a dot, then convert to float.",
+      "zh": "补全decimal_value(text)。text是合法十进制数，用一个逗号或小数点表示小数部分，两端可能有空格。先把逗号替换为点，再转成float。"
+    },
+    "explanation": {
+      "en": "replace standardises the decimal separator in a new string. float then interprets that numeric text and tolerates surrounding spaces. This conversion should be used for numeric data, not identifiers whose leading zeros must be preserved.",
+      "zh": "replace先把文本中的小数分隔符统一成点，再由float把文本解释为数值，首尾空格可以被float接受。这适用于真正的数值输入，不适合必须保留前导零的邮编等标识。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 2",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def decimal_value(text):\n    # Write your code here\n    pass\n",
+    "solution": "def decimal_value(text):\n    return float(text.replace(\",\", \".\"))\n",
+    "tests": "assert decimal_value(\"1,75\")==1.75\nassert decimal_value(\" 2.5 \")==2.5\nassert decimal_value(\"-0,5\")==-0.5\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-040",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Every second element",
+      "zh": "每隔一个取元素"
+    },
+    "prompt": {
+      "en": "Complete alternating(values), returning a new list containing elements at indices 0, 2, 4, ... . An empty list must return an empty list.",
+      "zh": "补全alternating(values)，返回一个新列表，包含索引0、2、4……的元素。空列表应返回空列表。"
+    },
+    "explanation": {
+      "en": "A slice step of 2 moves two positions at a time from the default start 0. Slicing naturally handles an empty or short list. The result is a new outer list rather than a new reference to the same list.",
+      "zh": "切片步长2表示每次向后走两个位置，省略起点时从0开始。空列表或只有一个元素时也能自然处理。切片会创建新的外层列表，不是给原列表再加一个名字。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Storing Multiple Values in Lists Challenges · Challenge 2: Non-Continuous Slices",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def alternating(values):\n    # Write your code here\n    pass\n",
+    "solution": "def alternating(values):\n    return values[::2]\n",
+    "tests": "assert alternating([0,1,2,3,4])==[0,2,4]\nassert alternating([])==[]\nassert alternating([9])==[9]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-041",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Last three characters",
+      "zh": "取末尾三个字符"
+    },
+    "prompt": {
+      "en": "Complete ending(text), returning the last three characters. If text has fewer than three characters, return all of it. Empty text stays empty.",
+      "zh": "补全ending(text)，返回末尾三个字符；若不足三个则返回全文，空字符串仍返回空字符串。"
+    },
+    "explanation": {
+      "en": "The start index -3 counts from the end and an omitted stop goes to the end. Slices clamp safely at the beginning when the text is short. Unlike direct indexing, this does not raise an error for an empty string.",
+      "zh": "-3从末尾倒着数，终点省略表示一直取到结尾。文本不够长时，切片会自动限制在开头，不会因为不足三个字符而越界，空字符串也能安全处理。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 23; Analyzing Patient Data Challenges · Challenge 1: Slicing Strings",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def ending(text):\n    # Write your code here\n    pass\n",
+    "solution": "def ending(text):\n    return text[-3:]\n",
+    "tests": "assert ending(\"Amsterdam\")==\"dam\"\nassert ending(\"hi\")==\"hi\"\nassert ending(\"\")==\"\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-042",
+    "chapter": "lecture2",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Copying & mutability",
+      "zh": "复制与可变性"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Sort without changing the input",
+      "zh": "排序但不修改输入"
+    },
+    "prompt": {
+      "en": "Complete ordered_copy(values), returning the values in ascending order in a new list. The original list must remain unchanged.",
+      "zh": "补全ordered_copy(values)，返回升序排列的新列表，原列表必须保持不变。"
+    },
+    "explanation": {
+      "en": "First make a copy, then sort that copy in place. Return the copied list, not the return value of sort, which is None. The unchanged-input check catches the common mistake of sorting values directly.",
+      "zh": "先复制再在副本上排序，最后返回副本本身。sort的返回值是None，不能把它当排序后的列表返回。检查原列表是否变化，可以抓住直接对values调用sort的常见错误。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 38",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def ordered_copy(values):\n    # Write your code here\n    pass\n",
+    "solution": "def ordered_copy(values):\n    result = values[:]\n    result.sort()\n    return result\n",
+    "tests": "a=[3,1,2]\nassert ordered_copy(a)==[1,2,3] and a==[3,1,2]\nassert ordered_copy([])==[]\nb=[2,2,-1]\nc=ordered_copy(b)\nassert c==[-1,2,2] and c is not b\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-043",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Remove and report the first element",
+      "zh": "移除并报告首项"
+    },
+    "prompt": {
+      "en": "Complete remove_first(values). values is a non-empty list. Modify it by removing the element at index 0 and return that removed element.",
+      "zh": "补全remove_first(values)。values保证是非空列表，请原地移除索引0的元素，并返回被移除的元素。"
+    },
+    "explanation": {
+      "en": "pop(0) both changes the list and returns its former first element. remove(0) would instead search for a value equal to zero. The one-element case checks that removing the last remaining element leaves an empty list.",
+      "zh": "pop(0)会同时完成“按索引删除”和“返回旧元素”两件事。remove(0)却是在找值为0的元素，含义不同。只有一个元素的边界用例能检查删除后列表是否正确变空。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 40",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def remove_first(values):\n    # Write your code here\n    pass\n",
+    "solution": "def remove_first(values):\n    return values.pop(0)\n",
+    "tests": "a=[8,4,9]\nassert remove_first(a)==8 and a==[4,9]\nb=[\"only\"]\nassert remove_first(b)==\"only\" and b==[]\nc=[0,0]\nassert remove_first(c)==0 and c==[0]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-044",
+    "chapter": "lecture2",
+    "topic": "lists",
+    "topicLabel": {
+      "en": "Lists & slicing",
+      "zh": "列表与切片"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "The middle section",
+      "zh": "去掉首尾的中间部分"
+    },
+    "prompt": {
+      "en": "Complete middle(values), returning a new list without the first and last elements. Lists of length 0, 1 or 2 must return an empty list. Do not modify values.",
+      "zh": "补全middle(values)，返回去掉首尾元素后的新列表，原列表不变。长度为0、1或2时返回空列表。"
+    },
+    "explanation": {
+      "en": "Start at index 1 to skip the first item, and stop before -1 to skip the last. Slices handle these short-list cases without special branches. Because the result is a slice, the outer input list is not changed.",
+      "zh": "从索引1开始跳过首项，在-1之前结束跳过末项。短列表的切片会自然变成空列表，不需要额外写判断。切片产生新外层列表，因此输入不变。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 28; Analyzing Patient Data Challenges · Challenge 1: Slicing Strings",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def middle(values):\n    # Write your code here\n    pass\n",
+    "solution": "def middle(values):\n    return values[1:-1]\n",
+    "tests": "assert middle([1,2,3,4])==[2,3]\nassert middle([1])==[]\nassert middle([])==[]\nassert middle([1,2])==[]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-045",
+    "chapter": "lecture2",
+    "topic": "mutability",
+    "topicLabel": {
+      "en": "Copying & mutability",
+      "zh": "复制与可变性"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Copy one matrix row",
+      "zh": "复制矩阵的一行"
+    },
+    "prompt": {
+      "en": "Complete copied_row(matrix, row). matrix is a list of row lists and row is a valid index. Return a shallow copy of that row so changing an element in the returned row will not replace an element in the original row.",
+      "zh": "补全copied_row(matrix,row)，matrix是由行列表组成的矩阵，row为有效索引。返回该行的浅副本，使替换返回行中的元素不会替换原行对应元素。"
+    },
+    "explanation": {
+      "en": "matrix[row] alone refers to the existing row list. Adding [:] creates a new row list with the same elements. This is a shallow copy: it isolates row-slot replacement, not arbitrary changes inside further nested objects.",
+      "zh": "只写matrix[row]取得的是原行的引用，加上[:]才创建新的行列表。这样替换副本中的某一项不会影响原行。它是浅复制，仅保证这一层独立，不保证更深层嵌套对象也被复制。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 50",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def copied_row(matrix, row):\n    # Write your code here\n    pass\n",
+    "solution": "def copied_row(matrix, row):\n    return matrix[row][:]\n",
+    "tests": "a=[[1,2],[3,4]]\nr=copied_row(a,1);r[0]=99\nassert a==[[1,2],[3,4]] and r==[99,4]\nb=[[]]\nassert copied_row(b,0)==[] and copied_row(b,0) is not b[0]\nassert copied_row([[7]],0)==[7]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-046",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Reverse a pair",
+      "zh": "交换元组中的两项"
+    },
+    "prompt": {
+      "en": "Complete reverse_pair(pair). pair is a two-element tuple. Use unpacking and return a tuple containing its second item followed by its first.",
+      "zh": "补全reverse_pair(pair)，pair是二元组。用解包取出两个元素，返回顺序交换后的新元组。"
+    },
+    "explanation": {
+      "en": "Unpacking gives each position a clear name. Returning second, first creates a new tuple in the opposite order. The original tuple is not edited, which respects its immutability.",
+      "zh": "先解包，让两个位置各有一个清晰名字，再按second、first的顺序返回新元组。这不是修改原元组，而是创建新结果，符合元组不可变的特点。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 52",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def reverse_pair(pair):\n    # Write your code here\n    pass\n",
+    "solution": "def reverse_pair(pair):\n    first, second = pair\n    return second, first\n",
+    "tests": "assert reverse_pair((1,2))==(2,1)\nassert reverse_pair((\"A\",\"B\"))==(\"B\",\"A\")\nassert reverse_pair((0,0))==(0,0)\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-047",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Replace without changing the original",
+      "zh": "替换字符并返回新文本"
+    },
+    "prompt": {
+      "en": "Complete replace_vowel(text), returning text with every lowercase \"a\" replaced by \"o\". Leave uppercase A and all other characters unchanged.",
+      "zh": "补全replace_vowel(text)，返回把所有小写a替换为o后的文本。大写A及其他字符保持不变。"
+    },
+    "explanation": {
+      "en": "String replace matches the exact lowercase character and returns a new string. It replaces all occurrences unless a count is supplied. The uppercase A is different and must remain unchanged.",
+      "zh": "replace按指定的小写字符精确匹配，并返回新字符串。不写次数限制就会替换所有匹配项。大写A是不同字符，必须保留；空字符串没有匹配项，结果仍为空。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 61; Sweigart · Exercise 10: Find and Replace",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def replace_vowel(text):\n    # Write your code here\n    pass\n",
+    "solution": "def replace_vowel(text):\n    return text.replace(\"a\", \"o\")\n",
+    "tests": "assert replace_vowel(\"banana\")==\"bonono\"\nassert replace_vowel(\"Amsterdam\")==\"Amsterdom\"\nassert replace_vowel(\"\")==\"\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-048",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Count exact substrings",
+      "zh": "统计精确子串"
+    },
+    "prompt": {
+      "en": "Complete occurrences(text, part), returning the count of non-overlapping occurrences of part in text using the string count method. part is guaranteed non-empty; matching is case-sensitive. This is substring counting, not whole-word counting.",
+      "zh": "补全occurrences(text,part)，用字符串count方法统计part在text中非重叠出现的次数。part保证非空，区分大小写；本题统计子串，不是完整单词。"
+    },
+    "explanation": {
+      "en": "The string count method looks for non-overlapping substring matches. Thus \"aaaa\" contains two non-overlapping \"aa\" matches, not three overlapping ones. Whole-word matching would be a different requirement and would need a different approach.",
+      "zh": "字符串count统计不重叠的子串匹配，所以\"aaaa\"中的\"aa\"算2次，而不是按重叠窗口算3次。它不会自动识别单词边界；若要求完整单词计数，解法与本题就不同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 23",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def occurrences(text, part):\n    # Write your code here\n    pass\n",
+    "solution": "def occurrences(text, part):\n    return text.count(part)\n",
+    "tests": "assert occurrences(\"banana\",\"an\")==2\nassert occurrences(\"aaaa\",\"aa\")==2\nassert occurrences(\"And and\",\"and\")==1\nassert occurrences(\"\",\"x\")==0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-049",
+    "chapter": "lecture2",
+    "topic": "strings",
+    "topicLabel": {
+      "en": "Strings & tuples",
+      "zh": "字符串与元组"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Wrap a label",
+      "zh": "给标签添加边框"
+    },
+    "prompt": {
+      "en": "Complete bracketed(text), returning text inside square brackets, for example \"[Python]\". Do not remove existing characters or spaces from text.",
+      "zh": "补全bracketed(text)，返回用方括号包住的文本，例如\"[Python]\"，不要删除输入原有字符或空格。"
+    },
+    "explanation": {
+      "en": "Create a new string from the opening bracket, the exact input and the closing bracket. Strings are immutable, so this does not modify the original text. Input spaces belong inside the brackets and should be preserved.",
+      "zh": "把左括号、原文本、右括号连接成新字符串即可。字符串不可变，这里不会改动原文本。输入中的空格也属于内容，应该保留在括号内部。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 55; Sweigart · Exercise 28: Border Drawing (text-construction variant)",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def bracketed(text):\n    # Write your code here\n    pass\n",
+    "solution": "def bracketed(text):\n    return \"[\" + text + \"]\"\n",
+    "tests": "assert bracketed(\"Python\")==\"[Python]\"\nassert bracketed(\"\")==\"[]\"\nassert bracketed(\" A \")==\"[ A ]\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-050",
+    "chapter": "lecture2",
+    "topic": "dictionaries",
+    "topicLabel": {
+      "en": "Dictionaries",
+      "zh": "字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Update an address copy",
+      "zh": "更新地址副本"
+    },
+    "prompt": {
+      "en": "Complete move_city(address, city). Return a shallow copy of address whose \"city\" entry is city. Do not modify address; add the key if it was missing.",
+      "zh": "补全move_city(address,city)，返回address的浅副本，将副本中的\"city\"设为city。不要修改原字典；若原来没有该键就新增。"
+    },
+    "explanation": {
+      "en": "Copy the dictionary before assigning to its city key. Assigning result = address would create only an alias and would change the input. Existing unrelated keys should survive the update.",
+      "zh": "先复制字典，再给副本的city键赋值。若只写result = address，得到的只是别名，修改时会影响输入。其他无关字段需要原样保留下来。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 63",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def move_city(address, city):\n    # Write your code here\n    pass\n",
+    "solution": "def move_city(address, city):\n    result = address.copy()\n    result[\"city\"] = city\n    return result\n",
+    "tests": "a={\"city\":\"Delft\",\"house\":8}\nassert move_city(a,\"Leiden\")=={\"city\":\"Leiden\",\"house\":8} and a[\"city\"]==\"Delft\"\nassert move_city({},\"Utrecht\")=={\"city\":\"Utrecht\"}\nb={\"city\":\"Delft\"}\nassert move_city(b,\"Delft\") is not b\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-051",
+    "chapter": "lecture2",
+    "topic": "dictionaries",
+    "topicLabel": {
+      "en": "Dictionaries",
+      "zh": "字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Total stock values",
+      "zh": "合计字典中的数量"
+    },
+    "prompt": {
+      "en": "Complete total_stock(stock). stock maps product names to non-negative integer counts. Return the sum of all counts; an empty dictionary must give 0. You may use sum and values().",
+      "zh": "补全total_stock(stock)。stock把商品名称映射为非负整数库存，返回全部库存数量的和，空字典返回0。允许使用sum与values()。"
+    },
+    "explanation": {
+      "en": "Dictionary values are the stock counts; keys are the product names. Summing values therefore matches the requested quantity. sum of an empty collection starts from 0, which handles the boundary naturally.",
+      "zh": "字典的值是库存数量，键是商品名，因此应对values()求和，而不是把键拿来相加。sum处理空集合时默认从0开始，刚好满足空字典返回0的要求。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 63",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def total_stock(stock):\n    # Write your code here\n    pass\n",
+    "solution": "def total_stock(stock):\n    return sum(stock.values())\n",
+    "tests": "assert total_stock({\"tea\":4,\"cake\":6})==10\nassert total_stock({})==0\nassert total_stock({\"empty\":0,\"full\":7})==7\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-052",
+    "chapter": "lecture2",
+    "topic": "dictionaries",
+    "topicLabel": {
+      "en": "Dictionaries",
+      "zh": "字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Remove a field safely",
+      "zh": "安全移除字段"
+    },
+    "prompt": {
+      "en": "Complete without_zip(address), returning a shallow copy without the \"zip\" key. The input must stay unchanged and a missing zip key must not cause an error.",
+      "zh": "补全without_zip(address)，返回去掉\"zip\"键的浅副本，原字典不变；没有zip键时也不能报错。"
+    },
+    "explanation": {
+      "en": "Copy first so deleting a field does not affect the input. pop with a default avoids KeyError if zip is absent. The default is only the removed-value fallback; it is not inserted into the dictionary.",
+      "zh": "先复制，删除字段时就不会改动原字典。pop提供默认值后，即使zip不存在也不会出现KeyError。这个默认值只用作返回值的后备，并不会被添加进字典。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 63",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def without_zip(address):\n    # Write your code here\n    pass\n",
+    "solution": "def without_zip(address):\n    result = address.copy()\n    result.pop(\"zip\", None)\n    return result\n",
+    "tests": "a={\"city\":\"Delft\",\"zip\":\"1234\"}\nassert without_zip(a)=={\"city\":\"Delft\"} and a[\"zip\"]==\"1234\"\nassert without_zip({\"city\":\"Delft\"})=={\"city\":\"Delft\"}\nassert without_zip({})=={}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-053",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A linear vector expression",
+      "zh": "向量线性组合"
+    },
+    "prompt": {
+      "en": "Complete linear_combo(u, v, w). Inputs are equally long lists of numbers. Convert them to NumPy arrays and return the NumPy vector 2*u - v + 10*w.",
+      "zh": "补全linear_combo(u,v,w)，输入是等长数值列表。先转为NumPy数组，返回向量2*u - v + 10*w，结果也必须是NumPy数组。"
+    },
+    "explanation": {
+      "en": "Convert the lists before using vector arithmetic: Python list multiplication would repeat them. NumPy applies scalar multiplication and addition to matching entries. The three equally sized vectors therefore produce another vector of the same length.",
+      "zh": "必须先转换，因为Python列表乘整数会重复列表，而不是逐项相乘。NumPy才会把倍数、减法、加法应用到对应元素上。三个向量等长，因此结果仍是相同长度的向量。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 77",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef linear_combo(u, v, w):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef linear_combo(u, v, w):\n    u = np.array(u)\n    v = np.array(v)\n    w = np.array(w)\n    return 2*u - v + 10*w\n",
+    "tests": "import numpy as np\nnp.testing.assert_allclose(linear_combo([1,2],[0,1],[2,3]),[22,33])\nnp.testing.assert_allclose(linear_combo([0],[0],[0]),[0])\nnp.testing.assert_allclose(linear_combo([-1,0.5],[2,1],[0,-1]),[-4,-10])\nassert isinstance(linear_combo([1],[2],[3]),np.ndarray)\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-054",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Element products plus an offset",
+      "zh": "逐元素乘积再加偏移"
+    },
+    "prompt": {
+      "en": "Complete product_offset(u, v, w). Convert equally long numeric lists to arrays and return the array with entries u[i]*v[i] + w[i]. Do not use a dot product.",
+      "zh": "补全product_offset(u,v,w)，把等长数值列表转为数组，返回第i项为u[i]*v[i] + w[i]的数组，不要使用点积。"
+    },
+    "explanation": {
+      "en": "The required output keeps one result per position, so * is the matching operation. A dot product would collapse the products into one scalar and lose the position-by-position information. Add w after forming the element-wise product.",
+      "zh": "题目要保留每个位置各自的结果，因此用*逐元素相乘。点积会把全部乘积合成一个标量，丢掉逐位置的信息。先形成逐元素乘积，再加上对应的w即可。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 77",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef product_offset(u, v, w):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef product_offset(u, v, w):\n    return np.array(u)*np.array(v)+np.array(w)\n",
+    "tests": "import numpy as np\nnp.testing.assert_allclose(product_offset([2,3],[4,5],[1,2]),[9,17])\nnp.testing.assert_allclose(product_offset([0],[5],[7]),[7])\nnp.testing.assert_allclose(product_offset([-2,0.5],[3,4],[1,-1]),[-5,1])\nassert isinstance(product_offset([1],[2],[3]),np.ndarray)\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-055",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A weighted score",
+      "zh": "用点积计算加权总分"
+    },
+    "prompt": {
+      "en": "Complete weighted_total(values, weights), returning np.dot of the two equally long numeric lists after conversion to arrays. Empty lists should give 0.",
+      "zh": "补全weighted_total(values,weights)，把两个等长数值列表转为数组，返回它们的np.dot点积。两个空列表应得到0。"
+    },
+    "explanation": {
+      "en": "A weighted total multiplies each value by its weight and sums the products. That is exactly a one-dimensional dot product. Merely returning values * weights would leave a vector instead of the requested total.",
+      "zh": "加权总分就是每项数值乘对应权重，再把乘积相加，正好是一维向量点积。仅返回逐元素乘积只得到一个向量，还没有完成题目要求的求和。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 68",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef weighted_total(values, weights):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef weighted_total(values, weights):\n    return np.dot(np.array(values), np.array(weights))\n",
+    "tests": "assert weighted_total([10,20],[0.4,0.6])==16\nassert weighted_total([],[])==0\nassert weighted_total([-1,2],[3,4])==5\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-056",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Multiply two matrices",
+      "zh": "两个矩阵相乘"
+    },
+    "prompt": {
+      "en": "Complete matrix_product(left, right). Inputs are rectangular two-dimensional numeric lists with compatible matrix dimensions. Return their NumPy matrix product using @ or np.dot, not element-wise *.",
+      "zh": "补全matrix_product(left,right)，输入是矩阵乘法维度相容的二维矩形数值列表。返回NumPy矩阵乘积，使用@或np.dot，不要逐元素相乘。"
+    },
+    "explanation": {
+      "en": "Matrix multiplication combines rows of the left matrix with columns of the right matrix. The inner dimensions must match, while the output keeps the left row count and right column count. The rectangular test catches code that accidentally assumes square matrices.",
+      "zh": "矩阵乘法用左矩阵的行与右矩阵的列相结合。中间维度必须相等，输出行数来自左矩阵、列数来自右矩阵。矩形用例可检查是否误以为矩阵都必须是方阵。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 74",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef matrix_product(left, right):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef matrix_product(left, right):\n    return np.array(left) @ np.array(right)\n",
+    "tests": "import numpy as np\nnp.testing.assert_allclose(matrix_product([[1,2],[3,4]],[[2,0],[1,2]]),[[4,4],[10,8]])\nnp.testing.assert_allclose(matrix_product([[1,2,3]],[[1],[0],[2]]),[[7]])\nnp.testing.assert_allclose(matrix_product([[5]],[[0]]),[[0]])\nassert isinstance(matrix_product([[1]],[[2]]),np.ndarray)\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-057",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Extract a two-by-two block",
+      "zh": "提取二乘二子块"
+    },
+    "prompt": {
+      "en": "Complete central_block(rows). rows is a rectangular numeric list with at least 3 rows and 3 columns. Convert to a NumPy array and return rows 1 and 2, columns 1 and 2, as a 2D array (indices are zero-based).",
+      "zh": "补全central_block(rows)。rows为至少3行3列的矩形数值列表。转为NumPy数组，返回索引1、2行与索引1、2列组成的二维子数组。"
+    },
+    "explanation": {
+      "en": "Use a slice on each axis, separated by a comma. The stop index 3 is excluded, leaving indices 1 and 2. Using two slices preserves the requested two-dimensional 2-by-2 structure.",
+      "zh": "行和列各写一个切片，中间用逗号分开。终点3不包含，因此恰好取索引1与2。两个方向都使用切片，就能保留二维的2×2结构。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 71; Analyzing Patient Data Challenges · Challenge 2: Thin slices",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef central_block(rows):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef central_block(rows):\n    data = np.array(rows)\n    return data[1:3, 1:3]\n",
+    "tests": "import numpy as np\nnp.testing.assert_array_equal(central_block([[1,2,3],[4,5,6],[7,8,9]]),[[5,6],[8,9]])\nnp.testing.assert_array_equal(central_block([[0,0,0,0],[0,1,2,0],[0,3,4,0],[0,0,0,0]]),[[1,2],[3,4]])\nassert central_block([[0]*3]*3).shape==(2,2)\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-058",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Report an array shape",
+      "zh": "报告数组形状"
+    },
+    "prompt": {
+      "en": "Complete array_shape(data). data is a rectangular nested list, or a flat list, with no ragged rows. Convert it to a NumPy array and return its shape tuple.",
+      "zh": "补全array_shape(data)。data是没有参差行的矩形嵌套列表或普通一维列表。转成NumPy数组并返回shape元组。"
+    },
+    "explanation": {
+      "en": "shape records the length of every axis, not the total element count. A one-dimensional array has a one-item tuple such as (3,), including its comma. The nested examples check that dimensions are reported in outer-to-inner order.",
+      "zh": "shape记录每个轴的长度，不是全部元素总数。一维数组的形状也是元组，如(3,)，其中逗号不可忽略。嵌套样例用于确认轴的顺序是从外到内。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 69",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef array_shape(data):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef array_shape(data):\n    return np.array(data).shape\n",
+    "tests": "assert array_shape([1,2,3])==(3,)\nassert array_shape([[1,2],[3,4],[5,6]])==(3,2)\nassert array_shape([[[1,2]],[[3,4]]])==(2,1,2)\nassert array_shape([])==(0,)\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-059",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Select a value in three dimensions",
+      "zh": "从三维数组中选值"
+    },
+    "prompt": {
+      "en": "Complete volume_value(data, block, row, col). data is a rectangular three-dimensional numeric list and all indices are valid. Convert it to an array and return the scalar at the given three indices.",
+      "zh": "补全volume_value(data,block,row,col)。data是矩形三维数值列表，索引均有效。转成数组，返回给定块、行、列位置的标量。"
+    },
+    "explanation": {
+      "en": "The three indices move from outer blocks to rows to individual columns. Keep that nesting order when translating to NumPy indexing. Supplying all three integer indices selects one scalar rather than an entire subarray.",
+      "zh": "三个索引依次对应最外层块、块内的行、行内的列。把这种嵌套顺序原样翻译成NumPy索引即可。三个轴都给整数索引，取得的是单个值，而不是一整个子数组。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 73",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef volume_value(data, block, row, col):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef volume_value(data, block, row, col):\n    return np.array(data)[block, row, col]\n",
+    "tests": "x=[[[1,2],[3,4]],[[5,6],[7,8]]]\nassert volume_value(x,0,0,0)==1\nassert volume_value(x,1,0,1)==6\nassert volume_value(x,1,1,0)==7\nassert volume_value([[[9]]],0,0,0)==9\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  },
+  {
+    "id": "L2-060",
+    "chapter": "lecture2",
+    "topic": "numpy",
+    "topicLabel": {
+      "en": "NumPy vectors & matrices",
+      "zh": "NumPy向量与矩阵"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Scale, then shift a vector",
+      "zh": "向量先缩放再平移"
+    },
+    "prompt": {
+      "en": "Complete rescale(values, factor, offset). values is a flat numeric list. Return the NumPy array obtained by multiplying every value by factor, then adding offset to every result. Empty input should produce an empty one-dimensional array.",
+      "zh": "补全rescale(values,factor,offset)，values是一维数值列表。返回先把每项乘factor、再给每项加offset的NumPy数组。空输入应产生空的一维数组。"
+    },
+    "explanation": {
+      "en": "Convert to an array so multiplication scales values instead of repeating the list. Operator precedence applies the multiplication before addition, matching the stated order. Adding a scalar to a numeric array applies it to every entry.",
+      "zh": "先转数组，让乘法按数值缩放，而不是把列表重复。乘法优先于加法，正好符合题目“先缩放再平移”的顺序。数组加标量时，每个元素都会加上这个数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 2 · 2_Data_Types_filled.ipynb · cell 68",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+      }
+    },
+    "type": "code",
+    "starter": "import numpy as np\n\ndef rescale(values, factor, offset):\n    # Write your code here\n    pass\n",
+    "solution": "import numpy as np\ndef rescale(values, factor, offset):\n    return np.array(values)*factor + offset\n",
+    "tests": "import numpy as np\nnp.testing.assert_allclose(rescale([1,2,3],2,1),[3,5,7])\nnp.testing.assert_allclose(rescale([-1,0,1],-2,5),[7,5,3])\nassert rescale([],3,2).shape==(0,)\nassert isinstance(rescale([1],0,7),np.ndarray)\n",
+    "setup": "",
+    "packages": [
+      "numpy"
+    ],
+    "testHint": {
+      "en": "Checks three or more examples, including a boundary or alternative input.",
+      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+    }
+  }
+]

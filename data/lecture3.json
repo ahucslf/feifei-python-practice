@@ -1,0 +1,2856 @@
+[
+  {
+    "id": "L3-001",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A branch at zero",
+      "zh": "零值走哪个分支"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nx = 0\nif x > 0:\n    print(\"positive\")\nelse:\n    print(\"not positive\")\n```",
+      "zh": "下面代码会输出什么？\n```python\nx = 0\nif x > 0:\n    print(\"positive\")\nelse:\n    print(\"not positive\")\n```"
+    },
+    "explanation": {
+      "en": "The condition asks whether zero is strictly greater than zero, which is false. Execution therefore enters else. “Not positive” includes both zero and negative numbers.",
+      "zh": "条件检查的是0是否严格大于0，结果为假，所以进入else。非正数包括0和负数，不要把“大于”误读成“大于或等于”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 3; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "not positive",
+        "zh": "not positive"
+      },
+      {
+        "en": "positive",
+        "zh": "positive"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "Nothing",
+        "zh": "无输出"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert not (0 > 0)"
+  },
+  {
+    "id": "L3-002",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A valid block",
+      "zh": "合法代码块"
+    },
+    "prompt": {
+      "en": "Which fragment is valid Python?",
+      "zh": "哪段代码符合Python语法？"
+    },
+    "explanation": {
+      "en": "A colon starts the if block and indentation places the print inside it. Omitting either changes valid syntax into an error. else does not take a condition; elif does.",
+      "zh": "if条件后需要冒号，块内语句需要缩进。冒号和缩进缺一不可。else后不写条件；需要继续检查条件时应使用elif。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 3; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "else ready:\n    print(\"Go\")",
+        "zh": "else ready:\n    print(\"Go\")"
+      },
+      {
+        "en": "if ready:\n    print(\"Go\")",
+        "zh": "if ready:\n    print(\"Go\")"
+      },
+      {
+        "en": "if ready\n    print(\"Go\")",
+        "zh": "if ready\n    print(\"Go\")"
+      },
+      {
+        "en": "if ready:\nprint(\"Go\")",
+        "zh": "if ready:\nprint(\"Go\")"
+      }
+    ],
+    "answer": 1,
+    "verification": "compile('if ready:\\n    print(\"Go\")',\"<question>\",\"exec\")"
+  },
+  {
+    "id": "L3-003",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "The first matching branch",
+      "zh": "只执行第一个匹配分支"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nscore = 85\nif score >= 50:\n    print(\"pass\")\nelif score >= 80:\n    print(\"high\")\nelse:\n    print(\"retry\")\n```",
+      "zh": "下面代码会输出什么？\n```python\nscore = 85\nif score >= 50:\n    print(\"pass\")\nelif score >= 80:\n    print(\"high\")\nelse:\n    print(\"retry\")\n```"
+    },
+    "explanation": {
+      "en": "Python checks an if/elif chain from the top and stops checking after the first true condition. 85 already satisfies score >= 50. To award high first, place the more restrictive condition above the broader one.",
+      "zh": "if/elif会从上到下检查，命中第一个真条件后就跳出整条分支链。85先满足大于等于50，所以只输出pass。想优先识别高分，应把更严格的高分条件放前面。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "pass, then high",
+        "zh": "先pass再high"
+      },
+      {
+        "en": "retry",
+        "zh": "retry"
+      },
+      {
+        "en": "pass",
+        "zh": "pass"
+      },
+      {
+        "en": "high",
+        "zh": "high"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert 85 >= 50"
+  },
+  {
+    "id": "L3-004",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Two independent checks",
+      "zh": "两个独立的if"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nx = 12\nif x > 5:\n    print(\"A\")\nif x > 10:\n    print(\"B\")\n```",
+      "zh": "下面代码会输出什么？\n```python\nx = 12\nif x > 5:\n    print(\"A\")\nif x > 10:\n    print(\"B\")\n```"
+    },
+    "explanation": {
+      "en": "These are two independent if statements, not an if/elif chain. Both conditions are true for 12, so both blocks run. The distinction matters when categories should be mutually exclusive.",
+      "zh": "这里是两个独立if，不是if/elif链。12同时满足两个条件，所以A、B都会输出。若希望多个类别互斥，应考虑用elif连接。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "A",
+        "zh": "A"
+      },
+      {
+        "en": "B",
+        "zh": "B"
+      },
+      {
+        "en": "Nothing",
+        "zh": "无输出"
+      },
+      {
+        "en": "A\nB",
+        "zh": "A\nB"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert 12 > 5 and 12 > 10"
+  },
+  {
+    "id": "L3-005",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "The adult boundary",
+      "zh": "成年边界"
+    },
+    "prompt": {
+      "en": "A category is defined as ages from 18 through 65, inclusive. Which condition is correct?",
+      "zh": "某类别包含18岁到65岁，两个端点都包含。正确条件是哪一个？"
+    },
+    "explanation": {
+      "en": "Both endpoints belong to the middle category, so both comparisons need equality. and, or a chained comparison, requires the two bounds together. Using or would accept almost every age.",
+      "zh": "18和65都属于这一组，所以两边都要带等号。区间要求上下界同时满足，可以用链式比较。用or会让几乎所有年龄都被选中。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 25; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "18 <= age <= 65",
+        "zh": "18 <= age <= 65"
+      },
+      {
+        "en": "18 < age < 65",
+        "zh": "18 < age < 65"
+      },
+      {
+        "en": "age >= 18 or age <= 65",
+        "zh": "age >= 18 or age <= 65"
+      },
+      {
+        "en": "age < 18 and age > 65",
+        "zh": "age < 18 and age > 65"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert 18 <= 18 <= 65 and 18 <= 65 <= 65"
+  },
+  {
+    "id": "L3-006",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Age 65",
+      "zh": "65岁的归类"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nage = 65\nif age < 18:\n    print(\"young\")\nelif age <= 65:\n    print(\"middle\")\nelse:\n    print(\"older\")\n```",
+      "zh": "下面代码会输出什么？\n```python\nage = 65\nif age < 18:\n    print(\"young\")\nelif age <= 65:\n    print(\"middle\")\nelse:\n    print(\"older\")\n```"
+    },
+    "explanation": {
+      "en": "Age 65 fails age < 18 but satisfies age <= 65. The older category begins at 66 for integer ages. Testing 17, 18, 65 and 66 catches both boundaries.",
+      "zh": "65不满足小于18，却满足小于等于65，因此属于middle。整数年龄中older从66开始。用17、18、65、66测试，能覆盖两处分界。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 26; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "No category",
+        "zh": "不属于任何组"
+      },
+      {
+        "en": "middle",
+        "zh": "middle"
+      },
+      {
+        "en": "older",
+        "zh": "older"
+      },
+      {
+        "en": "young",
+        "zh": "young"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert not (65 < 18) and 65 <= 65"
+  },
+  {
+    "id": "L3-007",
+    "chapter": "lecture3",
+    "topic": "logic",
+    "topicLabel": {
+      "en": "Boolean conditions",
+      "zh": "布尔条件"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A half-open interval",
+      "zh": "左闭右开区间"
+    },
+    "prompt": {
+      "en": "Which expression tests whether x is in [10, 15)?",
+      "zh": "哪个表达式判断x是否在[10, 15)内？"
+    },
+    "explanation": {
+      "en": "The square bracket includes 10 and the round bracket excludes 15. and requires both statements to hold for the same x. Check x=10 and x=15 before accepting an interval condition.",
+      "zh": "方括号表示包含10，圆括号表示不包含15。and要求同一个x同时满足上下界。写完后代入10和15，就能迅速检查等号放得对不对。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "x >= 10 or x < 15",
+        "zh": "x >= 10 or x < 15"
+      },
+      {
+        "en": "x < 10 and x >= 15",
+        "zh": "x < 10 and x >= 15"
+      },
+      {
+        "en": "x >= 10 and x < 15",
+        "zh": "x >= 10 and x < 15"
+      },
+      {
+        "en": "x > 10 and x <= 15",
+        "zh": "x > 10 and x <= 15"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert (10 >= 10 and 10 < 15) and not (15 >= 10 and 15 < 15)"
+  },
+  {
+    "id": "L3-008",
+    "chapter": "lecture3",
+    "topic": "logic",
+    "topicLabel": {
+      "en": "Boolean conditions",
+      "zh": "布尔条件"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Outside an interval",
+      "zh": "区间外的条件"
+    },
+    "prompt": {
+      "en": "Which condition is equivalent to not (0 <= x <= 100)?",
+      "zh": "哪个条件等价于not (0 <= x <= 100)？"
+    },
+    "explanation": {
+      "en": "Being outside a closed interval means falling below its lower bound or above its upper bound. The endpoints remain inside and must not be selected. No number can be below 0 and above 100 at the same time.",
+      "zh": "不在闭区间内，就是小于下界或大于上界。0和100仍在区间内，所以不能带等号。一个数不可能既小于0又大于100，因此这里用or。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "x <= 0 or x >= 100",
+        "zh": "x <= 0 or x >= 100"
+      },
+      {
+        "en": "x < 0 and x > 100",
+        "zh": "x < 0 and x > 100"
+      },
+      {
+        "en": "0 < x < 100",
+        "zh": "0 < x < 100"
+      },
+      {
+        "en": "x < 0 or x > 100",
+        "zh": "x < 0 or x > 100"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert all((not (0 <= x <= 100)) == (x < 0 or x > 100) for x in [-1,0,50,100,101])"
+  },
+  {
+    "id": "L3-009",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A conditional value",
+      "zh": "条件表达式的值"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nx = -4\nlabel = \"positive\" if x > 0 else \"other\"\nprint(label)\n```",
+      "zh": "下面代码会输出什么？\n```python\nx = -4\nlabel = \"positive\" if x > 0 else \"other\"\nprint(label)\n```"
+    },
+    "explanation": {
+      "en": "A conditional expression selects one of two values. Since x > 0 is false, it chooses the value after else. It does not store the condition itself unless that is explicitly requested.",
+      "zh": "条件表达式会从两个值中选一个。x大于0为假，所以选择else后面的other。得到的是选中的字符串，而不是条件本身的False。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 7; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "other",
+        "zh": "other"
+      },
+      {
+        "en": "positive",
+        "zh": "positive"
+      },
+      {
+        "en": "False",
+        "zh": "False"
+      },
+      {
+        "en": "SyntaxError",
+        "zh": "SyntaxError"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert (\"positive\" if -4 > 0 else \"other\") == \"other\""
+  },
+  {
+    "id": "L3-010",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "What pass does",
+      "zh": "pass的作用"
+    },
+    "prompt": {
+      "en": "What does pass do inside an if block?",
+      "zh": "if块中的pass有什么作用？"
+    },
+    "explanation": {
+      "en": "pass is a placeholder statement for a block that currently needs no action. It is different from continue, which jumps to the next loop iteration. Code after the block can still run.",
+      "zh": "pass是“这里暂时不做事”的占位语句。它不是continue，不会跳到下一轮循环。离开这个空块后，后面的代码照常执行。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 7; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "It makes the condition true.",
+        "zh": "它把条件改成真。"
+      },
+      {
+        "en": "It does nothing and lets execution continue.",
+        "zh": "它不做任何操作，让程序继续执行。"
+      },
+      {
+        "en": "It terminates the entire program.",
+        "zh": "它终止整个程序。"
+      },
+      {
+        "en": "It jumps to the next loop iteration.",
+        "zh": "它跳到下一次循环。"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L3-011",
+    "chapter": "lecture3",
+    "topic": "range",
+    "topicLabel": {
+      "en": "Counting loops",
+      "zh": "计数循环"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "The default start",
+      "zh": "range的默认起点"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nprint(list(range(4)))\n```",
+      "zh": "下面代码会输出什么？\n```python\nprint(list(range(4)))\n```"
+    },
+    "explanation": {
+      "en": "With one argument, range starts at zero and stops before that argument. Four values are produced, but the last is 3. “Four items” does not mean “ending at four.”",
+      "zh": "range只有一个参数时从0开始，到该参数之前停止。这里一共有4个数，最后一个是3。“有4项”并不表示“最后是4”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "[0, 1, 2, 3, 4]",
+        "zh": "[0, 1, 2, 3, 4]"
+      },
+      {
+        "en": "[4]",
+        "zh": "[4]"
+      },
+      {
+        "en": "[0, 1, 2, 3]",
+        "zh": "[0, 1, 2, 3]"
+      },
+      {
+        "en": "[1, 2, 3, 4]",
+        "zh": "[1, 2, 3, 4]"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert list(range(4)) == [0,1,2,3]"
+  },
+  {
+    "id": "L3-012",
+    "chapter": "lecture3",
+    "topic": "range",
+    "topicLabel": {
+      "en": "Counting loops",
+      "zh": "计数循环"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "A step of three",
+      "zh": "步长为3"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nprint(list(range(2, 10, 3)))\n```",
+      "zh": "下面代码会输出什么？\n```python\nprint(list(range(2, 10, 3)))\n```"
+    },
+    "explanation": {
+      "en": "Begin at 2 and add 3 each time: 2, 5, 8. The next value, 11, has already passed the excluded stop 10. The third argument controls the step, not the number of items.",
+      "zh": "从2开始每次加3，依次得到2、5、8。再加3是11，已经越过终点10，所以停止。第三个参数是步长，不是要生成的项数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "[2, 5, 8, 11]",
+        "zh": "[2, 5, 8, 11]"
+      },
+      {
+        "en": "[3, 6, 9]",
+        "zh": "[3, 6, 9]"
+      },
+      {
+        "en": "[2, 3, 4, 5, 6, 7, 8, 9]",
+        "zh": "[2, 3, 4, 5, 6, 7, 8, 9]"
+      },
+      {
+        "en": "[2, 5, 8]",
+        "zh": "[2, 5, 8]"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert list(range(2,10,3)) == [2,5,8]"
+  },
+  {
+    "id": "L3-013",
+    "chapter": "lecture3",
+    "topic": "range",
+    "topicLabel": {
+      "en": "Counting loops",
+      "zh": "计数循环"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Counting backwards",
+      "zh": "倒着计数"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nprint(list(range(5, 0, -2)))\n```",
+      "zh": "下面代码会输出什么？\n```python\nprint(list(range(5, 0, -2)))\n```"
+    },
+    "explanation": {
+      "en": "A negative step moves toward smaller values. Start at 5, then visit 3 and 1; 0 remains excluded. A backward range needs its start, stop and step to point in compatible directions.",
+      "zh": "负步长表示向小的方向走，从5依次到3和1。终点0不包含。倒序range的起点、终点和步长方向要相互配合。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "[5, 3, 1]",
+        "zh": "[5, 3, 1]"
+      },
+      {
+        "en": "[5, 3, 1, -1]",
+        "zh": "[5, 3, 1, -1]"
+      },
+      {
+        "en": "[0, 2, 4]",
+        "zh": "[0, 2, 4]"
+      },
+      {
+        "en": "[]",
+        "zh": "[]"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert list(range(5,0,-2)) == [5,3,1]"
+  },
+  {
+    "id": "L3-014",
+    "chapter": "lecture3",
+    "topic": "range",
+    "topicLabel": {
+      "en": "Counting loops",
+      "zh": "计数循环"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "An empty range",
+      "zh": "空的range"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nprint(list(range(5, 2)))\n```",
+      "zh": "下面代码会输出什么？\n```python\nprint(list(range(5, 2)))\n```"
+    },
+    "explanation": {
+      "en": "The omitted step is +1, so this range tries to move upward from 5 toward a smaller stop. It cannot enter the range at all. Use a negative step to count down.",
+      "zh": "省略步长时默认是+1，因此它想从5向上走，却把终点设在更小的2，第一轮就不会进入。想倒着数，必须显式给负步长。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "[2, 3, 4]",
+        "zh": "[2, 3, 4]"
+      },
+      {
+        "en": "[]",
+        "zh": "[]"
+      },
+      {
+        "en": "[5, 4, 3]",
+        "zh": "[5, 4, 3]"
+      },
+      {
+        "en": "[5, 4, 3, 2]",
+        "zh": "[5, 4, 3, 2]"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert list(range(5,2)) == []"
+  },
+  {
+    "id": "L3-015",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Updating an accumulator",
+      "zh": "累加变量"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ntotal = 0\nfor value in [2, 5, 1]:\n    total += value\nprint(total)\n```",
+      "zh": "下面代码会输出什么？\n```python\ntotal = 0\nfor value in [2, 5, 1]:\n    total += value\nprint(total)\n```"
+    },
+    "explanation": {
+      "en": "total carries the running sum from one iteration to the next. Its values become 2, 7 and then 8. Initializing it outside the loop prevents the accumulated result from being reset each time.",
+      "zh": "total把前一轮的结果带到下一轮，依次变成2、7、8。把初始化放在循环外，才能保留累加结果；放在循环内会每次重置。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 15; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "[2, 5, 1]",
+        "zh": "[2, 5, 1]"
+      },
+      {
+        "en": "8",
+        "zh": "8"
+      },
+      {
+        "en": "1",
+        "zh": "1"
+      }
+    ],
+    "answer": 2,
+    "verification": "total=0\nfor value in [2,5,1]: total+=value\nassert total==8"
+  },
+  {
+    "id": "L3-016",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Case-sensitive letters",
+      "zh": "区分大小写的字母统计"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ncount = 0\nfor letter in \"Aaab\":\n    if letter == \"a\":\n        count += 1\nprint(count)\n```",
+      "zh": "下面代码会输出什么？\n```python\ncount = 0\nfor letter in \"Aaab\":\n    if letter == \"a\":\n        count += 1\nprint(count)\n```"
+    },
+    "explanation": {
+      "en": "The equality check matches only the lowercase letter a. The uppercase A is a different character, so it is skipped. To count both, explicitly allow A or normalize the case.",
+      "zh": "这里仅检查小写a，字符串中有两个。大写A与小写a不是同一个字符，所以不会被计入。若要同时统计大小写，需要额外允许A或统一大小写。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 17; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "1",
+        "zh": "1"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert sum(c==\"a\" for c in \"Aaab\")==2"
+  },
+  {
+    "id": "L3-017",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Dictionary iteration",
+      "zh": "字典默认遍历什么"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ndata = {\"tea\": 3, \"cake\": 2}\nfor item in data:\n    print(item)\n```",
+      "zh": "下面代码会输出什么？\n```python\ndata = {\"tea\": 3, \"cake\": 2}\nfor item in data:\n    print(item)\n```"
+    },
+    "explanation": {
+      "en": "Iterating directly over a dictionary visits its keys in insertion order. Values require data.values(), and paired keys and values require data.items(). Here the loop variable therefore holds tea and cake.",
+      "zh": "直接遍历字典会按插入顺序取得键。想取值用values()，想同时取键和值用items()。这里item因此依次是tea和cake。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "tea\ncake",
+        "zh": "tea\ncake"
+      },
+      {
+        "en": "3\n2",
+        "zh": "3\n2"
+      },
+      {
+        "en": "(\"tea\", 3)\n(\"cake\", 2)",
+        "zh": "(\"tea\", 3)\n(\"cake\", 2)"
+      },
+      {
+        "en": "Nothing",
+        "zh": "无输出"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert list({\"tea\":3,\"cake\":2})==[\"tea\",\"cake\"]"
+  },
+  {
+    "id": "L3-018",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 1,
+    "type": "mcq",
+    "title": {
+      "en": "Starting at zero",
+      "zh": "enumerate默认从0开始"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nfor i, fruit in enumerate([\"pear\", \"kiwi\"]):\n    print(i, fruit)\n```",
+      "zh": "下面代码会输出什么？\n```python\nfor i, fruit in enumerate([\"pear\", \"kiwi\"]):\n    print(i, fruit)\n```"
+    },
+    "explanation": {
+      "en": "enumerate produces an index and an element together. Its default first index is zero, matching Python list positions. You can request a different start explicitly when making human-readable numbering.",
+      "zh": "enumerate会同时给出序号和元素，默认序号从0开始，与Python列表位置一致。若想给人看的编号从1开始，可以显式指定start=1。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "0 kiwi\n1 pear",
+        "zh": "0 kiwi\n1 pear"
+      },
+      {
+        "en": "0 pear\n1 kiwi",
+        "zh": "0 pear\n1 kiwi"
+      },
+      {
+        "en": "1 pear\n2 kiwi",
+        "zh": "1 pear\n2 kiwi"
+      },
+      {
+        "en": "pear 0\nkiwi 1",
+        "zh": "pear 0\nkiwi 1"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert list(enumerate([\"pear\",\"kiwi\"]))==[(0,\"pear\"),(1,\"kiwi\")]"
+  },
+  {
+    "id": "L3-019",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A false first check",
+      "zh": "while首次条件为假"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nn = 5\nwhile n < 3:\n    n += 1\nprint(n)\n```",
+      "zh": "下面代码会输出什么？\n```python\nn = 5\nwhile n < 3:\n    n += 1\nprint(n)\n```"
+    },
+    "explanation": {
+      "en": "while checks the condition before running its body. The very first test, 5 < 3, is false, so the body runs zero times. n remains unchanged.",
+      "zh": "while会先检查条件，再决定是否执行循环体。第一次检查5小于3就是假，所以循环体一次也不执行，n仍然是5。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "6",
+        "zh": "6"
+      },
+      {
+        "en": "Infinite loop",
+        "zh": "无限循环"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      }
+    ],
+    "answer": 2,
+    "verification": "n=5\nwhile n<3:n+=1\nassert n==5"
+  },
+  {
+    "id": "L3-020",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Repeated doubling",
+      "zh": "反复翻倍"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nn = 1\nwhile n < 10:\n    n *= 2\nprint(n)\n```",
+      "zh": "下面代码会输出什么？\n```python\nn = 1\nwhile n < 10:\n    n *= 2\nprint(n)\n```"
+    },
+    "explanation": {
+      "en": "The values after each update are 2, 4, 8 and 16. The loop only checks n < 10 before an iteration, so the final update can cross 10. It stops at the first value that fails the next check.",
+      "zh": "每轮更新后依次是2、4、8、16。条件在每轮开始前检查，所以最后一次更新可以越过10。到了16，下一轮检查失败，循环才结束。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "8",
+        "zh": "8"
+      },
+      {
+        "en": "10",
+        "zh": "10"
+      },
+      {
+        "en": "32",
+        "zh": "32"
+      },
+      {
+        "en": "16",
+        "zh": "16"
+      }
+    ],
+    "answer": 3,
+    "verification": "n=1\nwhile n<10:n*=2\nassert n==16"
+  },
+  {
+    "id": "L3-021",
+    "chapter": "lecture3",
+    "topic": "control",
+    "topicLabel": {
+      "en": "Break and continue",
+      "zh": "break 与 continue"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A break before adding",
+      "zh": "先break还是先累加"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ntotal = 0\nfor x in [3, 4, 0, 8]:\n    if x == 0:\n        break\n    total += x\nprint(total)\n```",
+      "zh": "下面代码会输出什么？\n```python\ntotal = 0\nfor x in [3, 4, 0, 8]:\n    if x == 0:\n        break\n    total += x\nprint(total)\n```"
+    },
+    "explanation": {
+      "en": "The zero is a stop marker. break leaves the loop before the addition on that iteration, and 8 is never visited. Trace statements in order rather than merely adding all numbers in the list.",
+      "zh": "0在这里是停止标记。遇到0就先break，因此本轮不会执行累加，后面的8也不会被访问。读代码时要按语句顺序走，而不是直接把整张表加起来。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "7",
+        "zh": "7"
+      },
+      {
+        "en": "15",
+        "zh": "15"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "8",
+        "zh": "8"
+      }
+    ],
+    "answer": 0,
+    "verification": "total=0\nfor x in [3,4,0,8]:\n if x==0:break\n total+=x\nassert total==7"
+  },
+  {
+    "id": "L3-022",
+    "chapter": "lecture3",
+    "topic": "control",
+    "topicLabel": {
+      "en": "Break and continue",
+      "zh": "break 与 continue"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Skipping negative readings",
+      "zh": "跳过负读数"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ntotal = 0\nfor x in [4, -2, 7, -5, 1]:\n    if x < 0:\n        continue\n    total += x\nprint(total)\n```",
+      "zh": "下面代码会输出什么？\n```python\ntotal = 0\nfor x in [4, -2, 7, -5, 1]:\n    if x < 0:\n        continue\n    total += x\nprint(total)\n```"
+    },
+    "explanation": {
+      "en": "continue skips the rest of the current iteration without ending the loop. Only 4, 7 and 1 reach the addition. The negative values do not subtract from the total.",
+      "zh": "continue只跳过本轮剩下的语句，不会终止整个循环。只有4、7、1会执行累加，所以得到12。负数并不是拿来减去，而是直接不处理。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 23; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "10",
+        "zh": "10"
+      },
+      {
+        "en": "12",
+        "zh": "12"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert sum(x for x in [4,-2,7,-5,1] if x>=0)==12"
+  },
+  {
+    "id": "L3-023",
+    "chapter": "lecture3",
+    "topic": "nested",
+    "topicLabel": {
+      "en": "Nested loops",
+      "zh": "嵌套循环"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "The nearest loop",
+      "zh": "break退出哪一层"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ncount = 0\nfor i in range(3):\n    for j in range(4):\n        count += 1\n        break\nprint(count)\n```",
+      "zh": "下面代码会输出什么？\n```python\ncount = 0\nfor i in range(3):\n    for j in range(4):\n        count += 1\n        break\nprint(count)\n```"
+    },
+    "explanation": {
+      "en": "break exits only the innermost loop containing it. Each of the three outer iterations enters the inner loop once and then breaks. The outer loop itself still completes all three iterations.",
+      "zh": "break只退出包含它的最内层循环。外层一共3轮，每轮内层执行一次就退出，因此累计3次。外层并没有被一起终止。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "12",
+        "zh": "12"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "1",
+        "zh": "1"
+      }
+    ],
+    "answer": 2,
+    "verification": "count=0\nfor i in range(3):\n for j in range(4):\n  count+=1\n  break\nassert count==3"
+  },
+  {
+    "id": "L3-024",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A continue trap",
+      "zh": "continue造成的陷阱"
+    },
+    "prompt": {
+      "en": "Why does this code not finish?\n```python\nn = 0\nwhile n < 3:\n    if n == 0:\n        continue\n    n += 1\n```",
+      "zh": "下面代码为什么不会结束？\n```python\nn = 0\nwhile n < 3:\n    if n == 0:\n        continue\n    n += 1\n```"
+    },
+    "explanation": {
+      "en": "At n=0 the code always reaches continue before n += 1. Returning to the condition changes nothing, so the same route repeats forever. Make sure every continuing path can make progress toward termination.",
+      "zh": "n为0时，总会先走到continue，下面的n+=1永远执行不到。重新检查条件时n还是0，于是不断重复。检查while时，要确认每条可能继续的路径都能推进状态。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "continue automatically sets n back to zero.",
+        "zh": "continue会自动把n重置为0。"
+      },
+      {
+        "en": "while cannot use an integer condition.",
+        "zh": "while不能检查整数相关条件。"
+      },
+      {
+        "en": "The loop runs exactly three times.",
+        "zh": "循环恰好执行3次。"
+      },
+      {
+        "en": "continue skips the update, so n stays zero.",
+        "zh": "continue跳过了更新，n始终是0。"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "id": "L3-025",
+    "chapter": "lecture3",
+    "topic": "logic",
+    "topicLabel": {
+      "en": "Boolean conditions",
+      "zh": "布尔条件"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Two requirements together",
+      "zh": "同时满足两项要求"
+    },
+    "prompt": {
+      "en": "A coupon is valid only when total >= 50 and member is True. Which condition matches this rule?",
+      "zh": "优惠券只有在total至少50且member为True时才有效。哪个条件符合规则？"
+    },
+    "explanation": {
+      "en": "Both the spending requirement and membership are necessary, so use and. Spending exactly 50 is included by >=. or would allow either condition alone, which changes the rule.",
+      "zh": "金额门槛和会员资格缺一不可，所以用and。金额恰好50也满足要求，因此使用>=。换成or，就变成只满足其中一项也能使用。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "total >= 50 and member",
+        "zh": "total >= 50 and member"
+      },
+      {
+        "en": "total > 50 or member",
+        "zh": "total > 50 or member"
+      },
+      {
+        "en": "total >= 50 or member",
+        "zh": "total >= 50 or member"
+      },
+      {
+        "en": "not member and total >= 50",
+        "zh": "not member and total >= 50"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert (50>=50 and True) and not (49>=50 and True) and not (60>=50 and False)"
+  },
+  {
+    "id": "L3-026",
+    "chapter": "lecture3",
+    "topic": "range",
+    "topicLabel": {
+      "en": "Counting loops",
+      "zh": "计数循环"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Including the final number",
+      "zh": "让终点也参加累加"
+    },
+    "prompt": {
+      "en": "For integer n >= 1, which loop header visits 1 through n, including n?",
+      "zh": "对于整数n>=1，哪个循环头能依次访问1到n，包含n？"
+    },
+    "explanation": {
+      "en": "range excludes its stop value. Setting the stop to n + 1 makes n the final visited number while keeping the start at 1. Starting at zero adds an unnecessary extra value for this task.",
+      "zh": "range不包含终止值，把终点写成n+1，最后访问到的才是n。起点仍写1，才能准确表达“从1到n”。range(n)从0开始且漏掉n。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "for i in range(n):",
+        "zh": "for i in range(n):"
+      },
+      {
+        "en": "for i in range(1, n + 1):",
+        "zh": "for i in range(1, n + 1):"
+      },
+      {
+        "en": "for i in range(1, n):",
+        "zh": "for i in range(1, n):"
+      },
+      {
+        "en": "for i in range(n + 1, 1):",
+        "zh": "for i in range(n + 1, 1):"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert list(range(1,4+1))==[1,2,3,4]"
+  },
+  {
+    "id": "L3-027",
+    "chapter": "lecture3",
+    "topic": "integration",
+    "topicLabel": {
+      "en": "Combined control flow",
+      "zh": "控制流程综合"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Counting rather than summing",
+      "zh": "计数与求和不同"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nvalues = [1, 5, 2, 8]\ncount = 0\nfor value in values:\n    if value > 3:\n        count += 1\nprint(count)\n```",
+      "zh": "下面代码会输出什么？\n```python\nvalues = [1, 5, 2, 8]\ncount = 0\nfor value in values:\n    if value > 3:\n        count += 1\nprint(count)\n```"
+    },
+    "explanation": {
+      "en": "Two items, 5 and 8, satisfy the condition. Adding 1 counts items; adding value would instead compute their sum, 13. Decide first whether your accumulator means “how many” or “how much.”",
+      "zh": "满足条件的是5和8，一共有2项。每次加1是在数个数；如果加value，求得的才是13。先明确变量是在回答“几个”还是“总共多少”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 15; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "13",
+        "zh": "13"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert sum(1 for v in [1,5,2,8] if v>3)==2"
+  },
+  {
+    "id": "L3-028",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A requested starting index",
+      "zh": "指定enumerate起点"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nfor index, letter in enumerate(\"AB\", start=1):\n    print(index, letter)\n```",
+      "zh": "下面代码会输出什么？\n```python\nfor index, letter in enumerate(\"AB\", start=1):\n    print(index, letter)\n```"
+    },
+    "explanation": {
+      "en": "start=1 changes the produced labels, not the underlying string. The first element is still A, but its displayed index is 1. This is useful for numbered lists for people.",
+      "zh": "start=1改的是输出编号，不会改变字符串的内容或访问顺序。第一个字母仍是A，只是编号变为1。给用户展示序号时很常用。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "0 A\n1 B",
+        "zh": "0 A\n1 B"
+      },
+      {
+        "en": "1 B\n2 A",
+        "zh": "1 B\n2 A"
+      },
+      {
+        "en": "A 1\nB 2",
+        "zh": "A 1\nB 2"
+      },
+      {
+        "en": "1 A\n2 B",
+        "zh": "1 A\n2 B"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert list(enumerate(\"AB\",start=1))==[(1,\"A\"),(2,\"B\")]"
+  },
+  {
+    "id": "L3-029",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "Using dictionary values",
+      "zh": "遍历字典键值对"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nstock = {\"tea\": 4, \"cake\": 7}\ntotal = 0\nfor product, quantity in stock.items():\n    total += quantity\nprint(total)\n```",
+      "zh": "下面代码会输出什么？\n```python\nstock = {\"tea\": 4, \"cake\": 7}\ntotal = 0\nfor product, quantity in stock.items():\n    total += quantity\nprint(total)\n```"
+    },
+    "explanation": {
+      "en": "items() provides a pair on every iteration, so quantity receives the numeric stock. The total becomes 4 + 7 = 11. Counting keys alone would answer a different question: how many products there are.",
+      "zh": "items()每轮提供一对键和值，所以quantity接到的是库存数字。累加4与7得到11。只数键的数量得到的是商品种类数，是另一个问题。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "11",
+        "zh": "11"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "47",
+        "zh": "47"
+      },
+      {
+        "en": "tea cake",
+        "zh": "tea cake"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert sum({\"tea\":4,\"cake\":7}.values())==11"
+  },
+  {
+    "id": "L3-030",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 2,
+    "type": "mcq",
+    "title": {
+      "en": "A strict stopping threshold",
+      "zh": "严格阈值的停止点"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nn = 1\ncount = 0\nwhile 1 / n > 0.25:\n    count += 1\n    n += 1\nprint(count)\n```",
+      "zh": "下面代码会输出什么？\n```python\nn = 1\ncount = 0\nwhile 1 / n > 0.25:\n    count += 1\n    n += 1\nprint(count)\n```"
+    },
+    "explanation": {
+      "en": "The accepted denominators are 1, 2 and 3. At n=4, 1/n equals 0.25, but the condition requires strictly greater, so the loop stops. Changing > to >= would add one more term.",
+      "zh": "分母1、2、3能进入循环。n为4时倒数正好是0.25，但这里要求严格大于，所以停止。若改成>=，就会多处理一项。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 21; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      }
+    ],
+    "answer": 1,
+    "verification": "n=1;count=0\nwhile 1/n>0.25:\n count+=1;n+=1\nassert count==3"
+  },
+  {
+    "id": "L3-031",
+    "chapter": "lecture3",
+    "topic": "logic",
+    "topicLabel": {
+      "en": "Boolean conditions",
+      "zh": "布尔条件"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "A safe division guard",
+      "zh": "短路保护除法"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nx = 0\nif x != 0 and 10 / x > 2:\n    print(\"yes\")\nelse:\n    print(\"no\")\n```",
+      "zh": "下面代码会输出什么？\n```python\nx = 0\nif x != 0 and 10 / x > 2:\n    print(\"yes\")\nelse:\n    print(\"no\")\n```"
+    },
+    "explanation": {
+      "en": "and evaluates left to right and stops once the result is already false. Since x != 0 is false, 10/x is never evaluated. This order safely guards the division; reversing it would not.",
+      "zh": "and从左往右计算，左边已经为假时就不会再计算右边。x!=0为假，因此10/x根本不会执行。把保护条件放在前面，才能避免除零错误。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "ZeroDivisionError",
+        "zh": "ZeroDivisionError"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "no",
+        "zh": "no"
+      },
+      {
+        "en": "yes",
+        "zh": "yes"
+      }
+    ],
+    "answer": 2,
+    "verification": "x=0\nassert (x!=0 and 10/x>2) is False"
+  },
+  {
+    "id": "L3-032",
+    "chapter": "lecture3",
+    "topic": "logic",
+    "topicLabel": {
+      "en": "Boolean conditions",
+      "zh": "布尔条件"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "An empty collection",
+      "zh": "空列表的真假"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nitems = []\nif items:\n    print(\"some\")\nelse:\n    print(\"empty\")\n```",
+      "zh": "下面代码会输出什么？\n```python\nitems = []\nif items:\n    print(\"some\")\nelse:\n    print(\"empty\")\n```"
+    },
+    "explanation": {
+      "en": "An empty list is treated as false in a condition. This allows if items to mean “there is at least one item.” A non-empty list is true even if one of its elements is zero.",
+      "zh": "空列表在条件中会被当作假，所以走else。这让if items可以表达“至少有一项”。列表只要非空就是真，即使里面的元素是0也一样。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "some",
+        "zh": "some"
+      },
+      {
+        "en": "[]",
+        "zh": "[]"
+      },
+      {
+        "en": "TypeError",
+        "zh": "TypeError"
+      },
+      {
+        "en": "empty",
+        "zh": "empty"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert not [] and bool([0])"
+  },
+  {
+    "id": "L3-033",
+    "chapter": "lecture3",
+    "topic": "integration",
+    "topicLabel": {
+      "en": "Combined control flow",
+      "zh": "控制流程综合"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "A product accumulator",
+      "zh": "乘积累加器的起点"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\nproduct = 1\nfor x in [2, 3, 4]:\n    product *= x\nprint(product)\n```",
+      "zh": "下面代码会输出什么？\n```python\nproduct = 1\nfor x in [2, 3, 4]:\n    product *= x\nprint(product)\n```"
+    },
+    "explanation": {
+      "en": "Multiplication accumulates from 1 because 1 does not change a product. The steps are 1×2, 2×3 and 6×4. Starting at zero would make every later product zero, regardless of the data.",
+      "zh": "连乘应从1开始，因为乘以1不改变结果。这里依次得到2、6、24。若从0开始，无论后面乘什么都一直是0。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; Python Programming Exercises, Gently Explained · #13 Sum & Product",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "24",
+        "zh": "24"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "9",
+        "zh": "9"
+      },
+      {
+        "en": "123",
+        "zh": "123"
+      }
+    ],
+    "answer": 0,
+    "verification": "p=1\nfor x in [2,3,4]:p*=x\nassert p==24"
+  },
+  {
+    "id": "L3-034",
+    "chapter": "lecture3",
+    "topic": "nested",
+    "topicLabel": {
+      "en": "Nested loops",
+      "zh": "嵌套循环"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "A triangular loop",
+      "zh": "三角形循环次数"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ncount = 0\nfor i in range(1, 4):\n    for j in range(i):\n        count += 1\nprint(count)\n```",
+      "zh": "下面代码会输出什么？\n```python\ncount = 0\nfor i in range(1, 4):\n    for j in range(i):\n        count += 1\nprint(count)\n```"
+    },
+    "explanation": {
+      "en": "The inner loop length depends on the current outer value. It runs 1 time, then 2 times, then 3 times. Add these lengths to obtain 6 rather than multiplying two fixed loop lengths.",
+      "zh": "内层循环的次数随外层i改变，依次执行1次、2次、3次。把次数加起来得到6，而不是直接把外层次数乘以一个固定内层次数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 12; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "6",
+        "zh": "6"
+      },
+      {
+        "en": "9",
+        "zh": "9"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert sum(len(range(i)) for i in range(1,4))==6"
+  },
+  {
+    "id": "L3-035",
+    "chapter": "lecture3",
+    "topic": "control",
+    "topicLabel": {
+      "en": "Break and continue",
+      "zh": "break 与 continue"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "Skip, stop and add",
+      "zh": "跳过、停止与累加的顺序"
+    },
+    "prompt": {
+      "en": "What is printed by this code?\n```python\ntotal = 0\nfor x in [2, -1, 4, 0, 9]:\n    if x == 0:\n        break\n    if x < 0:\n        continue\n    total += x\nprint(total)\n```",
+      "zh": "下面代码会输出什么？\n```python\ntotal = 0\nfor x in [2, -1, 4, 0, 9]:\n    if x == 0:\n        break\n    if x < 0:\n        continue\n    total += x\nprint(total)\n```"
+    },
+    "explanation": {
+      "en": "The negative item is skipped, but it does not stop processing. Zero does stop processing, so 9 is never reached. Only 2 and 4 contribute to the total.",
+      "zh": "负数只被跳过，不会终止循环；0才是停止信号，因此后面的9不会被读取。真正参加累加的只有2和4，结果为6。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "15",
+        "zh": "15"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "6",
+        "zh": "6"
+      },
+      {
+        "en": "14",
+        "zh": "14"
+      }
+    ],
+    "answer": 2,
+    "verification": "total=0\nfor x in [2,-1,4,0,9]:\n if x==0:break\n if x<0:continue\n total+=x\nassert total==6"
+  },
+  {
+    "id": "L3-036",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 3,
+    "type": "mcq",
+    "title": {
+      "en": "Repair an unreachable category",
+      "zh": "修复永远到不了的类别"
+    },
+    "prompt": {
+      "en": "The goal is to label scores >= 80 as \"high\", scores 50–79 as \"pass\", and lower scores as \"retry\". Which first condition should come before elif score >= 50?",
+      "zh": "目标是将至少80分标为high，50–79分标为pass，更低标为retry。在elif score >= 50前，首个if应检查什么？"
+    },
+    "explanation": {
+      "en": "The high category is a subset of the passing category. Check the narrower high range first, then let the broader passing test handle the remaining values. Otherwise the early pass branch absorbs high scores.",
+      "zh": "高分范围包含在及格范围中，因此应先检查更窄的高分范围。没被高分选中的，再检查及格条件。若反过来，高分早就被pass分支截走了。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "options": [
+      {
+        "en": "score >= 50",
+        "zh": "score >= 50"
+      },
+      {
+        "en": "score < 80",
+        "zh": "score < 80"
+      },
+      {
+        "en": "score <= 50",
+        "zh": "score <= 50"
+      },
+      {
+        "en": "score >= 80",
+        "zh": "score >= 80"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert all((\"high\" if s>=80 else \"pass\" if s>=50 else \"retry\")==e for s,e in [(49,\"retry\"),(50,\"pass\"),(79,\"pass\"),(80,\"high\")])"
+  },
+  {
+    "id": "L3-037",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Three signs",
+      "zh": "判断正负与零"
+    },
+    "prompt": {
+      "en": "Write sign_label(n). Return \"positive\" for n > 0, \"negative\" for n < 0, and \"zero\" otherwise. n is a real number.",
+      "zh": "编写sign_label(n)。n大于0返回positive，小于0返回negative，否则返回zero。n为实数。"
+    },
+    "explanation": {
+      "en": "Check the positive case, then the negative case. If neither matches, the number must be zero. Keeping zero separate prevents it from accidentally falling into a positive or negative category.",
+      "zh": "先检查正数，再检查负数。两者都不是时，剩下的就是0。单独处理0，可以避免把它错误地并入正数或负数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 6; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def sign_label(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def sign_label(n):\n    if n > 0:\n        return \"positive\"\n    elif n < 0:\n        return \"negative\"\n    return \"zero\"\n",
+    "tests": "assert sign_label(3)==\"positive\"\nassert sign_label(-0.5)==\"negative\"\nassert sign_label(0)==\"zero\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Positive, negative and exactly zero.",
+      "zh": "正数、负数和恰好为0。"
+    }
+  },
+  {
+    "id": "L3-038",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Count customer age groups",
+      "zh": "统计顾客年龄组"
+    },
+    "prompt": {
+      "en": "Write age_groups(ages) for a list of non-negative integer ages. Return a tuple (under_18, from_18_to_65, over_65) of counts. Both 18 and 65 belong to the middle group.",
+      "zh": "编写age_groups(ages)，ages是非负整数年龄列表。返回人数元组(未满18岁,18至65岁,超过65岁)，18和65均属于中间组。"
+    },
+    "explanation": {
+      "en": "Each customer must enter exactly one branch. Once age < 18 fails, the elif only needs to check the upper bound 65. Three separate counters let the function return all group sizes together.",
+      "zh": "每位顾客只能落入一个分支。第一个条件失败后，已经知道年龄至少18，所以elif只需检查是否不超过65。用三个计数器，最后一起返回各组人数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 25; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def age_groups(ages):\n    # Write your code here.\n    pass\n",
+    "solution": "def age_groups(ages):\n    young = middle = older = 0\n    for age in ages:\n        if age < 18:\n            young += 1\n        elif age <= 65:\n            middle += 1\n        else:\n            older += 1\n    return young, middle, older\n",
+    "tests": "assert age_groups([17,18,65,66])==(1,2,1)\nassert age_groups([])==(0,0,0)\nassert age_groups([0,12,90])==(2,0,1)\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Empty input and the four boundary ages 17, 18, 65, 66.",
+      "zh": "空列表，以及17、18、65、66四个边界年龄。"
+    }
+  },
+  {
+    "id": "L3-039",
+    "chapter": "lecture3",
+    "topic": "logic",
+    "topicLabel": {
+      "en": "Boolean conditions",
+      "zh": "布尔条件"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Keep readings in range",
+      "zh": "筛选区间内读数"
+    },
+    "prompt": {
+      "en": "Write keep_interval(values, low, high). Return a new list of the values in the closed interval [low, high], preserving order. Assume low <= high.",
+      "zh": "编写keep_interval(values, low, high)。返回落在闭区间[low, high]内的新列表，保持原顺序。假定low<=high。"
+    },
+    "explanation": {
+      "en": "Scan the input once and append only values satisfying both bounds. Equality is allowed on each side because the interval is closed. Building a separate result preserves the input and its order.",
+      "zh": "顺序扫描列表，只把同时满足上下界的数加入结果。因为是闭区间，两端都要包含等号。另建结果列表也能保留原数据与原顺序。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 5; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def keep_interval(values, low, high):\n    # Write your code here.\n    pass\n",
+    "solution": "def keep_interval(values, low, high):\n    result = []\n    for value in values:\n        if low <= value <= high:\n            result.append(value)\n    return result\n",
+    "tests": "assert keep_interval([-1,0,2,4,5],0,4)==[0,2,4]\nassert keep_interval([],1,3)==[]\nassert keep_interval([2,1,2],2,2)==[2,2]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Both endpoints, no matches and repeated values.",
+      "zh": "两个端点、没有匹配值及重复值。"
+    }
+  },
+  {
+    "id": "L3-040",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "A simple ticket rule",
+      "zh": "按年龄计算票价"
+    },
+    "prompt": {
+      "en": "Write ticket_price(age). Return 0 for ages below 6, 8 for ages 6–17, 12 for ages 18–64, and 6 for ages at least 65. age is a non-negative integer.",
+      "zh": "编写ticket_price(age)。不足6岁票价0，6–17岁票价8，18–64岁票价12，至少65岁票价6。age为非负整数。"
+    },
+    "explanation": {
+      "en": "Order the thresholds from smallest to largest. Reaching a later elif already means all smaller-age checks failed, so lower bounds are implicit. Test the age just below and exactly at every threshold.",
+      "zh": "把年龄门槛从小到大排列。能走到后面的elif，说明前面更小的范围都已被排除，因此不必重复写下界。每个分界都测试“前一岁”和“恰好这一岁”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 9; 7_Making_Choices_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/7_Making_Choices_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def ticket_price(age):\n    # Write your code here.\n    pass\n",
+    "solution": "def ticket_price(age):\n    if age < 6:\n        return 0\n    elif age < 18:\n        return 8\n    elif age < 65:\n        return 12\n    return 6\n",
+    "tests": "assert ticket_price(5)==0 and ticket_price(6)==8\nassert ticket_price(17)==8 and ticket_price(18)==12\nassert ticket_price(64)==12 and ticket_price(65)==6\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "All three age boundaries on both sides.",
+      "zh": "三个年龄分界的两侧。"
+    }
+  },
+  {
+    "id": "L3-041",
+    "chapter": "lecture3",
+    "topic": "range",
+    "topicLabel": {
+      "en": "Counting loops",
+      "zh": "计数循环"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Sum even numbers",
+      "zh": "累加范围内偶数"
+    },
+    "prompt": {
+      "en": "Write sum_even(n) using a loop. Return the sum of even integers from 0 through n, inclusive. n is a non-negative integer; do not use sum().",
+      "zh": "使用循环编写sum_even(n)，返回0到n之间所有偶数之和，包含n。n是非负整数，不使用sum()。"
+    },
+    "explanation": {
+      "en": "A step of 2 visits even numbers directly. Use n+1 as the stop so an even n is included. The same loop handles odd n without a separate case because it simply stops at the last even value below n.",
+      "zh": "步长2能直接访问偶数。终点写n+1，才能在n是偶数时把它包括进来。n为奇数时也不用额外分支，循环自然停在前一个偶数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def sum_even(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def sum_even(n):\n    total = 0\n    for value in range(0, n + 1, 2):\n        total += value\n    return total\n",
+    "tests": "assert sum_even(0)==0\nassert sum_even(6)==12\nassert sum_even(7)==12\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "n=0, an even upper bound and an odd upper bound.",
+      "zh": "n为0、偶数上界和奇数上界。"
+    }
+  },
+  {
+    "id": "L3-042",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Count letter A",
+      "zh": "不分大小写统计A"
+    },
+    "prompt": {
+      "en": "Write count_a(text) using a loop. Count both \"a\" and \"A\", but no other characters. Return an integer.",
+      "zh": "使用循环编写count_a(text)，统计小写a与大写A的总数，不统计其他字符，返回整数。"
+    },
+    "explanation": {
+      "en": "A string loop examines one character at a time. The or condition accepts either spelling and the counter rises by one for each match. Do not reset the counter inside the loop.",
+      "zh": "遍历字符串时，每次拿到一个字符。or允许两种大小写写法，每次匹配就加1。计数器要在循环前初始化，不能每一轮重新清零。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 17; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def count_a(text):\n    # Write your code here.\n    pass\n",
+    "solution": "def count_a(text):\n    count = 0\n    for char in text:\n        if char == \"a\" or char == \"A\":\n            count += 1\n    return count\n",
+    "tests": "assert count_a(\"Abracadabra\")==5\nassert count_a(\"\")==0\nassert count_a(\"BBB Aa\")==2\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Mixed case, no matches and an empty string.",
+      "zh": "混合大小写、无匹配以及空字符串。"
+    }
+  },
+  {
+    "id": "L3-043",
+    "chapter": "lecture3",
+    "topic": "range",
+    "topicLabel": {
+      "en": "Counting loops",
+      "zh": "计数循环"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Reverse positions",
+      "zh": "生成倒序位置"
+    },
+    "prompt": {
+      "en": "Write reverse_positions(n). Return [n-1, n-2, ..., 0] using range and a loop. For n=0 return an empty list. n is a non-negative integer.",
+      "zh": "编写reverse_positions(n)，使用range与循环返回[n-1,n-2,...,0]。n为0时返回空列表。n是非负整数。"
+    },
+    "explanation": {
+      "en": "The first position is n-1. A step of -1 moves backward, and a stop of -1 keeps zero included because the stop itself is excluded. Starting at n would introduce an invalid list position.",
+      "zh": "长度为n的列表最后位置是n-1。步长-1用于倒着走；终点设-1，才能把0保留下来，因为终点本身不包含。若从n开始，就多出了一个越界位置。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 13; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def reverse_positions(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def reverse_positions(n):\n    positions = []\n    for i in range(n - 1, -1, -1):\n        positions.append(i)\n    return positions\n",
+    "tests": "assert reverse_positions(4)==[3,2,1,0]\nassert reverse_positions(1)==[0]\nassert reverse_positions(0)==[]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Zero, one and several positions.",
+      "zh": "零个、一个和多个位置。"
+    }
+  },
+  {
+    "id": "L3-044",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Count passing scores",
+      "zh": "统计达标人数"
+    },
+    "prompt": {
+      "en": "Write count_passed(scores, threshold=50). Return how many scores are at least threshold. Use a loop and do not use sum().",
+      "zh": "编写count_passed(scores, threshold=50)，用循环返回分数至少为threshold的个数，不使用sum()。"
+    },
+    "explanation": {
+      "en": "This task counts matching items rather than adding their scores. Compare each score with the threshold and increase the counter by one when it passes. >= ensures a score exactly on the threshold counts.",
+      "zh": "这里要统计人数，不是累加分数。每个分数达到门槛时，把人数加1即可。使用>=，才能让恰好达到门槛的分数也被计入。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 16; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def count_passed(scores, threshold=50):\n    # Write your code here.\n    pass\n",
+    "solution": "def count_passed(scores, threshold=50):\n    count = 0\n    for score in scores:\n        if score >= threshold:\n            count += 1\n    return count\n",
+    "tests": "assert count_passed([49,50,80])==2\nassert count_passed([],50)==0\nassert count_passed([5,6,7],6)==2\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Exactly at the threshold, below it and empty input.",
+      "zh": "恰好达到门槛、低于门槛及空列表。"
+    }
+  },
+  {
+    "id": "L3-045",
+    "chapter": "lecture3",
+    "topic": "control",
+    "topicLabel": {
+      "en": "Break and continue",
+      "zh": "break 与 continue"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Find the first negative position",
+      "zh": "寻找首个负数位置"
+    },
+    "prompt": {
+      "en": "Write first_negative(values). Return the zero-based index of the first negative value, or -1 if there is none. Use a loop.",
+      "zh": "编写first_negative(values)，返回第一个负数的从0开始的位置；若没有负数，返回-1。使用循环实现。"
+    },
+    "explanation": {
+      "en": "enumerate gives both the position and the value. Save the first matching position and break so later negatives cannot replace it. Keeping -1 as the initial result also handles an empty list.",
+      "zh": "enumerate同时给出位置与数值。找到第一个负数后保存位置并break，后面的负数就不会覆盖结果。初始结果设为-1，也自然处理了空列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def first_negative(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def first_negative(values):\n    result = -1\n    for index, value in enumerate(values):\n        if value < 0:\n            result = index\n            break\n    return result\n",
+    "tests": "assert first_negative([3,-2,-5])==1\nassert first_negative([-1,3])==0\nassert first_negative([0,4])==-1\nassert first_negative([])==-1\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "First position, multiple matches, no matches and empty input.",
+      "zh": "首位命中、多次命中、没有负数及空列表。"
+    }
+  },
+  {
+    "id": "L3-046",
+    "chapter": "lecture3",
+    "topic": "control",
+    "topicLabel": {
+      "en": "Break and continue",
+      "zh": "break 与 continue"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Stop at zero",
+      "zh": "遇零停止累加"
+    },
+    "prompt": {
+      "en": "Write sum_until_zero(values). Add values up to the first zero, excluding the zero and all following values. If no zero occurs, add the whole list. Use a loop.",
+      "zh": "编写sum_until_zero(values)。累加第一个0之前的值，0及其后内容不参加。若没有0，则累加整个列表。使用循环。"
+    },
+    "explanation": {
+      "en": "Test the stop marker before adding. break leaves the loop completely, so values after zero are not visited. Negative values are still ordinary data for this task and should not be skipped.",
+      "zh": "先检查停止标记，再进行累加。break会直接退出循环，因此0后面的值不会再被访问。本题负数仍是正常数据，不应额外跳过。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def sum_until_zero(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def sum_until_zero(values):\n    total = 0\n    for value in values:\n        if value == 0:\n            break\n        total += value\n    return total\n",
+    "tests": "assert sum_until_zero([2,3,0,99])==5\nassert sum_until_zero([0,4])==0\nassert sum_until_zero([-2,5])==3\nassert sum_until_zero([])==0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "A leading zero, no zero, negative data and an empty list.",
+      "zh": "开头就是0、没有0、含负数和空列表。"
+    }
+  },
+  {
+    "id": "L3-047",
+    "chapter": "lecture3",
+    "topic": "control",
+    "topicLabel": {
+      "en": "Break and continue",
+      "zh": "break 与 continue"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Ignore multiples of three",
+      "zh": "跳过3的倍数"
+    },
+    "prompt": {
+      "en": "Write sum_nonmultiples_of_three(values). Use a loop and continue to sum only integers not divisible by 3. Zero is divisible by 3.",
+      "zh": "编写sum_nonmultiples_of_three(values)，使用循环与continue，只累加不能被3整除的整数。0也能被3整除。"
+    },
+    "explanation": {
+      "en": "A remainder of zero means divisible by three. continue skips that value while allowing later values to be checked. The same remainder rule works for negative multiples and zero.",
+      "zh": "除以3余数为0，就说明能整除。此时continue跳过该值，但仍会检查后面的值。负的3的倍数和0也遵循同一余数规则。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 23; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def sum_nonmultiples_of_three(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def sum_nonmultiples_of_three(values):\n    total = 0\n    for value in values:\n        if value % 3 == 0:\n            continue\n        total += value\n    return total\n",
+    "tests": "assert sum_nonmultiples_of_three([1,3,4,6,8])==13\nassert sum_nonmultiples_of_three([0,-3,-2])==-2\nassert sum_nonmultiples_of_three([])==0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Positive multiples, zero, negative values and empty input.",
+      "zh": "正倍数、0、负数和空列表。"
+    }
+  },
+  {
+    "id": "L3-048",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 1,
+    "type": "code",
+    "title": {
+      "en": "Sum decimal digits",
+      "zh": "计算十进制数位和"
+    },
+    "prompt": {
+      "en": "Write digit_sum(n) using a while loop, % and //. n is a non-negative integer. Return the sum of its decimal digits; digit_sum(0) is 0.",
+      "zh": "编写digit_sum(n)，使用while、%和//计算非负整数n的十进制数位之和。digit_sum(0)应为0。"
+    },
+    "explanation": {
+      "en": "n % 10 extracts the last digit and n // 10 removes it. Repeat until no digits remain. Starting total at zero gives the requested answer for n=0 without a special branch.",
+      "zh": "n%10取得最后一位，n//10则删掉最后一位。不断重复，直到没有剩余数位。total初始为0，因此输入0时不进入循环也能得到正确结果。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def digit_sum(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def digit_sum(n):\n    total = 0\n    while n > 0:\n        total += n % 10\n        n //= 10\n    return total\n",
+    "tests": "assert digit_sum(4052)==11\nassert digit_sum(0)==0\nassert digit_sum(999)==27\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Internal zeros, repeated digits and n=0.",
+      "zh": "中间含0、重复数位及n=0。"
+    }
+  },
+  {
+    "id": "L3-049",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "How many doublings?",
+      "zh": "需要翻倍多少次"
+    },
+    "prompt": {
+      "en": "Write doubling_steps(start, target). start and target are positive numbers. Repeatedly double start until it is at least target, and return the number of doublings. Return 0 if start already reaches target.",
+      "zh": "编写doubling_steps(start,target)，二者均为正数。反复将start翻倍，直到至少达到target，返回翻倍次数。开始就已达到时返回0。"
+    },
+    "explanation": {
+      "en": "Keep the current value and the number of updates in separate variables. The condition is value < target because equality already meets the goal. Each doubling increases the counter once, including the update that crosses the target.",
+      "zh": "把当前值和更新次数分开保存。达到相等就已完成，因此条件是value<target。每翻倍一次就加1，最后越过目标的那次也算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def doubling_steps(start, target):\n    # Write your code here.\n    pass\n",
+    "solution": "def doubling_steps(start, target):\n    count = 0\n    value = start\n    while value < target:\n        value *= 2\n        count += 1\n    return count\n",
+    "tests": "assert doubling_steps(1,10)==4\nassert doubling_steps(5,5)==0\nassert doubling_steps(3,12)==2\nassert doubling_steps(20,5)==0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "An exact hit, an overshoot and a goal already reached.",
+      "zh": "恰好达到、超过目标及开始就已达标。"
+    }
+  },
+  {
+    "id": "L3-050",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Count harmonic terms",
+      "zh": "统计倒数项数量"
+    },
+    "prompt": {
+      "en": "Write harmonic_term_count(tolerance). Starting at n=1, count denominators for which 1/n is strictly greater than tolerance. Use while. Assume 0.001 <= tolerance <= 2.",
+      "zh": "编写harmonic_term_count(tolerance)，从n=1开始，用while统计满足1/n严格大于tolerance的分母个数。假定0.001<=tolerance<=2。"
+    },
+    "explanation": {
+      "en": "The next denominator must be checked before it is counted. With tolerance 0.25, denominators 1, 2 and 3 pass, but 4 only equals the limit. Update n on every iteration so the condition eventually fails.",
+      "zh": "应先判断这一分母是否符合条件，再把它计入。阈值为0.25时，1、2、3符合，4只能达到相等。每轮都要更新n，才能最终停止。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 21; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def harmonic_term_count(tolerance):\n    # Write your code here.\n    pass\n",
+    "solution": "def harmonic_term_count(tolerance):\n    n = 1\n    count = 0\n    while 1 / n > tolerance:\n        count += 1\n        n += 1\n    return count\n",
+    "tests": "assert harmonic_term_count(0.25)==3\nassert harmonic_term_count(1)==0\nassert harmonic_term_count(0.5)==1\nassert harmonic_term_count(2)==0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Strict equality at 1/n and a threshold excluding all terms.",
+      "zh": "1/n恰好等于阈值，以及全部项都不符合的情况。"
+    }
+  },
+  {
+    "id": "L3-051",
+    "chapter": "lecture3",
+    "topic": "nested",
+    "topicLabel": {
+      "en": "Nested loops",
+      "zh": "嵌套循环"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Build a multiplication grid",
+      "zh": "建立乘法网格"
+    },
+    "prompt": {
+      "en": "Write multiplication_grid(rows, cols). Return a list of rows, where position [i][j] contains (i+1)*(j+1). rows and cols are non-negative integers. If cols=0, include rows empty lists.",
+      "zh": "编写multiplication_grid(rows,cols)，返回二维列表，其中[i][j]为(i+1)*(j+1)。rows和cols为非负整数。cols为0时，仍返回rows个空行。"
+    },
+    "explanation": {
+      "en": "The outer loop creates rows and the inner loop fills columns. Create a fresh row list for every outer iteration so rows do not share storage. The mathematical numbering starts at 1 even though list positions start at 0.",
+      "zh": "外层负责建立行，内层负责填写列。每轮外层都要新建row，避免多行共用同一列表。题目的乘法编号从1开始，但列表位置仍然从0开始。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 12; Python Programming Exercises, Gently Explained · #25 Multiplication Table",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def multiplication_grid(rows, cols):\n    # Write your code here.\n    pass\n",
+    "solution": "def multiplication_grid(rows, cols):\n    grid = []\n    for i in range(1, rows + 1):\n        row = []\n        for j in range(1, cols + 1):\n            row.append(i * j)\n        grid.append(row)\n    return grid\n",
+    "tests": "assert multiplication_grid(2,3)==[[1,2,3],[2,4,6]]\nassert multiplication_grid(0,3)==[]\nassert multiplication_grid(2,0)==[[],[]]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "A rectangular grid, zero rows and zero columns.",
+      "zh": "非正方形网格、零行和零列。"
+    }
+  },
+  {
+    "id": "L3-052",
+    "chapter": "lecture3",
+    "topic": "nested",
+    "topicLabel": {
+      "en": "Nested loops",
+      "zh": "嵌套循环"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "All distinct-position pairs",
+      "zh": "列出不同位置的组合"
+    },
+    "prompt": {
+      "en": "Write position_pairs(items). Return tuples (items[i], items[j]) for every pair of positions i < j, in increasing i and then increasing j order. Equal values at different positions still form a pair.",
+      "zh": "编写position_pairs(items)，按i递增、再按j递增的顺序，返回所有i<j位置形成的(items[i],items[j])元组。不同位置的值即使相同，也应组成一对。"
+    },
+    "explanation": {
+      "en": "Start the inner index at i+1. That avoids pairing an item with itself and avoids listing the same two positions in reverse order. Compare positions, not values, so repeated values remain valid data.",
+      "zh": "内层从i+1开始，就不会把某位置与自己配对，也不会把同一对位置反向重复列出。限制的是位置，不是数值，因此重复值仍可能形成有效的一对。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 12; Python Programming Exercises, Gently Explained · #26 Handshakes",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def position_pairs(items):\n    # Write your code here.\n    pass\n",
+    "solution": "def position_pairs(items):\n    pairs = []\n    for i in range(len(items)):\n        for j in range(i + 1, len(items)):\n            pairs.append((items[i], items[j]))\n    return pairs\n",
+    "tests": "assert position_pairs([\"A\",\"B\",\"C\"])==[(\"A\",\"B\"),(\"A\",\"C\"),(\"B\",\"C\")]\nassert position_pairs([1,1])==[(1,1)]\nassert position_pairs([])==[]\nassert position_pairs([5])==[]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Three items, equal values, no items and one item.",
+      "zh": "三个元素、相同值、空列表及单个元素。"
+    }
+  },
+  {
+    "id": "L3-053",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Count large stock entries",
+      "zh": "统计高库存商品"
+    },
+    "prompt": {
+      "en": "Write count_large_stock(stock, threshold). stock maps product names to numeric quantities. Return the number of products with quantity >= threshold, using items() and a loop.",
+      "zh": "编写count_large_stock(stock,threshold)。stock把商品名映射到数量。用items()与循环，返回库存至少达到threshold的商品种类数。"
+    },
+    "explanation": {
+      "en": "Unpack each dictionary pair into a name and quantity. Compare the quantity but add only one to the counter per matching product. Adding quantities would measure units in stock rather than product kinds.",
+      "zh": "把字典中的每对数据拆为商品名与库存量。比较库存量，但符合条件时人数式地加1。若把库存数字直接累加，求出的就成了件数，而不是商品种类数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def count_large_stock(stock, threshold):\n    # Write your code here.\n    pass\n",
+    "solution": "def count_large_stock(stock, threshold):\n    count = 0\n    for product, quantity in stock.items():\n        if quantity >= threshold:\n            count += 1\n    return count\n",
+    "tests": "assert count_large_stock({\"tea\":5,\"cake\":9,\"milk\":4},5)==2\nassert count_large_stock({},5)==0\nassert count_large_stock({\"a\":0,\"b\":1},0)==2\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Equality at the threshold, no products and zero stock.",
+      "zh": "恰好达到门槛、没有商品及零库存。"
+    }
+  },
+  {
+    "id": "L3-054",
+    "chapter": "lecture3",
+    "topic": "iteration",
+    "topicLabel": {
+      "en": "Lists, strings and dictionaries",
+      "zh": "列表、字符串与字典遍历"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Human-readable numbering",
+      "zh": "给条目添加编号"
+    },
+    "prompt": {
+      "en": "Write numbered_items(items). Return strings like \"1. tea\", \"2. cake\", using enumerate(..., start=1). Each input item is a string.",
+      "zh": "编写numbered_items(items)，使用enumerate(..., start=1)，返回类似\"1. tea\"、\"2. cake\"的字符串列表。输入元素均为字符串。"
+    },
+    "explanation": {
+      "en": "enumerate supplies the requested one-based number directly. Convert that number to a string before concatenating it with the item text. Keep the dot and following space exactly as specified.",
+      "zh": "enumerate可以直接提供从1开始的编号。把编号转换成字符串后，再与文本连接。题目要求的点号和后面的空格也要准确保留。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 18; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def numbered_items(items):\n    # Write your code here.\n    pass\n",
+    "solution": "def numbered_items(items):\n    result = []\n    for index, item in enumerate(items, start=1):\n        result.append(str(index) + \". \" + item)\n    return result\n",
+    "tests": "assert numbered_items([\"tea\",\"cake\"])==[\"1. tea\",\"2. cake\"]\nassert numbered_items([])==[]\nassert numbered_items([\"\"])==[\"1. \"]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Several items, an empty list and an empty item.",
+      "zh": "多个条目、空列表及空字符串条目。"
+    }
+  },
+  {
+    "id": "L3-055",
+    "chapter": "lecture3",
+    "topic": "integration",
+    "topicLabel": {
+      "en": "Combined control flow",
+      "zh": "控制流程综合"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Longest positive streak",
+      "zh": "最长连续正数段"
+    },
+    "prompt": {
+      "en": "Write longest_positive_streak(values). Return the largest number of consecutive values strictly greater than zero. Zero and negative values end a streak. Return 0 for an empty list.",
+      "zh": "编写longest_positive_streak(values)，返回最长连续正数段的长度。0和负数都会打断连续段。空列表返回0。"
+    },
+    "explanation": {
+      "en": "Use one counter for the current streak and another for the best seen so far. A non-positive value resets only the current streak. Update the best during the loop so a streak ending at the final item is not missed.",
+      "zh": "用current记录眼前这一段，用best保存历史最长段。遇到非正数时只重置current，不要丢掉best。每次延长连续段就更新best，才能正确处理一直延伸到末尾的情况。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 20; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def longest_positive_streak(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def longest_positive_streak(values):\n    current = best = 0\n    for value in values:\n        if value > 0:\n            current += 1\n            if current > best:\n                best = current\n        else:\n            current = 0\n    return best\n",
+    "tests": "assert longest_positive_streak([1,2,0,3,4,5,-1])==3\nassert longest_positive_streak([])==0\nassert longest_positive_streak([-1,0,-2])==0\nassert longest_positive_streak([2,3])==2\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "A final streak, interrupted streaks, no positives and empty input.",
+      "zh": "延续到末尾、被打断、无正数以及空列表。"
+    }
+  },
+  {
+    "id": "L3-056",
+    "chapter": "lecture3",
+    "topic": "integration",
+    "topicLabel": {
+      "en": "Combined control flow",
+      "zh": "控制流程综合"
+    },
+    "difficulty": 2,
+    "type": "code",
+    "title": {
+      "en": "Keep first occurrences",
+      "zh": "只保留首次出现"
+    },
+    "prompt": {
+      "en": "Write unique_in_order(values) using a loop. Return a new list containing each value only the first time it appears. Preserve order. Values are ordinary numbers or strings; do not use set().",
+      "zh": "使用循环编写unique_in_order(values)，每个值只在第一次出现时保留，返回保持原顺序的新列表。元素是普通数字或字符串，不使用set()。"
+    },
+    "explanation": {
+      "en": "The result list also acts as a record of what has already been kept. Append only when the current value is not there yet. Processing from left to right preserves first-occurrence order naturally.",
+      "zh": "结果列表同时也是“已经收录过哪些值”的记录。当前值尚未出现时才加入结果。从左往右处理，就能自然保留首次出现的顺序。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 15; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def unique_in_order(values):\n    # Write your code here.\n    pass\n",
+    "solution": "def unique_in_order(values):\n    result = []\n    for value in values:\n        if value not in result:\n            result.append(value)\n    return result\n",
+    "tests": "assert unique_in_order([3,1,3,2,1])==[3,1,2]\nassert unique_in_order([])==[]\nassert unique_in_order([\"a\",\"a\",\"b\"])==[\"a\",\"b\"]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Repeated values in different places, strings and empty input.",
+      "zh": "分散的重复值、字符串及空列表。"
+    }
+  },
+  {
+    "id": "L3-057",
+    "chapter": "lecture3",
+    "topic": "control",
+    "topicLabel": {
+      "en": "Break and continue",
+      "zh": "break 与 continue"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "The smallest nontrivial divisor",
+      "zh": "寻找最小非平凡因数"
+    },
+    "prompt": {
+      "en": "Write first_divisor(n) for integer n >= 2. Return the smallest divisor in 2 through n-1; return None if no such divisor exists. Use a loop and stop at the first match.",
+      "zh": "编写first_divisor(n)，n为至少2的整数。返回2到n-1之间最小的因数；不存在则返回None。用循环并在首次找到时停止。"
+    },
+    "explanation": {
+      "en": "Try candidate divisors in increasing order. The first zero remainder gives the smallest divisor, so break immediately. If the loop finds nothing, return None; including n itself would make every number appear to have a match.",
+      "zh": "按从小到大的顺序尝试因数。第一个余数为0的数就是最小因数，因此立即停止。没有找到时保留None。不能把n本身算进去，否则每个数都会“找到因数”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 22; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def first_divisor(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def first_divisor(n):\n    divisor = None\n    for candidate in range(2, n):\n        if n % candidate == 0:\n            divisor = candidate\n            break\n    return divisor\n",
+    "tests": "assert first_divisor(15)==3\nassert first_divisor(8)==2\nassert first_divisor(13) is None\nassert first_divisor(2) is None\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "A composite odd number, an even number, a prime and n=2.",
+      "zh": "奇合数、偶数、质数和n=2。"
+    }
+  },
+  {
+    "id": "L3-058",
+    "chapter": "lecture3",
+    "topic": "branching",
+    "topicLabel": {
+      "en": "Branches and boundaries",
+      "zh": "分支与边界"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "Fizz Buzz labels",
+      "zh": "Fizz Buzz分类标签"
+    },
+    "prompt": {
+      "en": "Write fizz_buzz(n) returning one string for each integer 1 through n. Multiples of both 3 and 5 become \"FizzBuzz\", only 3 become \"Fizz\", only 5 become \"Buzz\", others become their decimal string. n is a non-negative integer.",
+      "zh": "编写fizz_buzz(n)，为1到n每个整数返回一个字符串。同时被3和5整除写FizzBuzz，仅被3整除写Fizz，仅被5整除写Buzz，其他数写成十进制字符串。n为非负整数。"
+    },
+    "explanation": {
+      "en": "Check the combined condition before either single condition. Otherwise a multiple of 15 would be captured too early by the Fizz or Buzz branch. Use an if/elif chain so every integer produces exactly one label.",
+      "zh": "先检查同时被3和5整除的情况，再检查各自单独整除。否则15的倍数会过早被Fizz或Buzz截走。用if/elif链，确保每个整数只生成一个标签。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 9; Python Programming Exercises, Gently Explained · #5 Fizz Buzz",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def fizz_buzz(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def fizz_buzz(n):\n    result = []\n    for value in range(1, n + 1):\n        if value % 3 == 0 and value % 5 == 0:\n            result.append(\"FizzBuzz\")\n        elif value % 3 == 0:\n            result.append(\"Fizz\")\n        elif value % 5 == 0:\n            result.append(\"Buzz\")\n        else:\n            result.append(str(value))\n    return result\n",
+    "tests": "assert fizz_buzz(5)==[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]\nassert fizz_buzz(15)[-1]==\"FizzBuzz\"\nassert fizz_buzz(0)==[]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Ordinary numbers, individual multiples, a common multiple and n=0.",
+      "zh": "普通数、单独倍数、公倍数和n=0。"
+    }
+  },
+  {
+    "id": "L3-059",
+    "chapter": "lecture3",
+    "topic": "while",
+    "topicLabel": {
+      "en": "While loops",
+      "zh": "while 循环"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "Years to reach a savings goal",
+      "zh": "储蓄达到目标所需年数"
+    },
+    "prompt": {
+      "en": "Write years_to_goal(balance, rate, target). rate is a positive decimal yearly rate, such as 0.1 for 10%. After each full year multiply balance by (1+rate), without rounding. Return the first number of full years when balance >= target. balance and target are positive; use a while loop.",
+      "zh": "编写years_to_goal(balance,rate,target)。rate是正的小数年利率，如0.1表示10%。每满一年把余额乘以(1+rate)，中途不舍入。用while返回余额首次至少达到target所需的完整年数。余额与目标均为正数。"
+    },
+    "explanation": {
+      "en": "A while loop fits a task where the required number of years is initially unknown. Update the balance once per year and count that update. Do not round inside the loop, because repeated rounding can change which year reaches the goal.",
+      "zh": "需要几年开始并不知道，所以适合while。每轮代表一年：先更新余额，再把年数加1。不要每轮都舍入，否则小误差累积后可能改变达标年份。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 20; Tutorial1_Solutions.ipynb · Exercise 2, compound-interest variant",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def years_to_goal(balance, rate, target):\n    # Write your code here.\n    pass\n",
+    "solution": "def years_to_goal(balance, rate, target):\n    years = 0\n    while balance < target:\n        balance *= 1 + rate\n        years += 1\n    return years\n",
+    "tests": "assert years_to_goal(100,0.1,120)==2\nassert years_to_goal(200,0.1,100)==0\nassert years_to_goal(100,1.0,400)==2\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "An overshoot, an exact hit and a goal already reached.",
+      "zh": "越过目标、恰好达到和开始就已达标。"
+    }
+  },
+  {
+    "id": "L3-060",
+    "chapter": "lecture3",
+    "topic": "nested",
+    "topicLabel": {
+      "en": "Nested loops",
+      "zh": "嵌套循环"
+    },
+    "difficulty": 3,
+    "type": "code",
+    "title": {
+      "en": "Count high readings by row",
+      "zh": "逐行统计高读数"
+    },
+    "prompt": {
+      "en": "Write counts_above(rows, limit). rows is a list of lists of numbers, possibly of different lengths. Return one count per row: the number of entries strictly greater than limit. Use nested loops. Preserve empty rows as count 0.",
+      "zh": "编写counts_above(rows,limit)。rows由若干可能不等长的数字列表组成。用嵌套循环返回每一行中严格大于limit的数的个数；空行对应0。"
+    },
+    "explanation": {
+      "en": "Reset the row counter at the start of each outer iteration. The inner loop checks the values in that row, and one count is appended after the inner loop finishes. Appending inside the inner loop would produce too many results and lose empty rows.",
+      "zh": "每次进入新行时，把该行计数器归零。内层检查行内数值，内层结束后再把这一行的计数加入结果。若在内层每轮都追加，就会产生过多结果，还会漏掉空行。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "3_Control_Structures_filled.ipynb · cell 12; 5_for_Loops_Challenges_Challenges.ipynb",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/5_for_Loops_Challenges_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the named lecture and related public exercise; not an official exam question.",
+        "zh": "根据所列讲义与相关公开练习编写的变式，并非官方考试题。"
+      }
+    },
+    "starter": "def counts_above(rows, limit):\n    # Write your code here.\n    pass\n",
+    "solution": "def counts_above(rows, limit):\n    counts = []\n    for row in rows:\n        count = 0\n        for value in row:\n            if value > limit:\n                count += 1\n        counts.append(count)\n    return counts\n",
+    "tests": "assert counts_above([[1,5,6],[],[5,9]],5)==[1,0,1]\nassert counts_above([],0)==[]\nassert counts_above([[-1,0,1],[2]],0)==[1,1]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Unequal row lengths, empty rows, equality and no rows.",
+      "zh": "不等长行、空行、恰好等于阈值及没有行。"
+    }
+  }
+]

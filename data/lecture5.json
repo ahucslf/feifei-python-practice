@@ -1,0 +1,2868 @@
+[
+  {
+    "id": "L5-001",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Overwrite or append?",
+      "zh": "覆盖还是追加？"
+    },
+    "prompt": {
+      "en": "A text file already contains `old`. Which mode replaces it when new text is written?",
+      "zh": "一个文本文件已有内容`old`，用哪种模式写入新文字会替换原内容？"
+    },
+    "explanation": {
+      "en": "Opening in w mode truncates an existing file before writing. Use a when you want to keep the old text and add new text at the end. The mode is a choice about the file, not the variable name.",
+      "zh": "w模式在写入前清空旧文件。要保留旧内容并接着写，应选a模式。模式决定文件怎样被操作，与接收文件对象的变量名无关。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`'a'`",
+        "zh": "`'a'`"
+      },
+      {
+        "en": "`'r'`",
+        "zh": "`'r'`"
+      },
+      {
+        "en": "`'w'`",
+        "zh": "`'w'`"
+      },
+      {
+        "en": "`'read'`",
+        "zh": "`'read'`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-002",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Two writes",
+      "zh": "连续两次写入"
+    },
+    "prompt": {
+      "en": "What is the file content after these writes to a new text file?\n```python\nwith open(\"note.txt\", \"w\") as f:\n    f.write(\"cat\")\n    f.write(\"dog\")\n```",
+      "zh": "以下代码写入一个新文本文件后，文件内容是什么？\n```python\nwith open(\"note.txt\", \"w\") as f:\n    f.write(\"cat\")\n    f.write(\"dog\")\n```"
+    },
+    "explanation": {
+      "en": "write does not add a newline or space for you. The second write continues immediately after cat. Add an explicit newline character when separate lines are required.",
+      "zh": "write不会自动补空格或换行。第二次写入紧接着cat后面，所以得到catdog。想换行时需要自己写入换行符。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`catdog`",
+        "zh": "`catdog`"
+      },
+      {
+        "en": "`cat\ndog`",
+        "zh": "`cat\ndog`"
+      },
+      {
+        "en": "`dog`",
+        "zh": "`dog`"
+      },
+      {
+        "en": "`cat dog`",
+        "zh": "`cat dog`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-003",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Safe closing",
+      "zh": "可靠关闭文件"
+    },
+    "prompt": {
+      "en": "Why use `with open(...) as f:`?",
+      "zh": "为什么建议使用`with open(...) as f:`？"
+    },
+    "explanation": {
+      "en": "with manages the lifetime of the open file. Python calls the closing operation when control leaves the block, even if reading or writing raises an exception. It does not repair bad data or choose a different path.",
+      "zh": "with会管理文件从打开到关闭的过程。正常执行完或因异常退出代码块时，它都会负责关闭文件。它不会自动修复数据，也不会替你改变路径。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "It guarantees the file is empty",
+        "zh": "它保证文件为空"
+      },
+      {
+        "en": "It closes the file when the block ends, including during an exception",
+        "zh": "退出代码块时关闭文件，包括出现异常时"
+      },
+      {
+        "en": "It converts the file to CSV",
+        "zh": "它把文件转成CSV"
+      },
+      {
+        "en": "It makes every path absolute",
+        "zh": "它把所有路径变成绝对路径"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-004",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Second read",
+      "zh": "再读一次"
+    },
+    "prompt": {
+      "en": "A file contains `abc`. What does the second `f.read()` return?\n```python\nwith open(\"note.txt\") as f:\n    first = f.read()\n    second = f.read()\n```",
+      "zh": "文件内容为`abc`。下面第二次`f.read()`得到什么？\n```python\nwith open(\"note.txt\") as f:\n    first = f.read()\n    second = f.read()\n```"
+    },
+    "explanation": {
+      "en": "Reading moves a cursor through the file. After the first read the cursor is at the end, so no characters remain for the second call. Reopen the file or use seek(0) to start again.",
+      "zh": "读取过程会移动文件中的游标。第一次read已经读到末尾，第二次没有剩余字符，因此返回空字符串。重新打开文件或调用seek(0)才能从头再读。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`\"abc\"`",
+        "zh": "`\"abc\"`"
+      },
+      {
+        "en": "`None`",
+        "zh": "`None`"
+      },
+      {
+        "en": "`\"\"`",
+        "zh": "`\"\"`"
+      },
+      {
+        "en": "A FileNotFoundError",
+        "zh": "FileNotFoundError异常"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-005",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Read lines",
+      "zh": "读取各行"
+    },
+    "prompt": {
+      "en": "A file contains a, a newline, b, and another newline. What does readlines() return?",
+      "zh": "文件内容依次为a、换行、b、换行。readlines()返回什么？"
+    },
+    "explanation": {
+      "en": "readlines returns a list with one string per line. Each line keeps its newline when one is present in the file. Use rstrip if the task asks you to remove trailing whitespace.",
+      "zh": "readlines把每一行作为一个字符串放入列表。文件中原有的行尾换行符会保留。只有题目要求去掉行尾空白时，才额外使用rstrip等方法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`['a', 'b']`",
+        "zh": "`['a', 'b']`"
+      },
+      {
+        "en": "`['a\\n', 'b\\n']`",
+        "zh": "`['a\\n', 'b\\n']`"
+      },
+      {
+        "en": "`'a b'`",
+        "zh": "`'a b'`"
+      },
+      {
+        "en": "`['a', '\\n', 'b', '\\n']`",
+        "zh": "`['a', '\\n', 'b', '\\n']`"
+      }
+    ],
+    "answer": 1,
+    "verification": "from io import StringIO\nassert StringIO('a\\nb\\n').readlines()==['a\\n','b\\n']"
+  },
+  {
+    "id": "L5-006",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Whitespace words",
+      "zh": "用空白拆词"
+    },
+    "prompt": {
+      "en": "What is the result of splitting \"red  blue\\\\ngreen\" with split() (the escape sequence represents a newline)?",
+      "zh": "对\"red  blue\\\\ngreen\"调用split()是什么结果？其中转义序列表示换行。"
+    },
+    "explanation": {
+      "en": "split with no argument treats runs of whitespace as separators. Two spaces do not create an empty token, and a newline also separates words. This differs from split(\" \"), which uses a literal single-space separator.",
+      "zh": "不传参数的split会把连续空白视为分隔符。两个空格不会生成空字符串，换行也能分隔单词。它与只按一个普通空格拆分的split(\" \")不同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`['red', '', 'blue', 'green']`",
+        "zh": "`['red', '', 'blue', 'green']`"
+      },
+      {
+        "en": "`['red', 'blue', 'green']`",
+        "zh": "`['red', 'blue', 'green']`"
+      },
+      {
+        "en": "`['red  blue', 'green']`",
+        "zh": "`['red  blue', 'green']`"
+      },
+      {
+        "en": "`['red', 'blue\\ngreen']`",
+        "zh": "`['red', 'blue\\ngreen']`"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert 'red  blue\\ngreen'.split()==['red','blue','green']"
+  },
+  {
+    "id": "L5-007",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Relative location",
+      "zh": "相对路径的位置"
+    },
+    "prompt": {
+      "en": "Where does `open(\"results.txt\", \"w\")` create the file, assuming permission is granted?",
+      "zh": "在有写入权限的前提下，`open(\"results.txt\", \"w\")`会在哪里创建文件？"
+    },
+    "explanation": {
+      "en": "A relative path is resolved from the process working directory. That directory can differ from the directory containing a script or notebook. Check the working directory rather than assuming Desktop.",
+      "zh": "相对路径以程序当前工作目录为起点。工作目录不一定等于脚本文件或Notebook所在目录。找不到文件时，应先核对工作目录，不要默认它在桌面。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Always on the Desktop",
+        "zh": "总在桌面"
+      },
+      {
+        "en": "Always beside the Python interpreter",
+        "zh": "总在Python解释器旁"
+      },
+      {
+        "en": "In the current working directory",
+        "zh": "在当前工作目录"
+      },
+      {
+        "en": "Inside pandas",
+        "zh": "在pandas内部"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-008",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Right-end stripping",
+      "zh": "去除右端空白"
+    },
+    "prompt": {
+      "en": "A string contains two leading spaces, bike, one space, and a newline. What does rstrip() produce?",
+      "zh": "字符串包含两个前导空格、bike、一个空格和换行。rstrip()得到什么？"
+    },
+    "explanation": {
+      "en": "rstrip removes trailing whitespace, including the final space and newline. It leaves the two leading spaces unchanged. strip would remove whitespace from both ends.",
+      "zh": "rstrip只清理字符串右端的空白，末尾空格和换行都被去掉。开头的两个空格会保留。若想同时清理两端，应使用strip。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`\"bike\"`",
+        "zh": "`\"bike\"`"
+      },
+      {
+        "en": "`\"  bike\"`",
+        "zh": "`\"  bike\"`"
+      },
+      {
+        "en": "`\"bike \"`",
+        "zh": "`\"bike \"`"
+      },
+      {
+        "en": "`\"  bike \\n\"`",
+        "zh": "`\"  bike \\n\"`"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert '  bike \\n'.rstrip()=='  bike'"
+  },
+  {
+    "id": "L5-009",
+    "chapter": "lecture5",
+    "topic": "csv",
+    "topicLabel": {
+      "en": "Tables and CSV loading",
+      "zh": "表格与CSV读取"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Series or table?",
+      "zh": "一列还是表格？"
+    },
+    "prompt": {
+      "en": "For a DataFrame `df`, what type is `df[\"rentals\"]`?",
+      "zh": "对DataFrame对象`df`而言，`df[\"rentals\"]`的类型是什么？"
+    },
+    "explanation": {
+      "en": "Selecting one column with a single label returns a Series. A Series is one-dimensional but still carries index labels. Double brackets, df[[\"rentals\"]], keep the result as a one-column DataFrame.",
+      "zh": "用单个列名选出的一列是Series。它是一维数据，但仍带有索引标签。若要保留二维表格形式，需要写双层方括号df[[\"rentals\"]]。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`DataFrame`",
+        "zh": "`DataFrame`"
+      },
+      {
+        "en": "`Series`",
+        "zh": "`Series`"
+      },
+      {
+        "en": "`list`",
+        "zh": "`list`"
+      },
+      {
+        "en": "`dict`",
+        "zh": "`dict`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-010",
+    "chapter": "lecture5",
+    "topic": "csv",
+    "topicLabel": {
+      "en": "Tables and CSV loading",
+      "zh": "表格与CSV读取"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Inspect dimensions",
+      "zh": "查看表格尺寸"
+    },
+    "prompt": {
+      "en": "A DataFrame has 12 rows and 4 columns. What is `df.shape`?",
+      "zh": "一个DataFrame有12行4列，`df.shape`是什么？"
+    },
+    "explanation": {
+      "en": "shape is a tuple in row-then-column order. It describes dimensions rather than the total number of cells. Multiplying 12 by 4 would give the cell count, not shape.",
+      "zh": "shape按“行数、列数”的顺序返回元组。它描述维度，而不是表中共有多少个单元格。12乘4得到的48不能代替shape。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`(4, 12)`",
+        "zh": "`(4, 12)`"
+      },
+      {
+        "en": "`[12]`",
+        "zh": "`[12]`"
+      },
+      {
+        "en": "`(12, 4)`",
+        "zh": "`(12, 4)`"
+      },
+      {
+        "en": "`48`",
+        "zh": "`48`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-011",
+    "chapter": "lecture5",
+    "topic": "csv",
+    "topicLabel": {
+      "en": "Tables and CSV loading",
+      "zh": "表格与CSV读取"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "CSV dates",
+      "zh": "读取日期列"
+    },
+    "prompt": {
+      "en": "Which call loads `date` as a datetime column from a CSV?",
+      "zh": "哪条语句读取CSV时会把`date`列解析为日期时间类型？"
+    },
+    "explanation": {
+      "en": "parse_dates names the columns that should be interpreted as dates during loading. Once parsed, the date Series supports properties such as dt.month. A column named date is not automatically guaranteed to have a datetime dtype.",
+      "zh": "parse_dates指定读取时需要解析的日期列。转换成功后才能方便地使用dt.month等属性。列名叫date并不意味着它已经是日期时间类型。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`pd.read_csv(\"rides.csv\", parse_dates=[\"date\"])`",
+        "zh": "`pd.read_csv(\"rides.csv\", parse_dates=[\"date\"])`"
+      },
+      {
+        "en": "`pd.read_csv(\"rides.csv\", dates=True)`",
+        "zh": "`pd.read_csv(\"rides.csv\", dates=True)`"
+      },
+      {
+        "en": "`pd.read_csv(\"rides.csv\").date()`",
+        "zh": "`pd.read_csv(\"rides.csv\").date()`"
+      },
+      {
+        "en": "`pd.parse_dates(\"rides.csv\")`",
+        "zh": "`pd.parse_dates(\"rides.csv\")`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-012",
+    "chapter": "lecture5",
+    "topic": "csv",
+    "topicLabel": {
+      "en": "Tables and CSV loading",
+      "zh": "表格与CSV读取"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Inspect vs return",
+      "zh": "打印与返回"
+    },
+    "prompt": {
+      "en": "What is normally returned by `df.info()`?",
+      "zh": "`df.info()`通常返回什么？"
+    },
+    "explanation": {
+      "en": "info is mainly a reporting method: it prints column dtypes and non-missing counts. Its ordinary return value is None. Assigning summary = df.info() does not store a DataFrame summary table.",
+      "zh": "info主要用于显示列类型和非缺失数量等摘要，通常返回None。因此summary = df.info()不会把一张摘要表保存到summary中。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "A new cleaned DataFrame",
+        "zh": "清洗后的新DataFrame"
+      },
+      {
+        "en": "A list of column names",
+        "zh": "列名列表"
+      },
+      {
+        "en": "The number of rows",
+        "zh": "行数"
+      },
+      {
+        "en": "None; it prints a summary",
+        "zh": "None，同时打印摘要"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "id": "L5-013",
+    "chapter": "lecture5",
+    "topic": "select",
+    "topicLabel": {
+      "en": "Selecting rows and columns",
+      "zh": "选择行与列"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Keep two columns",
+      "zh": "保留两列"
+    },
+    "prompt": {
+      "en": "Which expression returns only columns `station` and `rentals` as a DataFrame?",
+      "zh": "哪个表达式会以DataFrame形式只保留station和rentals两列？"
+    },
+    "explanation": {
+      "en": "The outer brackets ask the DataFrame to select data. The inner list supplies multiple column names. Writing a tuple inside a single pair of brackets is not the same request for an ordinary flat-column table.",
+      "zh": "外层方括号执行表格选择，内层列表提供多个列名。普通单层列索引下，df[\"station\", \"rentals\"]传入的是元组，并不是选择两列的正确写法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df[\"station\", \"rentals\"]`",
+        "zh": "`df[\"station\", \"rentals\"]`"
+      },
+      {
+        "en": "`df[[\"station\", \"rentals\"]]`",
+        "zh": "`df[[\"station\", \"rentals\"]]`"
+      },
+      {
+        "en": "`df(\"station\", \"rentals\")`",
+        "zh": "`df(\"station\", \"rentals\")`"
+      },
+      {
+        "en": "`df.iloc[\"station\", \"rentals\"]`",
+        "zh": "`df.iloc[\"station\", \"rentals\"]`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-014",
+    "chapter": "lecture5",
+    "topic": "select",
+    "topicLabel": {
+      "en": "Selecting rows and columns",
+      "zh": "选择行与列"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Labels are not positions",
+      "zh": "标签不等于位置"
+    },
+    "prompt": {
+      "en": "A Series `s` has index labels `[10, 20, 30]` and values `[4, 8, 12]`. What is `s.loc[20]`?",
+      "zh": "Series对象s的索引标签为[10,20,30]，值为[4,8,12]。s.loc[20]是什么？"
+    },
+    "explanation": {
+      "en": "loc looks up an index label, so label 20 selects the value 8. iloc would instead count positions starting at zero. Treating label 20 as the twenty-first row confuses these two tools.",
+      "zh": "loc按索引标签寻找数据，标签20对应值8。iloc才按从0开始的位置取值。把标签20当成第21行，是混淆了标签与位置。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`20`",
+        "zh": "`20`"
+      },
+      {
+        "en": "`12`",
+        "zh": "`12`"
+      },
+      {
+        "en": "`8`",
+        "zh": "`8`"
+      },
+      {
+        "en": "An IndexError",
+        "zh": "IndexError异常"
+      }
+    ],
+    "answer": 2,
+    "verification": "import pandas as pd\ns=pd.Series([4,8,12],index=[10,20,30]);assert s.loc[20]==8"
+  },
+  {
+    "id": "L5-015",
+    "chapter": "lecture5",
+    "topic": "select",
+    "topicLabel": {
+      "en": "Selecting rows and columns",
+      "zh": "选择行与列"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Positional slice",
+      "zh": "位置切片"
+    },
+    "prompt": {
+      "en": "Which row positions are kept by `df.iloc[1:4]`?",
+      "zh": "df.iloc[1:4]保留哪些位置的行？"
+    },
+    "explanation": {
+      "en": "iloc follows normal Python slice rules. It includes the start position 1 and excludes the stop position 4. The result is the second, third, and fourth rows.",
+      "zh": "iloc遵循普通Python切片规则，包含起点1但不包含终点4。因此取到的位置是1、2、3，即表格的第2、3、4行。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`1, 2, 3, 4`",
+        "zh": "`1, 2, 3, 4`"
+      },
+      {
+        "en": "`0, 1, 2, 3`",
+        "zh": "`0, 1, 2, 3`"
+      },
+      {
+        "en": "`1, 2, 3`",
+        "zh": "`1, 2, 3`"
+      },
+      {
+        "en": "`2, 3, 4`",
+        "zh": "`2, 3, 4`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-016",
+    "chapter": "lecture5",
+    "topic": "select",
+    "topicLabel": {
+      "en": "Selecting rows and columns",
+      "zh": "选择行与列"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Label slice endpoint",
+      "zh": "标签切片的终点"
+    },
+    "prompt": {
+      "en": "A DataFrame has a sorted unique index `[10, 20, 30, 40]`. Which labels are selected by `df.loc[10:30]`?",
+      "zh": "DataFrame的索引已排序且不重复，为[10,20,30,40]。df.loc[10:30]选中哪些标签？"
+    },
+    "explanation": {
+      "en": "A label-based loc slice includes the ending label when it is present. This makes a range from label 10 through label 30 inclusive. Do not transfer iloc stopping rules to loc label slices.",
+      "zh": "按标签进行loc切片时，如果终点标签存在，会把终点一起选进来。所以这里选中10、20、30。不要把iloc的终点不包含规则直接套到loc上。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`10, 20`",
+        "zh": "`10, 20`"
+      },
+      {
+        "en": "`10, 20, 30`",
+        "zh": "`10, 20, 30`"
+      },
+      {
+        "en": "`20, 30`",
+        "zh": "`20, 30`"
+      },
+      {
+        "en": "No rows",
+        "zh": "没有行"
+      }
+    ],
+    "answer": 1,
+    "verification": "import pandas as pd\nd=pd.DataFrame({'x':[1,2,3,4]},index=[10,20,30,40]);assert list(d.loc[10:30].index)==[10,20,30]"
+  },
+  {
+    "id": "L5-017",
+    "chapter": "lecture5",
+    "topic": "select",
+    "topicLabel": {
+      "en": "Selecting rows and columns",
+      "zh": "选择行与列"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Category counts",
+      "zh": "类别数量"
+    },
+    "prompt": {
+      "en": "For `s = pd.Series([\"A\", \"B\", \"A\"])`, what does `s.value_counts()[\"A\"]` return?",
+      "zh": "对于s = pd.Series([\"A\",\"B\",\"A\"])，s.value_counts()[\"A\"]返回什么？"
+    },
+    "explanation": {
+      "en": "value_counts counts how many times each distinct value occurs. A appears twice, so its count is 2. It does not add letters or return the length of the complete Series.",
+      "zh": "value_counts统计每个不同值出现的次数。A出现两次，所以对应计数为2。它不是整个Series的长度，也不是对字符进行加法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`1`",
+        "zh": "`1`"
+      },
+      {
+        "en": "`2`",
+        "zh": "`2`"
+      },
+      {
+        "en": "`3`",
+        "zh": "`3`"
+      },
+      {
+        "en": "`\"A\"`",
+        "zh": "`\"A\"`"
+      }
+    ],
+    "answer": 1,
+    "verification": "import pandas as pd\nassert pd.Series(['A','B','A']).value_counts()['A']==2"
+  },
+  {
+    "id": "L5-018",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Two conditions",
+      "zh": "同时满足两个条件"
+    },
+    "prompt": {
+      "en": "Which filter keeps rows with `rain_mm > 5` and `temperature < 10`?",
+      "zh": "哪个筛选会保留rain_mm大于5且temperature小于10的行？"
+    },
+    "explanation": {
+      "en": "Each comparison builds one Boolean Series. The & operator combines those Series row by row, and parentheses keep each comparison together. Python and expects a single truth value and cannot choose between many row values.",
+      "zh": "两个比较各自产生一列布尔值，&会逐行把它们合并。每个比较式都需要括号。普通and处理单个真假判断，不能代替对整列逐行判断的&。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df[(df[\"rain_mm\"] > 5) & (df[\"temperature\"] < 10)]`",
+        "zh": "`df[(df[\"rain_mm\"] > 5) & (df[\"temperature\"] < 10)]`"
+      },
+      {
+        "en": "`df[df[\"rain_mm\"] > 5 and df[\"temperature\"] < 10]`",
+        "zh": "`df[df[\"rain_mm\"] > 5 and df[\"temperature\"] < 10]`"
+      },
+      {
+        "en": "`df[(df[\"rain_mm\"] > 5) | (df[\"temperature\"] < 10)]`",
+        "zh": "`df[(df[\"rain_mm\"] > 5) | (df[\"temperature\"] < 10)]`"
+      },
+      {
+        "en": "`df[\"rain_mm\" > 5]`",
+        "zh": "`df[\"rain_mm\" > 5]`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-019",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Strict rain threshold",
+      "zh": "严格的大于"
+    },
+    "prompt": {
+      "en": "Rain values are `[0, 5, 6]`. Which values satisfy `rain_mm > 5`?",
+      "zh": "降雨量为[0,5,6]，哪些数满足rain_mm > 5？"
+    },
+    "explanation": {
+      "en": "The greater-than sign excludes the threshold itself. Five is not greater than five, but six is. If the task says at least five, use >= instead.",
+      "zh": "大于号不包含临界值本身。5不大于5，只有6满足条件。若题意是“至少5”，才应使用>=。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`[5, 6]`",
+        "zh": "`[5, 6]`"
+      },
+      {
+        "en": "`[0, 5, 6]`",
+        "zh": "`[0, 5, 6]`"
+      },
+      {
+        "en": "`[6]`",
+        "zh": "`[6]`"
+      },
+      {
+        "en": "`[5]`",
+        "zh": "`[5]`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-020",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Membership filter",
+      "zh": "按名单筛选"
+    },
+    "prompt": {
+      "en": "Which mask selects stations in either `A` or `C`?",
+      "zh": "哪个条件可以选出station为A或C的行？"
+    },
+    "explanation": {
+      "en": "isin checks each row value against an allowed collection. It returns a Boolean Series ready to use inside df[...]. The Python in operator checks membership of one object and is not a row-by-row Series operation.",
+      "zh": "isin会检查这一列的每一个值是否在名单里，返回可用于筛选的布尔Series。普通in并不是对Series中每一行分别判断的运算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df[\"station\"] in [\"A\", \"C\"]`",
+        "zh": "`df[\"station\"] in [\"A\", \"C\"]`"
+      },
+      {
+        "en": "`df[\"station\"].isin([\"A\", \"C\"])`",
+        "zh": "`df[\"station\"].isin([\"A\", \"C\"])`"
+      },
+      {
+        "en": "`df[\"station\"] == [\"A\", \"C\"]`",
+        "zh": "`df[\"station\"] == [\"A\", \"C\"]`"
+      },
+      {
+        "en": "`df.isin(\"station\", \"A\", \"C\")`",
+        "zh": "`df.isin(\"station\", \"A\", \"C\")`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-021",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Negate a mask",
+      "zh": "取条件的反面"
+    },
+    "prompt": {
+      "en": "If `mask` is a Boolean Series with no missing values, which expression gives its row-wise opposite?",
+      "zh": "若mask是没有缺失值的布尔Series，哪个表达式能逐行取反？"
+    },
+    "explanation": {
+      "en": "The tilde operator flips True to False and False to True for a Boolean Series. This is useful for selecting all rows outside a chosen group. not is designed for one overall Boolean value, not a full Series.",
+      "zh": "~可以把布尔Series中的True和False逐项互换，适合选出某组以外的行。普通not不是整列逐行取反的写法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`not mask`",
+        "zh": "`not mask`"
+      },
+      {
+        "en": "mask & True",
+        "zh": "mask & True"
+      },
+      {
+        "en": "`~mask`",
+        "zh": "`~mask`"
+      },
+      {
+        "en": "`mask.reverse()`",
+        "zh": "`mask.reverse()`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-022",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Any or both?",
+      "zh": "满足任意一个还是两个？"
+    },
+    "prompt": {
+      "en": "For rows `(price, stock)` equal to `(1,0)`, `(4,5)`, `(1,5)`, how many satisfy `(price < 2) & (stock > 0)`?",
+      "zh": "三行(price,stock)分别为(1,0)、(4,5)、(1,5)。有几行满足(price < 2) & (stock > 0)？"
+    },
+    "explanation": {
+      "en": "The first row is cheap but out of stock. The second is in stock but not cheap. Only the third passes both conditions, so & keeps one row.",
+      "zh": "第一行价格低但没有库存，第二行有库存但价格不低。只有第三行同时满足两个条件，所以&最终保留一行。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`0`",
+        "zh": "`0`"
+      },
+      {
+        "en": "`1`",
+        "zh": "`1`"
+      },
+      {
+        "en": "`2`",
+        "zh": "`2`"
+      },
+      {
+        "en": "`3`",
+        "zh": "`3`"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert sum(p<2 and s>0 for p,s in [(1,0),(4,5),(1,5)])==1"
+  },
+  {
+    "id": "L5-023",
+    "chapter": "lecture5",
+    "topic": "columns",
+    "topicLabel": {
+      "en": "New columns, dates and sorting",
+      "zh": "新增列、日期与排序"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Inventory value",
+      "zh": "库存价值"
+    },
+    "prompt": {
+      "en": "A row has `Price = 3` euros and `Stock = 8`. What does `Price * Stock` represent?",
+      "zh": "某商品Price为3欧元，Stock为8件。Price * Stock表示什么？"
+    },
+    "explanation": {
+      "en": "Multiplying unit price by units still in stock values the inventory. Sales revenue needs the number actually sold, which is different information. The arithmetic can be identical while the business meaning depends on the column.",
+      "zh": "单价乘仍在库存中的件数，得到的是库存价值。销售收入需要实际售出数量，不能拿库存数量替代。公式外形相同，并不意味着业务含义相同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "24 euros of current inventory value",
+        "zh": "当前库存价值为24欧元"
+      },
+      {
+        "en": "24 euros of confirmed sales revenue",
+        "zh": "已确认销售收入为24欧元"
+      },
+      {
+        "en": "11 items in stock",
+        "zh": "库存共有11件"
+      },
+      {
+        "en": "3/8 euros per item",
+        "zh": "每件3/8欧元"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-024",
+    "chapter": "lecture5",
+    "topic": "columns",
+    "topicLabel": {
+      "en": "New columns, dates and sorting",
+      "zh": "新增列、日期与排序"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Descending order",
+      "zh": "从高到低排序"
+    },
+    "prompt": {
+      "en": "Which call places the largest rental counts first?",
+      "zh": "哪条语句会把租车次数最多的行排在最前面？"
+    },
+    "explanation": {
+      "en": "ascending=False requests descending order. sort_values uses the values in the named column rather than index labels. Remember that it returns a sorted result unless you explicitly assign it or request an in-place change.",
+      "zh": "ascending=False表示降序排列。sort_values根据指定列的数值排序，而不是按索引标签排。默认会返回排序后的结果，因此通常需要接收或保存这个结果。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df.sort_values(\"rentals\", ascending=True)`",
+        "zh": "`df.sort_values(\"rentals\", ascending=True)`"
+      },
+      {
+        "en": "`df.sort_values(\"rentals\", ascending=False)`",
+        "zh": "`df.sort_values(\"rentals\", ascending=False)`"
+      },
+      {
+        "en": "`df.sort_index(\"rentals\")`",
+        "zh": "`df.sort_index(\"rentals\")`"
+      },
+      {
+        "en": "`df[\"rentals\"].reverse()`",
+        "zh": "`df[\"rentals\"].reverse()`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-025",
+    "chapter": "lecture5",
+    "topic": "columns",
+    "topicLabel": {
+      "en": "New columns, dates and sorting",
+      "zh": "新增列、日期与排序"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Weekend rule",
+      "zh": "周末判断"
+    },
+    "prompt": {
+      "en": "pandas `dt.dayofweek` numbers Monday as 0. Which condition marks Saturday and Sunday?",
+      "zh": "pandas的dt.dayofweek以周一为0，哪个条件表示周六和周日？"
+    },
+    "explanation": {
+      "en": "The numbering is Monday 0 through Sunday 6. Saturday is 5 and Sunday is 6, so >= 5 keeps exactly the weekend. This is a common place for off-by-one mistakes.",
+      "zh": "编号从周一0一直到周日6。周六是5，周日是6，因此>=5刚好选出周末。这类题最容易把自然语言中的第几天与从0开始的编号混淆。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`dayofweek <= 1`",
+        "zh": "`dayofweek <= 1`"
+      },
+      {
+        "en": "`dayofweek == 7`",
+        "zh": "`dayofweek == 7`"
+      },
+      {
+        "en": "`dayofweek >= 5`",
+        "zh": "`dayofweek >= 5`"
+      },
+      {
+        "en": "`dayofweek > 6`",
+        "zh": "`dayofweek > 6`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "L5-026",
+    "chapter": "lecture5",
+    "topic": "columns",
+    "topicLabel": {
+      "en": "New columns, dates and sorting",
+      "zh": "新增列、日期与排序"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Broadcast a constant",
+      "zh": "整列赋常量"
+    },
+    "prompt": {
+      "en": "What does `df[\"fee\"] = 2.5` do for a three-row DataFrame?",
+      "zh": "对一个三行DataFrame执行df[\"fee\"] = 2.5会怎样？"
+    },
+    "explanation": {
+      "en": "Assigning a scalar to a column broadcasts that scalar across all rows. You do not need a manual loop for this operation. If fee already exists, its column values are replaced.",
+      "zh": "给一列赋单个常量时，pandas会把这个值填到所有行。不需要自己写循环。若fee列已经存在，这一列原来的值会被替换。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Adds one row",
+        "zh": "新增一行"
+      },
+      {
+        "en": "Sets fee to 2.5 in every row",
+        "zh": "每一行的fee都设为2.5"
+      },
+      {
+        "en": "Stores only one value in the first row",
+        "zh": "只在第一行存入一个值"
+      },
+      {
+        "en": "Raises an error because 2.5 is not a list",
+        "zh": "因为2.5不是列表而报错"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-027",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Group means",
+      "zh": "每组平均值"
+    },
+    "prompt": {
+      "en": "Rows `(station, rentals)` are `(A,10)`, `(B,30)`, `(A,20)`. What is the mean for A after grouping by station?",
+      "zh": "三行(station,rentals)为(A,10)、(B,30)、(A,20)。按station分组后，A组平均值是多少？"
+    },
+    "explanation": {
+      "en": "Grouping first gathers the two A rows together. Their sum is 30 and their count is 2, so the mean is 15. The B row does not contribute to the A-group average.",
+      "zh": "分组先把两条A记录放在一起。10加20为30，再除以A组的两条记录，平均值为15。B组的记录不会进入A组的平均值计算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`10`",
+        "zh": "`10`"
+      },
+      {
+        "en": "`15`",
+        "zh": "`15`"
+      },
+      {
+        "en": "`20`",
+        "zh": "`20`"
+      },
+      {
+        "en": "`30`",
+        "zh": "`30`"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert (10+20)/2==15"
+  },
+  {
+    "id": "L5-028",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Grouped summary shape",
+      "zh": "分组摘要的意义"
+    },
+    "prompt": {
+      "en": "What does `df.groupby(\"station\")[\"rentals\"].sum()` compute?",
+      "zh": "df.groupby(\"station\")[\"rentals\"].sum()计算什么？"
+    },
+    "explanation": {
+      "en": "groupby creates one group for each distinct station. Selecting rentals identifies the values to combine, and sum adds those values within each group. The result is smaller than the original table when stations repeat.",
+      "zh": "groupby先按站点分组，再选择rentals列，最后在每个组里求和。如果同一站点有多条记录，结果会把这些记录汇总成一个总量。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "One total per station",
+        "zh": "每个站点一个总量"
+      },
+      {
+        "en": "The single largest rental value",
+        "zh": "整表最大的单次租车数"
+      },
+      {
+        "en": "The count of station names as characters",
+        "zh": "站名的字符数"
+      },
+      {
+        "en": "One total per original row",
+        "zh": "每个原始行一个总量"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-029",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Several summaries",
+      "zh": "一次计算多个统计量"
+    },
+    "prompt": {
+      "en": "Which call gets mean, minimum, and maximum rentals for each station?",
+      "zh": "哪条语句能同时得到每个站点租车数的平均值、最小值和最大值？"
+    },
+    "explanation": {
+      "en": "agg accepts a list of aggregation names. It applies each requested calculation inside each station group and lays out separate summary columns. Putting these names into groupby would incorrectly treat them as grouping columns.",
+      "zh": "agg可以接收多个统计函数名，对每个站点分别计算并生成多个摘要列。mean、min、max是计算方法，不是用来分组的列名。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df.groupby(\"station\")[\"rentals\"].agg([\"mean\", \"min\", \"max\"])`",
+        "zh": "`df.groupby(\"station\")[\"rentals\"].agg([\"mean\", \"min\", \"max\"])`"
+      },
+      {
+        "en": "`df.groupby(\"station\")[\"rentals\"].mean(\"min\", \"max\")`",
+        "zh": "`df.groupby(\"station\")[\"rentals\"].mean(\"min\", \"max\")`"
+      },
+      {
+        "en": "`df[\"rentals\"].agg(\"station\")`",
+        "zh": "`df[\"rentals\"].agg(\"station\")`"
+      },
+      {
+        "en": "`df.groupby([\"mean\", \"min\", \"max\"])`",
+        "zh": "`df.groupby([\"mean\", \"min\", \"max\"])`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-030",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "July totals",
+      "zh": "七月总量"
+    },
+    "prompt": {
+      "en": "To find the station with the most rentals in July across many days, which order is suitable?",
+      "zh": "要找出七月跨多天累计租车最多的站点，哪种处理顺序合适？"
+    },
+    "explanation": {
+      "en": "The question asks about a monthly total rather than a single busy day. Filtering establishes the month, and grouping collects all days for each station before summing. Picking the largest original row answers a different question.",
+      "zh": "题目问整月累计值，不是某一天的峰值。先筛选七月，再把同一站点的多天记录相加，才能比较站点总量。直接取最大单行会答成另一个问题。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Sort all individual days, then take the first row",
+        "zh": "把所有单日记录排序，取第一行"
+      },
+      {
+        "en": "Keep July, group by station, sum rentals, then compare totals",
+        "zh": "保留七月，按站点求租车总量，再比较总量"
+      },
+      {
+        "en": "Count the letters in each station name",
+        "zh": "统计每个站名的字母数量"
+      },
+      {
+        "en": "Take the largest July temperature",
+        "zh": "取七月最高气温"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-031",
+    "chapter": "lecture5",
+    "topic": "missing",
+    "topicLabel": {
+      "en": "Missing values",
+      "zh": "缺失值处理"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Missing values in a mean",
+      "zh": "均值中的缺失值"
+    },
+    "prompt": {
+      "en": "For `pd.Series([10.0, None, 20.0])`, what is the default mean?",
+      "zh": "pd.Series([10.0,None,20.0])默认的mean是多少？"
+    },
+    "explanation": {
+      "en": "By default, Series.mean skips missing observations. It divides 10 + 20 by the two valid values, not by three rows. A missing value is not automatically treated as zero.",
+      "zh": "Series.mean默认跳过缺失值，因此用10加20再除以两个有效数，得到15。它不会自动把缺失值当0，也不会把三行都计入分母。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`10.0`",
+        "zh": "`10.0`"
+      },
+      {
+        "en": "`15.0`",
+        "zh": "`15.0`"
+      },
+      {
+        "en": "`None`",
+        "zh": "`None`"
+      },
+      {
+        "en": "`30.0`",
+        "zh": "`30.0`"
+      }
+    ],
+    "answer": 1,
+    "verification": "import pandas as pd\nassert pd.Series([10.0,None,20.0]).mean()==15"
+  },
+  {
+    "id": "L5-032",
+    "chapter": "lecture5",
+    "topic": "missing",
+    "topicLabel": {
+      "en": "Missing values",
+      "zh": "缺失值处理"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Fill without saving",
+      "zh": "填充后是否保存"
+    },
+    "prompt": {
+      "en": "Which statement actually replaces missing values in `df[\"temp\"]` with 0?",
+      "zh": "哪条语句会真正把df中的temp缺失值替换为0？"
+    },
+    "explanation": {
+      "en": "fillna normally returns a filled result. Assigning that result back to the column stores the change in df. A comparison such as == None asks a question; it does not replace data.",
+      "zh": "fillna默认返回填好后的结果。把结果重新赋给df[\"temp\"]，变化才被保存到这列。比较运算是在判断数据，不是在替换数据。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df[\"temp\"].fillna(0)` without assigning the result",
+        "zh": "`df[\"temp\"].fillna(0)` without assigning the result"
+      },
+      {
+        "en": "`df[\"temp\"] = df[\"temp\"].fillna(0)`",
+        "zh": "`df[\"temp\"] = df[\"temp\"].fillna(0)`"
+      },
+      {
+        "en": "`df.fillna == 0`",
+        "zh": "`df.fillna == 0`"
+      },
+      {
+        "en": "`df[\"temp\"] == None`",
+        "zh": "`df[\"temp\"] == None`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "L5-033",
+    "chapter": "lecture5",
+    "topic": "missing",
+    "topicLabel": {
+      "en": "Missing values",
+      "zh": "缺失值处理"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Count missing per column",
+      "zh": "逐列统计缺失"
+    },
+    "prompt": {
+      "en": "Which expression counts missing cells in every column?",
+      "zh": "哪个表达式能统计每一列有多少缺失单元格？"
+    },
+    "explanation": {
+      "en": "isna first produces a table of True for missing and False for present. Summing down each column counts True as 1. dropna removes rows, which is a different task from counting them.",
+      "zh": "isna先把缺失位置变成True，其他位置变成False。再按列sum时，True按1计数，就得到每列的缺失数量。dropna的作用是删行，不是计数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df.isna().sum()`",
+        "zh": "`df.isna().sum()`"
+      },
+      {
+        "en": "`df.isna().mean().sum()`",
+        "zh": "`df.isna().mean().sum()`"
+      },
+      {
+        "en": "`df.dropna()`",
+        "zh": "`df.dropna()`"
+      },
+      {
+        "en": "`df.count_missing_values`",
+        "zh": "`df.count_missing_values`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-034",
+    "chapter": "lecture5",
+    "topic": "plots",
+    "topicLabel": {
+      "en": "Plot choice and pivot tables",
+      "zh": "图表选择与透视表"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Chart for a relationship",
+      "zh": "观察两个数值的关系"
+    },
+    "prompt": {
+      "en": "Which plot is most suitable for examining the relationship between temperature and rentals across individual days?",
+      "zh": "想观察每天气温与租车数之间的关系，哪种图最合适？"
+    },
+    "explanation": {
+      "en": "A scatter plot places one numeric variable on each axis, with one point per observation. It lets you inspect how rentals vary with temperature. A visible pattern suggests an association but does not by itself prove causation.",
+      "zh": "散点图用两个数值变量作为横纵轴，每条记录对应一个点，便于观察气温变化时租车数怎样变化。看到趋势只能说明关联，不能单凭这张图断言因果。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Scatter plot",
+        "zh": "散点图"
+      },
+      {
+        "en": "Pie chart of station names",
+        "zh": "站名饼图"
+      },
+      {
+        "en": "One bar for the sum of all dates",
+        "zh": "用一个柱子表示所有日期的合计"
+      },
+      {
+        "en": "A chart of only index labels",
+        "zh": "只展示索引标签的图"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-035",
+    "chapter": "lecture5",
+    "topic": "plots",
+    "topicLabel": {
+      "en": "Plot choice and pivot tables",
+      "zh": "图表选择与透视表"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Pivot aggregation",
+      "zh": "透视时怎样合并"
+    },
+    "prompt": {
+      "en": "Two rows share month 7 and station A, with rentals 10 and 20. With `pivot_table(index=\"month\", columns=\"station\", values=\"rentals\", aggfunc=\"sum\")`, what is the cell for (7,A)?",
+      "zh": "两行的month都是7、station都是A，rentals为10和20。按month为行、station为列并以sum聚合做pivot_table，(7,A)单元格是多少？"
+    },
+    "explanation": {
+      "en": "A pivot cell can receive multiple original observations. aggfunc=\"sum\" tells pandas to add them, so 10 + 20 becomes 30. Without choosing the intended aggregation, a table can answer a different question.",
+      "zh": "一个透视单元格可能对应多条原始记录。指定sum后会把10和20相加，得到30。聚合方法必须与题目的业务目标一致，不能看到透视表就默认它一定是总和。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`10`",
+        "zh": "`10`"
+      },
+      {
+        "en": "`15`",
+        "zh": "`15`"
+      },
+      {
+        "en": "`20`",
+        "zh": "`20`"
+      },
+      {
+        "en": "`30`",
+        "zh": "`30`"
+      }
+    ],
+    "answer": 3,
+    "verification": "import pandas as pd\nd=pd.DataFrame({'month':[7,7],'station':['A','A'],'rentals':[10,20]});assert d.pivot_table(index='month',columns='station',values='rentals',aggfunc='sum').loc[7,'A']==30"
+  },
+  {
+    "id": "L5-036",
+    "chapter": "lecture5",
+    "topic": "plots",
+    "topicLabel": {
+      "en": "Plot choice and pivot tables",
+      "zh": "图表选择与透视表"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Save a clean CSV",
+      "zh": "导出时不附加索引"
+    },
+    "prompt": {
+      "en": "Which call writes only the DataFrame columns to a CSV, without adding the index as another column?",
+      "zh": "哪条语句导出CSV时不会把DataFrame索引额外写成一列？"
+    },
+    "explanation": {
+      "en": "to_csv serializes a DataFrame. index=False tells it to omit the index labels, which are often just row numbers. It does not remove a real data column that happens to be named index.",
+      "zh": "to_csv负责把DataFrame写成CSV。index=False表示不额外导出索引标签，避免读回来时多出一列行号。它不会删除恰好名叫index的真实数据列。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "`df.to_csv(\"out.csv\", index=False)`",
+        "zh": "`df.to_csv(\"out.csv\", index=False)`"
+      },
+      {
+        "en": "`df.to_csv(\"out.csv\", columns=False)`",
+        "zh": "`df.to_csv(\"out.csv\", columns=False)`"
+      },
+      {
+        "en": "`df.read_csv(\"out.csv\")`",
+        "zh": "`df.read_csv(\"out.csv\")`"
+      },
+      {
+        "en": "`pd.save_csv(df, \"out.csv\")`",
+        "zh": "`pd.save_csv(df, \"out.csv\")`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "L5-037",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Save a sentence",
+      "zh": "保存一句话"
+    },
+    "prompt": {
+      "en": "Implement `save_sentence(path, sentence)`. Overwrite the UTF-8 text file at path with exactly sentence, with no extra newline. Return None. Tests use only temporary practice files.",
+      "zh": "实现save_sentence(path, sentence)，以UTF-8覆盖写入sentence，不额外添加换行，返回None。测试只使用专门的练习文件。"
+    },
+    "explanation": {
+      "en": "Open in w mode so a previous sentence is replaced. write stores exactly the string supplied, so do not add a newline unless asked. The with block closes the file after writing, and no explicit return means None.",
+      "zh": "用w模式可保证旧句子被替换。write只写传入的字符串，题目没要求换行就不要自行补换行。with负责写完关闭文件，不写return的函数默认返回None。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def save_sentence(path, sentence):\n    # Write your code here.\n    pass\n",
+    "solution": "def save_sentence(path, sentence):\n    with open(path, 'w', encoding='utf-8') as f:\n        f.write(sentence)\n",
+    "tests": "save_sentence('l5_sentence.txt','Hello')\nassert open('l5_sentence.txt',encoding='utf-8').read()=='Hello'\nsave_sentence('l5_sentence.txt','你好')\nassert open('l5_sentence.txt',encoding='utf-8').read()=='你好'\nassert save_sentence('l5_sentence.txt','') is None\nassert open('l5_sentence.txt',encoding='utf-8').read()==''\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-038",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Append one line",
+      "zh": "追加一行"
+    },
+    "prompt": {
+      "en": "Implement `append_line(path, text)`: append text followed by one newline to a UTF-8 file. Assume text itself contains no newline and an existing file is empty or already ends in a newline. Return None.",
+      "zh": "实现append_line(path, text)，以UTF-8在文件末尾追加text和一个换行符。假定text没有换行，原文件为空或已以换行结束。返回None。"
+    },
+    "explanation": {
+      "en": "a mode keeps the old contents and moves writing to the end. Append the newline yourself because write does not create line breaks automatically. An empty text is still a line, so it contributes one newline.",
+      "zh": "a模式会保留旧内容并从末尾继续写。write不会自动换行，所以要自己追加换行符。空字符串也代表一行，因此仍应写入一个换行。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def append_line(path, text):\n    # Write your code here.\n    pass\n",
+    "solution": "def append_line(path, text):\n    with open(path, 'a', encoding='utf-8') as f:\n        f.write(text + '\\n')\n",
+    "tests": "append_line('l5_append.txt','red')\nassert open('l5_append.txt',encoding='utf-8').read()=='red\\n'\nappend_line('l5_append.txt','blue')\nassert open('l5_append.txt',encoding='utf-8').read()=='red\\nblue\\n'\nappend_line('l5_append.txt','')\nassert open('l5_append.txt',encoding='utf-8').read()=='red\\nblue\\n\\n'\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-039",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Words from a file",
+      "zh": "从文件读取单词"
+    },
+    "prompt": {
+      "en": "Implement `read_words(path)`, returning the UTF-8 file contents split on arbitrary whitespace. Consecutive spaces, tabs and newlines are separators, not empty words.",
+      "zh": "实现read_words(path)，读取UTF-8文件并按任意连续空白拆成单词列表。空格、制表符、换行都是分隔符，不保留空单词。"
+    },
+    "explanation": {
+      "en": "Read the whole text once, then call split without a separator. Python groups consecutive whitespace and omits empty pieces at the edges. An all-whitespace file therefore produces an empty list.",
+      "zh": "先一次性读取文本，再使用不带参数的split。它会把连续空白合并为分隔符，也不会保留两端的空片段。所以只有空白的文件会得到空列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def read_words(path):\n    # Write your code here.\n    pass\n",
+    "solution": "def read_words(path):\n    with open(path, encoding='utf-8') as f:\n        return f.read().split()\n",
+    "tests": "with open('l5_words.txt','w',encoding='utf-8') as f: f.write('one  two\\nthree')\nassert read_words('l5_words.txt')==['one','two','three']\nwith open('l5_words.txt','w',encoding='utf-8') as f: f.write(' \t\\n')\nassert read_words('l5_words.txt')==[]\nwith open('l5_words.txt','w',encoding='utf-8') as f: f.write('猫 狗')\nassert read_words('l5_words.txt')==['猫','狗']\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-040",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Preserve leading spaces",
+      "zh": "保留开头空格"
+    },
+    "prompt": {
+      "en": "Implement `clean_lines(path)`: return a list of lines from a UTF-8 file after removing all trailing whitespace from each line with rstrip. Preserve leading whitespace and empty lines.",
+      "zh": "实现clean_lines(path)，返回UTF-8文件逐行组成的列表，使用rstrip清除每行末尾空白。保留每行开头空白和空行。"
+    },
+    "explanation": {
+      "en": "Iteration gives one line at a time. rstrip removes the newline and any other trailing whitespace without touching the start of the line. Avoid strip here because leading spaces are part of the required result.",
+      "zh": "逐行遍历时，每次拿到一个行字符串。rstrip清除换行及右端其他空白，但不会动开头的空格。这里不能随意用strip，因为题目要求保留前导空格。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def clean_lines(path):\n    # Write your code here.\n    pass\n",
+    "solution": "def clean_lines(path):\n    with open(path, encoding='utf-8') as f:\n        return [line.rstrip() for line in f]\n",
+    "tests": "with open('l5_lines.txt','w',encoding='utf-8') as f: f.write('  A \\n\\nB\t\\n')\nassert clean_lines('l5_lines.txt')==['  A','','B']\nwith open('l5_lines.txt','w',encoding='utf-8') as f: f.write('x')\nassert clean_lines('l5_lines.txt')==['x']\nwith open('l5_lines.txt','w',encoding='utf-8') as f: f.write('')\nassert clean_lines('l5_lines.txt')==[]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-041",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Numbered practice lines",
+      "zh": "写入编号练习行"
+    },
+    "prompt": {
+      "en": "Implement `write_exercises(path, n)` for integer n >= 0. Overwrite the file with lines `Exercise 1` through `Exercise n`, each ending in a newline. An n of 0 creates an empty file.",
+      "zh": "实现write_exercises(path, n)，n为非负整数。覆盖写入Exercise 1到Exercise n，每行以换行结束。n为0时创建空文件。"
+    },
+    "explanation": {
+      "en": "range(1, n + 1) includes the desired last label n. Convert each integer to text before joining it to Exercise. Keeping the file open for the whole loop avoids repeatedly overwriting earlier lines.",
+      "zh": "range(1,n+1)才能把最后的编号n包含进去。整数要先转成字符串才能拼接。文件应在循环外打开，否则每次用w打开都会覆盖之前写好的行。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def write_exercises(path, n):\n    # Write your code here.\n    pass\n",
+    "solution": "def write_exercises(path, n):\n    with open(path, 'w', encoding='utf-8') as f:\n        for i in range(1, n + 1):\n            f.write('Exercise ' + str(i) + '\\n')\n",
+    "tests": "write_exercises('l5_exercises.txt',3)\nassert open('l5_exercises.txt',encoding='utf-8').read()=='Exercise 1\\nExercise 2\\nExercise 3\\n'\nwrite_exercises('l5_exercises.txt',1)\nassert open('l5_exercises.txt',encoding='utf-8').read()=='Exercise 1\\n'\nwrite_exercises('l5_exercises.txt',0)\nassert open('l5_exercises.txt',encoding='utf-8').read()==''\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-042",
+    "chapter": "lecture5",
+    "topic": "files",
+    "topicLabel": {
+      "en": "Text files and context managers",
+      "zh": "文本文件与with语句"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Copy a text file",
+      "zh": "复制文本文件"
+    },
+    "prompt": {
+      "en": "Implement `copy_text(source, target)`. Copy the exact UTF-8 text from an existing source file into target, replacing target. Source and target are different paths. Preserve all whitespace.",
+      "zh": "实现copy_text(source, target)，把已有UTF-8源文件的完整文本复制到另一个目标文件，并覆盖目标旧内容。两条路径不同，必须保留所有空白。"
+    },
+    "explanation": {
+      "en": "Open the source for reading and the target for writing in one with statement. Passing read directly to write keeps newlines and spaces intact. Splitting into words would destroy that exact formatting.",
+      "zh": "在一个with语句中同时以读模式打开源文件、以写模式打开目标文件。把read结果直接交给write，可以保留换行和空格。若先拆词再拼回，就可能改变原排版。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 1–9; Sweigart exercise 8, Read Write File",
+      "url": "https://inventwithpython.com/pythongently/exercise8/",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def copy_text(source, target):\n    # Write your code here.\n    pass\n",
+    "solution": "def copy_text(source, target):\n    with open(source, encoding='utf-8') as src, open(target, 'w', encoding='utf-8') as dst:\n        dst.write(src.read())\n",
+    "tests": "with open('l5_src.txt','w',encoding='utf-8') as f: f.write(' A\\nB\\n')\ncopy_text('l5_src.txt','l5_dst.txt')\nassert open('l5_dst.txt',encoding='utf-8').read()==' A\\nB\\n'\nassert open('l5_src.txt',encoding='utf-8').read()==' A\\nB\\n'\nwith open('l5_src.txt','w',encoding='utf-8') as f: f.write('')\ncopy_text('l5_src.txt','l5_dst.txt')\nassert open('l5_dst.txt',encoding='utf-8').read()==''\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-043",
+    "chapter": "lecture5",
+    "topic": "csv",
+    "topicLabel": {
+      "en": "Tables and CSV loading",
+      "zh": "表格与CSV读取"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Load CSV text",
+      "zh": "读取CSV字符串"
+    },
+    "prompt": {
+      "en": "Implement `load_csv_text(text)`: parse the supplied CSV string into a pandas DataFrame using `io.StringIO` and `pd.read_csv`, then return it. The first line supplies headers.",
+      "zh": "实现load_csv_text(text)，使用io.StringIO和pd.read_csv把给定CSV字符串解析为DataFrame并返回。第一行是列名。"
+    },
+    "explanation": {
+      "en": "StringIO wraps text in an in-memory file-like object. read_csv can read that object just as it reads a file path. This lets us practise CSV loading without depending on an external data download.",
+      "zh": "StringIO把字符串包装成内存里的文件对象，read_csv就能像读取文件一样读取它。这样可以练CSV解析，又不需要另行下载或寻找外部数据。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def load_csv_text(text):\n    # Write your code here.\n    pass\n",
+    "solution": "def load_csv_text(text):\n    from io import StringIO\n    import pandas as pd\n    return pd.read_csv(StringIO(text))\n",
+    "tests": "a=load_csv_text('station,rentals\\nA,10\\nB,20\\n')\nassert a.shape==(2,2)\nassert a['rentals'].tolist()==[10,20]\nb=load_csv_text('name,value\\n')\nassert b.shape==(0,2) and b.columns.tolist()==['name','value']\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-044",
+    "chapter": "lecture5",
+    "topic": "csv",
+    "topicLabel": {
+      "en": "Tables and CSV loading",
+      "zh": "表格与CSV读取"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Build a table",
+      "zh": "从等长列表建表"
+    },
+    "prompt": {
+      "en": "Implement `make_rentals(stations, rentals)`. The two input lists have equal lengths. Return a DataFrame with columns `station` and `rentals` in that order, including for empty lists.",
+      "zh": "实现make_rentals(stations, rentals)，两个列表长度相同。返回列名依次为station、rentals的DataFrame，空列表时也要保留这两个列名。"
+    },
+    "explanation": {
+      "en": "Each dictionary key becomes a column name, and each list becomes that column of values. Equal lengths mean every row has a matching value in both columns. Defining both keys preserves the schema even when there are no rows.",
+      "zh": "字典的键会成为列名，对应列表会成为列数据。两列等长，才能一行一行对应起来。即使列表为空，也应保留两个键，使空表仍有明确的列结构。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 11–20; pandas-dp notebook 1 exercise 1",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def make_rentals(stations, rentals):\n    # Write your code here.\n    pass\n",
+    "solution": "def make_rentals(stations, rentals):\n    import pandas as pd\n    return pd.DataFrame({'station': stations, 'rentals': rentals})\n",
+    "tests": "a=make_rentals(['A','B'],[10,20])\nassert a.to_dict('list')=={'station':['A','B'],'rentals':[10,20]}\nassert make_rentals([],[]).shape==(0,2)\nassert make_rentals(['X'],[0]).columns.tolist()==['station','rentals']\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-045",
+    "chapter": "lecture5",
+    "topic": "select",
+    "topicLabel": {
+      "en": "Selecting rows and columns",
+      "zh": "选择行与列"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Choose report columns",
+      "zh": "选择报告所需列"
+    },
+    "prompt": {
+      "en": "Implement `report_columns(df)`. Return a new DataFrame containing only `station` and `rentals`, in that order, with the original index preserved. The input contains these columns.",
+      "zh": "实现report_columns(df)，返回只含station、rentals两列的新DataFrame，顺序固定并保留原索引。输入表一定有这两列。"
+    },
+    "explanation": {
+      "en": "Pass a list of column names inside the DataFrame selection brackets. The order in that list becomes the output column order. copy makes it clear that the returned report is separate from the original table.",
+      "zh": "在DataFrame的选择方括号中放入列名列表。列表中列名的顺序就是输出顺序。再调用copy，明确得到独立的报告表，便于后续处理。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def report_columns(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def report_columns(df):\n    return df[['station', 'rentals']].copy()\n",
+    "tests": "import pandas as pd\na=pd.DataFrame({'rentals':[2,3],'extra':[9,9],'station':['A','B']},index=[7,8])\nr=report_columns(a)\nassert r.columns.tolist()==['station','rentals']\nassert r.index.tolist()==[7,8] and r['rentals'].tolist()==[2,3]\nassert report_columns(a.iloc[:0]).shape==(0,2)\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-046",
+    "chapter": "lecture5",
+    "topic": "select",
+    "topicLabel": {
+      "en": "Selecting rows and columns",
+      "zh": "选择行与列"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Last rental values",
+      "zh": "最后几条租车数据"
+    },
+    "prompt": {
+      "en": "Implement `last_rentals(df, n)` for integer n >= 0. Return the last n values of column rentals as a Python list, preserving row order. If n is 0, return []; if n exceeds the row count, return all values.",
+      "zh": "实现last_rentals(df, n)，n为非负整数，按原行顺序返回最后n条rentals值的Python列表。n为0返回空列表，n超过行数时返回全部值。"
+    },
+    "explanation": {
+      "en": "Handle zero before using a negative slice, because -0 is still 0 and [0:] would select everything. For positive n, iloc[-n:] takes the final n positions. tolist converts the result to the requested Python list.",
+      "zh": "先单独处理n为0，因为-0仍是0，[0:]反而会取到全部数据。正数n可以使用iloc[-n:]取得末尾n个位置。最后用tolist转成题目要求的Python列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 21–25; pandas-dp notebook 1 exercises 6–8",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def last_rentals(df, n):\n    # Write your code here.\n    pass\n",
+    "solution": "def last_rentals(df, n):\n    if n == 0:\n        return []\n    return df['rentals'].iloc[-n:].tolist()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'rentals':[10,20,30]})\nassert last_rentals(d,2)==[20,30]\nassert last_rentals(d,0)==[]\nassert last_rentals(d,9)==[10,20,30]\nassert last_rentals(d.iloc[:0],3)==[]\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-047",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Rainy rental list",
+      "zh": "雨天租车数列表"
+    },
+    "prompt": {
+      "en": "Implement `rainy_rentals(df, threshold)`. Return rentals as a list for rows with rain_mm strictly greater than threshold. Preserve row order; the table contains rain_mm and rentals without missing values.",
+      "zh": "实现rainy_rentals(df, threshold)，返回rain_mm严格大于threshold的各行rentals值组成的列表。保留原顺序，两列均无缺失值。"
+    },
+    "explanation": {
+      "en": "Build the mask from the rainfall column and use it to select the rentals column. The strict > sign excludes a day exactly on the threshold. Returning a list keeps the answer contract simple and explicit.",
+      "zh": "先根据降雨量构造布尔条件，再从符合条件的行中取rentals。严格大于号会排除恰好等于阈值的日子。最后返回列表，使函数输出形式明确。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def rainy_rentals(df, threshold):\n    # Write your code here.\n    pass\n",
+    "solution": "def rainy_rentals(df, threshold):\n    return df.loc[df['rain_mm'] > threshold, 'rentals'].tolist()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'rain_mm':[0,5,6,8],'rentals':[100,80,60,40]})\nassert rainy_rentals(d,5)==[60,40]\nassert rainy_rentals(d,8)==[]\nassert rainy_rentals(d,-1)==[100,80,60,40]\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-048",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Cold wet station",
+      "zh": "寒冷多雨的指定站点"
+    },
+    "prompt": {
+      "en": "Implement `cold_wet(df, station)`: return a DataFrame of rows at the named station where rain_mm > 5 AND temperature < 5. Preserve all columns and row order; there are no missing values.",
+      "zh": "实现cold_wet(df, station)，返回指定站点中rain_mm > 5且temperature < 5的行。保留所有列与原行顺序，数据没有缺失值。"
+    },
+    "explanation": {
+      "en": "All three conditions must hold for the same row, so join the masks with &. Parenthesize each comparison separately. The boundary rows with rain exactly 5 or temperature exactly 5 are intentionally excluded.",
+      "zh": "同一行要同时满足三个条件，因此用&连接各个布尔条件。每个比较式单独加括号。降雨量恰为5或气温恰为5的边界行都应被排除。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def cold_wet(df, station):\n    # Write your code here.\n    pass\n",
+    "solution": "def cold_wet(df, station):\n    mask = (df['station'] == station) & (df['rain_mm'] > 5) & (df['temperature'] < 5)\n    return df[mask].copy()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'station':['A','A','B','A'],'rain_mm':[6,5,8,9],'temperature':[4,3,2,5]})\nassert cold_wet(d,'A').index.tolist()==[0]\nassert cold_wet(d,'B').index.tolist()==[2]\nassert cold_wet(d,'C').empty\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-049",
+    "chapter": "lecture5",
+    "topic": "filter",
+    "topicLabel": {
+      "en": "Boolean filtering",
+      "zh": "条件筛选"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Affordable available products",
+      "zh": "价格合适且有库存的商品"
+    },
+    "prompt": {
+      "en": "Implement `available_products(df, max_price)`. Return product names where Price <= max_price AND Stock > 0. Preserve order. df has product, Price and Stock; all values are present.",
+      "zh": "实现available_products(df, max_price)，返回Price不高于max_price且Stock大于0的商品名称列表，保持原顺序。df含product、Price、Stock，均无缺失。"
+    },
+    "explanation": {
+      "en": "The price condition includes an item exactly at the budget, whereas stock must be strictly positive. Build the two conditions separately so their boundaries stay visible. This is the same filtering pattern as the grocery exercises, applied to a new small table.",
+      "zh": "价格不高于预算包含等于预算的情况，但库存必须严格大于0。把两种条件分开写，能看清各自边界。这是把商品筛选知识应用到新的小样本中。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 26–28; pandas-dp notebook 1 exercise 9",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-1",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def available_products(df, max_price):\n    # Write your code here.\n    pass\n",
+    "solution": "def available_products(df, max_price):\n    mask = (df['Price'] <= max_price) & (df['Stock'] > 0)\n    return df.loc[mask, 'product'].tolist()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'product':['Tea','Cake','Milk','Bread'],'Price':[2,5,2,1],'Stock':[3,8,0,4]})\nassert available_products(d,2)==['Tea','Bread']\nassert available_products(d,1)==['Bread']\nassert available_products(d,0)==[]\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-050",
+    "chapter": "lecture5",
+    "topic": "columns",
+    "topicLabel": {
+      "en": "New columns, dates and sorting",
+      "zh": "新增列、日期与排序"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Revenue from units sold",
+      "zh": "用售出数量计算收入"
+    },
+    "prompt": {
+      "en": "Implement `add_revenue(df)`. Return a copy of df with a new column revenue = Price * Sold. Do not modify the input. Price is unit price; Sold is units actually sold, not remaining stock.",
+      "zh": "实现add_revenue(df)，返回新增revenue列的副本，revenue = Price * Sold，原表不变。Price是单价，Sold是实际售出件数，不是剩余库存。"
+    },
+    "explanation": {
+      "en": "Multiplication on Series works row by row, so a loop is unnecessary. Use the Sold column because revenue is tied to completed sales, not remaining inventory. Copy first to keep the caller’s original data unchanged.",
+      "zh": "两个Series相乘会自动逐行计算，不需要循环。题目要销售收入，所以使用Sold售出数量，而不是剩余库存。先copy还能避免修改调用者传来的原始表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def add_revenue(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def add_revenue(df):\n    out = df.copy()\n    out['revenue'] = out['Price'] * out['Sold']\n    return out\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'Price':[2.5,4,3],'Sold':[2,0,5]})\nr=add_revenue(d)\nassert r['revenue'].tolist()==[5,0,15]\nassert 'revenue' not in d.columns\nassert add_revenue(d.iloc[:0]).columns.tolist()==['Price','Sold','revenue']\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-051",
+    "chapter": "lecture5",
+    "topic": "columns",
+    "topicLabel": {
+      "en": "New columns, dates and sorting",
+      "zh": "新增列、日期与排序"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Weekend flags from dates",
+      "zh": "从日期生成周末标记"
+    },
+    "prompt": {
+      "en": "Implement `weekend_flags(dates)`. dates is a list of valid ISO date strings. Return a list of Booleans: True for Saturday or Sunday, False otherwise. Use pandas date conversion; [] returns [].",
+      "zh": "实现weekend_flags(dates)，输入为有效ISO日期字符串列表。返回布尔列表，周六周日为True，其他为False。使用pandas日期转换，空列表返回空列表。"
+    },
+    "explanation": {
+      "en": "Convert the strings before using datetime properties. pandas numbers weekdays from Monday 0 to Sunday 6, so the weekend is >= 5. Computing the property on a Series enables the dt accessor used in the lecture.",
+      "zh": "先把字符串转换成日期类型，才能读取日期属性。pandas从周一0编号到周日6，周末对应>=5。把日期放入Series后，可使用讲义中的dt访问方式。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def weekend_flags(dates):\n    # Write your code here.\n    pass\n",
+    "solution": "def weekend_flags(dates):\n    import pandas as pd\n    s = pd.Series(pd.to_datetime(dates))\n    return (s.dt.dayofweek >= 5).tolist()\n",
+    "tests": "assert weekend_flags(['2026-11-06','2026-11-07','2026-11-08','2026-11-09'])==[False,True,True,False]\nassert weekend_flags(['2026-11-08'])==[True]\nassert weekend_flags([])==[]\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-052",
+    "chapter": "lecture5",
+    "topic": "columns",
+    "topicLabel": {
+      "en": "New columns, dates and sorting",
+      "zh": "新增列、日期与排序"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Rank busiest stations",
+      "zh": "按租车数给站点排序"
+    },
+    "prompt": {
+      "en": "Implement `rank_stations(df)`. Return station names ordered by rentals descending. Assume rental counts are distinct, and preserve an empty input as an empty list.",
+      "zh": "实现rank_stations(df)，按rentals从高到低返回站点名称列表。假定租车数互不相同，空表返回空列表。"
+    },
+    "explanation": {
+      "en": "Sort rows by the rentals values and then select station names. ascending=False is the switch that places the largest values first. Sorting the station names themselves would answer an alphabetical question instead.",
+      "zh": "先依据rentals列排序，再取出station列。ascending=False控制从大到小。如果先对站名排序，就会变成按字母顺序，而不是按业务数量排序。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 29–32; pandas-dp notebook 2 exercises 17–18",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def rank_stations(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def rank_stations(df):\n    return df.sort_values('rentals', ascending=False)['station'].tolist()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'station':['A','B','C'],'rentals':[20,40,10]})\nassert rank_stations(d)==['B','A','C']\nassert rank_stations(d.iloc[:1])==['A']\nassert rank_stations(d.iloc[:0])==[]\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-053",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Station totals as a dictionary",
+      "zh": "把站点总量转成字典"
+    },
+    "prompt": {
+      "en": "Implement `station_totals(df)`. Sum rentals for each station and return a Python dictionary station -> total. station has no missing values; repeated station names are expected.",
+      "zh": "实现station_totals(df)，按站点汇总rentals，并返回“站点→总量”的Python字典。station没有缺失值，允许站名重复。"
+    },
+    "explanation": {
+      "en": "groupby gathers rows belonging to the same station. sum combines the rentals within each group, and to_dict turns the grouped Series into the requested mapping. Repeated station rows must be added rather than overwritten.",
+      "zh": "groupby把同站点的记录集中起来，sum在各组内部求和，最后用to_dict转成字典。同站点多条记录需要累加，不能简单赋值导致前面的记录被覆盖。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def station_totals(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def station_totals(df):\n    return df.groupby('station')['rentals'].sum().to_dict()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'station':['A','B','A'],'rentals':[10,7,20]})\nassert station_totals(d)=={'A':30,'B':7}\nassert station_totals(d.iloc[:1])=={'A':10}\nassert station_totals(d.iloc[:0])=={}\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-054",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Three statistics per station",
+      "zh": "每站点三个统计量"
+    },
+    "prompt": {
+      "en": "Implement `station_stats(df)`. Return a DataFrame indexed by station with columns mean, min, max, summarizing rentals per station. station and rentals have no missing values.",
+      "zh": "实现station_stats(df)，返回按station索引的DataFrame，列依次为mean、min、max，分别汇总每站点rentals的均值、最小值和最大值。两列都无缺失。"
+    },
+    "explanation": {
+      "en": "Select rentals before applying the list of aggregations. Each station gets one row, and each aggregation gets one column. A group with one observation has identical mean, minimum, and maximum.",
+      "zh": "先选rentals列，再把多个统计方法交给agg。每个站点对应一行，每种统计量对应一列。只有一条记录的组，其平均值、最小值和最大值会相同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def station_stats(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def station_stats(df):\n    return df.groupby('station')['rentals'].agg(['mean', 'min', 'max'])\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'station':['A','A','B'],'rentals':[10,20,7]})\nr=station_stats(d)\nassert r.columns.tolist()==['mean','min','max']\nassert r.loc['A'].tolist()==[15,10,20]\nassert r.loc['B'].tolist()==[7,7,7]\nassert station_stats(d.iloc[:0]).shape==(0,3)\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-055",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Season and station totals",
+      "zh": "季节与站点双重汇总"
+    },
+    "prompt": {
+      "en": "Implement `season_totals(df)`. df contains month (integers 1..12), station, rentals. Map 12/1/2 to Winter, 3/4/5 to Spring, 6/7/8 to Summer, 9/10/11 to Autumn. Return a dict `(season, station) -> total rentals`. Do not change df.",
+      "zh": "实现season_totals(df)。df含month（1到12的整数）、station、rentals。12/1/2为Winter，3/4/5为Spring，6/7/8为Summer，9/10/11为Autumn。返回(季节,站点)元组到租车总量的字典，不修改原表。"
+    },
+    "explanation": {
+      "en": "Create a season label for every month, then group by both the season and station columns. December belongs with January and February under this task’s explicit convention. Copying protects the input while a tuple key records both grouping dimensions.",
+      "zh": "先给每个月生成季节标签，再同时按season和station分组。按本题规则，12月要与1月、2月归在同一个Winter组。元组键可以同时保留两个分组维度，copy则保护原表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def season_totals(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def season_totals(df):\n    out = df.copy()\n    def label(m):\n        if m in [12, 1, 2]: return 'Winter'\n        if m in [3, 4, 5]: return 'Spring'\n        if m in [6, 7, 8]: return 'Summer'\n        return 'Autumn'\n    out['season'] = out['month'].apply(label)\n    return out.groupby(['season', 'station'])['rentals'].sum().to_dict()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'month':[12,1,3,6,9],'station':['A','A','A','B','B'],'rentals':[10,20,7,8,9]})\nassert season_totals(d)=={('Winter','A'):30,('Spring','A'):7,('Summer','B'):8,('Autumn','B'):9}\nassert 'season' not in d.columns\nassert season_totals(d.iloc[:0])=={}\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-056",
+    "chapter": "lecture5",
+    "topic": "group",
+    "topicLabel": {
+      "en": "Grouping and aggregation",
+      "zh": "分组与聚合"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "July winner with a tie rule",
+      "zh": "含并列规则的七月冠军"
+    },
+    "prompt": {
+      "en": "Implement `july_winner(df)` for columns month, station, rentals. Return the station with the greatest July total; if totals tie, return the alphabetically smallest station. If there are no July rows, return None. Station names are strings and values are non-missing.",
+      "zh": "实现july_winner(df)，df含month、station、rentals。返回七月租车总量最多的站名；总量并列时返回字母顺序最小的站名；没有七月记录时返回None。站名为字符串且无缺失值。"
+    },
+    "explanation": {
+      "en": "Filter to July before adding rows per station. Find the maximum total, keep every station tied at that maximum, then use min on those names. The explicit empty-data check avoids asking for a winner that does not exist.",
+      "zh": "先筛出七月记录，再按站点累计。找到最大总量后保留所有并列站点，再用min取字母顺序最小的站名。空数据要先处理，否则没有可供比较的冠军。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 33–35 and 43–46; pandas-dp notebook 2 exercises 19–20",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def july_winner(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def july_winner(df):\n    july = df[df['month'] == 7]\n    if july.empty:\n        return None\n    totals = july.groupby('station')['rentals'].sum()\n    best = totals.max()\n    return min(totals[totals == best].index)\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'month':[7,7,7,8],'station':['B','A','B','C'],'rentals':[5,10,5,99]})\nassert july_winner(d)=='A'\nassert july_winner(d[d['station']=='B'])=='B'\nassert july_winner(d[d['month']==8]) is None\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-057",
+    "chapter": "lecture5",
+    "topic": "missing",
+    "topicLabel": {
+      "en": "Missing values",
+      "zh": "缺失值处理"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Fill temperatures safely",
+      "zh": "按均值填充气温"
+    },
+    "prompt": {
+      "en": "Implement `fill_temperature(df)`. Return a copy with missing temperature filled by the mean of valid temperatures. If every temperature is missing, fill with 0 instead. Preserve all other data and leave df unchanged.",
+      "zh": "实现fill_temperature(df)，返回副本，用有效temperature的均值填补该列缺失值。若该列全部缺失，则填0。保留其他数据且不修改原表。"
+    },
+    "explanation": {
+      "en": "Calculate the mean from valid values and assign the filled Series back to the copied column. An all-missing column has no valid mean, so this contract gives it an explicit zero fallback. This fallback is a teaching rule, not a universal business policy.",
+      "zh": "先用有效数计算均值，再把fillna结果赋回副本中的温度列。全缺失时根本算不出有效均值，所以按题目约定使用0。这个回退规则是本题规定，真实业务中应另行确定缺失处理政策。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def fill_temperature(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def fill_temperature(df):\n    import pandas as pd\n    out = df.copy()\n    mean = out['temperature'].mean()\n    if pd.isna(mean):\n        mean = 0\n    out['temperature'] = out['temperature'].fillna(mean)\n    return out\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'temperature':[10.0,None,20.0],'station':['A','B','C']})\nassert fill_temperature(d)['temperature'].tolist()==[10,15,20]\nassert d['temperature'].isna().sum()==1\nassert fill_temperature(pd.DataFrame({'temperature':[None,None]}))['temperature'].tolist()==[0,0]\nassert fill_temperature(d)['station'].tolist()==['A','B','C']\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-058",
+    "chapter": "lecture5",
+    "topic": "missing",
+    "topicLabel": {
+      "en": "Missing values",
+      "zh": "缺失值处理"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Missing-count report",
+      "zh": "缺失数量报告"
+    },
+    "prompt": {
+      "en": "Implement `missing_report(df)`, returning a Python dictionary from every column name to its number of missing cells. Keep columns whose missing count is zero.",
+      "zh": "实现missing_report(df)，返回每个列名到该列缺失单元格数量的Python字典。没有缺失的列也必须保留，其计数为0。"
+    },
+    "explanation": {
+      "en": "isna marks missing cells with True. Summing each column turns those markers into counts, and to_dict produces a readable report. Do not drop the zero-count columns because they confirm which fields were checked.",
+      "zh": "isna把缺失位置标成True，对每一列求和即可得到缺失数量，再转成字典报告。不要删去计数为0的列，因为它们也说明哪些字段已经被检查。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 36–38; pandas-dp notebook 2 exercise 15",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp/notebook-2",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def missing_report(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def missing_report(df):\n    return df.isna().sum().to_dict()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'a':[1,None],'b':[None,None],'c':[2,3]})\nassert missing_report(d)=={'a':1,'b':2,'c':0}\nassert missing_report(d.iloc[:0])=={'a':0,'b':0,'c':0}\nassert missing_report(pd.DataFrame())=={}\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-059",
+    "chapter": "lecture5",
+    "topic": "plots",
+    "topicLabel": {
+      "en": "Plot choice and pivot tables",
+      "zh": "图表选择与透视表"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Monthly station grid",
+      "zh": "月份站点交叉表"
+    },
+    "prompt": {
+      "en": "Implement `monthly_grid(df)`. Build a pivot table with month as rows, station as columns, rentals as values, and sum aggregation. Fill absent month-station combinations with 0. Assume non-missing input and at least one row.",
+      "zh": "实现monthly_grid(df)，生成month为行、station为列、rentals为值的透视表，按sum聚合。某月某站点没有记录的位置填0。假定输入无缺失且至少一行。"
+    },
+    "explanation": {
+      "en": "A pivot rearranges long-form records into a grid. sum combines multiple records that land in the same cell, and fill_value supplies 0 only for absent combinations. That distinguishes aggregation from simply displaying the first row found.",
+      "zh": "透视表把长表记录整理成网格。多条记录落到同一个单元格时，用sum合并；没有记录的组合再用fill_value补0。不能只显示找到的第一条记录，否则会漏掉累计值。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def monthly_grid(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def monthly_grid(df):\n    return df.pivot_table(index='month', columns='station', values='rentals', aggfunc='sum', fill_value=0)\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'month':[1,1,2,1],'station':['A','A','A','B'],'rentals':[10,20,5,7]})\nr=monthly_grid(d)\nassert r.loc[1,'A']==30\nassert r.loc[2,'B']==0\nassert r.loc[1,'B']==7 and r.shape==(2,2)\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "L5-060",
+    "chapter": "lecture5",
+    "topic": "plots",
+    "topicLabel": {
+      "en": "Plot choice and pivot tables",
+      "zh": "图表选择与透视表"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Prepare a sorted bar chart",
+      "zh": "为排序柱状图准备数据"
+    },
+    "prompt": {
+      "en": "Implement `price_chart_data(df)`. Return a list of dictionaries containing only product and Price, sorted by Price ascending. Prices are distinct. This prepares chart data; do not draw a chart.",
+      "zh": "实现price_chart_data(df)，返回只含product、Price两项的字典列表，并按Price升序排列。价格互不相同。本题仅准备绘图数据，不实际画图。"
+    },
+    "explanation": {
+      "en": "Sort by the numeric price before selecting the two report columns. to_dict(\"records\") creates one dictionary per row, a convenient input for a chart. Keep the input unchanged so sorting for presentation does not silently rearrange the original dataset.",
+      "zh": "先按数值价格排序，再选绘图所需的两列。to_dict(\"records\")把每一行转成一个字典，便于图表使用。只整理输出，不改变原表，避免展示排序悄悄影响后续分析。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Lecture 5 · cells 39–42; pandas-dp notebook 1 exercise 10 and notebook 4 exercise 29",
+      "url": "https://github.com/spcourse/pandas/tree/main/pandas-dp",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def price_chart_data(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def price_chart_data(df):\n    return df.sort_values('Price')[['product', 'Price']].to_dict('records')\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'product':['Cake','Tea','Bread'],'Price':[5,2,3],'Stock':[1,2,3]})\nassert price_chart_data(d)==[{'product':'Tea','Price':2},{'product':'Bread','Price':3},{'product':'Cake','Price':5}]\nassert price_chart_data(d.iloc[:0])==[]\nassert d['product'].tolist()==['Cake','Tea','Bread']\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  }
+]

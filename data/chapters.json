@@ -1,0 +1,103 @@
+{
+  "title": "跟着飞飞老师突击编程",
+  "chapters": [
+    {
+      "id": "lecture1",
+      "code": "01",
+      "name": {
+        "en": "Introduction",
+        "zh": "编程入门"
+      },
+      "file": "1_Introduction_filled.ipynb",
+      "icon": "sprout",
+      "description": {
+        "en": "Start with variables, notebooks, modules and clear programs.",
+        "zh": "从变量、Notebook、模块和读懂报错开始。"
+      }
+    },
+    {
+      "id": "lecture2",
+      "code": "02",
+      "name": {
+        "en": "Data Types",
+        "zh": "数据类型"
+      },
+      "file": "2_Data_Types_filled.ipynb",
+      "icon": "boxes",
+      "description": {
+        "en": "Understand numbers, strings, collections and NumPy arrays.",
+        "zh": "练清数字、字符串、容器与 NumPy 数组。"
+      }
+    },
+    {
+      "id": "lecture3",
+      "code": "03",
+      "name": {
+        "en": "Control Structures",
+        "zh": "条件与循环"
+      },
+      "file": "3_Control_Structures_filled.ipynb",
+      "icon": "route",
+      "description": {
+        "en": "Follow branches and loops, one step at a time.",
+        "zh": "逐步追踪分支与循环，把边界想清楚。"
+      }
+    },
+    {
+      "id": "lecture4",
+      "code": "04",
+      "name": {
+        "en": "Functions",
+        "zh": "函数"
+      },
+      "file": "4_Functions_filled.ipynb",
+      "icon": "function",
+      "description": {
+        "en": "Build reusable functions and understand scope and parameters.",
+        "zh": "理解参数、返回值、作用域和类型提示。"
+      }
+    },
+    {
+      "id": "lecture5",
+      "code": "05",
+      "name": {
+        "en": "Files & Data Handling",
+        "zh": "文件与数据处理"
+      },
+      "file": "5_Files_Data_Handling_filled.ipynb",
+      "icon": "table",
+      "description": {
+        "en": "Read files and explore small tables with pandas.",
+        "zh": "读写文件，用 pandas 筛选、汇总和分析表格。"
+      }
+    },
+    {
+      "id": "tutorial1",
+      "code": "T1",
+      "name": {
+        "en": "Tutorial 1",
+        "zh": "综合练习一"
+      },
+      "file": "Tutorial1_Solutions.ipynb",
+      "icon": "pencil",
+      "description": {
+        "en": "Business cards, compound interest, random samples and addresses.",
+        "zh": "名片排版、复利、随机样本与字典综合应用。"
+      }
+    },
+    {
+      "id": "tutorial2",
+      "code": "T2",
+      "name": {
+        "en": "Tutorial 2",
+        "zh": "综合练习二"
+      },
+      "file": "Tutorial2.ipynb",
+      "icon": "star",
+      "description": {
+        "en": "Pi, password rules, exact word counts and fitness tables.",
+        "zh": "π 近似、密码规则、精确词频与健身数据分析。"
+      }
+    }
+  ]
+}

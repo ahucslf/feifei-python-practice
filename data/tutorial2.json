@@ -1,0 +1,2847 @@
+[
+  {
+    "id": "T2-001",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "The missing multiplier",
+      "zh": "不能漏掉的乘数"
+    },
+    "prompt": {
+      "en": "S is the sum of (-1)**i/(2*i+1) for i=0..n. Which value approximates pi?",
+      "zh": "S是(-1)**i/(2*i+1)从i=0到n的和。哪个值近似π？"
+    },
+    "explanation": {
+      "en": "The unscaled Leibniz sum approaches pi/4. Multiply the whole sum by four before comparing with pi. Adding more terms cannot fix a missing scale factor.",
+      "zh": "未乘倍数的莱布尼茨和趋近π/4。必须把整个和乘4后才能与π比较。漏掉倍数不是多加几项就能修正的。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "S",
+        "zh": "S"
+      },
+      {
+        "en": "4*S",
+        "zh": "4*S"
+      },
+      {
+        "en": "S/4",
+        "zh": "S/4"
+      },
+      {
+        "en": "S**4",
+        "zh": "S**4"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-002",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Count the terms",
+      "zh": "计算项数"
+    },
+    "prompt": {
+      "en": "range(n+1) starts at zero. How many terms are generated for n=4?",
+      "zh": "range(n+1)从0开始，n=4时生成几项？"
+    },
+    "explanation": {
+      "en": "The indices are 0,1,2,3,4. Five indices mean five terms. The last index is one less than the term count.",
+      "zh": "索引是0、1、2、3、4，因此共5项。最后索引与项数相差1。从0开始计数时尤其要留意这个差别。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "6",
+        "zh": "6"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert len(range(5))==5"
+  },
+  {
+    "id": "T2-003",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Alternating signs",
+      "zh": "交替的正负号"
+    },
+    "prompt": {
+      "en": "What is [(-1)**i for i in range(4)]?",
+      "zh": "[(-1)**i for i in range(4)]的结果是什么？"
+    },
+    "explanation": {
+      "en": "Even powers of -1 give 1 and odd powers give -1. Index zero gives a positive first sign. Multiplication by i would not produce the same pattern.",
+      "zh": "-1的偶数次方为1、奇数次方为-1。索引0对应0次方，因此第一项为正。普通乘法不能代替这里的乘方。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[-1,1,-1,1]",
+        "zh": "[-1,1,-1,1]"
+      },
+      {
+        "en": "[1,1,1,1]",
+        "zh": "[1,1,1,1]"
+      },
+      {
+        "en": "[1,-1,1,-1]",
+        "zh": "[1,-1,1,-1]"
+      },
+      {
+        "en": "[0,-1,0,-1]",
+        "zh": "[0,-1,0,-1]"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert [(-1)**i for i in range(4)]==[1,-1,1,-1]"
+  },
+  {
+    "id": "T2-004",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "First two terms",
+      "zh": "前两项的近似值"
+    },
+    "prompt": {
+      "en": "What is round(4*(1-1/3),3)?",
+      "zh": "round(4*(1-1/3),3)是多少？"
+    },
+    "explanation": {
+      "en": "The unscaled sum is 2/3, so multiplying by four gives 8/3. Rounding gives 2.667. Three displayed decimal places do not guarantee three accurate digits of pi.",
+      "zh": "先求和得到2/3，乘4后为8/3，舍入得到2.667。显示3位小数不等于已经把π近似到3位。近似精度与显示精度是两件事。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "0.667",
+        "zh": "0.667"
+      },
+      {
+        "en": "2.667",
+        "zh": "2.667"
+      },
+      {
+        "en": "3.142",
+        "zh": "3.142"
+      },
+      {
+        "en": "4.000",
+        "zh": "4.000"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert round(4*(1-1/3),3)==2.667"
+  },
+  {
+    "id": "T2-005",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Absolute error",
+      "zh": "绝对误差"
+    },
+    "prompt": {
+      "en": "Which expression measures absolute error of an approximation a to math.pi?",
+      "zh": "哪个表达式计算近似值a与math.pi之间的绝对误差？"
+    },
+    "explanation": {
+      "en": "Subtraction gives a signed difference. abs makes both overestimates and underestimates non-negative. Rounding a alone does not measure its distance from pi.",
+      "zh": "先相减得到差值，abs去掉正负号。这样高估和低估都用非负误差表示。只对a舍入并没有计算它与π的距离。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "a-math.pi",
+        "zh": "a-math.pi"
+      },
+      {
+        "en": "math.pi/a",
+        "zh": "math.pi/a"
+      },
+      {
+        "en": "abs(a-math.pi)",
+        "zh": "abs(a-math.pi)"
+      },
+      {
+        "en": "round(a,2)",
+        "zh": "round(a,2)"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "T2-006",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Zero is still one term",
+      "zh": "n为0仍有一项"
+    },
+    "prompt": {
+      "en": "A function sums indices 0..n inclusive then multiplies by 4. What is its result for n=0?",
+      "zh": "函数对索引0到n含两端求和，再乘4。n=0时返回什么？"
+    },
+    "explanation": {
+      "en": "The interval still includes index zero, whose term is one. Multiplying by four gives four. This boundary catches an accidental range(n) loop that runs zero times.",
+      "zh": "范围仍包含索引0，这一项为1，乘4后为4。n=0不是没有项。这个边界能发现误用range(n)导致循环不执行的问题。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "0.0",
+        "zh": "0.0"
+      },
+      {
+        "en": "1.0",
+        "zh": "1.0"
+      },
+      {
+        "en": "4.0",
+        "zh": "4.0"
+      },
+      {
+        "en": "math.pi",
+        "zh": "math.pi"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "T2-007",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Four rules",
+      "zh": "四项规则"
+    },
+    "prompt": {
+      "en": "The rules are length>=8, upper AND lower case, a digit, and an allowed symbol. How many criteria are there?",
+      "zh": "规则为长度>=8、大小写同时存在、有数字、有允许的符号，共几项标准？"
+    },
+    "explanation": {
+      "en": "Uppercase and lowercase together make one criterion here. Both must be present to earn that point. Counting them separately would change the tutorial score.",
+      "zh": "本题把大小写同时存在作为一项标准。两种字母都找到才得这一分。拆成两分就改变了教程原有的四项评分。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "8",
+        "zh": "8"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-008",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Minimum length",
+      "zh": "最短长度"
+    },
+    "prompt": {
+      "en": "Which test accepts a password of exactly 8 characters?",
+      "zh": "哪条判断接受恰好8个字符的密码？"
+    },
+    "explanation": {
+      "en": "At least eight includes equality. A strict greater-than test rejects the shortest legal case. Testing the boundary is more useful than only testing very long passwords.",
+      "zh": "至少8个包含等于8。严格大于会错误拒绝最短合法情况。测试时应特意检查门槛本身，而不只测试很长的密码。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "len(pw)>8",
+        "zh": "len(pw)>8"
+      },
+      {
+        "en": "len(pw)>=8",
+        "zh": "len(pw)>=8"
+      },
+      {
+        "en": "len(pw)==9",
+        "zh": "len(pw)==9"
+      },
+      {
+        "en": "len(pw)<8",
+        "zh": "len(pw)<8"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-009",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Mixed letter case",
+      "zh": "同时含大小写"
+    },
+    "prompt": {
+      "en": "Which condition checks for at least one uppercase and one lowercase character?",
+      "zh": "哪个条件检查至少一个大写字符和一个小写字符？"
+    },
+    "explanation": {
+      "en": "The two any calls search for different characters. Whole-string isupper means all cased letters are uppercase, so combining it with islower is unsuitable. Length cannot substitute for a case check.",
+      "zh": "两个any分别寻找大写和小写字符。对整个字符串同时要求isupper和islower，不符合同时含两种字母的意思。长度也不能替代大小写检查。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "pw.isupper() and pw.islower()",
+        "zh": "pw.isupper() and pw.islower()"
+      },
+      {
+        "en": "any(c.isupper() for c in pw) and any(c.islower() for c in pw)",
+        "zh": "any(c.isupper() for c in pw) and any(c.islower() for c in pw)"
+      },
+      {
+        "en": "pw.upper()==pw",
+        "zh": "pw.upper()==pw"
+      },
+      {
+        "en": "len(pw)>=8",
+        "zh": "len(pw)>=8"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-010",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Allowed symbol list",
+      "zh": "允许的符号名单"
+    },
+    "prompt": {
+      "en": "Allowed symbols are !§$%&()=?+#. Does the underscore in Abcdef1_ satisfy that rule?",
+      "zh": "允许符号为!§$%&()=?+#，Abcdef1_中的下划线是否满足符号规则？"
+    },
+    "explanation": {
+      "en": "The explicit allowed set defines this exercise. A symbol may look special but still be outside that set. Check membership rather than guessing from appearance.",
+      "zh": "本题以明确给出的名单为准。看起来特殊的字符也可能不被这份规则接受。要检查成员关系，而不是凭外观判断。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Yes, any non-letter works",
+        "zh": "是，任何非字母都可以"
+      },
+      {
+        "en": "Yes, underscore always counts",
+        "zh": "是，下划线总算特殊字符"
+      },
+      {
+        "en": "No, underscore is absent from the list",
+        "zh": "否，下划线不在名单中"
+      },
+      {
+        "en": "No, digits are forbidden",
+        "zh": "否，数字不允许"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "T2-011",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Score a short password",
+      "zh": "短密码评分"
+    },
+    "prompt": {
+      "en": "Under the four rules, what score does Aa1! receive? Minimum length is 8.",
+      "zh": "按照四项规则，Aa1!得几分？最短长度为8。"
+    },
+    "explanation": {
+      "en": "It has mixed case, a digit and an allowed symbol. It fails only the length rule. Scoring must check all criteria instead of stopping after the first failure.",
+      "zh": "它有大小写、数字、允许的符号，只缺长度，因此3分。评分需要逐项检查。不能发现长度不够就把其他符合条件的项全部忽略。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "1",
+        "zh": "1"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "T2-012",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Repeat until valid",
+      "zh": "重复直到合格"
+    },
+    "prompt": {
+      "en": "score counts satisfied rules out of four. Which loop continues only while invalid?",
+      "zh": "score是满足的标准数，总分4。哪条循环条件只在不合格时继续？"
+    },
+    "explanation": {
+      "en": "A valid candidate reaches four points. Continue below that target and recalculate after every new password. Reusing an old score prevents the loop from noticing improvement.",
+      "zh": "四分才合格，所以小于4时继续。每次新密码都要重新计分。若沿用旧分数，循环就察觉不到密码已经改善。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "while score==4:",
+        "zh": "while score==4:"
+      },
+      {
+        "en": "while score<4:",
+        "zh": "while score<4:"
+      },
+      {
+        "en": "while score>4:",
+        "zh": "while score>4:"
+      },
+      {
+        "en": "while score!=0:",
+        "zh": "while score!=0:"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-013",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Exact token matching",
+      "zh": "完整词精确匹配"
+    },
+    "prompt": {
+      "en": "After whitespace splitting, how many exact and tokens occur in \"and And and, and\"?",
+      "zh": "按空白拆词后，\"and And and, and\"中完整匹配小写and的词有几个？"
+    },
+    "explanation": {
+      "en": "Only the first and last tokens match. And differs in case and and, retains a comma. The rule deliberately excludes both variants.",
+      "zh": "只有首尾两个词完全匹配。And大小写不同，and,带逗号，都不计入。这是题目特意规定的精确匹配规则。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "1",
+        "zh": "1"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert 'and And and, and'.split().count('and')==2"
+  },
+  {
+    "id": "T2-014",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Substring versus word",
+      "zh": "子串与完整词"
+    },
+    "prompt": {
+      "en": "Why is text.count(\"and\") unsuitable for exact-word counting in \"candy and sand\"?",
+      "zh": "为什么不能用text.count(\"and\")对\"candy and sand\"做完整词计数？"
+    },
+    "explanation": {
+      "en": "String count searches characters anywhere. The same letters occur inside other words. Splitting creates complete candidates that can be compared with equality.",
+      "zh": "字符串count会搜索任意位置的字符，其他词内部也可能出现and。先拆成完整词，再用相等比较，才符合词边界要求。不要把子串出现等同于完整词出现。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "It also counts the letters inside candy and sand",
+        "zh": "它还会计入candy与sand内部的字母片段"
+      },
+      {
+        "en": "It cannot handle strings",
+        "zh": "它不能处理字符串"
+      },
+      {
+        "en": "It always returns zero",
+        "zh": "它总返回0"
+      },
+      {
+        "en": "It removes punctuation",
+        "zh": "它会去除标点"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert 'candy and sand'.count('and')==3"
+  },
+  {
+    "id": "T2-015",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Default word",
+      "zh": "默认目标词"
+    },
+    "prompt": {
+      "en": "Given def count_word(text, word=\"and\"), which target is used by count_word(\"and or and\")?",
+      "zh": "给定def count_word(text,word=\"and\")，调用count_word(\"and or and\")搜索什么？"
+    },
+    "explanation": {
+      "en": "An omitted optional argument uses its default. Here word becomes and. The text parameter remains required because it has no default.",
+      "zh": "省略可选参数时会采用默认值，这里word为and。text没有默认值，仍必须提供。默认参数只是为常用调用减少输入，并不是所有参数都能省略。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "or",
+        "zh": "or"
+      },
+      {
+        "en": "and",
+        "zh": "and"
+      },
+      {
+        "en": "word",
+        "zh": "word"
+      },
+      {
+        "en": "An argument is missing",
+        "zh": "缺少参数报错"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-016",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Tabs and newlines",
+      "zh": "制表符与换行"
+    },
+    "prompt": {
+      "en": "What does \"and\\tand\\nAND\".split() return?",
+      "zh": "\"and\\tand\\nAND\".split()返回什么？"
+    },
+    "explanation": {
+      "en": "No-argument split recognizes whitespace such as tabs and newlines. It groups separators rather than introducing empty words. It does not lowercase AND.",
+      "zh": "不带参数的split能识别制表符和换行等空白。它会合并连续分隔符，不制造空词。它不会把AND转成小写。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "['and','and','AND']",
+        "zh": "['and','and','AND']"
+      },
+      {
+        "en": "['and\\tand\\nAND']",
+        "zh": "['and\\tand\\nAND']"
+      },
+      {
+        "en": "['and','','and','AND']",
+        "zh": "['and','','and','AND']"
+      },
+      {
+        "en": "['and','and','and']",
+        "zh": "['and','and','and']"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert 'and\\tand\\nAND'.split()==['and','and','AND']"
+  },
+  {
+    "id": "T2-017",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "No words",
+      "zh": "空文本"
+    },
+    "prompt": {
+      "en": "What should an exact-word counter return for empty text?",
+      "zh": "对空文本进行完整词计数，应返回什么？"
+    },
+    "explanation": {
+      "en": "An empty text splits into an empty list. There are no matching tokens, so zero is appropriate. Absence is a normal result, not an exceptional situation here.",
+      "zh": "空文本拆分得到空列表，没有匹配词，所以计数为0。没找到是正常结果。没有必要用None或异常代替数字计数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "None",
+        "zh": "None"
+      },
+      {
+        "en": "1",
+        "zh": "1"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "It must raise ValueError",
+        "zh": "必须抛ValueError"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "T2-018",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Cleaning changes the task",
+      "zh": "清洗会改变任务"
+    },
+    "prompt": {
+      "en": "A student lowercases text and removes commas before counting. Is this equivalent to Tutorial 2 exact matching?",
+      "zh": "先转小写、去逗号再计数，是否等同于Tutorial 2的精确匹配？"
+    },
+    "explanation": {
+      "en": "Cleaning is useful in other tasks but changes this contract. And and and, would be turned into and. Implement the specified rule before choosing extra preprocessing.",
+      "zh": "清洗在其他任务中可能有用，但会改变这里的约定。And和and,都可能被转成and。应先理解题目定义，再决定是否预处理，不能擅自改变匹配标准。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Yes, cleaning cannot change counts",
+        "zh": "是，清洗不会改变计数"
+      },
+      {
+        "en": "No, excluded tokens may become matches",
+        "zh": "否，本应排除的词可能变成匹配"
+      },
+      {
+        "en": "Yes, split already removes commas",
+        "zh": "是，split已经去掉逗号"
+      },
+      {
+        "en": "No, lower is not a string method",
+        "zh": "否，lower不是字符串方法"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-019",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Situp mean",
+      "zh": "仰卧起坐均值"
+    },
+    "prompt": {
+      "en": "A teaching sample has Situps=[10,20,30]. What is the mean?",
+      "zh": "教学样本Situps=[10,20,30]，均值是多少？"
+    },
+    "explanation": {
+      "en": "The sum is sixty across three observations. Divide by three to obtain twenty. The sum and average answer different questions.",
+      "zh": "总和为60，共3个观测值，除以3得到20。总量与平均值回答的问题不同。pandas中对应调用mean，而不是sum。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "10",
+        "zh": "10"
+      },
+      {
+        "en": "20",
+        "zh": "20"
+      },
+      {
+        "en": "30",
+        "zh": "30"
+      },
+      {
+        "en": "60",
+        "zh": "60"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert sum([10,20,30])/3==20"
+  },
+  {
+    "id": "T2-020",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Median pulse",
+      "zh": "脉搏中位数"
+    },
+    "prompt": {
+      "en": "Pulse values are [80,60,70,90]. What is the median?",
+      "zh": "Pulse为[80,60,70,90]，中位数是多少？"
+    },
+    "explanation": {
+      "en": "Sort to sixty,seventy,eighty,ninety. An even sample uses the mean of the two middle values. Original row order is irrelevant.",
+      "zh": "排序后为60、70、80、90，偶数个值取中间两数的平均值75。原来的行顺序无关。不能直接拿原表中间某一行当中位数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "70",
+        "zh": "70"
+      },
+      {
+        "en": "75",
+        "zh": "75"
+      },
+      {
+        "en": "80",
+        "zh": "80"
+      },
+      {
+        "en": "90",
+        "zh": "90"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-021",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Joint threshold",
+      "zh": "两个门槛同时满足"
+    },
+    "prompt": {
+      "en": "Which rows satisfy Weight>=190 AND Waist>=38? A=(190,38), B=(189,40), C=(200,37).",
+      "zh": "哪些行同时满足Weight>=190且Waist>=38？A=(190,38)，B=(189,40)，C=(200,37)。"
+    },
+    "explanation": {
+      "en": "A reaches both inclusive thresholds. B fails weight and C fails waist. A large value in one column cannot compensate for failing the other.",
+      "zh": "A两项都刚好达标。B体重不够，C腰围不够。且关系要求同一人两项都满足，另一项再高也不能补足。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "A only",
+        "zh": "只有A"
+      },
+      {
+        "en": "A and B",
+        "zh": "A和B"
+      },
+      {
+        "en": "A and C",
+        "zh": "A和C"
+      },
+      {
+        "en": "All",
+        "zh": "全部"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "T2-022",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "All other people",
+      "zh": "其余所有人"
+    },
+    "prompt": {
+      "en": "mask selects Weight>=190 AND Waist>=38. Which expression selects all remaining rows?",
+      "zh": "mask选择Weight>=190且Waist>=38的人，如何选择其余所有行？"
+    },
+    "explanation": {
+      "en": "Tilde reverses each Boolean value. The complement includes anyone failing either condition. Constructing an opposite AND filter may accidentally omit people.",
+      "zh": "~逐项反转真假值。其余人应包括任意一条未满足的人。另写一个相反的且条件，反而可能漏掉只未满足一条的人。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "df[mask]",
+        "zh": "df[mask]"
+      },
+      {
+        "en": "df[~mask]",
+        "zh": "df[~mask]"
+      },
+      {
+        "en": "df[not mask]",
+        "zh": "df[not mask]"
+      },
+      {
+        "en": "df[mask==mask]",
+        "zh": "df[mask==mask]"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-023",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Count people",
+      "zh": "统计人数"
+    },
+    "prompt": {
+      "en": "With no missing Weight, what does (df[\"Weight\"]>=190).sum() measure?",
+      "zh": "Weight无缺失时，(df[\"Weight\"]>=190).sum()统计什么？"
+    },
+    "explanation": {
+      "en": "A comparison produces one Boolean per row. True adds one and False adds zero in a sum. Therefore the result counts matching people, not pounds.",
+      "zh": "比较会为每行生成真假值。True求和时为1，False为0，因此结果是人数。它不是对原体重求和，也没有磅这个单位。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Total weight",
+        "zh": "体重总和"
+      },
+      {
+        "en": "Number meeting the threshold",
+        "zh": "达到门槛的人数"
+      },
+      {
+        "en": "Mean weight",
+        "zh": "平均体重"
+      },
+      {
+        "en": "Column count",
+        "zh": "列数"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-024",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Remember units",
+      "zh": "记住单位"
+    },
+    "prompt": {
+      "en": "The original Linnerud description uses pounds for Weight. What does Weight>=190 mean?",
+      "zh": "原Linnerud说明里Weight的单位为磅，Weight>=190表示什么？"
+    },
+    "explanation": {
+      "en": "A threshold belongs to a column and unit. The original description specifies pounds here. Converting the data to kilograms requires converting the threshold as well.",
+      "zh": "门槛数字需要与字段、单位一起解释。原说明使用磅，因此190就是190磅。如果把数据换成千克，门槛也要同步换算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "At least 190 kilograms",
+        "zh": "至少190千克"
+      },
+      {
+        "en": "At least 190 pounds",
+        "zh": "至少190磅"
+      },
+      {
+        "en": "At least 190 centimetres",
+        "zh": "至少190厘米"
+      },
+      {
+        "en": "At least 190 repetitions",
+        "zh": "至少190次"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-025",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Heavy at the boundary",
+      "zh": "heavy临界值"
+    },
+    "prompt": {
+      "en": "heavy is Weight>=180. What is the flag for Weight=180?",
+      "zh": "heavy定义为Weight>=180，Weight恰为180时标记是什么？"
+    },
+    "explanation": {
+      "en": "The equality includes one hundred eighty. A strict greater-than sign would misclassify this row. Do not confuse this threshold with the separate 190-pound filter.",
+      "zh": ">=包含门槛180。误用>会把这一行分错组。这里的180也不要与另一题的190门槛混淆。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "False",
+        "zh": "False"
+      },
+      {
+        "en": "True",
+        "zh": "True"
+      },
+      {
+        "en": "180",
+        "zh": "180"
+      },
+      {
+        "en": "Missing",
+        "zh": "缺失"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-026",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Low boundary",
+      "zh": "low边界"
+    },
+    "prompt": {
+      "en": "Fitness is low for chins<6, medium for 6..12, high for >=13. What is fitness_level(5)?",
+      "zh": "fitness为小于6时low、6到12时medium、至少13时high，fitness_level(5)是什么？"
+    },
+    "explanation": {
+      "en": "Five is immediately below six. The low branch includes it. Testing just below a threshold catches off-by-one mistakes.",
+      "zh": "5正好位于6之前，因此属于low。测试门槛前一个值很有帮助。只测0和20，未必能暴露临界值差1的错误。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "low",
+        "zh": "low"
+      },
+      {
+        "en": "medium",
+        "zh": "medium"
+      },
+      {
+        "en": "high",
+        "zh": "high"
+      },
+      {
+        "en": "Undefined",
+        "zh": "未定义"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "T2-027",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Medium upper end",
+      "zh": "medium上端点"
+    },
+    "prompt": {
+      "en": "Under the same rules, which label belongs to exactly 12 chin-ups?",
+      "zh": "沿用同一规则，恰好12次属于哪类？"
+    },
+    "explanation": {
+      "en": "Medium includes twelve and high starts at thirteen. Every allowed value should enter exactly one branch. Clear comparisons avoid gaps and overlap.",
+      "zh": "medium包含12，high从13开始。每个允许值应恰好进入一类。清晰的比较条件可避免在边界出现空档或重叠。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "low",
+        "zh": "low"
+      },
+      {
+        "en": "medium",
+        "zh": "medium"
+      },
+      {
+        "en": "high",
+        "zh": "high"
+      },
+      {
+        "en": "Both medium and high",
+        "zh": "同时为medium和high"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-028",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Apply a scalar function",
+      "zh": "逐值应用函数"
+    },
+    "prompt": {
+      "en": "Which expression applies fitness_level to every value in the Chins column?",
+      "zh": "哪个表达式把fitness_level应用到Chins列每个值？"
+    },
+    "explanation": {
+      "en": "Series.apply sends one cell value at a time to the function. This suits a rule written for one number. Passing the entire table changes the expected input shape.",
+      "zh": "Series.apply每次把一个单元格值交给函数，正好匹配处理单个次数的函数。直接传整张表就改变了输入类型。要让函数接口与传入对象对应。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "df[\"Chins\"].apply(fitness_level)",
+        "zh": "df[\"Chins\"].apply(fitness_level)"
+      },
+      {
+        "en": "fitness_level(df)",
+        "zh": "fitness_level(df)"
+      },
+      {
+        "en": "df.apply(\"Chins\")",
+        "zh": "df.apply(\"Chins\")"
+      },
+      {
+        "en": "df[fitness_level]",
+        "zh": "df[fitness_level]"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "T2-029",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Means by group",
+      "zh": "分组均值"
+    },
+    "prompt": {
+      "en": "Which computes mean Chins separately by heavy?",
+      "zh": "哪条表达式按heavy分别计算Chins均值？"
+    },
+    "explanation": {
+      "en": "Group by the grouping label and then choose the measurement. A plain mean mixes all people. The mean of a Boolean heavy column is a proportion, not exercise performance.",
+      "zh": "先按分组标签heavy分组，再选要统计的Chins。直接求均值会混合所有人。对布尔heavy求均值则是True的比例，不是运动表现。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "df[\"Chins\"].mean()",
+        "zh": "df[\"Chins\"].mean()"
+      },
+      {
+        "en": "df.groupby(\"heavy\")[\"Chins\"].mean()",
+        "zh": "df.groupby(\"heavy\")[\"Chins\"].mean()"
+      },
+      {
+        "en": "df[\"heavy\"].mean()",
+        "zh": "df[\"heavy\"].mean()"
+      },
+      {
+        "en": "df.groupby(\"Chins\")[\"heavy\"].sum()",
+        "zh": "df.groupby(\"Chins\")[\"heavy\"].sum()"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-030",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Interpret a small sample",
+      "zh": "解释小样本"
+    },
+    "prompt": {
+      "en": "A small teaching table has a lower mean Chins for heavy people. What is justified by that table alone?",
+      "zh": "教学小表中heavy组平均Chins更低，仅凭此表能说明什么？"
+    },
+    "explanation": {
+      "en": "The calculation describes this sample and grouping rule. It does not isolate causation or describe every individual. Correct arithmetic still needs careful interpretation.",
+      "zh": "计算描述当前样本及分组规则下的均值差异，不能单独证明因果关系，也不能预测每个人。算对以后仍要谨慎表述结论。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Weight causes lower performance for everyone",
+        "zh": "体重大导致每个人表现差"
+      },
+      {
+        "en": "The observed sample group means differ",
+        "zh": "此样本里两组均值不同"
+      },
+      {
+        "en": "Light people never have low Chins",
+        "zh": "体轻的人绝不可能Chins低"
+      },
+      {
+        "en": "A medical diagnosis is proven",
+        "zh": "已证明医学诊断"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-031",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Update after every attempt",
+      "zh": "每次尝试都要更新"
+    },
+    "prompt": {
+      "en": "A loop reads a new password but never recalculates score. What is the logic problem?",
+      "zh": "循环读取新密码却不重新计算score，主要问题是什么？"
+    },
+    "explanation": {
+      "en": "Updating pw does not recalculate a separate variable automatically. The condition can react only to updated values. Score each new candidate inside the loop.",
+      "zh": "修改pw不会自动更新另一个变量score。循环条件只能使用它实际读到的新值。因此每一轮都要重新检查新密码并更新分数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "The loop condition may never reflect the new password",
+        "zh": "循环条件可能永远反映不了新密码"
+      },
+      {
+        "en": "input always returns an integer",
+        "zh": "input总返回整数"
+      },
+      {
+        "en": "The symbol set becomes empty",
+        "zh": "符号名单必然变空"
+      },
+      {
+        "en": "All loops require recursion",
+        "zh": "循环必须改递归"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "T2-032",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "A precise pi contract",
+      "zh": "清晰的π函数约定"
+    },
+    "prompt": {
+      "en": "Which contract removes ambiguity about n?",
+      "zh": "哪种约定消除了n的歧义？"
+    },
+    "explanation": {
+      "en": "State the input domain, index bounds and scale. Then n=0 and n=1 have agreed results. Vague accuracy wording does not define a stopping rule.",
+      "zh": "输入范围、索引边界与倍数都应明确。这样n=0、n=1才有一致理解。只说准确并没有告诉程序该循环多少次。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Compute pi somehow",
+        "zh": "以某种方式算π"
+      },
+      {
+        "en": "For n>=0, sum indices 0..n inclusive then multiply by 4",
+        "zh": "n>=0，对索引0到n含两端求和，再乘4"
+      },
+      {
+        "en": "Return something accurate",
+        "zh": "返回准确的数"
+      },
+      {
+        "en": "Repeat until it looks right",
+        "zh": "重复到看起来正确"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-033",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Return a count",
+      "zh": "返回计数"
+    },
+    "prompt": {
+      "en": "Why return the result from count_word instead of only printing it?",
+      "zh": "count_word为什么应返回结果，而不只打印？"
+    },
+    "explanation": {
+      "en": "Returning passes a result back to the caller. The caller can still print it or use it in tests and reports. Printing alone usually leaves a function returning None.",
+      "zh": "return把结果交给调用者，调用者可以打印，也可以写测试或合成报告。只打印会把计算与显示绑在一起，函数本身通常仍返回None。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Returned values cannot be tested",
+        "zh": "返回值不能测试"
+      },
+      {
+        "en": "The caller can store, compare or combine it",
+        "zh": "调用者能保存、比较或继续使用"
+      },
+      {
+        "en": "Printing automatically cleans text",
+        "zh": "打印自动清洗文本"
+      },
+      {
+        "en": "return stops the entire notebook",
+        "zh": "return结束整个Notebook"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-034",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Protect the original table",
+      "zh": "保护原表"
+    },
+    "prompt": {
+      "en": "A helper must add a column without changing the caller table. What should it do first?",
+      "zh": "函数要新增列但不能改变调用者原表，首先应做什么？"
+    },
+    "explanation": {
+      "en": "A new name does not create a new table. copy creates an independent object for adding the column. This prevents later exercises from seeing unexpected mutations.",
+      "zh": "赋值新名字不会创建新表，copy才会复制。新增列应放在副本上。这样后续练习不会被意外修改的输入影响。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "out=df.copy()",
+        "zh": "out=df.copy()"
+      },
+      {
+        "en": "out=df",
+        "zh": "out=df"
+      },
+      {
+        "en": "del df",
+        "zh": "del df"
+      },
+      {
+        "en": "df=None",
+        "zh": "df=None"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "T2-035",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Boundary tests",
+      "zh": "边界测试"
+    },
+    "prompt": {
+      "en": "Which values best test both fitness thresholds?",
+      "zh": "哪组值最适合检查两个fitness门槛？"
+    },
+    "explanation": {
+      "en": "Five and six straddle the first threshold. Twelve and thirteen straddle the second. Interior values alone cannot reveal whether equality is handled properly.",
+      "zh": "5与6位于第一个门槛两侧，12与13位于第二个门槛两侧。这样能检查两次分类变化。只测某一类内部的值，很难发现等号写错。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "0,1,2,3",
+        "zh": "0,1,2,3"
+      },
+      {
+        "en": "5,6,12,13",
+        "zh": "5,6,12,13"
+      },
+      {
+        "en": "6,7,8,9",
+        "zh": "6,7,8,9"
+      },
+      {
+        "en": "13,14,15,16",
+        "zh": "13,14,15,16"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-036",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Honest teaching data",
+      "zh": "明确教学数据来源"
+    },
+    "prompt": {
+      "en": "A six-row local table has Linnerud-like column names. How should it be described?",
+      "zh": "六行本地小表采用Linnerud类似列名，应如何标注？"
+    },
+    "explanation": {
+      "en": "A local sample makes practice self-contained but is not the original dataset. State that substitution clearly. Identical column names do not prove identical data provenance.",
+      "zh": "本地小样本方便独立练习，但不等于原数据集。需要明确写出替代关系。列名相同不能证明数据来源也相同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Full original Linnerud data",
+        "zh": "完整原始Linnerud数据"
+      },
+      {
+        "en": "An independent teaching sample",
+        "zh": "独立编写的教学小样本"
+      },
+      {
+        "en": "A real student health record",
+        "zh": "学生真实健康记录"
+      },
+      {
+        "en": "Official exam data",
+        "zh": "官方试卷数据"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "id": "T2-037",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Compute the corrected pi sum",
+      "zh": "计算修正后的π近似"
+    },
+    "prompt": {
+      "en": "Implement approximate_pi(n), for integer n>=0. Sum indices 0..n inclusive of (-1)**i/(2*i+1), then multiply by 4.",
+      "zh": "实现approximate_pi(n)，n为非负整数，对(-1)**i/(2*i+1)从0到n含两端求和，最后乘4。"
+    },
+    "explanation": {
+      "en": "Begin with zero and add one signed term for every index. range(n+1) includes n. Multiplying after the loop gives an approximation to pi rather than pi/4.",
+      "zh": "先设累计和为0，再逐个加入交替正负的项。range(n+1)才能包含索引n。最后乘4，得到的才是π近似值，而不是π/4。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def approximate_pi(n):\n    # Write your code here.\n    pass\n",
+    "solution": "def approximate_pi(n):\n    total = 0.0\n    for i in range(n+1):\n        total += (-1)**i/(2*i+1)\n    return 4*total\n",
+    "tests": "import math\nassert approximate_pi(0)==4\nassert math.isclose(approximate_pi(1),8/3)\nassert math.isclose(approximate_pi(2),4*(1-1/3+1/5))\nassert abs(approximate_pi(1000)-math.pi)<0.002\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-038",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Approximation error list",
+      "zh": "近似误差列表"
+    },
+    "prompt": {
+      "en": "Implement pi_errors(indices). Each n is a non-negative last index. Return absolute errors against math.pi, using the corrected n+1-term sum for each n. Empty input returns [].",
+      "zh": "实现pi_errors(indices)，每个n为非负末尾索引。对每个n使用n+1项并乘4，返回与math.pi的绝对误差列表；空输入返回空列表。"
+    },
+    "explanation": {
+      "en": "Use a fresh accumulator for each requested n. abs makes errors non-negative. Sharing an unfinished sum across independent requests would mix their results.",
+      "zh": "每个n都需要独立的新累计和，再用abs把误差转为非负值。不能把上一个n的结果继续累加到下一个计算中，否则会混淆各次近似。结果顺序应与输入相同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def pi_errors(indices):\n    # Write your code here.\n    pass\n",
+    "solution": "def pi_errors(indices):\n    import math\n    errors=[]\n    for n in indices:\n        total=0.0\n        for i in range(n+1):\n            total += (-1)**i/(2*i+1)\n        errors.append(abs(4*total-math.pi))\n    return errors\n",
+    "tests": "import math\nr=pi_errors([0,1,2])\nassert len(r)==3 and math.isclose(r[0],abs(4-math.pi))\nassert math.isclose(r[1],abs(8/3-math.pi))\nassert pi_errors([])==[]\nassert all(e>=0 for e in r)\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-039",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Generate unscaled terms",
+      "zh": "生成未乘倍数的项"
+    },
+    "prompt": {
+      "en": "Implement leibniz_terms(count) for count>=0. Return exactly count terms (-1)**i/(2*i+1), starting at i=0, without multiplying by 4. count is a term count, not a last index.",
+      "zh": "实现leibniz_terms(count)，count为非负整数。返回从i=0开始恰好count个(-1)**i/(2*i+1)，不乘4。本题count是项数，不是末尾索引。"
+    },
+    "explanation": {
+      "en": "Here range(count) is correct because count names a quantity. The last index is count-1. Read the contract before copying the n+1 pattern from another function.",
+      "zh": "count明确表示数量，因此使用range(count)，最后索引是count-1。它与n表示末尾索引的函数不同。不要不看接口说明就机械复制n+1。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def leibniz_terms(count):\n    # Write your code here.\n    pass\n",
+    "solution": "def leibniz_terms(count):\n    return [(-1)**i/(2*i+1) for i in range(count)]\n",
+    "tests": "import math\nassert leibniz_terms(0)==[]\nassert leibniz_terms(1)==[1.0]\nr=leibniz_terms(4)\nassert len(r)==4 and math.isclose(r[3],-1/7)\nassert r[:3]==[1.0,-1/3,1/5]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-040",
+    "chapter": "tutorial2",
+    "topic": "series",
+    "topicLabel": {
+      "en": "Leibniz series and errors",
+      "zh": "莱布尼茨级数与误差"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "First error below tolerance",
+      "zh": "第一次误差达标"
+    },
+    "prompt": {
+      "en": "Implement first_pi_index(tolerance,max_n), with tolerance>0 and integer max_n>=0. Return the first n in 0..max_n whose corrected n+1-term approximation has error strictly below tolerance, or None.",
+      "zh": "实现first_pi_index(tolerance,max_n)，tolerance>0、max_n为非负整数。从n=0检查到max_n，返回修正后的n+1项近似误差严格小于tolerance的首个n，若没有则None。"
+    },
+    "explanation": {
+      "en": "Extend one running sum as n increases. Check the error after adding the current term and return on first success. The max_n limit ensures that a failed search still terminates.",
+      "zh": "随着n增加，每次只需多加当前一项。加完后检查误差，首次达标就返回。max_n限定搜索范围，即使没有达标也会结束，避免无限循环。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 1, cells 1–2; corrected factor of 4",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def first_pi_index(tolerance, max_n):\n    # Write your code here.\n    pass\n",
+    "solution": "def first_pi_index(tolerance, max_n):\n    import math\n    total=0.0\n    for n in range(max_n+1):\n        total += (-1)**n/(2*n+1)\n        if abs(4*total-math.pi)<tolerance:\n            return n\n    return None\n",
+    "tests": "assert first_pi_index(1,0)==0\nassert first_pi_index(0.5,1)==1\nassert first_pi_index(0.01,2) is None\nassert first_pi_index(0.2,10)==4\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-041",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Return password checks",
+      "zh": "返回密码检查项"
+    },
+    "prompt": {
+      "en": "Implement password_checks(pw). Return a tuple (length_ok,mixed_case_ok,digit_ok,symbol_ok): length>=8; any upper AND any lower; any digit; any character in !§$%&()=?+#. Use Python character-method semantics.",
+      "zh": "实现password_checks(pw)，返回四个布尔值组成的元组：长度>=8、同时有大小写、含数字、含!§$%&()=?+#中的符号。字符种类按Python字符串方法定义。"
+    },
+    "explanation": {
+      "en": "Compute each criterion independently. Mixed case needs two searches joined with and. The tuple order lets a caller see exactly which rule failed.",
+      "zh": "每条规则独立计算。大小写混合需要两个搜索都成功。按固定顺序返回，调用者就能看清具体缺哪项，而不只是看到一个总分。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def password_checks(pw):\n    # Write your code here.\n    pass\n",
+    "solution": "def password_checks(pw):\n    return (len(pw)>=8,\n            any(c.isupper() for c in pw) and any(c.islower() for c in pw),\n            any(c.isdigit() for c in pw),\n            any(c in '!§$%&()=?+#' for c in pw))\n",
+    "tests": "assert password_checks('Aa1!')==(False,True,True,True)\nassert password_checks('Abcdef1!')==(True,True,True,True)\nassert password_checks('abcdefgh')==(True,False,False,False)\nassert password_checks('')==(False,False,False,False)\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-042",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Calculate password score",
+      "zh": "计算密码分数"
+    },
+    "prompt": {
+      "en": "Implement password_score(pw), returning 0..4 for the same rules: length>=8, both upper and lower, any digit, any symbol from !§$%&()=?+#.",
+      "zh": "实现password_score(pw)，按长度>=8、同时有大小写、有数字、有!§$%&()=?+#中的符号四项规则，返回0到4分。"
+    },
+    "explanation": {
+      "en": "Each True contributes one to a sum. Mixed case remains one combined Boolean rather than two points. Only four points means every criterion passed.",
+      "zh": "布尔值求和时每个True贡献1分。大小写混合仍是一项合并判断，不能拆成两分。只有总分4才表示所有规则都满足。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def password_score(pw):\n    # Write your code here.\n    pass\n",
+    "solution": "def password_score(pw):\n    checks=[len(pw)>=8,\n            any(c.isupper() for c in pw) and any(c.islower() for c in pw),\n            any(c.isdigit() for c in pw),\n            any(c in '!§$%&()=?+#' for c in pw)]\n    return sum(checks)\n",
+    "tests": "assert password_score('')==0\nassert password_score('Aa1!')==3\nassert password_score('Abcdef1!')==4\nassert password_score('ABCDEFGH')==1\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-043",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "List missing rules",
+      "zh": "列出未满足的规则"
+    },
+    "prompt": {
+      "en": "Implement missing_rules(pw). Return failed rule names in order: length, mixed_case, digit, symbol. Use the same four rules and allowed symbol string !§$%&()=?+#.",
+      "zh": "实现missing_rules(pw)，按length、mixed_case、digit、symbol顺序返回未满足的规则名。规则与前题相同，符号名单为!§$%&()=?+#。"
+    },
+    "explanation": {
+      "en": "Pair each readable rule name with its test result. Keep the false results in the prescribed order. This gives actionable feedback instead of an unexplained score.",
+      "zh": "把规则名与检查结果配对，再按规定顺序筛出False的项目。这样能告诉使用者需要改哪里。相比只给一个总分，这种反馈更容易指导下一次尝试。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def missing_rules(pw):\n    # Write your code here.\n    pass\n",
+    "solution": "def missing_rules(pw):\n    checks=[('length',len(pw)>=8),\n            ('mixed_case',any(c.isupper() for c in pw) and any(c.islower() for c in pw)),\n            ('digit',any(c.isdigit() for c in pw)),\n            ('symbol',any(c in '!§$%&()=?+#' for c in pw))]\n    return [name for name,ok in checks if not ok]\n",
+    "tests": "assert missing_rules('Aa1!')==['length']\nassert missing_rules('abcdefgh')==['mixed_case','digit','symbol']\nassert missing_rules('Abcdef1!')==[]\nassert missing_rules('')==['length','mixed_case','digit','symbol']\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-044",
+    "chapter": "tutorial2",
+    "topic": "password",
+    "topicLabel": {
+      "en": "Password rules and repeated checks",
+      "zh": "密码规则与重复检查"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "First valid attempt",
+      "zh": "首次合格的尝试"
+    },
+    "prompt": {
+      "en": "Implement first_valid_attempt(attempts), returning the 1-based index of the first password passing all four rules, or None. Rules: >=8 chars, mixed case, digit, allowed symbol !§$%&()=?+#. Do not call input().",
+      "zh": "实现first_valid_attempt(attempts)，返回第一个通过四项规则的密码位置，从1开始；没有则返回None。规则为长度>=8、大小写都有、有数字、有!§$%&()=?+#中的符号。不调用input。"
+    },
+    "explanation": {
+      "en": "Every candidate receives a fresh check. enumerate starting at one matches attempt numbering. Returning immediately on success models the stopping rule without interactive dialogs.",
+      "zh": "每个新候选都重新检查。enumerate从1开始正好对应尝试次数。成功立即返回，能体现原教程何时停止，同时不需要网页弹出输入框。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 2, cells 4–5",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def first_valid_attempt(attempts):\n    # Write your code here.\n    pass\n",
+    "solution": "def first_valid_attempt(attempts):\n    for position,pw in enumerate(attempts,start=1):\n        if (len(pw)>=8 and any(c.isupper() for c in pw)\n            and any(c.islower() for c in pw) and any(c.isdigit() for c in pw)\n            and any(c in '!§$%&()=?+#' for c in pw)):\n            return position\n    return None\n",
+    "tests": "assert first_valid_attempt(['Aa1!','Abcdef1!','Xyzabcd2#'])==2\nassert first_valid_attempt(['abcdefgh','ABCDEFGH']) is None\nassert first_valid_attempt([]) is None\nassert first_valid_attempt(['Xyzabcd2#'])==1\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-045",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Exact word counter",
+      "zh": "完整词计数函数"
+    },
+    "prompt": {
+      "en": "Implement count_word(text,word=\"and\"). Split on arbitrary whitespace. Count only tokens exactly equal to word, preserving case and punctuation.",
+      "zh": "实现count_word(text,word=\"and\")，按任意空白拆词，只计入与word完全相同的词，保留大小写和标点差别。"
+    },
+    "explanation": {
+      "en": "Each token is a complete candidate. Equality implements exact matching, while an accumulator records successful matches. Extra lowercase or punctuation processing would change the task.",
+      "zh": "每个拆出的词都是完整候选，用==比较才能执行精确匹配。计数只在完全相同时增加。额外转小写或去标点会改变题意，不应擅自添加。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def count_word(text, word=\"and\"):\n    # Write your code here.\n    pass\n",
+    "solution": "def count_word(text, word=\"and\"):\n    count=0\n    for token in text.split():\n        if token==word:\n            count+=1\n    return count\n",
+    "tests": "assert count_word('and And and, and')==2\nassert count_word('candy and sand')==1\nassert count_word('blue red blue','blue')==2\nassert count_word('')==0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-046",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Count requested words",
+      "zh": "统计指定词列表"
+    },
+    "prompt": {
+      "en": "Implement requested_counts(text,words). Return a dict for every distinct requested word, including zero counts. Match whitespace tokens exactly and do not clean them.",
+      "zh": "实现requested_counts(text,words)，返回每个不同指定词到完整词匹配次数的字典，包括0次。只按空白拆词，不做清洗。"
+    },
+    "explanation": {
+      "en": "Split only once and reuse the token list. A dictionary stores one entry per distinct requested word. Keeping zero counts makes absence visible.",
+      "zh": "先拆一次词并复用结果。字典会对每个不同键保留一个条目，重复请求不会产生重复键。0次也保留，才能说明该词查过但没有出现。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def requested_counts(text, words):\n    # Write your code here.\n    pass\n",
+    "solution": "def requested_counts(text, words):\n    tokens=text.split()\n    return {word:tokens.count(word) for word in words}\n",
+    "tests": "assert requested_counts('and And and, and',['and','And','or'])=={'and':2,'And':1,'or':0}\nassert requested_counts('', ['x'])=={'x':0}\nassert requested_counts('x x',['x','x'])=={'x':2}\nassert requested_counts('text',[])=={}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-047",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Matching token positions",
+      "zh": "匹配词的位置"
+    },
+    "prompt": {
+      "en": "Implement word_positions(text,word=\"and\"). Return zero-based positions of exact matching whitespace tokens, in original order.",
+      "zh": "实现word_positions(text,word=\"and\")，返回完整匹配词在空白拆词结果中的位置，从0开始并保持原顺序。"
+    },
+    "explanation": {
+      "en": "enumerate provides both position and token. Select positions only when the corresponding token matches. These are token indices, not character offsets in the original string.",
+      "zh": "enumerate同时给出位置和词，词匹配时收集位置即可。注意这里是拆词后的编号，而不是原字符串中的字符下标。不同长度的空白不会改变这种按词计数方式。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def word_positions(text, word=\"and\"):\n    # Write your code here.\n    pass\n",
+    "solution": "def word_positions(text, word=\"and\"):\n    return [i for i,token in enumerate(text.split()) if token==word]\n",
+    "tests": "assert word_positions('and red and And')==[0,2]\nassert word_positions('blue blue','blue')==[0,1]\nassert word_positions('')==[]\nassert word_positions('and,')==[]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-048",
+    "chapter": "tutorial2",
+    "topic": "words",
+    "topicLabel": {
+      "en": "Exact word matching",
+      "zh": "完整单词精确匹配"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Exact frequency table",
+      "zh": "精确词频表"
+    },
+    "prompt": {
+      "en": "Implement token_frequencies(text), a dict of counts for every whitespace token. Uppercase variants and attached punctuation are distinct. Empty text returns {}.",
+      "zh": "实现token_frequencies(text)，返回所有空白拆分词的计数字典，大小写或附带标点不同视为不同词。空文本返回空字典。"
+    },
+    "explanation": {
+      "en": "Look up the old count or zero before adding one. Keeping the token unchanged preserves exact-match distinctions. This scales the same counting idea from one word to a whole text.",
+      "zh": "读取旧次数，没有就用0，再加1。词本身不改变，才能保留大小写和标点的差别。这样一次遍历就能把单词计数扩展到整篇文本。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 3, cells 7–10; local text replaces NLTK download",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def token_frequencies(text):\n    # Write your code here.\n    pass\n",
+    "solution": "def token_frequencies(text):\n    counts={}\n    for token in text.split():\n        counts[token]=counts.get(token,0)+1\n    return counts\n",
+    "tests": "assert token_frequencies('and And and, and')=={'and':2,'And':1,'and,':1}\nassert token_frequencies('x\tx\\ny')=={'x':2,'y':1}\nassert token_frequencies('')=={}\nassert token_frequencies('  one  ')=={'one':1}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-049",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Summarize situps",
+      "zh": "汇总仰卧起坐"
+    },
+    "prompt": {
+      "en": "Implement situp_summary(df). For a non-empty non-missing numeric Situps column, return a tuple (mean,min,max).",
+      "zh": "实现situp_summary(df)，Situps列为非空、无缺失数值，返回(均值,最小值,最大值)元组。"
+    },
+    "explanation": {
+      "en": "Select one measurement column and apply three different summaries. Keep the result order specified in the question. With one observation all three values coincide.",
+      "zh": "选择同一个测量列，再分别计算三种统计量。返回顺序必须与题目一致。只有一个观测值时，三种统计结果都会相同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def situp_summary(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def situp_summary(df):\n    s=df['Situps']\n    return (s.mean(),s.min(),s.max())\n",
+    "tests": "import pandas as pd\nassert situp_summary(pd.DataFrame({'Situps':[10,20,30]}))==(20,10,30)\nassert situp_summary(pd.DataFrame({'Situps':[7]}))==(7,7,7)\nassert situp_summary(pd.DataFrame({'Situps':[0,0]}))==(0,0,0)\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-050",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Median pulse helper",
+      "zh": "脉搏中位数函数"
+    },
+    "prompt": {
+      "en": "Implement median_pulse(df). Return the median of a non-empty non-missing numeric Pulse column. Rows may be unordered.",
+      "zh": "实现median_pulse(df)，返回非空且无缺失数值列Pulse的中位数，行顺序可能任意。"
+    },
+    "explanation": {
+      "en": "median handles odd and even sample sizes. It uses value order, not the middle row of an unsorted table. Choosing a row by position would answer a different question.",
+      "zh": "median会处理奇数与偶数个观测值，依据数值顺序而非原表行位置。不能直接取未排序表的中间行。分清统计位置与数据行位置很重要。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def median_pulse(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def median_pulse(df):\n    return df['Pulse'].median()\n",
+    "tests": "import pandas as pd\nassert median_pulse(pd.DataFrame({'Pulse':[80,60,70,90]}))==75\nassert median_pulse(pd.DataFrame({'Pulse':[72]}))==72\nassert median_pulse(pd.DataFrame({'Pulse':[80,60,70]}))==70\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-051",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Count both body thresholds",
+      "zh": "统计同时达到两门槛的人数"
+    },
+    "prompt": {
+      "en": "Implement body_count(df). Count Weight>=190 AND Waist>=38. Values are non-missing in pounds and inches; empty tables are allowed.",
+      "zh": "实现body_count(df)，统计Weight>=190且Waist>=38的人数。值无缺失，单位为磅和英寸，允许空表。"
+    },
+    "explanation": {
+      "en": "Each comparison includes equality. Join the masks with & so both apply to the same row. Summing the Boolean mask counts people instead of weight.",
+      "zh": "两条比较都包含等号。用&逐行组合，保证同一人同时达标。对布尔mask求和得到人数，而不是体重总和。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def body_count(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def body_count(df):\n    mask=(df['Weight']>=190)&(df['Waist']>=38)\n    return int(mask.sum())\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'Weight':[190,189,200,210],'Waist':[38,40,37,40]})\nassert body_count(d)==2\nassert body_count(d.iloc[:1])==1\nassert body_count(d.iloc[:0])==0\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-052",
+    "chapter": "tutorial2",
+    "topic": "stats",
+    "topicLabel": {
+      "en": "Fitness table statistics",
+      "zh": "健身数据表统计"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Compare selected and other people",
+      "zh": "比较目标组与其余人"
+    },
+    "prompt": {
+      "en": "Implement situp_comparison(df), returning (selected_mean,other_mean) for Situps. Selected means Weight>=190 AND Waist>=38. For an empty group return None for that mean. All values are non-missing.",
+      "zh": "实现situp_comparison(df)，返回(目标组Situps均值,其余人均值)。目标组为Weight>=190且Waist>=38，某组为空时该均值用None表示。数据无缺失。"
+    },
+    "explanation": {
+      "en": "Build one mask and invert it for the exact comparison group. Check emptiness before taking a mean. None means no average exists, whereas zero would invent a performance value.",
+      "zh": "先建一个mask，取反才能准确选到全部其余人。求均值前检查是否为空。没有人时用None说明均值不存在，填0则会凭空制造一个表现数值。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4a–b, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def situp_comparison(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def situp_comparison(df):\n    mask=(df['Weight']>=190)&(df['Waist']>=38)\n    a=df.loc[mask,'Situps']\n    b=df.loc[~mask,'Situps']\n    return (None if a.empty else a.mean(),None if b.empty else b.mean())\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'Weight':[190,189,200],'Waist':[38,40,37],'Situps':[10,20,30]})\nassert situp_comparison(d)==(10,25)\nassert situp_comparison(d.iloc[:1])==(10,None)\nassert situp_comparison(d.iloc[1:])==(None,25)\nassert situp_comparison(d.iloc[:0])==(None,None)\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-053",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Classify fitness boundaries",
+      "zh": "分类fitness边界"
+    },
+    "prompt": {
+      "en": "Implement fitness_level(chins), for non-negative integers. Return low if <6, medium if 6..12 inclusive, otherwise high.",
+      "zh": "实现fitness_level(chins)，输入非负整数，小于6返回low，6到12含两端返回medium，否则high。"
+    },
+    "explanation": {
+      "en": "The first return removes all values below six. The next test only needs an upper bound because remaining values are already at least six. Everything else belongs to high.",
+      "zh": "第一处return已经处理小于6的值。执行第二个判断时自然已>=6，所以只需检查上界12。剩下的值才进入high，依次判断不会重叠。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def fitness_level(chins):\n    # Write your code here.\n    pass\n",
+    "solution": "def fitness_level(chins):\n    if chins<6:\n        return 'low'\n    if chins<=12:\n        return 'medium'\n    return 'high'\n",
+    "tests": "assert fitness_level(5)=='low'\nassert fitness_level(6)=='medium'\nassert fitness_level(12)=='medium'\nassert fitness_level(13)=='high'\nassert fitness_level(0)=='low'\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-054",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Add heavy on a copy",
+      "zh": "在副本上新增heavy"
+    },
+    "prompt": {
+      "en": "Implement add_heavy(df). Return a copy with heavy=(Weight>=180), preserving all original columns and leaving df unchanged.",
+      "zh": "实现add_heavy(df)，返回新增heavy=(Weight>=180)的副本，保留原有列，原表不变。"
+    },
+    "explanation": {
+      "en": "The vectorized comparison creates one Boolean per row. Exactly 180 belongs in True. Copying before assignment protects the original input.",
+      "zh": "整列比较能一次生成每行的布尔值，恰好180应为True。赋值前先复制，才能保护原表。这里不需要自己编写逐行循环。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def add_heavy(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def add_heavy(df):\n    out=df.copy()\n    out['heavy']=out['Weight']>=180\n    return out\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'Weight':[179,180,181]})\nr=add_heavy(d)\nassert r['heavy'].tolist()==[False,True,True]\nassert 'heavy' not in d.columns\nassert add_heavy(d.iloc[:0]).columns.tolist()==['Weight','heavy']\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-055",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "All fitness counts",
+      "zh": "完整fitness分类计数"
+    },
+    "prompt": {
+      "en": "Implement fitness_counts(df). Chins contains non-negative integers. Return all three keys low,medium,high using rules <6,6..12,>=13. Include zero counts and do not change df.",
+      "zh": "实现fitness_counts(df)，Chins为非负整数，按<6、6到12、>=13分为low、medium、high，返回含全部三键的字典，缺组填0，不改变原表。"
+    },
+    "explanation": {
+      "en": "Initialize every named group at zero. Classify each number once and increment the matching counter. Reading the column is enough; no added column is required to produce this report.",
+      "zh": "先把三个类别都初始化为0，再把每个值恰好分到一组并增加计数。这样没有出现的类别也会保留。只读原列即可生成报告，不必为了计数改变原表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def fitness_counts(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def fitness_counts(df):\n    counts={'low':0,'medium':0,'high':0}\n    for n in df['Chins']:\n        if n<6: label='low'\n        elif n<=12: label='medium'\n        else: label='high'\n        counts[label]+=1\n    return counts\n",
+    "tests": "import pandas as pd\nassert fitness_counts(pd.DataFrame({'Chins':[5,6,12,13]}))=={'low':1,'medium':2,'high':1}\nassert fitness_counts(pd.DataFrame({'Chins':[0]}))=={'low':1,'medium':0,'high':0}\nassert fitness_counts(pd.DataFrame({'Chins':[]}))=={'low':0,'medium':0,'high':0}\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-056",
+    "chapter": "tutorial2",
+    "topic": "fitness",
+    "topicLabel": {
+      "en": "Boundary rules and group labels",
+      "zh": "边界规则与分组标签"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Means for both heavy groups",
+      "zh": "heavy两组的运动均值"
+    },
+    "prompt": {
+      "en": "Implement heavy_means(df). Return mean Chins,Situps,Jumps by heavy=(Weight>=180), as a DataFrame with these columns in this order and Boolean groups as index. Do not modify df; only present groups must appear.",
+      "zh": "实现heavy_means(df)，按heavy=(Weight>=180)分组，返回Chins、Situps、Jumps均值的DataFrame，列顺序如上，布尔组作为索引。原表不变，只显示实际出现的组。"
+    },
+    "explanation": {
+      "en": "Create the label then select only the exercise columns to average. Explicit column selection avoids averaging unrelated measurements. The output describes sample means rather than a causal claim.",
+      "zh": "先创建分组标记，再明确选出三项运动列求均值。显式选列能避免把其他指标一起平均。输出描述样本均值，不代表已经证明体重对表现的因果作用。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercise 4c–d, cell 13; small teaching data replaces Linnerud original",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def heavy_means(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def heavy_means(df):\n    out=df.copy()\n    out['heavy']=out['Weight']>=180\n    return out.groupby('heavy')[['Chins','Situps','Jumps']].mean()\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'Weight':[179,180,200],'Chins':[10,6,8],'Situps':[30,10,20],'Jumps':[60,20,40]})\nr=heavy_means(d)\nassert r.columns.tolist()==['Chins','Situps','Jumps']\nassert r.loc[True].tolist()==[7,15,30]\nassert r.loc[False].tolist()==[10,30,60]\nassert 'heavy' not in d.columns\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-057",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "A compact text report",
+      "zh": "简洁文本报告"
+    },
+    "prompt": {
+      "en": "Implement text_report(text,word=\"and\"). Return {\"tokens\":total whitespace-token count,\"matches\":exact target count}. Preserve case and punctuation.",
+      "zh": "实现text_report(text,word=\"and\")，返回tokens为全部空白拆词数、matches为完整目标词次数的字典，保留大小写及标点。"
+    },
+    "explanation": {
+      "en": "Both metrics use one shared tokenization. len counts all tokens and count selects the target. Sharing the same definition of a word keeps the report internally consistent.",
+      "zh": "两个指标使用同一次拆词，才能保证对词的定义一致。len统计全部词，count统计目标词。组合成报告时，也要先让各统计量基于同一套数据处理规则。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def text_report(text, word=\"and\"):\n    # Write your code here.\n    pass\n",
+    "solution": "def text_report(text, word=\"and\"):\n    tokens=text.split()\n    return {'tokens':len(tokens),'matches':tokens.count(word)}\n",
+    "tests": "assert text_report('and And and, and')=={'tokens':4,'matches':2}\nassert text_report('')=={'tokens':0,'matches':0}\nassert text_report('red blue red','red')=={'tokens':3,'matches':2}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-058",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Summarize password attempts",
+      "zh": "汇总密码尝试"
+    },
+    "prompt": {
+      "en": "Implement attempt_summary(attempts). Return total and valid counts over all candidates. Valid means length>=8, mixed case, a digit, and a symbol from !§$%&()=?+#. Do not stop at first success.",
+      "zh": "实现attempt_summary(attempts)，返回total总尝试数及valid合格数。合格需长度>=8、大小写都有、有数字、有!§$%&()=?+#中的符号；不能首次成功就停止。"
+    },
+    "explanation": {
+      "en": "This contract requires checking every attempt. Increment valid when all criteria pass, and return only after the loop. Returning inside the loop would silently lose later candidates.",
+      "zh": "本题要检查所有尝试，四项都通过时才增加valid。循环结束后再返回。若在循环中提前return，就会丢失后面的候选，与首次成功题的停止条件不同。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def attempt_summary(attempts):\n    # Write your code here.\n    pass\n",
+    "solution": "def attempt_summary(attempts):\n    valid=0\n    for pw in attempts:\n        if (len(pw)>=8 and any(c.isupper() for c in pw)\n            and any(c.islower() for c in pw) and any(c.isdigit() for c in pw)\n            and any(c in '!§$%&()=?+#' for c in pw)):\n            valid+=1\n    return {'total':len(attempts),'valid':valid}\n",
+    "tests": "assert attempt_summary(['Abcdef1!','Aa1!','Xyzabcd2#'])=={'total':3,'valid':2}\nassert attempt_summary([])=={'total':0,'valid':0}\nassert attempt_summary(['abcdefgh'])=={'total':1,'valid':0}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-059",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Label fitness without mutation",
+      "zh": "不修改原表地标记fitness"
+    },
+    "prompt": {
+      "en": "Implement label_fitness(df). Return a copy with fitness derived from Chins: low<6, medium=6..12, high>=13. Keep the original index.",
+      "zh": "实现label_fitness(df)，返回按Chins新增fitness列的副本：<6为low、6到12为medium、>=13为high。保留原索引，不修改原表。"
+    },
+    "explanation": {
+      "en": "A scalar helper states the boundary rule once. apply uses it for every value and preserves index alignment. Assigning to a copy keeps the caller data unchanged.",
+      "zh": "小函数只需写一次分类规则，apply会逐值应用并保持索引对齐。把结果赋给副本，就不会改动调用者的原表。题目没有要求重置索引，不要擅自改变标签。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def label_fitness(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def label_fitness(df):\n    out=df.copy()\n    def level(n):\n        if n<6: return 'low'\n        if n<=12: return 'medium'\n        return 'high'\n    out['fitness']=out['Chins'].apply(level)\n    return out\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'Chins':[5,6,12,13]},index=[10,20,30,40])\nr=label_fitness(d)\nassert r['fitness'].tolist()==['low','medium','medium','high']\nassert r.index.tolist()==[10,20,30,40]\nassert 'fitness' not in d.columns\nassert label_fitness(d.iloc[:0]).shape==(0,2)\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  },
+  {
+    "id": "T2-060",
+    "chapter": "tutorial2",
+    "topic": "integrated",
+    "topicLabel": {
+      "en": "Putting the tutorial together",
+      "zh": "综合应用"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Combined fitness report",
+      "zh": "综合健身报告"
+    },
+    "prompt": {
+      "en": "Implement fitness_report(df). Return people=row count, joint_threshold=count of Weight>=190 AND Waist>=38, high_fitness=count of Chins>=13. Columns are numeric without missing values; empty tables are allowed.",
+      "zh": "实现fitness_report(df)，返回people总人数、joint_threshold为Weight>=190且Waist>=38的人数、high_fitness为Chins>=13的人数。数值列无缺失，允许空表。"
+    },
+    "explanation": {
+      "en": "Each count answers a different question. len counts every row while the two masks express separate membership rules. A person may contribute to more than one field without any contradiction.",
+      "zh": "三个计数回答不同问题。len统计全部行，两个mask分别执行不同规则。同一人可以同时计入多个字段，并不矛盾；不要把它们误当成互不重叠的分类。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial 2 · exercises 1–4; independent teaching variants",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the named lecture/tutorial and public exercise topics. Not an official exam question.",
+        "zh": "依据所列讲义、教程及公开练习知识点新编的变式，并非官方考试题。"
+      }
+    },
+    "type": "code",
+    "starter": "def fitness_report(df):\n    # Write your code here.\n    pass\n",
+    "solution": "def fitness_report(df):\n    joint=(df['Weight']>=190)&(df['Waist']>=38)\n    return {'people':len(df),'joint_threshold':int(joint.sum()),\n            'high_fitness':int((df['Chins']>=13).sum())}\n",
+    "tests": "import pandas as pd\nd=pd.DataFrame({'Weight':[190,189,200,180],'Waist':[38,40,37,39],'Chins':[13,12,20,5]})\nassert fitness_report(d)=={'people':4,'joint_threshold':1,'high_fitness':2}\nassert fitness_report(d.iloc[:0])=={'people':0,'joint_threshold':0,'high_fitness':0}\nassert fitness_report(d.iloc[:1])=={'people':1,'joint_threshold':1,'high_fitness':1}\n",
+    "setup": "",
+    "packages": [
+      "pandas"
+    ],
+    "testHint": {
+      "en": "Tests include the stated examples, boundaries, and empty or zero cases where the contract allows them.",
+      "zh": "测试覆盖题干示例、临界情况，以及题意允许的空输入或零值情况。"
+    }
+  }
+]

@@ -1,0 +1,2853 @@
+[
+  {
+    "id": "T1-001",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "What does input return?",
+      "zh": "input返回什么类型？"
+    },
+    "prompt": {
+      "en": "A user enters 2006. Immediately after `year = input()`, before any conversion, what is the type of `year`?",
+      "zh": "用户输入2006。刚执行`year = input()`、尚未做任何转换时，`year`是什么类型？"
+    },
+    "explanation": {
+      "en": "Keyboard input arrives as text, even when it looks like a number. `input()` does not inspect the digits and automatically choose a numeric type. Convert with `int(year)` before using it as an integer year.",
+      "zh": "键盘输入先以文本形式进入程序，即使看起来全是数字也一样。`input()`不会自动帮你判断为整数。需要把它当出生年份计算时，再用`int(year)`转换。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "str",
+        "zh": "str"
+      },
+      {
+        "en": "int",
+        "zh": "int"
+      },
+      {
+        "en": "float",
+        "zh": "float"
+      },
+      {
+        "en": "bool",
+        "zh": "bool"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "T1-002",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Accept a decimal comma",
+      "zh": "接受小数逗号"
+    },
+    "prompt": {
+      "en": "Which expression correctly converts the height text `\"1,72\"` to a floating-point number?",
+      "zh": "哪个表达式可以把身高文本`\"1,72\"`正确转成浮点数？"
+    },
+    "explanation": {
+      "en": "Python numeric text uses a decimal point. First replace the comma with a point, then call `float`. Adding a floating-point number to a string does not convert the string for you.",
+      "zh": "Python的数字文本使用小数点。先把逗号换成点，再交给`float`处理，就像先把地址写规范再送给收件人。把字符串直接与浮点数相加，不能完成类型转换。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "float(\"1,72\")",
+        "zh": "float(\"1,72\")"
+      },
+      {
+        "en": "int(\"1,72\")",
+        "zh": "int(\"1,72\")"
+      },
+      {
+        "en": "\"1,72\" + 0.0",
+        "zh": "\"1,72\" + 0.0"
+      },
+      {
+        "en": "float(\"1,72\".replace(\",\", \".\"))",
+        "zh": "float(\"1,72\".replace(\",\", \".\"))"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert float(\"1,72\".replace(\",\", \".\")) == 1.72"
+  },
+  {
+    "id": "T1-003",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Addition after conversion",
+      "zh": "转换后再相加"
+    },
+    "prompt": {
+      "en": "What is the result of `int(\"03\") + int(\"4\")`?",
+      "zh": "`int(\"03\") + int(\"4\")`的结果是什么？"
+    },
+    "explanation": {
+      "en": "Each `int` turns text into an integer before addition happens. The leading zero in `\"03\"` is just part of the original text, so its numeric value is 3. The final result is the integer 7, not a string.",
+      "zh": "两个`int`先把文本变成整数，再执行加法。`\"03\"`前面的0只是原文本的写法，数值仍然是3。最后得到整数7，而不是拼起来的字符串。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "34",
+        "zh": "34"
+      },
+      {
+        "en": "\"7\"",
+        "zh": "\"7\""
+      },
+      {
+        "en": "7",
+        "zh": "7"
+      },
+      {
+        "en": "\"034\"",
+        "zh": "\"034\""
+      }
+    ],
+    "answer": 2,
+    "verification": "assert int(\"03\") + int(\"4\") == 7"
+  },
+  {
+    "id": "T1-004",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Integer conversion is not parsing a decimal",
+      "zh": "整数转换并不接受小数文本"
+    },
+    "prompt": {
+      "en": "What happens when Python evaluates `int(\"1.75\")`?",
+      "zh": "Python执行`int(\"1.75\")`时会怎样？"
+    },
+    "explanation": {
+      "en": "The string contains a decimal point, so it is not a valid integer literal for `int`. `int(1.75)` is different: its input is already a float, so it can truncate it. To parse this text as a height, use `float(\"1.75\")`.",
+      "zh": "这里传入的是带小数点的字符串，不是`int`能直接读取的整数文本。`int(1.75)`则不同：它接收的已经是浮点数，可以截去小数部分。读取身高时应使用`float(\"1.75\")`。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "It returns 1.75.",
+        "zh": "返回1.75。"
+      },
+      {
+        "en": "It raises ValueError.",
+        "zh": "抛出ValueError。"
+      },
+      {
+        "en": "It returns 1.",
+        "zh": "返回1。"
+      },
+      {
+        "en": "It returns 2.",
+        "zh": "返回2。"
+      }
+    ],
+    "answer": 1,
+    "verification": "try:\n    int(\"1.75\")\nexcept ValueError:\n    pass\nelse:\n    raise AssertionError(\"Expected ValueError\")"
+  },
+  {
+    "id": "T1-005",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Keep an identifier as text",
+      "zh": "把编号保留为文本"
+    },
+    "prompt": {
+      "en": "An address contains the postal code `\"0071\"`. You must preserve every character, including the leading zeros. How should this field normally be stored?",
+      "zh": "地址中的邮编是`\"0071\"`，要求保留全部字符，包括开头的0。通常应该怎样保存这个字段？"
+    },
+    "explanation": {
+      "en": "A postal code is an identifier, not a quantity to add or multiply. Converting it to an integer produces 71 and loses its original spelling. Keep text when the characters themselves matter.",
+      "zh": "邮编是用来识别地址的编号，不是用来加减乘除的数量。转成整数后只剩71，原来开头的0就丢了。字符写法本身有意义时，应保留字符串。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "As the string \"0071\".",
+        "zh": "保存为字符串\"0071\"。"
+      },
+      {
+        "en": "As int(\"0071\").",
+        "zh": "保存为int(\"0071\")。"
+      },
+      {
+        "en": "As float(\"0071\").",
+        "zh": "保存为float(\"0071\")。"
+      },
+      {
+        "en": "As the Boolean True.",
+        "zh": "保存为布尔值True。"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert str(int(\"0071\")) == \"71\""
+  },
+  {
+    "id": "T1-006",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Use the returned replacement",
+      "zh": "接住replace的返回值"
+    },
+    "prompt": {
+      "en": "What happens at the last line?\n```python\ntext = \"1,80\"\ntext.replace(\",\", \".\")\nheight = float(text)\n```",
+      "zh": "最后一行会怎样？\n```python\ntext = \"1,80\"\ntext.replace(\",\", \".\")\nheight = float(text)\n```"
+    },
+    "explanation": {
+      "en": "Strings are immutable: `replace` creates a new string instead of changing `text` in place. Here that returned string is discarded. Assign `text = text.replace(\",\", \".\")` or put the replacement directly inside `float`.",
+      "zh": "字符串不能原地修改，`replace`会产生一个新字符串，而不会改掉原来的`text`。这段代码把新结果丢掉了，所以`float`读到的仍是逗号。要写成`text = text.replace(\",\", \".\")`，或者把替换操作直接放进`float`。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "height becomes 1.8.",
+        "zh": "height变为1.8。"
+      },
+      {
+        "en": "height becomes 180.0.",
+        "zh": "height变为180.0。"
+      },
+      {
+        "en": "text becomes a list of characters.",
+        "zh": "text变成字符列表。"
+      },
+      {
+        "en": "ValueError, because text still contains the comma.",
+        "zh": "发生ValueError，因为text里仍然有逗号。"
+      }
+    ],
+    "answer": 3,
+    "verification": "text=\"1,80\"\ntext.replace(\",\", \".\")\nassert text==\"1,80\""
+  },
+  {
+    "id": "T1-007",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Parse a height",
+      "zh": "读取身高文本"
+    },
+    "prompt": {
+      "en": "Implement `parse_height(text)`. Return a float after accepting either a decimal comma or a decimal point. Surrounding spaces may appear. All inputs represent valid non-negative heights; no other validation is required. Example: `parse_height(\" 1,72 \")` returns `1.72`.",
+      "zh": "实现`parse_height(text)`：接受小数逗号或小数点，返回浮点数。文本两端可能有空格。输入都表示有效的非负身高，无需检查其他非法输入。例如`parse_height(\" 1,72 \")`返回`1.72`。"
+    },
+    "explanation": {
+      "en": "Clean the text first, then convert its type. `strip` removes surrounding spaces and `replace` normalises the decimal separator. Returning a float keeps the value ready for calculations; fixed decimal places belong to formatting later.",
+      "zh": "先把文本整理规范，再转换类型。`strip`去掉两端空格，`replace`统一小数符号，最后`float`得到数值。返回浮点数便于后续计算；显示几位小数是下一步格式化的任务。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def parse_height(text):\n    # Write your code here\n    pass\n",
+    "solution": "def parse_height(text):\n    return float(text.strip().replace(\",\", \".\"))\n",
+    "tests": "assert parse_height(\" 1,72 \") == 1.72\nassert parse_height(\"1.80\") == 1.8\nassert parse_height(\"0\") == 0.0\nassert isinstance(parse_height(\"2\"), float)\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks comma, point, surrounding spaces, zero and the returned type.",
+      "zh": "检查逗号、小数点、首尾空格、零值和返回类型。"
+    }
+  },
+  {
+    "id": "T1-008",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Convert birthday fields",
+      "zh": "转换出生日期字段"
+    },
+    "prompt": {
+      "en": "Implement `birth_parts(year, month, day)`. The three arguments are strings containing integer values. Return a tuple of three integers in the same year-month-day order. Valid dates are supplied; do not return a formatted date string.",
+      "zh": "实现`birth_parts(year, month, day)`。三个参数都是整数文本，按年、月、日的顺序返回由三个整数构成的元组。输入都是有效日期，不要返回格式化日期字符串。"
+    },
+    "explanation": {
+      "en": "Convert each field separately with `int`. Commas in the return statement pack the three values into a tuple. Conversion and display are different jobs: the integer month is 3 even if the user originally typed `\"03\"`.",
+      "zh": "分别对年、月、日调用`int`。`return`后用逗号并列三个值，就会组成一个元组。数值转换和显示排版是两回事：用户输入`\"03\"`，转换后的整数月份就是3。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def birth_parts(year, month, day):\n    # Write your code here\n    pass\n",
+    "solution": "def birth_parts(year, month, day):\n    return int(year), int(month), int(day)\n",
+    "tests": "assert birth_parts(\"2006\", \"03\", \"09\") == (2006, 3, 9)\nassert birth_parts(\"1999\", \"12\", \"31\") == (1999, 12, 31)\nassert birth_parts(\"2024\", \"2\", \"29\") == (2024, 2, 29)\nassert all(type(x) is int for x in birth_parts(\"2000\", \"01\", \"01\"))\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks leading zeros, end of year, a leap-day input and integer types.",
+      "zh": "检查前导零、年末日期、闰日输入和整数类型。"
+    }
+  },
+  {
+    "id": "T1-009",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A typed profile record",
+      "zh": "生成类型正确的资料记录"
+    },
+    "prompt": {
+      "en": "Implement `typed_profile(name, year, height)`. All arguments are strings. Return a new dictionary with keys `name`, `year`, `height`: strip surrounding spaces from name, convert year to int, and convert height to float accepting a decimal comma. Keep the name's internal spaces and case unchanged.",
+      "zh": "实现`typed_profile(name, year, height)`，三个参数均为字符串。返回新字典，键为`name`、`year`、`height`：姓名只去掉两端空格，年份转成整数，身高转成浮点数且接受小数逗号。姓名内部空格与大小写保持不变。"
+    },
+    "explanation": {
+      "en": "Treat the fields according to their meaning rather than converting everything alike. A name remains text, a year becomes an integer, and a height may contain a fractional part. `strip` only removes the edges, so a meaningful space inside a name is preserved.",
+      "zh": "按照字段含义分别处理，不要把所有输入都转成同一种类型。姓名保留文本，年份使用整数，身高需要浮点数。`strip`只清理两端，不会把姓名中间的空格一起删除。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def typed_profile(name, year, height):\n    # Write your code here\n    pass\n",
+    "solution": "def typed_profile(name, year, height):\n    return {\"name\": name.strip(), \"year\": int(year),\n            \"height\": float(height.strip().replace(\",\", \".\"))}\n",
+    "tests": "assert typed_profile(\"  Ada Lovelace  \", \"1815\", \"1,65\") == {\"name\":\"Ada Lovelace\",\"year\":1815,\"height\":1.65}\nassert typed_profile(\"Li\", \"2006\", \"1.80\") == {\"name\":\"Li\",\"year\":2006,\"height\":1.8}\nassert typed_profile(\"Mary  Ann\", \"2000\", \"0\") == {\"name\":\"Mary  Ann\",\"year\":2000,\"height\":0.0}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks mixed field types and preservation of internal name spaces.",
+      "zh": "检查不同字段的类型，以及姓名内部空格是否保留。"
+    }
+  },
+  {
+    "id": "T1-010",
+    "chapter": "tutorial1",
+    "topic": "input-conversion",
+    "topicLabel": {
+      "en": "Input & type conversion",
+      "zh": "输入与类型转换"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Convert metres to whole centimetres",
+      "zh": "将米转换成整厘米"
+    },
+    "prompt": {
+      "en": "Implement `height_in_cm(text)`. Parse a non-negative height in metres, accepting a comma or point, multiply by 100, then use Python's `round` with no second argument. Return the resulting integer centimetres. Use exactly that rounding rule, not truncation.",
+      "zh": "实现`height_in_cm(text)`。读取以米为单位的非负身高文本，接受逗号或小数点，乘以100后调用不带第二个参数的Python `round`，返回整数厘米。严格使用这种舍入规则，不要直接截去小数。"
+    },
+    "explanation": {
+      "en": "First put the input into a usable numeric form, then change the unit by multiplying by 100. Only after that do you round to whole centimetres. `int` would merely discard the fractional part, which is why 123.6 must become 124 here rather than 123.",
+      "zh": "先得到数值，再乘100完成单位换算，最后才舍入成整厘米。顺序不能颠倒，否则可能先丢掉精度。`int`只是截去小数，所以123.6用`int`会得到123，本题要求用`round`得到124。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3); related: ubvu March 2026 Python Fundamentals challenges",
+      "url": "https://github.com/ubvu/Python-Software-Carpentry/blob/main/Introductory/Code/2026/March/1_Python_Fundamentals_Challenges.ipynb",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def height_in_cm(text):\n    # Write your code here\n    pass\n",
+    "solution": "def height_in_cm(text):\n    metres = float(text.strip().replace(\",\", \".\"))\n    return round(metres * 100)\n",
+    "tests": "assert height_in_cm(\"1,72\") == 172\nassert height_in_cm(\"1.234\") == 123\nassert height_in_cm(\"0\") == 0\nassert height_in_cm(\"1.236\") == 124\nassert type(height_in_cm(\"1.8\")) is int\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks both decimal separators, upward/downward rounding, zero and int output.",
+      "zh": "检查两种小数符号、向上向下舍入、零值和整数输出。"
+    }
+  },
+  {
+    "id": "T1-011",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Pad a day with zero",
+      "zh": "给日期补零"
+    },
+    "prompt": {
+      "en": "What does `f\"{7:02d}\"` produce?",
+      "zh": "`f\"{7:02d}\"`会产生什么？"
+    },
+    "explanation": {
+      "en": "The `d` formats an integer in decimal, width 2 asks for at least two characters, and `0` supplies the padding character. A single-digit day therefore gains a leading zero. Formatting returns a string, not the original integer.",
+      "zh": "`d`表示按十进制整数输出，宽度2表示至少两位，前面的0表示不足时补0。所以日期7显示为`07`。格式化得到的是字符串，不再是整数本身。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "\"70\"",
+        "zh": "\"70\""
+      },
+      {
+        "en": "7",
+        "zh": "7"
+      },
+      {
+        "en": "\"07\"",
+        "zh": "\"07\""
+      },
+      {
+        "en": "\"7.00\"",
+        "zh": "\"7.00\""
+      }
+    ],
+    "answer": 2,
+    "verification": "assert f\"{7:02d}\" == \"07\""
+  },
+  {
+    "id": "T1-012",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Exactly two decimal places",
+      "zh": "严格保留两位小数"
+    },
+    "prompt": {
+      "en": "A card must display height as `1.20 m`. Which expression guarantees those two decimal places when `height = 1.2`?",
+      "zh": "名片必须将身高显示为`1.20 m`。`height = 1.2`时，哪个表达式保证两位小数？"
+    },
+    "explanation": {
+      "en": "Rounding changes or limits a numeric value; it does not promise a fixed-width display. The `.2f` format explicitly asks for two digits after the decimal point, including a trailing zero. The integer format `d` is unsuitable for this float.",
+      "zh": "舍入处理的是数值，并不保证显示时一定有两位小数。`.2f`明确要求小数点后显示两位，因此会把末尾的0补出来。`d`用于整数，不适合这里的浮点身高。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "f\"{height:02d} m\"",
+        "zh": "f\"{height:02d} m\""
+      },
+      {
+        "en": "f\"{height:.2f} m\"",
+        "zh": "f\"{height:.2f} m\""
+      },
+      {
+        "en": "str(round(height, 2)) + \" m\"",
+        "zh": "str(round(height, 2)) + \" m\""
+      },
+      {
+        "en": "str(height) + \" m\"",
+        "zh": "str(height) + \" m\""
+      }
+    ],
+    "answer": 1,
+    "verification": "height=1.2\nassert f\"{height:.2f} m\" == \"1.20 m\"\nassert str(round(height,2)) == \"1.2\""
+  },
+  {
+    "id": "T1-013",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Make two output lines",
+      "zh": "创建两行文字"
+    },
+    "prompt": {
+      "en": "Which Python string contains a real line break between `Ada` and `Lovelace`?",
+      "zh": "哪个Python字符串在`Ada`和`Lovelace`之间包含真正的换行？"
+    },
+    "explanation": {
+      "en": "Inside an ordinary Python string, `\n` represents one newline character. A forward slash `/n` has no such meaning, and `\\n` represents a literal backslash followed by n. Think of the escape sequence as an instruction for laying out the text.",
+      "zh": "普通Python字符串中的`\n`代表一个换行字符。`/n`只是斜杠和字母n，而`\\n`会把反斜杠本身作为文字保留。换行符是文字排版的一部分，不是屏幕上一定会显示出的两个字符。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "\"Ada\\nLovelace\"",
+        "zh": "\"Ada\\nLovelace\""
+      },
+      {
+        "en": "\"Ada/nLovelace\"",
+        "zh": "\"Ada/nLovelace\""
+      },
+      {
+        "en": "\"Ada\\\\nLovelace\"",
+        "zh": "\"Ada\\\\nLovelace\""
+      },
+      {
+        "en": "\"Ada n Lovelace\"",
+        "zh": "\"Ada n Lovelace\""
+      }
+    ],
+    "answer": 0,
+    "verification": "assert \"Ada\\nLovelace\".splitlines() == [\"Ada\",\"Lovelace\"]"
+  },
+  {
+    "id": "T1-014",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Spaces added by print",
+      "zh": "print自动添加的空格"
+    },
+    "prompt": {
+      "en": "What exact line does this print?\n```python\nprint(\"Li\" + \",\", \"Mei\")\n```",
+      "zh": "下面代码输出的整行是什么？\n```python\nprint(\"Li\" + \",\", \"Mei\")\n```"
+    },
+    "explanation": {
+      "en": "The concatenation first makes `\"Li,\"`, with the comma attached to Li. `print` then separates its two arguments using one space. Distinguish spaces written inside strings from the default space inserted between arguments.",
+      "zh": "字符串相加先得到`\"Li,\"`，逗号紧跟在Li后面。随后`print`在两个参数之间自动放一个空格。要分清字符串里手写的空格，以及`print`帮你添加的空格。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Li ,Mei",
+        "zh": "Li ,Mei"
+      },
+      {
+        "en": "Li,Mei",
+        "zh": "Li,Mei"
+      },
+      {
+        "en": "Li , Mei",
+        "zh": "Li , Mei"
+      },
+      {
+        "en": "Li, Mei",
+        "zh": "Li, Mei"
+      }
+    ],
+    "answer": 3,
+    "verification": "import io,contextlib\nb=io.StringIO()\nwith contextlib.redirect_stdout(b):\n    print(\"Li\"+\",\", \"Mei\")\nassert b.getvalue()==\"Li, Mei\\n\""
+  },
+  {
+    "id": "T1-015",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Date order matters",
+      "zh": "日期顺序不能颠倒"
+    },
+    "prompt": {
+      "en": "For `year=2006`, `month=3`, `day=9`, which expression produces `\"09.03.2006\"`?",
+      "zh": "当`year=2006`、`month=3`、`day=9`时，哪个表达式产生`\"09.03.2006\"`？"
+    },
+    "explanation": {
+      "en": "Write the fields in the requested day-month-year order, then format each field individually. Padding fixes the day and month width without changing their numeric values. Adding the numbers would calculate a sum, not construct a date.",
+      "zh": "先按题目要求排成日、月、年，再分别设置每段的宽度。补零只是显示方式，不会改变日期的数值。把三项直接相加得到的是和，不能得到日期文本。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "f\"{month:02d}.{day:02d}.{year:04d}\"",
+        "zh": "f\"{month:02d}.{day:02d}.{year:04d}\""
+      },
+      {
+        "en": "str(day + month + year)",
+        "zh": "str(day + month + year)"
+      },
+      {
+        "en": "f\"{day:02d}.{month:02d}.{year:04d}\"",
+        "zh": "f\"{day:02d}.{month:02d}.{year:04d}\""
+      },
+      {
+        "en": "f\"{year}.{month}.{day}\"",
+        "zh": "f\"{year}.{month}.{day}\""
+      }
+    ],
+    "answer": 2,
+    "verification": "year,month,day=2006,3,9\nassert f\"{day:02d}.{month:02d}.{year:04d}\" == \"09.03.2006\""
+  },
+  {
+    "id": "T1-016",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Width is a minimum",
+      "zh": "宽度表示最小宽度"
+    },
+    "prompt": {
+      "en": "What is `f\"{123:02d}\"`?",
+      "zh": "`f\"{123:02d}\"`的结果是什么？"
+    },
+    "explanation": {
+      "en": "A width of 2 is a minimum, not a request to cut the number down to two digits. Python leaves a longer value intact. This is useful for padding, but format widths are not a replacement for validating whether a date is valid.",
+      "zh": "宽度2表示至少显示两位，不是强行截成两位。原数已经有三位，就完整显示三位。因此补零格式只负责排版，不能替你检查日期数值是否合法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "\"00\"",
+        "zh": "\"00\""
+      },
+      {
+        "en": "\"123\"",
+        "zh": "\"123\""
+      },
+      {
+        "en": "\"23\"",
+        "zh": "\"23\""
+      },
+      {
+        "en": "\"12\"",
+        "zh": "\"12\""
+      }
+    ],
+    "answer": 1,
+    "verification": "assert f\"{123:02d}\" == \"123\""
+  },
+  {
+    "id": "T1-017",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Format a birthday",
+      "zh": "格式化生日"
+    },
+    "prompt": {
+      "en": "Implement `format_date(year, month, day)` for valid integer date components with `1 <= year <= 9999`. Return a string in `dd.mm.yyyy` form with zero padding. Example: `(2006, 3, 9)` becomes `\"09.03.2006\"`.",
+      "zh": "实现`format_date(year, month, day)`。参数为有效日期的整数部分，且`1 <= year <= 9999`。返回补零后的`dd.mm.yyyy`字符串，例如`(2006, 3, 9)`变成`\"09.03.2006\"`。"
+    },
+    "explanation": {
+      "en": "A date string is assembled in the requested order rather than added numerically. Give the day and month two digits and the year four digits. The format specifiers supply any missing leading zeros for you.",
+      "zh": "日期字符串要按要求拼接，而不是对日期数字求和。日和月各设为两位，年份设为四位。不足的位数由格式化语法自动补0，所以公元7年也能显示成`0007`。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def format_date(year, month, day):\n    # Write your code here\n    pass\n",
+    "solution": "def format_date(year, month, day):\n    return f\"{day:02d}.{month:02d}.{year:04d}\"\n",
+    "tests": "assert format_date(2006,3,9) == \"09.03.2006\"\nassert format_date(1999,12,31) == \"31.12.1999\"\nassert format_date(7,1,2) == \"02.01.0007\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks single digits, two-digit fields and a short year requiring four-digit padding.",
+      "zh": "检查一位日期、两位日期，以及需要补成四位的年份。"
+    }
+  },
+  {
+    "id": "T1-018",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Format a height label",
+      "zh": "格式化身高标签"
+    },
+    "prompt": {
+      "en": "Implement `format_height(height)`. The input is a non-negative float in metres. Return exactly `\"height: x.xx m\"`, using fixed-point formatting with two decimal places and one space before `m`. Example: `1.2` becomes `\"height: 1.20 m\"`.",
+      "zh": "实现`format_height(height)`，输入为以米计的非负浮点数。返回严格的`\"height: x.xx m\"`，用定点格式显示两位小数，`m`前有一个空格。例如1.2变成`\"height: 1.20 m\"`。"
+    },
+    "explanation": {
+      "en": "Keep the fixed words and spaces in the surrounding string, and place only the changing number inside the format expression. `.2f` both rounds for display and retains two decimal places. A trailing zero is part of the required text even though it does not change the number's value.",
+      "zh": "固定的标签和空格直接写在字符串里，只把变化的身高放进花括号。`.2f`会按两位小数显示，并在需要时补上末尾的0。这个0不改变数值，却是题目要求的排版内容。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def format_height(height):\n    # Write your code here\n    pass\n",
+    "solution": "def format_height(height):\n    return f\"height: {height:.2f} m\"\n",
+    "tests": "assert format_height(1.2) == \"height: 1.20 m\"\nassert format_height(1.756) == \"height: 1.76 m\"\nassert format_height(0.0) == \"height: 0.00 m\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks trailing zeros, rounding for display and zero height.",
+      "zh": "检查末尾补零、显示时舍入和零身高。"
+    }
+  },
+  {
+    "id": "T1-019",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A correctly punctuated name",
+      "zh": "姓名标点与空格"
+    },
+    "prompt": {
+      "en": "Implement `card_name(first, last)`. Remove surrounding spaces from each input and return `\"Last, First\"` with exactly one comma and one following space. Keep internal spaces and letter case unchanged.",
+      "zh": "实现`card_name(first, last)`：分别删除输入两端空格，返回`\"Last, First\"`，中间严格使用一个逗号和逗号后的一个空格。内部空格与字母大小写保持不变。"
+    },
+    "explanation": {
+      "en": "Clean each name separately, then join the last name, the separator, and the first name. Keeping the separator as one explicit string avoids accidental extra spaces. `strip` leaves meaningful spaces inside compound names untouched.",
+      "zh": "分别清理名和姓后，按姓、分隔符、名的顺序拼接。把分隔符明确写成`\", \"`，就不容易漏空格或多空格。`strip`不会破坏复合姓名内部原有的空格。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def card_name(first, last):\n    # Write your code here\n    pass\n",
+    "solution": "def card_name(first, last):\n    return last.strip() + \", \" + first.strip()\n",
+    "tests": "assert card_name(\"Ada\",\"Lovelace\") == \"Lovelace, Ada\"\nassert card_name(\" Mei \",\" Li \") == \"Li, Mei\"\nassert card_name(\"Mary Ann\",\"van Buren\") == \"van Buren, Mary Ann\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks name order, surrounding spaces and compound names.",
+      "zh": "检查姓名顺序、首尾空格和带内部空格的复合姓名。"
+    }
+  },
+  {
+    "id": "T1-020",
+    "chapter": "tutorial1",
+    "topic": "card-formatting",
+    "topicLabel": {
+      "en": "Business-card formatting",
+      "zh": "名片与精确格式化"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Build the complete business card",
+      "zh": "生成完整名片"
+    },
+    "prompt": {
+      "en": "Implement `business_card(first, last, place, year, month, day, height)`. Names/place are already clean strings; date fields are valid ints (`1 <= year <= 9999`); height is a float. Return exactly four lines, with no final newline:\n```text\nLast, First\nborn on dd.mm.yyyy\nin Place\nheight: x.xx m\n```\nUse the supplied values in place of the placeholders, zero-pad the date and display two height decimals.",
+      "zh": "实现`business_card(first, last, place, year, month, day, height)`。姓名和地点都是无需清理的字符串；日期为有效整数（`1 <= year <= 9999`）；身高为浮点数。严格返回四行，末尾不加换行：\n```text\nLast, First\nborn on dd.mm.yyyy\nin Place\nheight: x.xx m\n```\n用实际参数替换占位内容，日期补零，身高显示两位小数。"
+    },
+    "explanation": {
+      "en": "Build each output line with its own clear formatting rule, then separate the lines using newline characters. Dates and heights need explicit format specifiers; `round` alone does not ensure the requested display. Avoid adding an extra newline after the last line because the returned string must match exactly.",
+      "zh": "先把每一行的格式单独想清楚，再用换行符连接。日期需要补零，身高需要两位定点小数，单独调用`round`不能保证这些显示效果。最后一行后面不要多加换行，因为整张名片要逐字符匹配。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 1 (cells 2–3)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def business_card(first, last, place, year, month, day, height):\n    # Write your code here\n    pass\n",
+    "solution": "def business_card(first, last, place, year, month, day, height):\n    return (f\"{last}, {first}\\n\"\n            f\"born on {day:02d}.{month:02d}.{year:04d}\\n\"\n            f\"in {place}\\n\"\n            f\"height: {height:.2f} m\")\n",
+    "tests": "assert business_card(\"Ada\",\"Lovelace\",\"London\",1815,12,10,1.65) == \"Lovelace, Ada\\nborn on 10.12.1815\\nin London\\nheight: 1.65 m\"\nassert business_card(\"Mei\",\"Li\",\"Amsterdam\",2006,3,9,1.2) == \"Li, Mei\\nborn on 09.03.2006\\nin Amsterdam\\nheight: 1.20 m\"\nassert business_card(\"A\",\"B\",\"C\",7,1,2,0) == \"B, A\\nborn on 02.01.0007\\nin C\\nheight: 0.00 m\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks all four lines, punctuation, padding, decimal places and absence of a final newline.",
+      "zh": "检查四行内容、标点、补零、小数位数及末尾没有多余换行。"
+    }
+  },
+  {
+    "id": "T1-021",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Convert a percent to a multiplier",
+      "zh": "百分比换成增长倍数"
+    },
+    "prompt": {
+      "en": "For a yearly interest rate `p = 3` percent, what is the correct one-year growth multiplier?",
+      "zh": "年利率为`p = 3`（即3%），正确的一年增长倍数是什么？"
+    },
+    "explanation": {
+      "en": "Three percent means 3 per 100, or 0.03. The new balance contains the original 100% plus that extra 3%, so the multiplier is 1.03. Using just 0.03 would calculate only the interest, not the total balance.",
+      "zh": "3%表示每100份增加3份，也就是0.03。新余额既包含原来的100%，也包含增加的3%，所以倍数应为1.03。只乘0.03算到的是利息，不是本金加利息。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "1 + p / 100",
+        "zh": "1 + p / 100"
+      },
+      {
+        "en": "1 + p",
+        "zh": "1 + p"
+      },
+      {
+        "en": "p / 100",
+        "zh": "p / 100"
+      },
+      {
+        "en": "100 + p",
+        "zh": "100 + p"
+      }
+    ],
+    "answer": 0,
+    "verification": "p=3\nassert 1+p/100 == 1.03"
+  },
+  {
+    "id": "T1-022",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Two years of growth",
+      "zh": "两年后的复利"
+    },
+    "prompt": {
+      "en": "What is the capital after two years for initial capital 100 and a yearly rate of 10%, with annual compounding?",
+      "zh": "本金100、年利率10%、每年复利一次，两年后本息合计是多少？"
+    },
+    "explanation": {
+      "en": "The first year gives 100 × 1.1 = 110. In the second year, interest is earned on 110, giving 110 × 1.1 = 121. The result 120 would describe simple interest on the original 100 in both years.",
+      "zh": "第一年得到100×1.1=110。第二年是在110的基础上继续计息，所以得到110×1.1=121。120对应每年都只按最初本金100计息的单利，不能代替复利。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "120.0",
+        "zh": "120.0"
+      },
+      {
+        "en": "110.0",
+        "zh": "110.0"
+      },
+      {
+        "en": "102.0",
+        "zh": "102.0"
+      },
+      {
+        "en": "121.0",
+        "zh": "121.0"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert round(100*(1+10/100)**2,2)==121.0"
+  },
+  {
+    "id": "T1-023",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "No time has passed",
+      "zh": "零年期的余额"
+    },
+    "prompt": {
+      "en": "In `K * (1 + p / 100) ** n`, what is the result when `n = 0`, for positive K and a non-negative rate p?",
+      "zh": "在`K * (1 + p / 100) ** n`中，当`n = 0`时，结果是什么？假设本金K为正、利率p非负。"
+    },
+    "explanation": {
+      "en": "The positive growth multiplier raised to the power zero equals 1. Multiplying K by 1 leaves the original capital unchanged. Zero-year inputs are a useful boundary check for an investment function.",
+      "zh": "正的增长倍数的0次方等于1，再乘本金K，余额仍然是K。零年期表示还没经过任何计息周期。这个边界例子能快速发现程序是否多算了一年的利息。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "K multiplied by p.",
+        "zh": "K乘以p。"
+      },
+      {
+        "en": "A division-by-zero error.",
+        "zh": "除零错误。"
+      },
+      {
+        "en": "The original capital K.",
+        "zh": "原本金K。"
+      },
+      {
+        "en": "Zero.",
+        "zh": "0。"
+      }
+    ],
+    "answer": 2,
+    "verification": "K,p,n=500,4,0\nassert K*(1+p/100)**n==K"
+  },
+  {
+    "id": "T1-024",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Choose the compound formula",
+      "zh": "选择复利公式"
+    },
+    "prompt": {
+      "en": "Which expression implements annual compound interest for initial capital K, percentage rate p and integer years n?",
+      "zh": "本金为K、百分比年利率为p、年数为整数n，哪个表达式实现每年一次的复利？"
+    },
+    "explanation": {
+      "en": "Each year multiplies the current balance by the same growth factor. Repeating that multiplication n times is exponentiation. The second option adds n years of interest on the original principal only, so it is simple interest.",
+      "zh": "每过一年，都要让当前余额乘一次相同的增长倍数。连续乘n次，就可以写成n次方。第二个表达式始终只按最初本金计息，因此算的是单利。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "K + p + n",
+        "zh": "K + p + n"
+      },
+      {
+        "en": "K * (1 + p / 100) ** n",
+        "zh": "K * (1 + p / 100) ** n"
+      },
+      {
+        "en": "K * (1 + p / 100 * n)",
+        "zh": "K * (1 + p / 100 * n)"
+      },
+      {
+        "en": "K * (p / 100) ** n",
+        "zh": "K * (p / 100) ** n"
+      }
+    ],
+    "answer": 1,
+    "verification": "K,p,n=100,10,2\nassert round(K*(1+p/100)**n,2)==121.0\nassert K*(1+p/100*n)==120.0"
+  },
+  {
+    "id": "T1-025",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Power is not a caret",
+      "zh": "幂运算不是脱字符"
+    },
+    "prompt": {
+      "en": "What is the correct way to calculate the power in the formula?",
+      "zh": "计算复利公式中的幂，哪种写法正确？"
+    },
+    "explanation": {
+      "en": "Python uses `**` for exponentiation, and `math.pow` is another way to compute a power. The caret `^` means bitwise XOR and cannot replace a mathematical exponent. Swapping the base and exponent also changes the calculation.",
+      "zh": "Python的幂运算符是`**`，`math.pow`也可以计算幂。`^`表示按位异或，不能按手写公式中的上标来理解。底数和指数的位置也不能互换，否则已经是另一道计算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Use `(1 + p / 100) ** n`, or `math.pow(1 + p / 100, n)` after importing math.",
+        "zh": "使用`(1 + p / 100) ** n`，或先导入math再使用`math.pow(1 + p / 100, n)`。"
+      },
+      {
+        "en": "Use `(1 + p / 100) ^ n`.",
+        "zh": "使用`(1 + p / 100) ^ n`。"
+      },
+      {
+        "en": "Use `(1 + p / 100) * n`.",
+        "zh": "使用`(1 + p / 100) * n`。"
+      },
+      {
+        "en": "Use `n ** (1 + p / 100)`.",
+        "zh": "使用`n ** (1 + p / 100)`。"
+      }
+    ],
+    "answer": 0,
+    "verification": "import math\nassert math.isclose(1.03**5,math.pow(1.03,5))"
+  },
+  {
+    "id": "T1-026",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Round only at the requested stage",
+      "zh": "在指定阶段舍入"
+    },
+    "prompt": {
+      "en": "A task says: calculate `K * (1 + p / 100) ** n`, then round the final capital to two decimals. Which implementation follows it most faithfully?",
+      "zh": "题目要求先计算`K * (1 + p / 100) ** n`，再把最终余额舍入到两位小数。哪种实现最符合要求？"
+    },
+    "explanation": {
+      "en": "Rounding at every intermediate step may change the final cents. The task specifies a formula and a final rounding step, so preserve intermediate precision and round at the end. `int` truncates to an integer and does not keep two decimal places.",
+      "zh": "每一步都舍入，误差可能逐步积累，最后的分位也可能不同。题目既然明确给出公式并要求最后舍入，就应保留中间精度。`int`只是截取整数，既不是两位小数的舍入，也不是固定小数位的显示。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Round the rate p/100 to an integer before using it.",
+        "zh": "先把利率p/100舍入成整数。"
+      },
+      {
+        "en": "Round the capital to two decimals after every multiplication, regardless of the requirement.",
+        "zh": "不管题意，每乘一次都把余额舍入成两位。"
+      },
+      {
+        "en": "Use int(result) to guarantee two decimals.",
+        "zh": "使用int(result)保证两位小数。"
+      },
+      {
+        "en": "Evaluate the full formula, then call round(result, 2).",
+        "zh": "算完整个公式，最后调用round(result, 2)。"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "id": "T1-027",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Calculate final capital",
+      "zh": "计算最终本息"
+    },
+    "prompt": {
+      "en": "Implement `final_capital(K, p, n)` using `K * (1 + p / 100) ** n`. K and p are non-negative numbers and n is a non-negative integer. Return the final numeric capital rounded to two decimals; do not return a string.",
+      "zh": "实现`final_capital(K, p, n)`，使用公式`K * (1 + p / 100) ** n`。K和p为非负数，n为非负整数。返回舍入到两位小数的数值，不要返回字符串。"
+    },
+    "explanation": {
+      "en": "Build the yearly growth factor first, raise it to the number of years, then multiply by the initial capital. Round once, after the full formula. Returning a number makes it possible to use the result in later calculations.",
+      "zh": "先算每年的增长倍数，再求n次方，最后乘以最初本金。整个公式算完后只舍入一次。返回数值而不是加上货币符号的字符串，后续才能继续计算。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def final_capital(K, p, n):\n    # Write your code here\n    pass\n",
+    "solution": "def final_capital(K, p, n):\n    return round(K * (1 + p / 100) ** n, 2)\n",
+    "tests": "assert final_capital(100,10,2) == 121.0\nassert final_capital(1000,3,50) == 4383.91\nassert final_capital(500,4,0) == 500\nassert final_capital(100,0,20) == 100\nassert final_capital(0,8,3) == 0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks the tutorial example, two years, zero years, zero rate and zero capital.",
+      "zh": "检查Tutorial例子、两年期、零年期、零利率与零本金。"
+    }
+  },
+  {
+    "id": "T1-028",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Separate interest from principal",
+      "zh": "区分利息与本金"
+    },
+    "prompt": {
+      "en": "Implement `interest_earned(K, p, n)` for non-negative K, p and integer n. Return only the interest earned: `K * (1 + p / 100) ** n - K`, rounded to two decimals after the subtraction.",
+      "zh": "实现`interest_earned(K, p, n)`，K、p和整数n均非负。只返回获得的利息，即`K * (1 + p / 100) ** n - K`，在减去本金之后舍入到两位小数。"
+    },
+    "explanation": {
+      "en": "The compound-interest formula gives the whole balance, which still includes the original capital. Subtract the principal to keep only the newly earned amount. The zero-rate and zero-year examples should therefore give no interest.",
+      "zh": "复利公式算出的是总余额，其中还包括一开始投入的本金。减去本金之后，剩下的才是新获得的利息。零利率和零年期都没有产生新利息，因此应返回0。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def interest_earned(K, p, n):\n    # Write your code here\n    pass\n",
+    "solution": "def interest_earned(K, p, n):\n    interest = K * (1 + p / 100) ** n - K\n    return round(interest, 2)\n",
+    "tests": "assert interest_earned(100,10,2) == 21.0\nassert interest_earned(500,0,10) == 0\nassert interest_earned(900,6,25) == 2962.68\nassert interest_earned(80,5,0) == 0\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks total-versus-interest distinction and no-growth boundaries.",
+      "zh": "检查是否区分总余额与纯利息，以及没有增长的边界情况。"
+    }
+  },
+  {
+    "id": "T1-029",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Write a currency report",
+      "zh": "生成货币报告"
+    },
+    "prompt": {
+      "en": "Implement `capital_report(K, p, n)` for non-negative values and integer n. Calculate the compound final capital without rounding intermediate values. Return `\"Capital after n years: x.xx EUR\"` with n inserted as an integer and exactly two decimals for the capital. Example: `(100, 10, 2)` gives `\"Capital after 2 years: 121.00 EUR\"`.",
+      "zh": "实现`capital_report(K, p, n)`，参数非负且n为整数。按复利公式计算余额，中间不舍入，返回`\"Capital after n years: x.xx EUR\"`；把n替换为整数年数，余额严格显示两位小数。例如`(100, 10, 2)`返回`\"Capital after 2 years: 121.00 EUR\"`。"
+    },
+    "explanation": {
+      "en": "Keep calculation and presentation separate. First compute the numeric balance, then insert it into a string using `.2f` so whole amounts still end in `.00`. Match the specified wording exactly, including the word `years` even when n is 1.",
+      "zh": "计算和显示分成两步处理：先求出数值余额，再用`.2f`放入字符串，整数金额也会显示`.00`。题目规定了固定模板，所以即使n等于1，本题也仍使用模板里的`years`。这道题练习的是按要求精确输出。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def capital_report(K, p, n):\n    # Write your code here\n    pass\n",
+    "solution": "def capital_report(K, p, n):\n    value = K * (1 + p / 100) ** n\n    return f\"Capital after {n} years: {value:.2f} EUR\"\n",
+    "tests": "assert capital_report(100,10,2) == \"Capital after 2 years: 121.00 EUR\"\nassert capital_report(250,0,3) == \"Capital after 3 years: 250.00 EUR\"\nassert capital_report(1,5,1) == \"Capital after 1 years: 1.05 EUR\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks exact text, fixed decimals, zero rate and the literal report template.",
+      "zh": "检查文字完全匹配、固定小数位、零利率及固定模板。"
+    }
+  },
+  {
+    "id": "T1-030",
+    "chapter": "tutorial1",
+    "topic": "compound-interest",
+    "topicLabel": {
+      "en": "Compound interest",
+      "zh": "复利与数值计算"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Balances from year zero",
+      "zh": "从第0年开始的余额表"
+    },
+    "prompt": {
+      "en": "Implement `capital_table(K, p, n)`. Return a list of balances for years `0, 1, ..., n`, each calculated independently as `round(K * (1 + p / 100) ** year, 2)`. K and p are non-negative and n is a non-negative integer. Do not compound already-rounded earlier entries.",
+      "zh": "实现`capital_table(K, p, n)`。返回第`0, 1, ..., n`年的余额列表，每项都独立按`round(K * (1 + p / 100) ** year, 2)`计算。K和p非负，n为非负整数。不要拿已经舍入过的前一年余额继续计算。"
+    },
+    "explanation": {
+      "en": "Including year zero means the list has n+1 entries. `range(n + 1)` supplies exactly those years. Reusing the original principal in every formula avoids changing the specified calculation by repeatedly rounding the running balance.",
+      "zh": "列表包含第0年，所以一共应有n+1项。`range(n + 1)`刚好依次给出这些年份。每次都从原本金代入公式，能避免反复对前一年余额舍入而偏离题目指定的算法。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 2 (cells 5–7)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def capital_table(K, p, n):\n    # Write your code here\n    pass\n",
+    "solution": "def capital_table(K, p, n):\n    return [round(K * (1 + p / 100) ** year, 2)\n            for year in range(n + 1)]\n",
+    "tests": "assert capital_table(100,10,2) == [100.0,110.0,121.0]\nassert capital_table(500,5,0) == [500.0]\nassert capital_table(100,0,3) == [100.0]*4\nassert capital_table(1.01,0.5,5) == [round(1.01*1.005**y,2) for y in range(6)]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks inclusive year count, year zero, a zero rate and a small-balance rounding case.",
+      "zh": "检查年份是否包含终点、第0年、零利率，以及小额余额的舍入情况。"
+    }
+  },
+  {
+    "id": "T1-031",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "The basic random interval",
+      "zh": "基本随机数区间"
+    },
+    "prompt": {
+      "en": "According to the `random.random()` interface, which interval contains the returned value r?",
+      "zh": "按照`random.random()`的接口定义，其返回值r属于哪个区间？"
+    },
+    "explanation": {
+      "en": "The lower endpoint 0 is allowed and the upper endpoint 1 is excluded. This is the starting interval used when scaling a random value. Keep track of which end is open before changing the interval.",
+      "zh": "返回值可以等于0，但不能等于1。这是把随机数缩放到其他区间时的起点。先分清哪个端点能取到，再去做乘法和平移，就不容易把区间写反。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "-1 <= r <= 1",
+        "zh": "-1 <= r <= 1"
+      },
+      {
+        "en": "1 <= r < 10",
+        "zh": "1 <= r < 10"
+      },
+      {
+        "en": "0 <= r < 1",
+        "zh": "0 <= r < 1"
+      },
+      {
+        "en": "0 < r <= 1",
+        "zh": "0 < r <= 1"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "T1-032",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Scale and shift",
+      "zh": "缩放后再平移"
+    },
+    "prompt": {
+      "en": "For a given r with `0 <= r < 1`, which expression maps it mathematically to `[-5, 10)`? Ignore floating-point endpoint-rounding effects in this interval question.",
+      "zh": "给定`0 <= r < 1`，哪个表达式在数学上把它映射到`[-5, 10)`？本题忽略浮点舍入对端点的影响。"
+    },
+    "explanation": {
+      "en": "The desired interval has width 10 - (-5) = 15. Multiplying r by 15 stretches the interval to [0, 15), then subtracting 5 shifts it to the target interval. Multiplying by 10 would make the interval too narrow.",
+      "zh": "目标区间的宽度是10-(-5)=15。先乘15得到[0,15)，再减5，整体移动到目标位置。只乘10会让区间宽度不够，不能到达接近10的位置。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "15 - 5 * r",
+        "zh": "15 - 5 * r"
+      },
+      {
+        "en": "-5 + 15 * r",
+        "zh": "-5 + 15 * r"
+      },
+      {
+        "en": "-5 + 10 * r",
+        "zh": "-5 + 10 * r"
+      },
+      {
+        "en": "5 + 15 * r",
+        "zh": "5 + 15 * r"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert -5+15*0==-5\nassert -5+15*0.5==2.5\nassert -5+15*0.999<10"
+  },
+  {
+    "id": "T1-033",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Count a list comprehension",
+      "zh": "数清列表推导式的项数"
+    },
+    "prompt": {
+      "en": "How many values are stored in `samples`?\n```python\nsamples = [-5 + 15 * random.random() for i in range(5)]\n```\nAssume `random` is imported.",
+      "zh": "`samples`里一共保存多少个值？\n```python\nsamples = [-5 + 15 * random.random() for i in range(5)]\n```\n假设已导入`random`。"
+    },
+    "explanation": {
+      "en": "`range(5)` produces five loop values: 0 through 4. The expression on the left is evaluated once for each of them. The value 15 controls the random interval width, not the number of samples.",
+      "zh": "`range(5)`产生0到4，共五个循环值。左边的表达式对每个循环值计算一次，于是得到五个样本。15控制的是随机数范围的宽度，不是生成的数量。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "6",
+        "zh": "6"
+      },
+      {
+        "en": "15",
+        "zh": "15"
+      }
+    ],
+    "answer": 0,
+    "verification": "import random\nassert len([-5+15*random.random() for i in range(5)])==5"
+  },
+  {
+    "id": "T1-034",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Inclusive integer endpoints",
+      "zh": "整数随机数的端点"
+    },
+    "prompt": {
+      "en": "Which values may `random.randint(2, 4)` return?",
+      "zh": "`random.randint(2, 4)`可能返回哪些值？"
+    },
+    "explanation": {
+      "en": "Unlike `range`, `randint(a, b)` includes both integer endpoints. Its result is an integer chosen from 2, 3 and 4 in this example. Do not transfer the exclusive-upper-bound rule of `range` to every random-number function.",
+      "zh": "`randint(a, b)`包含两端的整数，所以这里可能得到2、3、4。它返回的是整数，而不是区间中的任意小数。不要把`range`的右端点不包含规则直接套到所有随机函数上。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Only 2 and 3",
+        "zh": "只有2和3"
+      },
+      {
+        "en": "Only 3",
+        "zh": "只有3"
+      },
+      {
+        "en": "Any float between 2 and 4",
+        "zh": "2到4之间的任意浮点数"
+      },
+      {
+        "en": "2, 3 or 4",
+        "zh": "2、3或4"
+      }
+    ],
+    "answer": 3,
+    "verification": "import random\nr=random.Random(9)\nassert set(r.randint(2,4) for _ in range(200))=={2,3,4}"
+  },
+  {
+    "id": "T1-035",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Place the seed outside the loop",
+      "zh": "随机种子放在循环外"
+    },
+    "prompt": {
+      "en": "You want a reproducible sequence of five random values that is not forced to repeat the same first draw. Where should a fixed seed normally be set?",
+      "zh": "你想要一组可以重复得到的五个随机数，而不是被迫把第一次抽取的值重复五次。固定种子通常应在哪里设置？"
+    },
+    "explanation": {
+      "en": "A seed resets the generator to a particular starting state. Set it once, then let the state advance as each value is drawn. Resetting to the same state before every draw keeps returning that state's first value.",
+      "zh": "种子会把随机生成器放回某个固定起点。先设置一次，再连续抽取，生成器就会沿着序列向前走。如果每次抽取前都回到同一个起点，反而会反复拿到同一个“第一个数”。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Only after all five values have already been generated.",
+        "zh": "五个数都生成完后才设置。"
+      },
+      {
+        "en": "The seed must be changed by hand after every line.",
+        "zh": "每行之后必须手动修改种子。"
+      },
+      {
+        "en": "Once before generating the sequence.",
+        "zh": "在生成整组序列前设置一次。"
+      },
+      {
+        "en": "Immediately before every random draw with the same seed.",
+        "zh": "每次抽取前都用相同种子重置。"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": "T1-036",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Why int can destroy the variation",
+      "zh": "int为何会丢掉变化"
+    },
+    "prompt": {
+      "en": "For any supplied number r satisfying `0 <= r < 1`, what is `int(r)`?",
+      "zh": "对于任何满足`0 <= r < 1`的给定数r，`int(r)`是多少？"
+    },
+    "explanation": {
+      "en": "For these non-negative inputs, `int` discards the fractional part. Every value below 1 therefore becomes 0. To create a broader interval, scale first; converting too early can remove all variation.",
+      "zh": "对于这里的非负数，`int`会去掉小数部分。因为所有输入都小于1，所以结果全部变成0。要生成更大的数值范围，应先做缩放；太早转成整数会把变化全丢掉。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "The original float r",
+        "zh": "原来的浮点数r"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "1",
+        "zh": "1"
+      },
+      {
+        "en": "A random integer from 0 to 9",
+        "zh": "0到9之间的随机整数"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert all(int(r)==0 for r in [0,0.1,0.5,0.999999])"
+  },
+  {
+    "id": "T1-037",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Transform supplied random fractions",
+      "zh": "转换给定随机小数"
+    },
+    "prompt": {
+      "en": "Implement `scale_randoms(fractions, low, high)` using a list comprehension. Every supplied fraction r satisfies `0 <= r < 1`, and low < high. Return `[low + (high - low) * r, ...]` in input order. Do not generate new random values. Empty input returns `[]`.",
+      "zh": "使用列表推导式实现`scale_randoms(fractions, low, high)`。每个给定小数r都满足`0 <= r < 1`，且low < high。按输入顺序返回`low + (high - low) * r`构成的列表。不要重新生成随机数。空输入返回`[]`。"
+    },
+    "explanation": {
+      "en": "The difference high-low gives the interval width. Multiply each supplied fraction by that width and shift by low. Using the supplied fractions rather than drawing new ones makes the transformation deterministic and easy to check.",
+      "zh": "先用high-low得到区间宽度，再对每个给定小数做缩放和平移。列表推导式会自然保留顺序，也能自然处理空列表。本题只检验区间变换，因此使用给定小数，不需要再抽取随机数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def scale_randoms(fractions, low, high):\n    # Write your code here\n    pass\n",
+    "solution": "def scale_randoms(fractions, low, high):\n    return [low + (high - low) * r for r in fractions]\n",
+    "tests": "assert scale_randoms([0,0.5],-5,10) == [-5,2.5]\nassert scale_randoms([0.25,0.75],10,14) == [11.0,13.0]\nassert scale_randoms([],0,1) == []\nassert scale_randoms([0],-8,-2) == [-8]\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks lower endpoint, midpoint, a negative interval, input order and empty input.",
+      "zh": "检查左端点、中点、负数区间、顺序与空输入。"
+    }
+  },
+  {
+    "id": "T1-038",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Five reproducible samples",
+      "zh": "五个可重复的随机样本"
+    },
+    "prompt": {
+      "en": "Implement `sample_five(seed)`. Create a local generator with `rng = random.Random(seed)`, then return five values from `-5 + 15 * rng.random()` using a list comprehension. Do not reset the generator inside the comprehension. Import `random` in your solution.",
+      "zh": "实现`sample_five(seed)`。用`rng = random.Random(seed)`创建局部生成器，再使用列表推导式返回五个`-5 + 15 * rng.random()`的值。不要在推导式内部重置生成器。解答中需要导入`random`。"
+    },
+    "explanation": {
+      "en": "A local generator keeps this function from depending on unrelated random calls elsewhere. Seeding once gives a reproducible sequence, and the comprehension draws five consecutive values. The multiplier and shift reproduce the interval transformation from the tutorial.",
+      "zh": "局部生成器不会受其他地方抽取随机数的影响。种子只设置一次，随后推导式连续抽取五个数，因此同一种子可以复现整组序列。乘15再减5，对应Tutorial中相同的区间变换。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def sample_five(seed):\n    # Write your code here\n    pass\n",
+    "solution": "import random\n\ndef sample_five(seed):\n    rng = random.Random(seed)\n    return [-5 + 15 * rng.random() for _ in range(5)]\n",
+    "tests": "import random\nr=random.Random(4)\nexpected=[-5+15*r.random() for _ in range(5)]\nassert sample_five(4)==expected\nassert sample_five(0)==sample_five(0)\nassert len(sample_five(7))==5\nassert all(-5<=x<10 for x in sample_five(8))\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks the specified generator sequence, reproducibility, sample count and range.",
+      "zh": "检查指定生成器序列、可重复性、样本数量和范围。"
+    }
+  },
+  {
+    "id": "T1-039",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "A reproducible integer list",
+      "zh": "生成可重复的整数列表"
+    },
+    "prompt": {
+      "en": "Implement `integer_samples(seed, low, high, n)`. With a local `random.Random(seed)` generator, return a list of n calls to `rng.randint(low, high)`. Both integer endpoints are included. Assume low <= high and n >= 0; n=0 returns `[]`.",
+      "zh": "实现`integer_samples(seed, low, high, n)`。使用局部`random.Random(seed)`生成器，返回调用n次`rng.randint(low, high)`得到的列表。包含两个整数端点。假设low <= high、n >= 0；n=0时返回`[]`。"
+    },
+    "explanation": {
+      "en": "Choose the random function that matches the required type and endpoints. `randint` already returns an integer and includes low and high, so no extra `int` conversion is needed. `range(n)` controls the number of generated values and naturally handles n=0.",
+      "zh": "先根据所需类型和端点规则选择随机函数。`randint`本身就返回整数，而且包含low和high，不需要再套`int`。生成数量由`range(n)`控制，n为0时循环不执行，就得到空列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def integer_samples(seed, low, high, n):\n    # Write your code here\n    pass\n",
+    "solution": "import random\n\ndef integer_samples(seed, low, high, n):\n    rng = random.Random(seed)\n    return [rng.randint(low, high) for _ in range(n)]\n",
+    "tests": "import random\nr=random.Random(3)\nassert integer_samples(3,2,4,6)==[r.randint(2,4) for _ in range(6)]\nassert integer_samples(7,5,5,3)==[5,5,5]\nassert integer_samples(0,-2,2,0)==[]\nassert all(type(x) is int for x in integer_samples(4,-2,2,8))\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks the exact seeded sequence, equal endpoints, zero length and integer results.",
+      "zh": "检查给定种子的序列、相同端点、零长度与整数结果。"
+    }
+  },
+  {
+    "id": "T1-040",
+    "chapter": "tutorial1",
+    "topic": "random-samples",
+    "topicLabel": {
+      "en": "Random samples",
+      "zh": "随机样本"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Generate pairs without reseeding",
+      "zh": "不重置种子地生成随机数对"
+    },
+    "prompt": {
+      "en": "Implement `random_pairs(seed, n)`. Create one local `random.Random(seed)` generator. Return n tuples `(x, y)`, drawing x then y with `rng.random()` for each pair. Preserve draw order and do not reseed between pairs. Assume n >= 0.",
+      "zh": "实现`random_pairs(seed, n)`。创建一个局部`random.Random(seed)`生成器。返回n个元组`(x, y)`，每组依次用`rng.random()`抽取x、再抽取y。保留抽取顺序，各组之间不重新设置种子。假设n >= 0。"
+    },
+    "explanation": {
+      "en": "Each tuple consumes two consecutive draws: one for x and one for y. The list comprehension repeats that pair-building step n times while sharing the same generator. Resetting the seed between pairs would incorrectly repeat the first pair.",
+      "zh": "每个元组连续使用两次抽取：第一次给x，第二次给y。列表推导式重复构造n组，但一直使用同一个生成器。若每组前重设种子，就会反复得到第一组，而不是所要求的连续序列。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10)",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def random_pairs(seed, n):\n    # Write your code here\n    pass\n",
+    "solution": "import random\n\ndef random_pairs(seed, n):\n    rng = random.Random(seed)\n    return [(rng.random(), rng.random()) for _ in range(n)]\n",
+    "tests": "import random\nr=random.Random(12)\nexpected=[(r.random(),r.random()) for _ in range(3)]\nassert random_pairs(12,3)==expected\nassert random_pairs(8,0)==[]\nassert random_pairs(5,2)==random_pairs(5,2)\nassert all(isinstance(pair,tuple) and len(pair)==2 and all(0<=x<1 for x in pair) for pair in random_pairs(7,4))\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks draw order, tuple shape, reproducibility, range and zero pairs.",
+      "zh": "检查抽取顺序、元组形状、可重复性、范围及零组情况。"
+    }
+  },
+  {
+    "id": "T1-041",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "The arithmetic mean",
+      "zh": "算术平均数"
+    },
+    "prompt": {
+      "en": "What is the arithmetic mean of `[2, 4, 6, 8, 10]`?",
+      "zh": "`[2, 4, 6, 8, 10]`的算术平均数是多少？"
+    },
+    "explanation": {
+      "en": "Add the five values to get 30, then divide by their count, 5. The mean is 6. The total and the number of observations are ingredients, not the final average.",
+      "zh": "先把五个数相加得到30，再除以数量5，平均数就是6。总和与样本数量只是计算所需的两个部分，不能把其中任意一个直接当作平均数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "6.0",
+        "zh": "6.0"
+      },
+      {
+        "en": "30.0",
+        "zh": "30.0"
+      },
+      {
+        "en": "5.0",
+        "zh": "5.0"
+      },
+      {
+        "en": "10.0",
+        "zh": "10.0"
+      }
+    ],
+    "answer": 0,
+    "verification": "assert (2+4+6+8+10)/5==6.0"
+  },
+  {
+    "id": "T1-042",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Sort before finding the middle",
+      "zh": "先排序再找中间"
+    },
+    "prompt": {
+      "en": "What is the median of `[9, 1, 5, 3, 7]`?",
+      "zh": "`[9, 1, 5, 3, 7]`的中位数是多少？"
+    },
+    "explanation": {
+      "en": "Sort conceptually to get [1, 3, 5, 7, 9], then choose the middle value. The median is about ordered position, not the position in the original unsorted list. It happens to be 5 here; that coincidence must not become your general algorithm.",
+      "zh": "按大小排列后是[1,3,5,7,9]，中间那项为5。中位数指的是排序之后的位置，不是原列表的位置。这里原列表中间也恰好是5，但不能据此省略排序这一步。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "1",
+        "zh": "1"
+      },
+      {
+        "en": "9",
+        "zh": "9"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      }
+    ],
+    "answer": 3,
+    "verification": "assert sorted([9,1,5,3,7])[2]==5"
+  },
+  {
+    "id": "T1-043",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Zero-based middle index",
+      "zh": "从0开始的中间下标"
+    },
+    "prompt": {
+      "en": "A list of five numbers has already been sorted in ascending order. Which index selects its median?",
+      "zh": "一个包含五个数的列表已经升序排列。哪个下标对应中位数？"
+    },
+    "explanation": {
+      "en": "The positions are 0, 1, 2, 3 and 4. There are two values on each side of index 2, so it is the middle. Human phrases such as “third value” must be translated into Python's zero-based index 2.",
+      "zh": "五项的下标是0、1、2、3、4，下标2左右各有两项，因此位于中间。日常说的“第三个数”，换成Python从0开始计数后，就是下标2。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "0",
+        "zh": "0"
+      },
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      }
+    ],
+    "answer": 2,
+    "verification": "assert [1,3,5,7,9][2]==5"
+  },
+  {
+    "id": "T1-044",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Median with an even count",
+      "zh": "偶数个样本的中位数"
+    },
+    "prompt": {
+      "en": "Using the usual statistical definition, what is the median of `[2, 4, 8, 10]`?",
+      "zh": "按通常的统计学定义，`[2, 4, 8, 10]`的中位数是多少？"
+    },
+    "explanation": {
+      "en": "An even-sized sorted list has two central values, here 4 and 8. The median is their average: (4+8)/2 = 6. Choosing only the upper or lower middle value would use a different rule.",
+      "zh": "偶数个有序样本中间有两个数，这里是4和8。通常的中位数取这两个数的平均值，也就是6。只挑较小或较大的那个中间数，都不是本题采用的定义。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "24.0",
+        "zh": "24.0"
+      },
+      {
+        "en": "6.0",
+        "zh": "6.0"
+      },
+      {
+        "en": "4.0",
+        "zh": "4.0"
+      },
+      {
+        "en": "8.0",
+        "zh": "8.0"
+      }
+    ],
+    "answer": 1,
+    "verification": "assert (4+8)/2==6.0"
+  },
+  {
+    "id": "T1-045",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "An outlier changes the mean",
+      "zh": "异常大值会拉动均值"
+    },
+    "prompt": {
+      "en": "Compare `[1, 2, 3, 4, 5]` with `[1, 2, 3, 4, 100]`. Which statement is true?",
+      "zh": "比较`[1, 2, 3, 4, 5]`与`[1, 2, 3, 4, 100]`，哪个说法正确？"
+    },
+    "explanation": {
+      "en": "Replacing 5 with 100 greatly increases the total, so it increases the mean. The sorted middle item is still 3, so the median is unchanged. This example shows why the two summaries react differently to an extreme value.",
+      "zh": "把5换成100后，总和大幅增加，因此平均数随之增大。排序后中间那项仍是3，所以中位数不变。这个例子能看出，均值和中位数对极端数值的反应并不一样。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "The mean increases, but the median stays 3.",
+        "zh": "平均数增大，但中位数仍为3。"
+      },
+      {
+        "en": "Both the mean and median become 100.",
+        "zh": "平均数和中位数都变成100。"
+      },
+      {
+        "en": "The mean stays 3, but the median increases.",
+        "zh": "平均数仍为3，但中位数增大。"
+      },
+      {
+        "en": "Both lists have the same sum.",
+        "zh": "两个列表的总和相同。"
+      }
+    ],
+    "answer": 0,
+    "verification": "a,b=[1,2,3,4,5],[1,2,3,4,100]\nassert sum(b)/5>sum(a)/5\nassert sorted(a)[2]==sorted(b)[2]==3"
+  },
+  {
+    "id": "T1-046",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "sort does not return the sorted list",
+      "zh": "sort并不返回排序结果列表"
+    },
+    "prompt": {
+      "en": "What is stored in `ordered`?\n```python\nvalues = [5, 1, 3]\nordered = values.sort()\n```",
+      "zh": "`ordered`保存的是什么？\n```python\nvalues = [5, 1, 3]\nordered = values.sort()\n```"
+    },
+    "explanation": {
+      "en": "The list method `sort` rearranges the existing list and returns None. If you need a separate sorted list while leaving the original alone, use `sorted(values)` when the task allows it. The tutorial's restriction on built-ins must be read separately from the behaviour of each method.",
+      "zh": "列表的`sort`方法会修改原列表，但返回值是None。若题目允许、又希望保留原列表，可以用`sorted(values)`得到新的有序列表。方法本身怎样工作，与题目是否禁止使用它，是两个需要分别看清的问题。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "[1, 3, 5]",
+        "zh": "[1, 3, 5]"
+      },
+      {
+        "en": "[5, 1, 3]",
+        "zh": "[5, 1, 3]"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      }
+    ],
+    "answer": 3,
+    "verification": "values=[5,1,3]\nordered=values.sort()\nassert ordered is None\nassert values==[1,3,5]"
+  },
+  {
+    "id": "T1-047",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Mean without sum",
+      "zh": "不用sum计算均值"
+    },
+    "prompt": {
+      "en": "Implement `mean_manual(values)` for a non-empty list of numbers. Add the numbers with a loop and divide by their count. Do not use `sum`, `statistics.mean`, NumPy or pandas. `len` and a loop are allowed. Return the numeric mean without rounding.",
+      "zh": "实现`mean_manual(values)`，输入为非空数值列表。通过循环累加后除以数量，不得使用`sum`、`statistics.mean`、NumPy或pandas。允许`len`和循环。返回不舍入的数值均值。"
+    },
+    "explanation": {
+      "en": "Start the running total at zero so no value is counted twice. Add each list entry once, then divide by the original list length. The non-empty-input assumption matters because an empty list would make the denominator zero.",
+      "zh": "把累计总和从0开始，依次把每个数加进去，每个数只加一次。加完后除以列表长度，就是平均数。本题明确保证列表非空，是因为空列表的数量为0，不能拿来作除数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def mean_manual(values):\n    # Write your code here\n    pass\n",
+    "solution": "def mean_manual(values):\n    total = 0\n    for value in values:\n        total += value\n    return total / len(values)\n",
+    "tests": "assert mean_manual([2,4,6,8,10])==6\nassert mean_manual([-2,0,2])==0\nassert mean_manual([7])==7\nassert abs(mean_manual([0.1,0.2])-0.15)<1e-12\nassert not (set(mean_manual.__code__.co_names) & {\"sum\", \"statistics\", \"mean\", \"numpy\", \"pandas\", \"np\", \"pd\"}), \"Use the requested manual accumulation, not a forbidden helper\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks positive numbers, negatives, one element and fractional values.",
+      "zh": "检查正数、负数、单元素和小数值。"
+    }
+  },
+  {
+    "id": "T1-048",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Median of exactly five values",
+      "zh": "五个数的中位数"
+    },
+    "prompt": {
+      "en": "Implement `median_five(values)` for a list of exactly five numbers. In this variant `sorted` is explicitly allowed. Return the middle of a sorted copy, leaving the input list unchanged.",
+      "zh": "实现`median_five(values)`，输入恰好包含五个数。本变式明确允许使用`sorted`。从排序后的副本中取中间项并返回，原列表必须保持不变。"
+    },
+    "explanation": {
+      "en": "`sorted` creates a new list, so finding the median does not disturb the caller's order. With five entries, the middle index is always 2. The permission to use `sorted` is explicit here because other tutorial variants intentionally practise manual sorting.",
+      "zh": "`sorted`会创建新列表，因此不会破坏调用者原有的顺序。五项排序后，中间下标固定是2。本题特意说明可以使用`sorted`，因为同一知识点的其他变式可能要求手动排序，不能把不同题目的限制混在一起。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def median_five(values):\n    # Write your code here\n    pass\n",
+    "solution": "def median_five(values):\n    ordered = sorted(values)\n    return ordered[2]\n",
+    "tests": "data=[9,1,8,2,3]\nassert median_five(data)==3\nassert data==[9,1,8,2,3]\nassert median_five([5,5,1,2,5])==5\nassert median_five([-5,-1,-3,-4,-2])==-3\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks unsorted values, duplicates, negative numbers and no mutation.",
+      "zh": "检查无序输入、重复值、负数及不修改原列表。"
+    }
+  },
+  {
+    "id": "T1-049",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Median by manual insertion sorting",
+      "zh": "手动插入排序求中位数"
+    },
+    "prompt": {
+      "en": "Implement `median_manual(values)` for any non-empty numeric list. Make a copy, sort it manually with loops, and return the middle item for odd length or the mean of the middle two for even length. Do not call `sorted`, `.sort()`, `statistics`, NumPy or pandas. Leave the original list unchanged.",
+      "zh": "实现`median_manual(values)`，输入为任意非空数值列表。先复制，再用循环手动排序；奇数项返回中间项，偶数项返回中间两项的平均值。不得调用`sorted`、`.sort()`、`statistics`、NumPy或pandas。原列表必须保持不变。"
+    },
+    "explanation": {
+      "en": "Insertion sorting grows a sorted left-hand section by moving larger values one position to the right before inserting the current value. Once the copy is ordered, use the length's parity to choose one middle value or average two. Copying first protects the original list from these moves.",
+      "zh": "插入排序的做法是逐步扩大左边已经排好的部分：把较大的数向右挪，再把当前数放进合适位置。排序后根据项数的奇偶，决定取一个中间值，还是中间两个数的平均值。先复制能保证这些移动不会改到原列表。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def median_manual(values):\n    # Write your code here\n    pass\n",
+    "solution": "def median_manual(values):\n    ordered = list(values)\n    for i in range(1, len(ordered)):\n        current = ordered[i]\n        j = i - 1\n        while j >= 0 and ordered[j] > current:\n            ordered[j + 1] = ordered[j]\n            j -= 1\n        ordered[j + 1] = current\n    middle = len(ordered) // 2\n    if len(ordered) % 2:\n        return ordered[middle]\n    return (ordered[middle - 1] + ordered[middle]) / 2\n",
+    "tests": "data=[9,1,8,2,3]\nassert median_manual(data)==3\nassert data==[9,1,8,2,3]\nassert median_manual([10,2,8,4])==6\nassert median_manual([5])==5\nassert median_manual([2,2,2,1])==2\nassert median_manual([-4,-2,-3])==-3\nassert not (set(median_manual.__code__.co_names) & {\"sorted\", \"sort\", \"statistics\", \"numpy\", \"pandas\", \"np\", \"pd\"}), \"Use manual sorting, not a forbidden helper\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks odd/even sizes, a single item, duplicates, negatives and input preservation.",
+      "zh": "检查奇偶长度、单元素、重复值、负数及原列表不变。"
+    }
+  },
+  {
+    "id": "T1-050",
+    "chapter": "tutorial1",
+    "topic": "mean-median",
+    "topicLabel": {
+      "en": "Mean & median",
+      "zh": "均值与中位数"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "A five-number practice summary",
+      "zh": "五个样本的综合统计"
+    },
+    "prompt": {
+      "en": "Implement `summary_five(values)` for exactly five numeric values. Return `{\"mean\": ..., \"median\": ..., \"range\": ...}`. Here range means largest minus smallest, not Python's range object. Do not use `sum`, `min`, `max`, `sorted`, `.sort()`, `statistics`, NumPy or pandas. Loops, comparisons, `len` and list copying are allowed; leave the input unchanged.",
+      "zh": "实现`summary_five(values)`，输入恰好五个数。返回`{\"mean\": ..., \"median\": ..., \"range\": ...}`。这里range表示最大值减最小值的极差，不是Python的range对象。不得使用`sum`、`min`、`max`、`sorted`、`.sort()`、`statistics`、NumPy或pandas。允许循环、比较、`len`和复制列表，且不得改变原列表。"
+    },
+    "explanation": {
+      "en": "Use one simple loop for the total and a separate manual sorting step on a copy. After sorting five items, the endpoints give the smallest and largest values, while index 2 gives the median. Keeping the mean, middle position and spread separate makes the three calculations easier to inspect.",
+      "zh": "先用一个简单循环累加总和，再对副本手动排序。五项排好后，首尾分别是最小与最大值，下标2是中位数。把“总和求均值”“中间项”“首尾求极差”分开处理，思路清楚，也更容易逐步检查。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 3 (cells 9–10); related: Sweigart Python Programming Exercises, Gently Explained, #14 Average and #15 Median",
+      "url": "https://inventwithpython.com/pythongently/",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def summary_five(values):\n    # Write your code here\n    pass\n",
+    "solution": "def summary_five(values):\n    ordered = list(values)\n    total = 0\n    for value in values:\n        total += value\n    for i in range(1, 5):\n        j = i\n        while j > 0 and ordered[j] < ordered[j - 1]:\n            ordered[j], ordered[j - 1] = ordered[j - 1], ordered[j]\n            j -= 1\n    return {\"mean\": total / 5, \"median\": ordered[2],\n            \"range\": ordered[4] - ordered[0]}\n",
+    "tests": "data=[9,1,8,2,5]\nassert summary_five(data)=={\"mean\":5.0,\"median\":5,\"range\":8}\nassert data==[9,1,8,2,5]\nassert summary_five([3,3,3,3,3])=={\"mean\":3.0,\"median\":3,\"range\":0}\nassert summary_five([-5,-4,-3,-2,-1])=={\"mean\":-3.0,\"median\":-3,\"range\":4}\nassert not (set(summary_five.__code__.co_names) & {\"sum\", \"min\", \"max\", \"sorted\", \"sort\", \"statistics\", \"numpy\", \"pandas\", \"np\", \"pd\"}), \"Use the requested manual calculations\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks all three statistics, duplicates, negatives and input preservation; the prompt's forbidden helpers are intentional.",
+      "zh": "检查三项统计、重复值、负数和输入不变；题干中的禁用函数是本题有意设置的练习限制。"
+    }
+  },
+  {
+    "id": "T1-051",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Replace an address value",
+      "zh": "替换地址字段的值"
+    },
+    "prompt": {
+      "en": "Which statement updates only the house field in `address = {\"city\": \"Amsterdam\", \"house\": \"12\", \"postal\": \"1012\"}`?",
+      "zh": "对于`address = {\"city\": \"Amsterdam\", \"house\": \"12\", \"postal\": \"1012\"}`，哪个语句只更新门牌字段？"
+    },
+    "explanation": {
+      "en": "Index the dictionary by the key that describes the field you want to change. Assigning to that key replaces its value while leaving the other entries alone. Assigning directly to `address` would replace the whole variable's dictionary reference.",
+      "zh": "用字段对应的键定位到需要修改的位置，再给它赋新值。这样只会替换门牌，城市和邮编仍然保留。如果直接写`address = \"14A\"`，变量指向的就不再是原来的地址字典了。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "address[\"city\"] = \"14A\"",
+        "zh": "address[\"city\"] = \"14A\""
+      },
+      {
+        "en": "address.append(\"14A\")",
+        "zh": "address.append(\"14A\")"
+      },
+      {
+        "en": "address[\"house\"] = \"14A\"",
+        "zh": "address[\"house\"] = \"14A\""
+      },
+      {
+        "en": "address = \"14A\"",
+        "zh": "address = \"14A\""
+      }
+    ],
+    "answer": 2,
+    "verification": "address={\"city\":\"Amsterdam\",\"house\":\"12\",\"postal\":\"1012\"}\naddress[\"house\"]=\"14A\"\nassert address=={\"city\":\"Amsterdam\",\"house\":\"14A\",\"postal\":\"1012\"}"
+  },
+  {
+    "id": "T1-052",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "What does pop return?",
+      "zh": "pop会返回什么？"
+    },
+    "prompt": {
+      "en": "What is `removed` after this code?\n```python\naddress = {\"city\": \"Amsterdam\", \"postal\": \"1012\"}\nremoved = address.pop(\"postal\")\n```",
+      "zh": "执行下面代码后，`removed`是什么？\n```python\naddress = {\"city\": \"Amsterdam\", \"postal\": \"1012\"}\nremoved = address.pop(\"postal\")\n```"
+    },
+    "explanation": {
+      "en": "`pop` both removes an entry and returns its old value. The key selects which entry to remove; the returned result is not the key itself. Afterward the dictionary contains only the city entry.",
+      "zh": "`pop`一边删除键值对，一边把原来的值交还给你。传入的键只是用来定位被删除的字段，返回的并不是这个键。执行后，字典里只剩城市字段。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "None",
+        "zh": "None"
+      },
+      {
+        "en": "\"1012\"",
+        "zh": "\"1012\""
+      },
+      {
+        "en": "\"postal\"",
+        "zh": "\"postal\""
+      },
+      {
+        "en": "{\"city\": \"Amsterdam\"}",
+        "zh": "{\"city\": \"Amsterdam\"}"
+      }
+    ],
+    "answer": 1,
+    "verification": "address={\"city\":\"Amsterdam\",\"postal\":\"1012\"}\nremoved=address.pop(\"postal\")\nassert removed==\"1012\"\nassert address=={\"city\":\"Amsterdam\"}"
+  },
+  {
+    "id": "T1-053",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "A house number may contain letters",
+      "zh": "门牌号也可能带字母"
+    },
+    "prompt": {
+      "en": "A user enters house number `\"12A\"`. What representation best preserves this address field for the tutorial task?",
+      "zh": "用户输入门牌号`\"12A\"`。对于Tutorial中的地址任务，哪种表示最适合保留这个字段？"
+    },
+    "explanation": {
+      "en": "A house number is an address label and can contain letters. Converting `\"12A\"` to an integer would fail, and deleting the A would change the address. Choose the type that preserves the information the field is meant to hold.",
+      "zh": "门牌号是地址标识，可以包含字母。`\"12A\"`不能直接转成整数，删除A又会让地址信息变错。选择类型时，要先考虑这个字段到底用来表示什么，而不是看到数字就一律转成整数。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "Keep it as the string \"12A\".",
+        "zh": "保留为字符串\"12A\"。"
+      },
+      {
+        "en": "Convert it using int(\"12A\").",
+        "zh": "使用int(\"12A\")转换。"
+      },
+      {
+        "en": "Delete the A and keep only 12.",
+        "zh": "删去A，只保留12。"
+      },
+      {
+        "en": "Store the count of its characters instead.",
+        "zh": "改为保存它的字符数量。"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "id": "T1-054",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Deleting a missing key",
+      "zh": "删除不存在的键"
+    },
+    "prompt": {
+      "en": "What happens at the last line?\n```python\naddress = {\"city\": \"Amsterdam\"}\naddress.pop(\"postal\")\n```",
+      "zh": "最后一行会怎样？\n```python\naddress = {\"city\": \"Amsterdam\"}\naddress.pop(\"postal\")\n```"
+    },
+    "explanation": {
+      "en": "The one-argument form of `pop` expects the requested key to exist. Since postal is missing, Python raises KeyError rather than guessing a value. A robust variant can provide a default, such as `pop(\"postal\", None)`, when missing fields are allowed.",
+      "zh": "只有一个参数的`pop`默认要求键存在。这里没有postal，所以会抛出KeyError，而不是随便返回一个值。如果题目允许缺字段，可以用`pop(\"postal\", None)`提供找不到时的默认返回值。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "It silently adds a postal entry.",
+        "zh": "自动增加一个postal字段。"
+      },
+      {
+        "en": "It returns the city value.",
+        "zh": "返回城市的值。"
+      },
+      {
+        "en": "It returns an empty dictionary.",
+        "zh": "返回空字典。"
+      },
+      {
+        "en": "It raises KeyError.",
+        "zh": "抛出KeyError。"
+      }
+    ],
+    "answer": 3,
+    "verification": "try:\n    {\"city\":\"Amsterdam\"}.pop(\"postal\")\nexcept KeyError:\n    pass\nelse:\n    raise AssertionError(\"Expected KeyError\")"
+  },
+  {
+    "id": "T1-055",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Assignment creates an alias",
+      "zh": "赋值产生别名"
+    },
+    "prompt": {
+      "en": "What is printed?\n```python\naddress = {\"house\": \"12\"}\nother = address\nother[\"house\"] = \"14\"\nprint(address[\"house\"])\n```",
+      "zh": "下面代码输出什么？\n```python\naddress = {\"house\": \"12\"}\nother = address\nother[\"house\"] = \"14\"\nprint(address[\"house\"])\n```"
+    },
+    "explanation": {
+      "en": "Both variables refer to the same dictionary because ordinary assignment did not make a copy. Changing it through either name affects the shared object. Use a copy when an exercise requires the original address to remain unchanged.",
+      "zh": "普通赋值不会复制字典，所以两个变量指向同一个对象。通过`other`修改门牌后，`address`看到的也是同一份新内容。如果题目要求原地址不变，就需要先复制。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "house",
+        "zh": "house"
+      },
+      {
+        "en": "None",
+        "zh": "None"
+      },
+      {
+        "en": "14",
+        "zh": "14"
+      },
+      {
+        "en": "12",
+        "zh": "12"
+      }
+    ],
+    "answer": 2,
+    "verification": "address={\"house\":\"12\"}\nother=address\nother[\"house\"]=\"14\"\nassert address[\"house\"]==\"14\""
+  },
+  {
+    "id": "T1-056",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Copy a flat address record",
+      "zh": "复制扁平地址记录"
+    },
+    "prompt": {
+      "en": "All values in `address` are strings. Which operation lets you change `new_address[\"house\"]` without changing `address[\"house\"]`?",
+      "zh": "`address`的所有值都是字符串。哪种操作之后，修改`new_address[\"house\"]`不会改变`address[\"house\"]`？"
+    },
+    "explanation": {
+      "en": "A shallow copy creates a separate outer dictionary. That is enough for this flat record because its values are immutable strings, not nested mutable structures. Plain assignment would keep the two names attached to one dictionary.",
+      "zh": "浅复制会创建一个独立的外层字典。本题是扁平记录，里面的值全是不可变字符串，因此浅复制就够用；如果内部还有可变列表等对象，则要另行考虑。直接赋值仍然是给同一字典再起一个名字。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "mcq",
+    "options": [
+      {
+        "en": "new_address = \"address\"",
+        "zh": "new_address = \"address\""
+      },
+      {
+        "en": "new_address = address.copy()",
+        "zh": "new_address = address.copy()"
+      },
+      {
+        "en": "new_address = address",
+        "zh": "new_address = address"
+      },
+      {
+        "en": "new_address = address.keys()",
+        "zh": "new_address = address.keys()"
+      }
+    ],
+    "answer": 1,
+    "verification": "address={\"house\":\"12\",\"city\":\"Amsterdam\"}\nnew_address=address.copy()\nnew_address[\"house\"]=\"14\"\nassert address[\"house\"]==\"12\""
+  },
+  {
+    "id": "T1-057",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Create an address record",
+      "zh": "建立地址记录"
+    },
+    "prompt": {
+      "en": "Implement `make_address(city, street, house, postal)`. All arguments are strings, and they must remain strings. Return a new dictionary with exactly the lowercase keys `city`, `street`, `house`, `postal` and the corresponding values. Preserve input text, including leading zeros and house-number letters.",
+      "zh": "实现`make_address(city, street, house, postal)`。参数都是字符串，且必须保留为字符串。返回恰好包含小写键`city`、`street`、`house`、`postal`及对应值的新字典。保留原文本，包括邮编前导零和门牌字母。"
+    },
+    "explanation": {
+      "en": "Write the agreed field names as dictionary keys and store each supplied value under the matching key. No numeric conversion is needed because these values identify parts of an address. Keeping the field names consistent also makes later updates predictable.",
+      "zh": "先按约定写好字段键，再把对应参数放到各自位置。这里的数据是地址标识，不需要进行数值转换。键名保持一致，后续更新门牌、删除邮编时才能准确找到目标。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def make_address(city, street, house, postal):\n    # Write your code here\n    pass\n",
+    "solution": "def make_address(city, street, house, postal):\n    return {\"city\": city, \"street\": street, \"house\": house, \"postal\": postal}\n",
+    "tests": "assert make_address(\"Amsterdam\",\"Damrak\",\"12A\",\"0071\")=={\"city\":\"Amsterdam\",\"street\":\"Damrak\",\"house\":\"12A\",\"postal\":\"0071\"}\nassert make_address(\"Utrecht\",\"Oudegracht\",\"8\",\"3511\")[\"house\"]==\"8\"\nassert set(make_address(\"A\",\"B\",\"C\",\"D\"))=={\"city\",\"street\",\"house\",\"postal\"}\nassert make_address(\"A\",\"B\",\"0\",\"0000\")[\"postal\"]==\"0000\"\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks exact keys, string preservation, a lettered house number and leading zeros.",
+      "zh": "检查键名完全一致、保留字符串、带字母的门牌和前导零。"
+    }
+  },
+  {
+    "id": "T1-058",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 1,
+    "title": {
+      "en": "Update the original address",
+      "zh": "原地更新地址"
+    },
+    "prompt": {
+      "en": "Implement `update_house(address, new_house)`. The dictionary contains a `house` key. Change that value in the original dictionary and return the same dictionary object. Leave all other entries unchanged. `new_house` is a string.",
+      "zh": "实现`update_house(address, new_house)`。字典包含`house`键。修改原字典的门牌值，并返回同一个字典对象。其他字段保持不变，`new_house`为字符串。"
+    },
+    "explanation": {
+      "en": "Assign directly to the existing house key, then return the input dictionary. The object-identity requirement distinguishes an in-place update from constructing a replacement dictionary. The other entries need no rewriting, so leave them alone.",
+      "zh": "直接对原字典的house键赋值，再返回这个字典。题目要求“同一个对象”，因此不能只造一个内容相同的新字典交回去。其他键值不需要重写，保持原样即可。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def update_house(address, new_house):\n    # Write your code here\n    pass\n",
+    "solution": "def update_house(address, new_house):\n    address[\"house\"] = new_house\n    return address\n",
+    "tests": "a={\"city\":\"Amsterdam\",\"house\":\"12\",\"postal\":\"1012\"}\nr=update_house(a,\"14A\")\nassert r is a\nassert a=={\"city\":\"Amsterdam\",\"house\":\"14A\",\"postal\":\"1012\"}\nassert update_house({\"house\":\"1\"},\"2\")=={\"house\":\"2\"}\nb={\"house\":\"7\",\"street\":\"X\"}\nupdate_house(b,\"7\")\nassert b=={\"house\":\"7\",\"street\":\"X\"}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks mutation, same-object return, preservation of other fields and an unchanged-value update.",
+      "zh": "检查原地修改、返回同一对象、其他字段保留及更新为相同值。"
+    }
+  },
+  {
+    "id": "T1-059",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 2,
+    "title": {
+      "en": "Remove postal information safely",
+      "zh": "安全移除邮编"
+    },
+    "prompt": {
+      "en": "Implement `remove_postal(address)`. Remove the `postal` key from the supplied dictionary if present, returning its old value. If it is absent, return `None` and leave the dictionary unchanged. Modify the original dictionary, not a copy.",
+      "zh": "实现`remove_postal(address)`。若原字典中有`postal`键，就删除它并返回旧值；若没有该键，则返回`None`且字典不变。直接修改原字典，不要只修改副本。"
+    },
+    "explanation": {
+      "en": "`pop` removes and returns an existing value in one operation. Its second argument supplies the result to use if the key is absent, preventing KeyError. An empty string is still a real stored value, so it must be returned rather than treated as missing.",
+      "zh": "`pop`可以一次完成删除并取回旧值。第二个参数表示键不存在时返回什么，因此这里不会发生KeyError。空字符串虽然没有可见字符，但仍然是实际保存的值，不能误当成不存在。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def remove_postal(address):\n    # Write your code here\n    pass\n",
+    "solution": "def remove_postal(address):\n    return address.pop(\"postal\", None)\n",
+    "tests": "a={\"city\":\"Amsterdam\",\"postal\":\"1012\"}\nassert remove_postal(a)==\"1012\"\nassert a=={\"city\":\"Amsterdam\"}\nb={\"city\":\"Utrecht\"}\nassert remove_postal(b) is None\nassert b=={\"city\":\"Utrecht\"}\nc={\"postal\":\"\"}\nassert remove_postal(c)==\"\"\nassert c=={}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks present, missing and empty-string postal values, including the resulting dictionary.",
+      "zh": "检查邮编存在、不存在及为空字符串，并检查删除后的字典。"
+    }
+  },
+  {
+    "id": "T1-060",
+    "chapter": "tutorial1",
+    "topic": "address-dictionaries",
+    "topicLabel": {
+      "en": "Address dictionaries",
+      "zh": "地址字典"
+    },
+    "difficulty": 3,
+    "title": {
+      "en": "Prepare a revised address copy",
+      "zh": "生成修改后的地址副本"
+    },
+    "prompt": {
+      "en": "Implement `revised_address(address, new_house)`. The input is a flat dictionary of string values. Return a new dictionary with `house` set to new_house and `postal` removed if present. Preserve all other entries and leave the original dictionary unchanged. If house was absent, add it.",
+      "zh": "实现`revised_address(address, new_house)`。输入为值均为字符串的扁平字典。返回一个新字典：把`house`设为new_house，若有`postal`则删除，保留其他全部字段。原字典必须不变；若原来没有house，则新增。"
+    },
+    "explanation": {
+      "en": "Copy the dictionary before applying any changes. Updating or adding house then affects only that copy, and `pop` with a default handles either presence or absence of postal. This combines the tutorial's update-and-remove steps with an explicit requirement to preserve the original record.",
+      "zh": "先复制字典，再对副本做任何修改。这样更新或新增house只影响新记录，带默认值的`pop`又能同时处理有邮编和没邮编的情况。这道综合题把Tutorial中的“更新门牌、删除邮编”与“保护原记录”结合起来。"
+    },
+    "source": {
+      "kind": "adapted",
+      "label": "Tutorial1_Solutions.ipynb · Exercise 4 (cells 12–13); related: Lecture 2 dictionary examples",
+      "url": "",
+      "note": {
+        "en": "New practice variant based on the cited tutorial and related exercises; not an official exam question. Function interfaces are supplied where useful for checking.",
+        "zh": "依据所标Tutorial及相关练习编写的变式，并非官方试题；部分题目提供函数接口，方便自动检查。"
+      }
+    },
+    "type": "code",
+    "starter": "def revised_address(address, new_house):\n    # Write your code here\n    pass\n",
+    "solution": "def revised_address(address, new_house):\n    result = address.copy()\n    result[\"house\"] = new_house\n    result.pop(\"postal\", None)\n    return result\n",
+    "tests": "a={\"city\":\"Amsterdam\",\"house\":\"12\",\"postal\":\"1012\",\"note\":\"doorbell\"}\nr=revised_address(a,\"14A\")\nassert r=={\"city\":\"Amsterdam\",\"house\":\"14A\",\"note\":\"doorbell\"}\nassert a=={\"city\":\"Amsterdam\",\"house\":\"12\",\"postal\":\"1012\",\"note\":\"doorbell\"}\nassert r is not a\nassert revised_address({\"city\":\"Utrecht\"},\"8\")=={\"city\":\"Utrecht\",\"house\":\"8\"}\nassert revised_address({},\"0\")=={\"house\":\"0\"}\n",
+    "setup": "",
+    "packages": [],
+    "testHint": {
+      "en": "Checks copy identity, no mutation, preservation of extra fields, missing postal and missing house.",
+      "zh": "检查返回新对象、不修改输入、额外字段保留，以及缺邮编和缺门牌的情况。"
+    }
+  }
+]
