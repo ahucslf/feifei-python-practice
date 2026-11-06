@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id), KEY='feifei-python-club-2026-v1'+(new URLSearchParams(location.search).has('qa')?'-qa':'');
-let meta,questions=[],current=null,editor=null,fallback=null,monacoReady=false,editorQuestionId=null,language='en',chapter='lecture1',topic='all',type='all',level=0,review='all',search='',answerOpen=false,selected=null,checked=false,worker=null,busy=false,timer=null,runID=0,filtered=[],cuteFontId='zcool-kuaile';
+let meta,questions=[],current=null,editor=null,fallback=null,monacoReady=false,editorQuestionId=null,language='en',chapter='lecture1',topic='all',type='all',level=0,review='all',search='',answerOpen=false,selected=null,checked=false,worker=null,busy=false,timer=null,runID=0,filtered=[],cuteFontId='zcool-kuaile',enFontId='default';
 let saved={version:1,records:{},drafts:{},language:'en',chapter:'lecture1',last:{},resetAt:0};
 try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&x.version===1&&x.records&&x.drafts)saved={...saved,...x};}catch{}
 language=saved.language==='zh'?'zh':'en';chapter=saved.chapter||chapter;
@@ -8,7 +8,8 @@ const bilingual=(value)=>typeof value==='string'?value:(value?.[language]??value
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels={1:'基础',2:'进阶',3:'挑战'};
 const CUTE_FONTS=[{id:'zcool-kuaile',name:'站酷快乐体',short:'快乐体',family:'FeifeiFont0',desc:'ZCOOL KuaiLe'},{id:'zcool-qingke-huangyou',name:'站酷庆科黄油体',short:'黄油体',family:'FeifeiFont1',desc:'ZCOOL QingKe HuangYou'},{id:'wdxl-lubrifont',name:'WD-XL 滑油字',short:'滑油字',family:'FeifeiFont2',desc:'WD-XL Lubrifont'},{id:'chiron-goround',name:'昭源环方',short:'环方',family:'FeifeiFont3',desc:'Chiron GoRound'},{id:'lxgw-975-yuan',name:'霞鹜975圆体',short:'975圆',family:'FeifeiFont4',desc:'LXGW 975 Yuan'},{id:'chill-round-gothic',name:'寒蝉全圆体',short:'寒蝉圆',family:'FeifeiFont5',desc:'Chill Round Gothic'},{id:'lxgw-wenkai',name:'霞鹜文楷',short:'文楷',family:'FeifeiFont6',desc:'LXGW WenKai'},{id:'lxgw-wenkai-mono',name:'霞鹜文楷等宽',short:'文楷等宽',family:'FeifeiFont7',desc:'LXGW WenKai Mono'},{id:'lxgw-marker-gothic',name:'霞鹜马克体',short:'马克体',family:'FeifeiFont8',desc:'LXGW Marker Gothic'},{id:'smiley-sans',name:'得意黑',short:'得意黑',family:'FeifeiFont9',desc:'Smiley Sans'},{id:'ma-shan-zheng',name:'马善政毛笔楷书',short:'毛笔楷',family:'FeifeiFont10',desc:'Ma Shan Zheng'},{id:'long-cang',name:'龙藏体',short:'龙藏',family:'FeifeiFont11',desc:'Long Cang'},{id:'zhi-mang-xing',name:'志莽行书',short:'行书',family:'FeifeiFont12',desc:'Zhi Mang Xing'},{id:'liu-jian-mao-cao',name:'刘建毛草',short:'毛草',family:'FeifeiFont13',desc:'Liu Jian Mao Cao'},{id:'zcool-xiaowei',name:'站酷小薇体',short:'小薇体',family:'FeifeiFont14',desc:'ZCOOL XiaoWei'},{id:'chocolate-classical-sans',name:'朱古力黑体',short:'朱古力',family:'FeifeiFont15',desc:'Chocolate Classical Sans'},{id:'cactus-classical-serif',name:'仙人掌明体',short:'仙人掌',family:'FeifeiFont16',desc:'Cactus Classical Serif'}];
-cuteFontId=migrateCuteFont(saved.cuteFont);applyFontState();
+const EN_FONTS=[{id:'baloo-2',name:'Baloo 2',family:'FeifeiEn0'},{id:'fredoka',name:'Fredoka',family:'FeifeiEn1'},{id:'nunito',name:'Nunito',family:'FeifeiEn2'},{id:'quicksand',name:'Quicksand',family:'FeifeiEn3'},{id:'comic-neue',name:'Comic Neue',family:'FeifeiEn4'},{id:'patrick-hand',name:'Patrick Hand',family:'FeifeiEn5'},{id:'gochi-hand',name:'Gochi Hand',family:'FeifeiEn6'},{id:'gloria-hallelujah',name:'Gloria Hallelujah',family:'FeifeiEn7'},{id:'bubblegum-sans',name:'Bubblegum Sans',family:'FeifeiEn8'}];
+cuteFontId=migrateCuteFont(saved.cuteFont);enFontId=migrateEnFont(saved.enFont);applyFontState();
 function md(text){return String(text??'').split(/```(?:\w+)?\n?([\s\S]*?)```/g).map((part,i)=>{if(i%2)return '<pre><code class="python-code">'+esc(part.replace(/\n$/,''))+'</code></pre>';let s=esc(part).replace(/`([^`\n]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');return s.split(/\n\n+/).filter(Boolean).map(p=>'<p>'+p.replace(/\n/g,'<br>')+'</p>').join('');}).join('');}
 const CODE_CHOICE_QUESTIONS=new Set('L1-013 L1-015 L1-019 L1-026 L1-029 L1-031 L2-004 L2-005 L2-024 L2-026 L2-036 L3-002 L3-005 L3-007 L3-008 L3-025 L3-026 L3-036 L4-009 L4-019 L4-020 L4-022 T1-002 T1-012 T1-015 T1-021 T1-024 T1-031 T1-032 T1-051 T1-056 T2-001 T2-005 T2-008 T2-009 T2-012 T2-022 T2-028 T2-029 T2-034'.split(' '));
 function isCodeOption(text,questionId=''){
@@ -52,15 +53,24 @@ function explanationTerms(q){if(!q)return [];if(q.__explanationTerms)return q.__
 function termPattern(terms,flags=''){const parts=[...new Set(terms)].sort((a,b)=>b.length-a.length).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));return new RegExp('(^|[^A-Za-z0-9_])('+parts.join('|')+')(?![A-Za-z0-9_])','g'+flags);}
 function bareAIsVariable(text,index){const after=text.slice(index+1).replace(/\*\*/g,'');const first=(/^\s*(.)/.exec(after)||[])[1];if(!first)return true;if(/[.,;:!?)\]}"'#]/.test(first)||/[=+\-*/%<>!&|^~]/.test(first))return true;const nextWord=/^\s+([A-Za-z]+)/.exec(after);return !!(nextWord&&EN_VAR_NEXT.has(nextWord[1]));}
 function highlightedExplanation(q){const text=bilingual(q.explanation),terms=explanationTerms(q);if(!terms.length)return md(text);const multi=terms.filter(t=>t.length>1),single=terms.filter(t=>t.length===1),multiPattern=multi.length?termPattern(multi,'i'):null,singlePattern=single.length?termPattern(single):null;return md(text.split(/(```[\s\S]*?```|`[^`\n]+`)/g).map((part,index)=>{if(index%2)return part;let out=part;if(multiPattern)out=out.replace(multiPattern,(match,prefix,term)=>prefix+'**'+term+'**');if(singlePattern)out=out.replace(singlePattern,(match,prefix,term,offset,whole)=>{if(language==='en'&&term==='a'&&!bareAIsVariable(whole,offset+prefix.length))return match;return prefix+'**'+term+'**';});return out;}).join(''));}
-function save(){saved.language=language;saved.chapter=chapter;saved.cuteFont=cuteFontId;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{toast('浏览器存储空间不足，请导出学习记录。');}}
-function migrateCuteFont(value){if(value===false||value==='default')return 'default';if(typeof value==='string'&&CUTE_FONTS.some(f=>f.id===value))return value;return 'zcool-kuaile';}
+function save(){saved.language=language;saved.chapter=chapter;saved.cuteFont=cuteFontId;saved.enFont=enFontId;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{toast('浏览器存储空间不足，请导出学习记录。');}}
+function migrateCuteFont(value){if(value===false||value==='default')return 'default';if(value===true||value===undefined)return 'zcool-kuaile';if(typeof value==='string'&&CUTE_FONTS.some(f=>f.id===value))return value;return 'zcool-kuaile';}
 function fontById(id){return CUTE_FONTS.find(f=>f.id===id);}
 function fontLabel(id){if(id==='default')return '默认字体';const f=fontById(id);return f?f.name:'站酷快乐体';}
-function applyFontState(){document.documentElement.classList.toggle('cute-font',cuteFontId!=='default');if(cuteFontId==='default')document.documentElement.removeAttribute('data-font-id');else document.documentElement.setAttribute('data-font-id',cuteFontId);}
-function updateFontPicker(){const b=$('fontPickerBtn'),label=$('fontPickerLabel');if(!b)return;const name=fontLabel(cuteFontId);if(label)label.textContent=name;b.classList.toggle('is-active',cuteFontId!=='default');b.title='当前字体：'+name+'（点击切换）';b.setAttribute('aria-label','选择字体，当前：'+name);}
-function renderFontMenu(){const menu=$('fontPickerMenu');if(!menu)return;const options=[{id:'default',name:'默认字体',family:''}].concat(CUTE_FONTS);menu.innerHTML=options.map(o=>`<button class="fp-item" type="button" role="option" data-font-id="${o.id}" aria-selected="${o.id===cuteFontId}"><span class="fp-sample${o.family?'':' fp-sample-default'}"${o.family?` style="font-family:${o.family}"`:''}>跟着飞飞老师</span><span class="fp-name">${esc(o.name)}</span><span class="fp-check">${o.id===cuteFontId?'✓':''}</span></button>`).join('');}
-function toggleFontMenu(open){const menu=$('fontPickerMenu'),b=$('fontPickerBtn');if(!menu||!b)return;const next=typeof open==='boolean'?open:menu.hidden;if(next)renderFontMenu();menu.hidden=!next;b.setAttribute('aria-expanded',String(next));if(next){const sel=menu.querySelector('[aria-selected="true"]');(sel||menu.querySelector('.fp-item'))?.focus();}}
-function applyCuteFont(id,notify=true){cuteFontId=id==='default'||fontById(id)?id:'zcool-kuaile';applyFontState();saved.cuteFont=cuteFontId;save();updateFontPicker();if(notify)toast('已切换为「'+fontLabel(cuteFontId)+'」');}
+function migrateEnFont(value){if(typeof value==='string'&&EN_FONTS.some(f=>f.id===value))return value;return 'default';}
+function enFontById(id){return EN_FONTS.find(f=>f.id===id);}
+function enFontLabel(id){if(id==='default')return '默认字体';const f=enFontById(id);return f?f.name:'默认字体';}
+function applyFontState(){const cnOn=cuteFontId!=='default',enOn=enFontId!=='default';document.documentElement.classList.toggle('cute-font',cnOn||enOn);if(cnOn)document.documentElement.setAttribute('data-font-id',cuteFontId);else document.documentElement.removeAttribute('data-font-id');if(enOn)document.documentElement.setAttribute('data-en-font-id',enFontId);else document.documentElement.removeAttribute('data-en-font-id');}
+function updateFontPicker(){const b=$('fontPickerBtn'),label=$('fontPickerLabel');if(!b)return;const name=fontLabel(cuteFontId);if(label)label.textContent=name;b.classList.toggle('is-active',cuteFontId!=='default');b.title='中文字体：'+name+'（点击切换）';b.setAttribute('aria-label','选择中文字体，当前：'+name);}
+function updateEnFontPicker(){const b=$('enFontPickerBtn'),label=$('enFontPickerLabel');if(!b)return;const name=enFontLabel(enFontId);if(label)label.textContent=name;b.classList.toggle('is-active',enFontId!=='default');b.title='英文字体：'+name+'（点击切换）';b.setAttribute('aria-label','选择英文字体，当前：'+name);}
+function pickerItemHtml(o,sample,selectedId){return `<button class="fp-item" type="button" role="option" data-font-id="${o.id}" aria-selected="${o.id===selectedId}"><span class="fp-sample${o.family?'':' fp-sample-default'}"${o.family?` style="font-family:${o.family}"`:''}>${sample}</span><span class="fp-name">${esc(o.name)}</span><span class="fp-check">${o.id===selectedId?'✓':''}</span></button>`;}
+function renderFontMenu(){const menu=$('fontPickerMenu');if(!menu)return;const options=[{id:'default',name:'默认字体',family:''}].concat(CUTE_FONTS);menu.innerHTML=options.map(o=>pickerItemHtml(o,'跟着飞飞老师',cuteFontId)).join('');}
+function renderEnFontMenu(){const menu=$('enFontPickerMenu');if(!menu)return;const options=[{id:'default',name:'默认字体',family:''}].concat(EN_FONTS);menu.innerHTML=options.map(o=>pickerItemHtml(o,'Hello, 2026!',enFontId)).join('');}
+function toggleFontMenu(open){const menu=$('fontPickerMenu'),b=$('fontPickerBtn');if(!menu||!b)return;const next=typeof open==='boolean'?open:menu.hidden;if(next){renderFontMenu();toggleEnFontMenu(false);}menu.hidden=!next;b.setAttribute('aria-expanded',String(next));if(next){const sel=menu.querySelector('[aria-selected="true"]');(sel||menu.querySelector('.fp-item'))?.focus();}}
+function toggleEnFontMenu(open){const menu=$('enFontPickerMenu'),b=$('enFontPickerBtn');if(!menu||!b)return;const next=typeof open==='boolean'?open:menu.hidden;if(next){renderEnFontMenu();toggleFontMenu(false);}menu.hidden=!next;b.setAttribute('aria-expanded',String(next));if(next){const sel=menu.querySelector('[aria-selected="true"]');(sel||menu.querySelector('.fp-item'))?.focus();}}
+function applyCuteFont(id,notify=true){cuteFontId=id==='default'||fontById(id)?id:'zcool-kuaile';applyFontState();saved.cuteFont=cuteFontId;save();updateFontPicker();if(notify)toast('中文字体：'+fontLabel(cuteFontId));}
+function applyEnFont(id,notify=true){enFontId=id==='default'||enFontById(id)?id:'default';applyFontState();saved.enFont=enFontId;save();updateEnFontPicker();if(notify)toast('英文字体：'+enFontLabel(enFontId));}
+function bindMenuKeys(menuId){const menu=$(menuId);if(!menu)return;menu.addEventListener('keydown',e=>{if(e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;e.preventDefault();const items=[...menu.querySelectorAll('[data-font-id]')];const i=items.indexOf(document.activeElement);const next=items[(i+(e.key==='ArrowDown'?1:-1)+items.length)%items.length];next?.focus();});}
 function record(id=current?.id){return saved.records[id]||{};}
 function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toast.timeout);toast.timeout=setTimeout(()=>$('toast').classList.remove('show'),3300);}
 function chapterItems(){return questions.filter(q=>q.chapter===chapter);}
@@ -120,7 +130,7 @@ function replaceStudyRecords(nextState){
  cancelRun();
  disposeEditor();
  saved=nextState;
- cuteFontId=migrateCuteFont(saved.cuteFont);applyFontState();updateFontPicker();
+ cuteFontId=migrateCuteFont(saved.cuteFont);enFontId=migrateEnFont(saved.enFont);applyFontState();updateFontPicker();updateEnFontPicker();
  selected=null;
  checked=false;
  answerOpen=false;
@@ -128,7 +138,7 @@ function replaceStudyRecords(nextState){
  clearFilters();
 }
 function clearStudyRecords(){
- replaceStudyRecords({version:1,records:{},drafts:{},last:{},language,chapter,cuteFont:cuteFontId,resetAt:Date.now()});
+ replaceStudyRecords({version:1,records:{},drafts:{},last:{},language,chapter,cuteFont:cuteFontId,enFont:enFontId,resetAt:Date.now()});
  save();
  toast('做题记录已清空，可以重新开始练习了。');
 }
@@ -144,10 +154,12 @@ function initEvents(){
  $('langEn').onclick=()=>changeLanguage('en');$('langZh').onclick=()=>changeLanguage('zh');
  $('fontPickerBtn').onclick=e=>{e.stopPropagation();toggleFontMenu();};
  $('fontPickerMenu').onclick=e=>{const item=e.target.closest('[data-font-id]');if(!item)return;applyCuteFont(item.dataset.fontId);toggleFontMenu(false);$('fontPickerBtn').focus();};
- $('fontPickerMenu').addEventListener('keydown',e=>{if(e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;e.preventDefault();const items=[...$('fontPickerMenu').querySelectorAll('[data-font-id]')];const i=items.indexOf(document.activeElement);const next=items[(i+(e.key==='ArrowDown'?1:-1)+items.length)%items.length];next?.focus();});
- document.addEventListener('click',e=>{if(!e.target.closest('#fontPicker'))toggleFontMenu(false);});
- document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleFontMenu(false);});
- updateFontPicker();
+ $('enFontPickerBtn').onclick=e=>{e.stopPropagation();toggleEnFontMenu();};
+ $('enFontPickerMenu').onclick=e=>{const item=e.target.closest('[data-font-id]');if(!item)return;applyEnFont(item.dataset.fontId);toggleEnFontMenu(false);$('enFontPickerBtn').focus();};
+ bindMenuKeys('fontPickerMenu');bindMenuKeys('enFontPickerMenu');
+ document.addEventListener('click',e=>{if(!e.target.closest('#fontPicker'))toggleFontMenu(false);if(!e.target.closest('#enFontPicker'))toggleEnFontMenu(false);});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleFontMenu(false);toggleEnFontMenu(false);}});
+ updateFontPicker();updateEnFontPicker();
  $('typeTabs').onclick=e=>{const b=e.target.closest('[data-type]');if(!b)return;saveDraft();type=b.dataset.type;document.querySelectorAll('[data-type]').forEach(x=>x.classList.toggle('active',x===b));render();};
  $('levelFilter').onclick=e=>{const b=e.target.closest('[data-level]');if(!b)return;saveDraft();level=Number(b.dataset.level);document.querySelectorAll('[data-level]').forEach(x=>x.classList.toggle('active',x===b));render();};
  $('topicFilters').onclick=e=>{const b=e.target.closest('[data-topic]');if(b){saveDraft();topic=b.dataset.topic;render();}};
