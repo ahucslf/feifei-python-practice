@@ -1,8 +1,9 @@
 'use strict';
 const $=id=>document.getElementById(id), KEY='feifei-python-club-2026-v1'+(new URLSearchParams(location.search).has('qa')?'-qa':'');
 let meta,questions=[],current=null,editor=null,fallback=null,monacoReady=false,editorQuestionId=null,language='en',chapter='lecture1',topic='all',type='all',level=0,review='all',search='',answerOpen=false,selected=null,checked=false,worker=null,busy=false,timer=null,runID=0,filtered=[],cuteFontId='zcool-kuaile',enFontId='default',examPaper=null,examIndex=0,examAnswers={},examSubmitted=false,examResultData=null;
-let saved={version:1,records:{},drafts:{},language:'en',chapter:'lecture1',last:{},resetAt:0};
+let saved={version:1,records:{},drafts:{},notes:{},language:'en',chapter:'lecture1',last:{},resetAt:0};
 try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&x.version===1&&x.records&&x.drafts)saved={...saved,...x};}catch{}
+if(!saved.notes||typeof saved.notes!=='object')saved.notes={};
 language=saved.language==='zh'?'zh':'en';chapter=saved.chapter||chapter;
 const bilingual=(value)=>typeof value==='string'?value:(value?.[language]??value?.en??'');
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -71,6 +72,9 @@ function toggleEnFontMenu(open){const menu=$('enFontPickerMenu'),b=$('enFontPick
 function applyCuteFont(id,notify=true){cuteFontId=id==='default'||fontById(id)?id:'zcool-kuaile';applyFontState();saved.cuteFont=cuteFontId;save();updateFontPicker();if(notify)toast('中文字体：'+fontLabel(cuteFontId));}
 function applyEnFont(id,notify=true){enFontId=id==='default'||enFontById(id)?id:'default';applyFontState();saved.enFont=enFontId;save();updateEnFontPicker();if(notify)toast('英文字体：'+enFontLabel(enFontId));}
 function bindMenuKeys(menuId){const menu=$(menuId);if(!menu)return;menu.addEventListener('keydown',e=>{if(e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;e.preventDefault();const items=[...menu.querySelectorAll('[data-font-id]')];const i=items.indexOf(document.activeElement);const next=items[(i+(e.key==='ArrowDown'?1:-1)+items.length)%items.length];next?.focus();});}
+function currentNote(){return current?(saved.notes[current.id]||''):'';}
+function updateNoteUI(){const input=$('noteInput');if(!input)return;const note=currentNote();if(input.value!==note)input.value=note;if($('noteCount'))$('noteCount').textContent=note.length+' 字';if($('noteStatus'))$('noteStatus').textContent='自动保存到本机';}
+function saveNote(){if(!current){return;}const input=$('noteInput');if(!input)return;saved.notes[current.id]=input.value;save();if($('noteCount'))$('noteCount').textContent=input.value.length+' 字';if($('noteStatus'))$('noteStatus').textContent='已自动保存';clearTimeout(saveNote.timer);saveNote.timer=setTimeout(()=>{if($('noteStatus'))$('noteStatus').textContent='自动保存到本机';},1800);}
 function record(id=current?.id){return saved.records[id]||{};}
 function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toast.timeout);toast.timeout=setTimeout(()=>$('toast').classList.remove('show'),3300);}
 function chapterItems(){return questions.filter(q=>q.chapter===chapter);}
@@ -103,7 +107,7 @@ function renderQuestion(){saveDraft();disposeEditor();if(!current){$('questionCa
  }
  if(answerOpen){content+=`<section class="answer-panel"><div class="answer-heading"><span>✦</span>${q.type==='mcq'?'参考答案：'+String.fromCharCode(65+q.answer):'参考答案与思路'}</div>`;if(q.type==='code')content+=`<div class="markdown">${md('```python\n'+q.solution+'\n```')}</div>`;content+=`<div class="markdown">${highlightedExplanation(q)}</div>`;if(q.type==='code')content+=`<details class="source-box"><summary>查看本题测试样例</summary><div class="markdown">${md('```python\n'+q.tests+'\n```')}</div></details>`;content+=`<details class="source-box"><summary>参考与出题依据 · 教学变式</summary><p>${esc(q.source.label)}</p><p>${esc(bilingual(q.source.note))}</p>${/^https?:\/\//.test(q.source.url)?`<a href="${esc(q.source.url)}" target="_blank" rel="noreferrer">查看参考来源 ↗</a>`:''}</details></section>`;}
  content+=`<div class="question-pagination"><span>第 ${i+1} / ${filtered.length} 题</span><div class="page-buttons"><button data-action="prev" ${i===0?'disabled':''}>← 上一题</button><button data-action="next" ${i===filtered.length-1?'disabled':''}>下一题 →</button></div></div>`;
- $('questionCard').innerHTML=content;if(q.type==='code')mountEditor(q);colorize();}
+ $('questionCard').innerHTML=content;if(q.type==='code')mountEditor(q);colorize();updateNoteUI();}
 function colorize(){
  if(!monacoReady)return;
  document.querySelectorAll('code.python-code, code.python-inline').forEach(el=>{
@@ -138,7 +142,7 @@ function replaceStudyRecords(nextState){
  clearFilters();
 }
 function clearStudyRecords(){
- replaceStudyRecords({version:1,records:{},drafts:{},last:{},language,chapter,cuteFont:cuteFontId,enFont:enFontId,resetAt:Date.now()});
+ replaceStudyRecords({version:1,records:{},drafts:{},last:{},language,chapter,cuteFont:cuteFontId,enFont:enFontId,notes:{...saved.notes},resetAt:Date.now()});
  save();
  toast('做题记录已清空，可以重新开始练习了。');
 }
@@ -204,8 +208,9 @@ function initEvents(){
    toast('做题记录已在另一个页面中清空。');
   }catch{}
  });
+ $('noteInput').addEventListener('input',saveNote);
  $('exportBtn').onclick=()=>{saveDraft();download(JSON.stringify(saved,null,2),'飞飞编程学习记录-'+new Date().toISOString().slice(0,10)+'.json');toast('学习记录已导出，记得保管好。');};
- $('importInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>5000000)throw Error('文件过大');const data=JSON.parse(await f.text());if(data.version!==1||!data.records||!data.drafts)throw Error('文件格式不匹配');const ids=new Set(questions.map(q=>q.id));for(const [id,r]of Object.entries(data.records))if(ids.has(id)&&r&&typeof r==='object')saved.records[id]={...record(id),...r};for(const[id,code]of Object.entries(data.drafts))if(ids.has(id)&&typeof code==='string')saved.drafts[id]=code;save();disposeEditor();render();toast('已合并导入学习记录。');}catch(err){toast('无法导入：'+err.message);}e.target.value='';};
+ $('importInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>5000000)throw Error('文件过大');const data=JSON.parse(await f.text());if(data.version!==1||!data.records||!data.drafts)throw Error('文件格式不匹配');const ids=new Set(questions.map(q=>q.id));for(const [id,r]of Object.entries(data.records))if(ids.has(id)&&r&&typeof r==='object')saved.records[id]={...record(id),...r};for(const[id,code]of Object.entries(data.drafts))if(ids.has(id)&&typeof code==='string')saved.drafts[id]=code;for(const[id,note]of Object.entries(data.notes||{}))if(ids.has(id)&&typeof note==='string')saved.notes[id]=note;save();disposeEditor();render();toast('已合并导入学习记录。');}catch(err){toast('无法导入：'+err.message);}e.target.value='';};
  $('menuBtn').onclick=()=>{$('sidebar').classList.toggle('open');$('mobileShade').classList.toggle('active');};$('mobileShade').onclick=()=>{$('sidebar').classList.remove('open');$('mobileShade').classList.remove('active');};window.addEventListener('beforeunload',saveDraft);
 }
 function loadMonaco(){if(typeof require==='undefined')return;require.config({paths:{vs:'vendor/monaco/vs'}});window.MonacoEnvironment={getWorkerUrl:()=>new URL('vendor/monaco/vs/base/worker/workerMain.js',location.href).href};require(['vs/editor/editor.main'],()=>{monaco.editor.defineTheme('feifei',{base:'vs',inherit:true,rules:[{token:'comment',foreground:'7e8c6c',fontStyle:'italic'},{token:'keyword',foreground:'8d6ca7'},{token:'string',foreground:'6b8f52'},{token:'number',foreground:'b9793f'},{token:'identifier',foreground:'3f4a3e'},{token:'delimiter',foreground:'8a8068'}],colors:{'editor.background':'#fbf6ea','editor.foreground':'#3f4a3e','editorLineNumber.foreground':'#c2b7a0','editorLineNumber.activeForeground':'#8a7a5c','editor.lineHighlightBackground':'#f3ecdd','editorCursor.foreground':'#6e8f58','editor.selectionBackground':'#dce9cf','editor.inactiveSelectionBackground':'#eaf0df','editorIndentGuide.background1':'#e9dec9','editorWidget.background':'#fcf8ee'}});monaco.editor.setTheme('feifei');monacoReady=true;if(current?.type==='code'){saveDraft();disposeEditor();mountEditor(current);}colorize();},()=>toast('高亮编辑器未能加载，已使用基础输入框。'));}
