@@ -524,3 +524,12 @@ body.exam-open{overflow:hidden}
 @media(min-width:1201px){.practice-grid{grid-template-columns:minmax(0,1fr) 320px;gap:24px}.question-grid{grid-template-columns:repeat(8,1fr);gap:5px}}
 @media(min-width:1001px) and (max-width:1200px){.practice-grid{grid-template-columns:minmax(0,1fr) 250px;gap:20px}.question-grid{grid-template-columns:repeat(7,1fr);gap:4px}}
 @media(max-width:760px){.note-input{min-height:120px;font-size:13px}}
+
+/* --- Sidebar brand: custom logo image + bolder name; heading lines removed. --- */
+.brand-mark{background:transparent;padding:0;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(53,91,73,.20)}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
+.brand-copy{display:block;min-width:0}
+.brand-name{display:block;font-weight:800;font-size:16px;letter-spacing:.3px;color:var(--ink);white-space:nowrap}
+.sidebar #chapterNav{margin-top:30px}
+@media(max-width:760px){.brand-name{font-size:15px}.sidebar #chapterNav{margin-top:24px}}
+@media(max-width:760px){.sidebar{padding-top:72px}}
