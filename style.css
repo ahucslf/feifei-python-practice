@@ -541,3 +541,9 @@ body.exam-open{overflow:hidden}
 /* Favorite marker: corner badge instead of overlapping the question number. */
 .question-grid button.fav::after{content:"★";position:absolute;right:-3px;top:-4px;width:14px;height:14px;display:grid;place-items:center;font-size:9px;line-height:1;color:#D99A2B;background:#FFFDF8;border:1px solid #F0DFB8;border-radius:50%;box-shadow:0 1px 3px rgba(122,88,48,.22);z-index:2;pointer-events:none}
 @media(max-width:760px){.question-grid button.fav::after{width:13px;height:13px;font-size:8px;right:-2px;top:-3px}}
+
+/* Answer column narrower + number panel wider (bigger cells), centered on very wide screens. */
+@media(min-width:1201px){.practice-grid{grid-template-columns:minmax(0,766px) clamp(336px,25vw,360px);justify-content:center;gap:24px}.question-grid{grid-template-columns:repeat(8,1fr);gap:5px}}
+/* Favorite star: no outer circle, sits outside the top-right corner without touching the number. */
+.question-grid button.fav::after{content:"★";position:absolute;right:-4px;top:-5px;width:auto;height:auto;display:block;font-size:10px;line-height:1;color:#D99A2B;background:none;border:0;border-radius:0;box-shadow:none;text-shadow:0 0 2px #FBF6EA,0 0 2px #FBF6EA;z-index:2;pointer-events:none}
+@media(max-width:760px){.question-grid button.fav::after{right:-3px;top:-4px;font-size:9px}}
