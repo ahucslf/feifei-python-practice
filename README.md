@@ -13,6 +13,7 @@
 - Pyodide浏览器Python运行与样例测试；NumPy、pandas和相关依赖随网站提供。
 - 代码草稿和学习进度保存在当前浏览器，可导出、导入备份。
 - 清空做题记录需二次确认；清除全部章节的结果、收藏和草稿，保留语言与当前章节。
+- 答题界面：奶油暖色主题与 sticky 章节进度；选择题选中态使用奶油黄（绿色只表示答对/已通过），答对/答错用 ✓/✕ 双编码；判分后小兔/小猫反馈气泡，答对主按钮变「下一题 →」、答错「再试一次」并锁定选项；右栏题号地图 sticky，已通过/待复习/当前/收藏/未练习五态图例；移动端保留老师便签。
 
 ## 题目来源
 题目为依据课程讲义及公开教材知识点编写的教学练习和变式，不代表UvA官方题库或考试真题。逐题依据见网页答案下方及[data/question-sources.csv](data/question-sources.csv)。参考资料包括Al Sweigart的Python Programming Exercises, Gently Explained、Software Carpentry公开工作坊、spcourse/pandas-dp和Jake VanderPlas的Python Data Science Handbook。

@@ -90,6 +90,7 @@ html[data-font-id="cactus-classical-serif"]{--cute-title-font:'FeifeiFont16','Fe
 .fp-check{width:11px;flex-shrink:0;font-size:10px;color:#6d8c5b;text-align:center}
 @media(max-width:760px){.font-picker-button{max-width:104px;padding:4px 8px;font-size:10px;gap:4px}.font-picker-button .fp-icon{font-size:8px}.font-picker-menu{right:-6px;width:238px}}
 
+@font-face{font-family:'FeifeiTitle';src:url('assets/fonts/zcool-kuaile-title.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
 /* ==========================================================================
    Design refresh v2 —— 奶油毛绒 × 温柔秩序
    目标：可读性（对比度/字号）、状态语义（选中≠答对）、反馈动线、可爱化。
@@ -137,7 +138,7 @@ body{color:var(--ink);background:var(--bg);font-size:15px;line-height:1.65}
 .chapter-button{color:#6F7568;border-radius:14px;padding:12px}
 .chapter-button .nav-code{border-color:#D8CBB2;width:32px;height:32px;border-radius:10px;font-size:12px}
 .chapter-button b{font-size:14px}
-.chapter-button small{font-size:11.5px;opacity:.82}
+.chapter-button>span{min-width:0}.chapter-button small{font-size:10.5px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;max-width:100%}
 .chapter-button.active{background:var(--forest);color:#FFFDF6;box-shadow:0 6px 16px rgba(51,92,70,.18)}
 .chapter-button.active .nav-code{border-color:#79937D;background:rgba(255,255,255,.06)}
 .nav-dot{background:#8FAF6E}
@@ -200,7 +201,7 @@ body{color:var(--ink);background:var(--bg);font-size:15px;line-height:1.65}
 .bookmark:hover{background:#FFF3D6}
 .bookmark.active{color:var(--gold-ink);background:#FFF3D6;border-color:#EBD3A2}
 .question-card h3{font-size:28px;line-height:1.4;font-weight:600;letter-spacing:-.2px;margin:10px 0 10px;color:var(--ink)}
-html.cute-font .question-card h3{font-family:var(--cute-title-font);font-weight:400;letter-spacing:.3px;line-height:1.35}
+html.cute-font .question-card h3{font-family:'FeifeiTitle','Yuanti SC','YouYuan',sans-serif;font-weight:400;letter-spacing:.3px;line-height:1.35}
 .markdown{font-size:14.5px;line-height:1.85;color:var(--body)}
 .question-card .markdown.prompt{max-width:700px;font-weight:500;color:var(--body)}
 .question-card .markdown.prompt>p:first-child{font-size:16.5px;font-weight:600;color:var(--ink)}
@@ -279,9 +280,9 @@ html.cute-font .question-card h3{font-family:var(--cute-title-font);font-weight:
 .question-grid button.active.done{background:#EAF3DE!important}
 .question-grid button.active.wrong{background:#FDF0E8!important}
 .question-grid button.fav::after{content:"★";position:absolute;right:4px;top:2px;font-size:9px;line-height:1;color:#DFA23C;background:none;width:auto;height:auto;border-radius:0}
-.legend{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 10px;font-size:11.5px;color:var(--sub);margin-top:13px}
+.legend{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:4px 7px;font-size:11px;color:var(--sub);margin-top:13px}
 .legend span{display:inline-flex;align-items:center;gap:4px}
-.legend i{width:8px;height:8px;border-radius:3px;background:#F7F0E1;border:1px solid #EADFC9}
+.legend i{width:7px;height:7px;border-radius:2px;background:#F7F0E1;border:1px solid #EADFC9;flex:none}
 .legend i.done{background:#DDEBCB;border-color:#CFE0B7}
 .legend i.wrong{background:#F9E2D7;border-color:#F0CFC0}
 .legend i.current{background:transparent;border:2px solid var(--forest)}
@@ -329,12 +330,21 @@ dialog::backdrop{background:rgba(40,52,43,.35)}
   .mini-card{padding:16px 14px}
 }
 @media(max-width:1000px){
+  .practice-grid{grid-template-columns:minmax(0,1fr)}
   .practice-aside{position:static;grid-template-columns:1fr 1fr;gap:16px}
   .teacher-note{margin-top:0}
   .question-grid{grid-template-columns:repeat(6,1fr)}
 }
 @media(max-width:760px){
-  .topbar{height:60px;padding:0 16px}
+  .topbar{height:58px;padding:0 12px;gap:8px}
+  .crumb{min-width:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px}
+  .crumb span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top-actions{gap:5px;flex:none}
+  .avatar{display:none}
+  .font-picker-button{max-width:92px;padding:4px 8px;font-size:10px;gap:4px}
+  .font-picker-button .fp-icon{font-size:8px}
+  .language-switch{flex:none;padding:2px}
+  .language-switch button{padding:4px 8px;font-size:11px;white-space:nowrap}
   .top-progress{display:none}
   .chapter-heading h2{font-size:22px}
   .practice-grid{gap:18px}
@@ -352,7 +362,7 @@ dialog::backdrop{background:rgba(40,52,43,.35)}
   .feedback{flex-wrap:wrap;padding:12px 14px;gap:10px}
   .feedback-avatar{width:46px;height:46px}
   .reward{margin-left:0;order:3}
-  .question-actions{position:sticky;bottom:6px;z-index:6;background:rgba(255,252,246,.94);backdrop-filter:blur(12px);margin:16px -4px 0;padding:10px 6px;border-radius:14px;box-shadow:0 -8px 24px rgba(122,88,48,.08)}
+  .question-actions{margin-top:16px}
   .question-actions .button{height:44px;font-size:14px;padding:0 16px}
   .answer-panel{max-width:none}
   .question-grid{grid-template-columns:repeat(8,1fr);gap:6px}
