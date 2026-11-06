@@ -438,3 +438,18 @@ html.cute-font .hero-stats,html.cute-font .chapter-progress,html.cute-font .top-
 /* Two font pickers: keep the topbar tidy on smaller screens. */
 @media(max-width:1000px){.font-picker-button{max-width:44px;min-width:32px;justify-content:center;gap:0;padding:4px 7px}.font-picker-button .fp-label{display:none}.font-picker-button .fp-caret{display:none}}
 @media(max-width:760px){.font-picker-button{max-width:38px;min-width:30px;padding:3px 6px;font-size:10px}}
+
+/* --- Range filter: each option is a prominent pill button (no dropdown). --- */
+.review-wrap{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--sub);margin-left:auto;flex-wrap:wrap}
+.review-label{font-size:11px;color:var(--muted);letter-spacing:.6px}
+.review-filter{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.review-filter button{font:600 11.5px/1.2 inherit;padding:7px 13px;border-radius:999px;border:1px solid #E2D5BC;background:#FFFDF8;color:#6F7568;cursor:pointer;transition:background .16s ease,color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease;white-space:nowrap}
+.review-filter button:hover{border-color:#C9B98F;color:var(--ink);transform:translateY(-1px)}
+.review-filter button.active{background:var(--forest);border-color:var(--forest);color:#FFFDF6;box-shadow:0 6px 14px rgba(53,91,73,.22)}
+.review-filter button:focus-visible{outline:2px solid #C9A25A;outline-offset:2px}
+@media(max-width:760px){.review-wrap{width:100%;margin-left:0;gap:7px}.review-filter{width:100%}}
+/* --- Question prompt code blocks: Apple Terminal window look (traffic lights, white body). --- */
+.markdown.prompt pre{position:relative;max-width:100%;margin:16px 0;padding:46px 20px 18px;background:linear-gradient(#F6F6F7 0,#F6F6F7 36px,#FFFFFF 36px);border:1px solid #DCDCE2;border-left:1px solid #DCDCE2;border-radius:12px;box-shadow:0 10px 24px rgba(30,30,36,.10);color:#24292F;font-size:13px;line-height:1.8;overflow-x:auto}
+.markdown.prompt pre::before{content:"";position:absolute;top:16px;left:16px;width:12px;height:12px;border-radius:50%;background:#FF5F57;box-shadow:20px 0 0 #FEBC2E,40px 0 0 #28C840}
+.markdown.prompt pre::after{content:"PYTHON";position:absolute;top:13px;right:16px;font:600 9px/1 Inter,-apple-system,"PingFang SC",sans-serif;letter-spacing:1.4px;color:#9A9AA1}
+.markdown.prompt pre code{font-size:13px;line-height:1.8;color:#24292F}
