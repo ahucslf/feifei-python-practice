@@ -11,3 +11,11 @@
 .option .markdown pre{margin:0;width:100%;max-width:100%;text-align:left;tab-size:4;white-space:pre;overflow-wrap:normal;word-break:normal}
 .option .markdown pre code{display:block;white-space:pre;tab-size:4}
 .option .markdown .python-inline{white-space:pre-wrap;tab-size:4}
+
+.reset-records-button{color:#a67b61;margin-top:6px}
+.clear-records-dialog{width:min(460px,92vw)}
+.clear-records-dialog p{font-size:13px}
+.clear-records-dialog .clear-records-note{font-size:11px;color:#9b9c87;background:#f5f4eb;border-radius:9px;padding:11px 13px}
+.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:23px}
+.dialog-actions .button{min-width:85px;text-decoration:none}
+.clear-confirm{background:#a8785d;border-color:#a8785d}

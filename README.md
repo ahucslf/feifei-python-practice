@@ -10,6 +10,7 @@
 - Monaco代码编辑器；选择题代码选项和题干均支持Python高亮与缩进显示。
 - Pyodide浏览器Python运行与样例测试；NumPy、pandas和相关依赖随网站提供。
 - 代码草稿和学习进度保存在当前浏览器，可导出、导入备份。
+- 清空做题记录需二次确认；清除全部章节的结果、收藏和草稿，保留语言与当前章节。
 
 ## 题目来源
 题目为依据课程讲义及公开教材知识点编写的教学练习和变式，不代表UvA官方题库或考试真题。逐题依据见网页答案下方及[data/question-sources.csv](data/question-sources.csv)。参考资料包括Al Sweigart的Python Programming Exercises, Gently Explained、Software Carpentry公开工作坊、spcourse/pandas-dp和Jake VanderPlas的Python Data Science Handbook。

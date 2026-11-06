@@ -1,7 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id), KEY='feifei-python-club-2026-v1'+(new URLSearchParams(location.search).has('qa')?'-qa':'');
 let meta,questions=[],current=null,editor=null,fallback=null,monacoReady=false,editorQuestionId=null,language='en',chapter='lecture1',topic='all',type='all',level=0,review='all',search='',answerOpen=false,selected=null,checked=false,worker=null,busy=false,timer=null,runID=0,filtered=[];
-let saved={version:1,records:{},drafts:{},language:'en',chapter:'lecture1',last:{}};
+let saved={version:1,records:{},drafts:{},language:'en',chapter:'lecture1',last:{},resetAt:0};
 try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&x.version===1&&x.records&&x.drafts)saved={...saved,...x};}catch{}
 language=saved.language==='zh'?'zh':'en';chapter=saved.chapter||chapter;
 const bilingual=(value)=>typeof value==='string'?value:(value?.[language]??value?.en??'');
@@ -78,6 +78,23 @@ function checkMCQ(){if(selected===null){toast('先选一个你认为正确的选
 function changeChapter(id){saveDraft();chapter=id;current=null;clearFilters();save();$('sidebar').classList.remove('open');$('mobileShade').classList.remove('active');}
 function changeLanguage(lang){saveDraft();language=lang;save();renderHeader();renderQuestion();renderGrid();}
 function clearFilters(){topic='all';type='all';level=0;review='all';search='';$('searchInput').value='';$('reviewSelect').value='all';document.querySelectorAll('[data-type]').forEach(b=>b.classList.toggle('active',b.dataset.type==='all'));document.querySelectorAll('[data-level]').forEach(b=>b.classList.toggle('active',b.dataset.level==='0'));render();}
+function replaceStudyRecords(nextState){
+ // Stop queued execution and detach the editor before clearing drafts.
+ runID++;
+ cancelRun();
+ disposeEditor();
+ saved=nextState;
+ selected=null;
+ checked=false;
+ answerOpen=false;
+ current=null;
+ clearFilters();
+}
+function clearStudyRecords(){
+ replaceStudyRecords({version:1,records:{},drafts:{},last:{},language,chapter,resetAt:Date.now()});
+ save();
+ toast('做题记录已清空，可以重新开始练习了。');
+}
 function download(text,name,mime='application/json'){const blob=new Blob([text],{type:mime});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
 function cancelRun(reason='已停止运行。可以修改代码后再试。'){clearTimeout(timer);worker?.terminate();worker=null;busy=false;document.querySelectorAll('[data-action="run"],[data-action="test"]').forEach(b=>b.disabled=false);$('stopRun')?.setAttribute('hidden','');if($('codeOutput')){$('codeOutput').textContent=reason;$('runtimeStatus').textContent='已停止';}}
 function ensureWorker(){if(!worker){worker=new Worker('python-worker.js');worker.onerror=e=>{showOutput('Python 环境未能启动：'+e.message,true);finishRun();worker?.terminate();worker=null;};worker.onmessage=event=>{const data=event.data;if(data.id!==runID)return;if(data.status){if($('runtimeStatus'))$('runtimeStatus').textContent=data.status;if(data.phase==='running'){clearTimeout(timer);timer=setTimeout(()=>cancelRun('代码运行超过8秒，已自动停止。请检查循环是否有结束条件，或缩小输入。'),8000);}return;}clearTimeout(timer);if(data.kind==='result'){const q=questions.find(q=>q.id===data.questionId);if(data.check){saved.records[q.id]={...record(q.id),attempted:true,solved:data.ok,wrong:!data.ok};save();renderSidebar();renderHeader();renderGrid();}if(current?.id===data.questionId){let message=data.stdout||'';if(data.ok)message+=(message?'\n':'')+(data.check?'✓ 本题样例测试通过。写法限制请结合题干自行核对；也可以设计一个新输入再检查。':'✓ 运行完成。'+(!data.stdout?'代码没有打印内容；函数返回值可用 print(...) 查看。':''));else message+=(message?'\n':'')+friendlyError(data.error)+'\n\n'+data.error;showOutput(message,!data.ok,data.check?'测试结果':'运行结果');}finishRun();}};}return worker;}
@@ -95,6 +112,20 @@ function initEvents(){
  $('questionGrid').onclick=e=>{const b=e.target.closest('[data-question]');if(b)selectQuestion(b.dataset.question);};
  $('questionCard').onclick=e=>{const option=e.target.closest('[data-option]');if(option){selected=Number(option.dataset.option);checked=false;renderQuestion();return;}const b=e.target.closest('[data-action]');if(!b)return;const action=b.dataset.action,i=filtered.findIndex(q=>q.id===current?.id);switch(action){case'check':checkMCQ();break;case'answer':answerOpen=!answerOpen;renderQuestion();break;case'favorite':saved.records[current.id]={...record(),favorite:!record().favorite};save();renderQuestion();renderGrid();break;case'prev':selectQuestion(filtered[i-1]?.id);break;case'next':selectQuestion(filtered[i+1]?.id);break;case'random':{const pool=filtered.filter(q=>q.id!==current.id);if(pool.length)selectQuestion(pool[Math.floor(Math.random()*pool.length)].id);break;}case'clear':clearFilters();break;case'run':runCode(false);break;case'test':runCode(true);break;case'stop':cancelRun();break;case'reset':if(editor)editor.setValue(current.starter);else if(fallback){fallback.value=current.starter;saveDraft();}toast('已恢复起步代码。');break;case'download':saveDraft();download(saved.drafts[current.id]??current.starter,current.id+'.py','text/x-python');break;}};
  $('sourceBtn').onclick=()=>$('sourceDialog').showModal();$('closeSource').onclick=()=>$('sourceDialog').close();$('sourceDialog').onclick=e=>{if(e.target===$('sourceDialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}};
+ $('clearRecordsBtn').onclick=()=>{$('clearRecordsDialog').showModal();$('cancelClearRecords').focus();};
+ const closeClearRecords=()=>$('clearRecordsDialog').close();
+ $('cancelClearRecords').onclick=closeClearRecords;
+ $('closeClearRecords').onclick=closeClearRecords;
+ $('confirmClearRecords').onclick=()=>{closeClearRecords();clearStudyRecords();};
+ window.addEventListener('storage',event=>{
+  if(event.key!==KEY||!event.newValue)return;
+  try{
+   const next=JSON.parse(event.newValue);
+   if(next.version!==1||!next.records||!next.drafts||!(next.resetAt>(saved.resetAt||0)))return;
+   replaceStudyRecords({...next,language,chapter});
+   toast('做题记录已在另一个页面中清空。');
+  }catch{}
+ });
  $('exportBtn').onclick=()=>{saveDraft();download(JSON.stringify(saved,null,2),'飞飞编程学习记录-'+new Date().toISOString().slice(0,10)+'.json');toast('学习记录已导出，记得保管好。');};
  $('importInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>5000000)throw Error('文件过大');const data=JSON.parse(await f.text());if(data.version!==1||!data.records||!data.drafts)throw Error('文件格式不匹配');const ids=new Set(questions.map(q=>q.id));for(const [id,r]of Object.entries(data.records))if(ids.has(id)&&r&&typeof r==='object')saved.records[id]={...record(id),...r};for(const[id,code]of Object.entries(data.drafts))if(ids.has(id)&&typeof code==='string')saved.drafts[id]=code;save();disposeEditor();render();toast('已合并导入学习记录。');}catch(err){toast('无法导入：'+err.message);}e.target.value='';};
  $('menuBtn').onclick=()=>{$('sidebar').classList.toggle('open');$('mobileShade').classList.toggle('active');};$('mobileShade').onclick=()=>{$('sidebar').classList.remove('open');$('mobileShade').classList.remove('active');};window.addEventListener('beforeunload',saveDraft);
