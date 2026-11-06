@@ -19,3 +19,10 @@
 .dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:23px}
 .dialog-actions .button{min-width:85px;text-decoration:none}
 .clear-confirm{background:#a8785d;border-color:#a8785d}
+
+/* Code options: center the A/B/C/D badge against the whole code block. */
+.option.code-option{align-items:center}
+.option.code-option .option-letter{margin-top:0}
+
+/* Answer explanations: keep the auto-highlighted code names visible but calm. */
+.answer-panel .markdown strong{color:#3e5f49}

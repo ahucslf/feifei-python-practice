@@ -2,12 +2,13 @@
 
 按5份章节讲义和2份Tutorial编写的420道Python双语练习：每章60题，36道选择题、24道编程题。
 
-练习网站：https://ahucslf.github.io/feifei-python-practice/
+练习网站：https://pythonpra.netlify.app/ （同步发布：https://ahucslf.github.io/feifei-python-practice/）
 
 ## 功能
 - 默认英文题目，可切换中文题干、选项和解析。
 - 按章节、知识点、题型与难度筛选，支持错题和收藏。
-- Monaco代码编辑器；选择题代码选项和题干均支持Python高亮与缩进显示。
+- Monaco代码编辑器；选择题代码选项和题干均支持Python高亮与缩进显示，代码选项的A/B/C/D字母与代码块垂直居中。
+- 答案解析中与题目代码相关的变量名、函数名和字符串会自动加粗，方便把文字说明和代码对照起来。
 - Pyodide浏览器Python运行与样例测试；NumPy、pandas和相关依赖随网站提供。
 - 代码草稿和学习进度保存在当前浏览器，可导出、导入备份。
 - 清空做题记录需二次确认；清除全部章节的结果、收藏和草稿，保留语言与当前章节。

@@ -596,8 +596,8 @@
       "zh": "哪个Python字符串在`Ada`和`Lovelace`之间包含真正的换行？"
     },
     "explanation": {
-      "en": "Inside an ordinary Python string, `\n` represents one newline character. A forward slash `/n` has no such meaning, and `\\n` represents a literal backslash followed by n. Think of the escape sequence as an instruction for laying out the text.",
-      "zh": "普通Python字符串中的`\n`代表一个换行字符。`/n`只是斜杠和字母n，而`\\n`会把反斜杠本身作为文字保留。换行符是文字排版的一部分，不是屏幕上一定会显示出的两个字符。"
+      "en": "Inside an ordinary Python string, `\\n` represents one newline character. A forward slash `/n` has no such meaning, and `\\\\n` represents a literal backslash followed by n. Think of the escape sequence as an instruction for laying out the text.",
+      "zh": "普通Python字符串中的`\\n`代表一个换行字符。`/n`只是斜杠和字母n，而`\\\\n`会把反斜杠本身作为文字保留。换行符是文字排版的一部分，不是屏幕上一定会显示出的两个字符。"
     },
     "source": {
       "kind": "adapted",
