@@ -158,9 +158,9 @@ function finishRun(){clearTimeout(timer);busy=false;document.querySelectorAll('[
 function runCode(check){if(busy||!current||current.type!=='code')return;saveDraft();busy=true;runID++;const q=current;document.querySelectorAll('[data-action="run"],[data-action="test"]').forEach(b=>b.disabled=true);$('stopRun').hidden=false;$('outputPanel').hidden=false;$('outputPanel').classList.remove('error');$('codeOutput').textContent='正在准备 Python 环境，第一次运行稍等片刻…';$('runtimeStatus').textContent='准备中…';timer=setTimeout(()=>cancelRun('Python 环境准备超时。请重新点击运行；如果持续出现，请刷新页面或检查网络后重试。'),60000);ensureWorker().postMessage({id:runID,questionId:q.id,code:saved.drafts[q.id]??q.starter,setup:q.setup||'',tests:q.tests||'',packages:q.packages||[],check});}
 const EXAM_SIZE=40;
 function chapterName(id){const c=meta?.chapters.find(c=>c.id===id);return c?c.name.zh:'';}
-function buildExamPaper(){const pools={};meta.chapters.forEach(c=>pools[c.id]=questions.filter(q=>q.chapter===c.id&&q.type==='mcq'));const base=Math.floor(EXAM_SIZE/meta.chapters.length),extra=EXAM_SIZE-base*meta.chapters.length;const order=meta.chapters.map((_,i)=>i).sort(()=>Math.random()-.5);examPaper=[];order.forEach((ci,pos)=>{const c=meta.chapters[ci],n=base+(pos<extra?1:0),pool=[...pools[c.id]];for(let k=0;k<n&&pool.length;k++)examPaper.push(pool.splice(Math.floor(Math.random()*pool.length),1)[0]);});examPaper.sort(()=>Math.random()-.5);examIndex=0;examAnswers={};examSubmitted=false;examResultData=null;}
+function buildExamPaper(){const pools=meta.chapters.map(c=>({items:questions.filter(q=>q.chapter===c.id&&q.type==='mcq')}));pools.forEach(p=>{for(let i=p.items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[p.items[i],p.items[j]]=[p.items[j],p.items[i]];}});const total=pools.reduce((n,p)=>n+p.items.length,0);const target=Math.min(EXAM_SIZE,total);const active=pools.filter(p=>p.items.length).map(p=>({...p,used:0}));const drawn=[];let rounds=0;while(drawn.length<target&&active.length&&rounds<100){let progressed=false;for(const p of active){if(p.used<p.items.length){drawn.push(p.items[p.used]);p.used++;progressed=true;if(drawn.length>=target)break;}}if(!progressed)break;rounds++;}examPaper=drawn.sort(()=>Math.random()-.5);examIndex=0;examAnswers={};examSubmitted=false;examResultData=null;}
 function examAnsweredCount(){return examPaper?examPaper.filter(q=>examAnswers[q.id]!==undefined).length:0;}
-function openExam(){if(!meta)return;if(!examPaper||examSubmitted)buildExamPaper();$('examOverlay').hidden=false;document.body.classList.add('exam-open');renderExam();}
+function openExam(){if(!meta)return;if(!examPaper||examSubmitted)buildExamPaper();if(!examPaper||!examPaper.length){toast('当前题库中没有选择题，无法进行模拟考试。');return;}$('examOverlay').hidden=false;document.body.classList.add('exam-open');renderExam();}
 function closeExam(){const o=$('examOverlay');if(!o)return;o.hidden=true;document.body.classList.remove('exam-open');}
 function examOptionMarkup(q){return '<div class="options exam-options">'+q.options.map((o,n)=>{const sel=examAnswers[q.id]===n,code=isCodeOption(bilingual(o),q.id),wide=bilingual(o).length>90||code;return `<button class="option ${sel?'selected ':''}${wide?'wide ':''}${code?'code-option':''}" type="button" data-exam-option="${n}" aria-pressed="${sel}"><span class="option-letter">${String.fromCharCode(65+n)}</span><span class="markdown">${optionMarkdown(bilingual(o),q.id)}</span></button>`;}).join('')+'</div>';}
 function renderExamQuestion(){const q=examPaper[examIndex];if(!q){$('examQuestion').innerHTML='';return;}$('examQuestion').innerHTML=`<div class="exam-q-meta"><span class="q-id">${q.id}</span><span class="badge level${q.difficulty}">${labels[q.difficulty]}</span><span>${esc(chapterName(q.chapter))} · ${esc(bilingual(q.topicLabel))}</span></div><h3>${esc(bilingual(q.title))}</h3><div class="markdown prompt">${md(bilingual(q.prompt))}</div>${examOptionMarkup(q)}`;colorize();}
@@ -169,6 +169,184 @@ function examGrade(){const result={total:examPaper.length,correct:0,chapters:{},
 function renderExamResult(){const r=examResultData||examGrade();const rows=meta.chapters.filter(c=>r.chapters[c.id]).map(c=>{const s=r.chapters[c.id],pct=s.total?Math.round(s.correct/s.total*100):0;return `<div class="exam-chapter"><span>${esc(c.name.zh)}</span><b>${s.correct} / ${s.total}</b><i style="width:${pct}%"></i></div>`;}).join('');const wrong=r.wrong.length?r.wrong.map(q=>{const chosen=examAnswers[q.id],chosenText=chosen===undefined?'未作答':String.fromCharCode(65+chosen);return `<details class="exam-wrong"><summary><span class="exam-wrong-id">${q.id}</span>${esc(bilingual(q.title))}<em>你选 ${chosenText} · 正确 ${String.fromCharCode(65+q.answer)}</em></summary><div class="markdown exam-wrong-body">${md(bilingual(q.explanation))}</div></details>`;}).join(''):'<p class="exam-all-correct">全部答对，漂亮！</p>';$('examResult').innerHTML=`<div class="exam-score"><span>本次得分</span><b>${r.correct}</b><span>/ ${r.total}</span><em>${r.percent}%</em></div><div class="exam-score-line">正确 ${r.correct} 题 · 错误 ${r.total-r.correct} 题</div><div class="exam-chapters">${rows}</div><div class="exam-actions"><button type="button" class="button" data-exam-action="retry">再考一次</button><button type="button" class="button secondary" data-exam-action="close">关闭</button></div><h3 class="exam-wrong-title">错题回顾${r.wrong.length?'（'+r.wrong.length+'）':''}</h3>${wrong}`;}
 function renderExam(){if(!examPaper||!examPaper.length)return;const answered=examAnsweredCount();$('examSub').textContent=examSubmitted?'本次模拟考试已交卷，可以查看错题解析。':`从每个章节随机抽取选择题，共 ${examPaper.length} 题；交卷后自动打分。已答 ${answered} / ${examPaper.length}`;$('examProgressText').textContent=examSubmitted?'已交卷':`第 ${examIndex+1} / ${examPaper.length} 题`;$('examAnsweredText').textContent=`已答 ${answered} / ${examPaper.length}`;$('examNavBtns').hidden=examSubmitted;$('examQuestion').hidden=examSubmitted;$('examResult').hidden=!examSubmitted;if($('examTip'))$('examTip').textContent=examSubmitted?'绿色=答对，红色=答错，灰色=未作答；点「错题回顾」展开解析。':'已答题目为绿色；当前题带深色描边；交卷后可查看错题解析。';renderExamGrid();if(examSubmitted)renderExamResult();else renderExamQuestion();}
 function submitExam(){if(!examPaper||examSubmitted)return;const left=examPaper.length-examAnsweredCount();if(left>0&&!confirm(`还有 ${left} 道题未作答，确定交卷吗？`))return;examSubmitted=true;examResultData=examGrade();renderExam();toast(`模拟考试得分：${examResultData.correct} / ${examResultData.total}（${examResultData.percent}%）`);}
+
+/* ------------------------------------------------------------------ *
+ * Question bank: Excel template / import / export (IndexedDB storage)
+ * ------------------------------------------------------------------ */
+const BANK_TEMPLATE_PATH='assets/question-bank-template.xlsx';
+const BANK_CHAPTER_COLS=['章节ID','章节编号','章节中文名','章节英文名','章节描述(中文)','章节描述(英文)','图标(可选)'];
+const BANK_QUESTION_COLS=['题目ID','章节ID','题型','难度','知识点(中文)','知识点(英文)','题目标题(中文)','题目标题(英文)','题干(中文)','题干(英文)','选项A(中文)','选项A(英文)','选项B(中文)','选项B(英文)','选项C(中文)','选项C(英文)','选项D(中文)','选项D(英文)','正确答案','解析(中文)','解析(英文)','起始代码','参考答案代码','测试代码','运行提示(中文)','运行提示(英文)','环境设置代码','依赖包','来源标签','来源说明(中文)','来源说明(英文)','来源链接','备注'];
+const BANK_DIFFICULTY={'基础':1,'进阶':2,'挑战':3,'1':1,'2':2,'3':3};
+let bankIsCustom=false;
+const bankStr=v=>String(v??'').trim();
+const bankPair=(zh,en)=>{const z=bankStr(zh),e=bankStr(en);return {zh:z||e,en:e||z};};
+function bankSheetRows(wb,names){const name=(wb.SheetNames||[]).find(n=>names.includes(String(n).trim()));if(!name)return null;return XLSX.utils.sheet_to_json(wb.Sheets[name],{header:1,raw:false,defval:''});}
+function bankHeaderMap(rows,anchor){for(let i=0;i<Math.min(rows.length,15);i++){const cells=(rows[i]||[]).map(bankStr);if(cells.includes(anchor)){const map={};cells.forEach((c,idx)=>{if(c&&map[c]===undefined)map[c]=idx;});return {index:i,map};}}return null;}
+function bankCell(row,map,name){const idx=map[name];if(idx===undefined)return '';return bankStr(row[idx]);}
+function parseBankWorkbook(wb){
+ const errors=[];
+ const mark=(sheet,row,message)=>errors.push({sheet,row,message});
+ const questRows=bankSheetRows(wb,['题目','题库','questions','Questions']);
+ if(!questRows){return {bank:null,errors:[{sheet:'工作簿',row:0,message:'缺少「题目」工作表，请使用下载的题库模板。'}]};}
+ const qh=bankHeaderMap(questRows,'题目ID');
+ if(!qh){return {bank:null,errors:[{sheet:'题目',row:0,message:'未找到表头「题目ID」，请使用下载的题库模板。'}]};}
+ const essential=['题目ID','章节ID','题型','难度','题目标题(中文)','题目标题(英文)','题干(中文)','题干(英文)'];
+ const miss=essential.filter(c=>!(c in qh.map));
+ if(miss.length){return {bank:null,errors:[{sheet:'题目',row:qh.index+1,message:'缺少必需列：'+miss.join('、')}]};}
+ let chapters=[];const chapterMap=new Map();
+ const chapterRows=bankSheetRows(wb,['章节','chapters','Chapters']);
+ if(chapterRows){
+   const ch=bankHeaderMap(chapterRows,'章节ID');
+   if(ch){
+     for(let i=ch.index+1;i<chapterRows.length;i++){
+       const row=chapterRows[i]||[];
+       const id=bankCell(row,ch.map,'章节ID');
+       if(!id||/^(示例|example)/i.test(id))continue;
+       if(chapterMap.has(id)){mark('章节',i+1,'章节ID重复：'+id);continue;}
+       const nameZh=bankCell(row,ch.map,'章节中文名'),nameEn=bankCell(row,ch.map,'章节英文名');
+       const c={id,code:bankCell(row,ch.map,'章节编号')||String(chapters.length+1).padStart(2,'0'),name:bankPair(nameZh,nameEn),file:'',icon:bankCell(row,ch.map,'图标(可选)')||'book',description:bankPair(bankCell(row,ch.map,'章节描述(中文)'),bankCell(row,ch.map,'章节描述(英文)'))};
+       if(!c.name.zh){mark('章节',i+1,'缺少章节中文名（或英文名）');continue;}
+       chapters.push(c);chapterMap.set(id,c);
+     }
+   }else mark('章节',1,'未找到表头「章节ID」');
+ }
+ const questions=[],qids=new Set();
+ for(let i=qh.index+1;i<questRows.length;i++){
+   const row=questRows[i]||[];
+   const id=bankCell(row,qh.map,'题目ID');
+   if(!id||/^(示例|example)/i.test(id))continue;
+   if(qids.has(id)){mark('题目',i+1,'题目ID重复：'+id);continue;}
+   const chapterId=bankCell(row,qh.map,'章节ID');
+   const typeRaw=bankCell(row,qh.map,'题型');
+   const type=/选择|单选|mcq/i.test(typeRaw)?'mcq':(/编程|代码|code/i.test(typeRaw)?'code':'');
+   const difficulty=BANK_DIFFICULTY[bankCell(row,qh.map,'难度')]||0;
+   if(!chapterId){mark('题目',i+1,'缺少章节ID');continue;}
+   if(!chapterMap.has(chapterId)){mark('题目',i+1,'章节ID不存在：'+chapterId+'（请先在「章节」表定义）');continue;}
+   if(!type){mark('题目',i+1,'题型必须填「选择题」或「编程题」');continue;}
+   if(!difficulty){mark('题目',i+1,'难度必须填「基础/进阶/挑战」或 1/2/3');continue;}
+   const titleZh=bankCell(row,qh.map,'题目标题(中文)'),titleEn=bankCell(row,qh.map,'题目标题(英文)');
+   const promptZh=bankCell(row,qh.map,'题干(中文)'),promptEn=bankCell(row,qh.map,'题干(英文)');
+   if(!titleZh&&!titleEn){mark('题目',i+1,'缺少题目标题');continue;}
+   if(!promptZh&&!promptEn){mark('题目',i+1,'缺少题干');continue;}
+   const topicZh=bankCell(row,qh.map,'知识点(中文)'),topicEn=bankCell(row,qh.map,'知识点(英文)');
+   const q={id,chapter:chapterId,topic:topicZh||topicEn||'综合',topicLabel:bankPair(topicZh,topicEn),difficulty,title:bankPair(titleZh,titleEn),prompt:bankPair(promptZh,promptEn),explanation:bankPair(bankCell(row,qh.map,'解析(中文)'),bankCell(row,qh.map,'解析(英文)')),source:{kind:'adapted',label:bankCell(row,qh.map,'来源标签')||'自定义题库',url:/^https?:\/\//i.test(bankCell(row,qh.map,'来源链接'))?bankCell(row,qh.map,'来源链接'):'',note:bankPair(bankCell(row,qh.map,'来源说明(中文)'),bankCell(row,qh.map,'来源说明(英文)'))},type};
+   if(type==='mcq'){
+     const options=[];
+     ['A','B','C','D'].forEach(L=>{const zh=bankCell(row,qh.map,'选项'+L+'(中文)'),en=bankCell(row,qh.map,'选项'+L+'(英文)');if(zh||en)options.push(bankPair(zh,en));});
+     if(options.length<2){mark('题目',i+1,'选择题至少需要 2 个选项（选项A-D）');continue;}
+     const ansRaw=bankCell(row,qh.map,'正确答案').toUpperCase();
+     const ans='ABCD'.indexOf(ansRaw.charAt(0));
+     if(ans<0||ans>=options.length){mark('题目',i+1,'正确答案必须填 A/B/C/D，且在已填选项范围内');continue;}
+     q.options=options;q.answer=ans;
+   }else{
+     q.starter=bankCell(row,qh.map,'起始代码');
+     q.solution=bankCell(row,qh.map,'参考答案代码');
+     q.tests=bankCell(row,qh.map,'测试代码');
+     q.setup=bankCell(row,qh.map,'环境设置代码');
+     q.packages=bankCell(row,qh.map,'依赖包').split(/[,，、;；\s]+/).filter(Boolean);
+     q.testHint=bankPair(bankCell(row,qh.map,'运行提示(中文)'),bankCell(row,qh.map,'运行提示(英文)'));
+     if(!q.testHint.zh)q.testHint=bankPair('检查样例与边界输入。','Check examples and boundary inputs.');
+   }
+   qids.add(id);questions.push(q);
+ }
+ if(!questions.length&&!errors.length)errors.push({sheet:'题目',row:qh.index+1,message:'没有找到可导入的题目（示例行会被跳过，请填写真实题目）。'});
+ const usedChapters=new Set(questions.map(q=>q.chapter));
+ chapters=chapters.filter(c=>usedChapters.has(c.id));
+ if(questions.length&&!chapters.length&&!errors.length)errors.push({sheet:'章节',row:1,message:'没有找到与题目对应的章节，请检查「章节ID」。'});
+ return {bank:errors.length?null:{chapters,questions},errors};
+}
+function mergeBankIntoCurrent(imported){
+ const chapters=meta.chapters.map(c=>({...c}));
+ const chapterMap=new Map(chapters.map(c=>[c.id,c]));
+ imported.chapters.forEach(c=>{if(!chapterMap.has(c.id)){chapters.push(c);chapterMap.set(c.id,c);}});
+ const merged=questions.map(q=>({...q}));
+ const idMap=new Map(merged.map((q,i)=>[q.id,i]));
+ imported.questions.forEach(q=>{const idx=idMap.get(q.id);if(idx===undefined){idMap.set(q.id,merged.length);merged.push(q);}else merged[idx]={...q};});
+ return {chapters,questions:merged};
+}
+function retainKnownRecords(){
+ const ids=new Set(questions.map(q=>q.id));
+ ['records','drafts','notes'].forEach(key=>{const obj=saved[key];if(!obj||typeof obj!=='object')return;Object.keys(obj).forEach(id=>{if(!ids.has(id))delete obj[id];});});
+}
+function updateBankMeta(){const el=$('bankMeta');if(!el||!meta)return;el.textContent=(bankIsCustom?'自定义题库':'默认题库')+` · ${meta.chapters.length} 章 / ${questions.length} 题`;}
+async function openBankDb(){
+ return new Promise((resolve,reject)=>{
+   if(!('indexedDB' in window))return reject(new Error('no indexedDB'));
+   const req=indexedDB.open('feifei-question-bank',1);
+   req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains('bank'))db.createObjectStore('bank');};
+   req.onsuccess=()=>resolve(req.result);
+   req.onerror=()=>reject(req.error||new Error('indexedDB open failed'));
+ });
+}
+async function loadStoredBank(){
+ try{const db=await openBankDb();return await new Promise((res,rej)=>{const tx=db.transaction('bank','readonly');const rq=tx.objectStore('bank').get('current');rq.onsuccess=()=>res(rq.result||null);rq.onerror=()=>rej(rq.error);});}
+ catch(e){try{const raw=localStorage.getItem(KEY+'-bank');return raw?JSON.parse(raw):null;}catch(e2){return null;}}
+}
+async function putStoredBank(bank){
+ try{const db=await openBankDb();await new Promise((res,rej)=>{const tx=db.transaction('bank','readwrite');tx.objectStore('bank').put(bank,'current');tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});}
+ catch(e){try{localStorage.setItem(KEY+'-bank',JSON.stringify(bank));}catch(err){throw new Error('浏览器存储空间不足，题库未能保存');}}
+}
+async function applyImportedBank(imported,mode){
+ const bank=mode==='replace'?imported:mergeBankIntoCurrent(imported);
+ await putStoredBank(bank);
+ meta={title:'飞飞老师的题库',chapters:bank.chapters};
+ questions=bank.questions;
+ bankIsCustom=true;
+ examPaper=null;examIndex=0;examAnswers={};examSubmitted=false;examResultData=null;
+ if($('examOverlay')&&!$('examOverlay').hidden)closeExam();
+ if(mode==='replace'){
+   retainKnownRecords();
+   saved.last={};
+   chapter=meta.chapters[0]?.id||'';
+   current=null;answerOpen=false;
+   clearFilters();
+ }else{
+   if(!meta.chapters.some(c=>c.id===chapter)){chapter=meta.chapters[0]?.id||'';current=null;clearFilters();}
+   else render();
+ }
+ save();updateBankMeta();updateNoteUI();
+}
+function exportBankWorkbook(){
+ if(!window.XLSX){toast('Excel 组件未加载，请刷新页面后重试。');return;}
+ const wb=XLSX.utils.book_new();
+ const intro=[['飞飞老师的题库 · 题库导出'],[''],['说明：本文件由网站「导出题库」生成，可再次通过「导入题库」导入本站。'],['「章节」「题目」工作表结构与导入模板一致，第 1 行为列名。'],['导入方式：左侧「导入题库」→ 选择本文件 → 追加到现有题库 / 清空原题库后导入。'],['如需备份练习记录，请使用「导出学习记录」按钮。']];
+ XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(intro),'说明');
+ const chapterRows=[BANK_CHAPTER_COLS,...meta.chapters.map(c=>[c.id,c.code,c.name.zh,c.name.en,c.description.zh,c.description.en,c.icon||'book'])];
+ const chSheet=XLSX.utils.aoa_to_sheet(chapterRows);chSheet['!cols']=[{wch:16},{wch:8},{wch:20},{wch:24},{wch:42},{wch:42},{wch:10}];
+ XLSX.utils.book_append_sheet(wb,chSheet,'章节');
+ const questionRows=[BANK_QUESTION_COLS,...questions.map(q=>{
+  const opts=q.options||[];
+  const opt=(n,lang)=>opts[n]?opts[n][lang]:'';
+  return [q.id,q.chapter,q.type==='mcq'?'选择题':'编程题',({1:'基础',2:'进阶',3:'挑战'})[q.difficulty]||String(q.difficulty||''),q.topicLabel?.zh||'',q.topicLabel?.en||'',q.title?.zh||'',q.title?.en||'',q.prompt?.zh||'',q.prompt?.en||'',opt(0,'zh'),opt(0,'en'),opt(1,'zh'),opt(1,'en'),opt(2,'zh'),opt(2,'en'),opt(3,'zh'),opt(3,'en'),q.type==='mcq'?String.fromCharCode(65+q.answer):'',q.explanation?.zh||'',q.explanation?.en||'',q.starter||'',q.solution||'',q.tests||'',q.testHint?.zh||'',q.testHint?.en||'',q.setup||'',(q.packages||[]).join(', '),q.source?.label||'',q.source?.note?.zh||'',q.source?.note?.en||'',q.source?.url||'',''];
+ })];
+ const qSheet=XLSX.utils.aoa_to_sheet(questionRows);qSheet['!cols']=[{wch:16},{wch:16},{wch:9},{wch:8},{wch:18},{wch:20},{wch:22},{wch:24},{wch:40},{wch:40},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:10},{wch:40},{wch:40},{wch:36},{wch:36},{wch:40},{wch:24},{wch:24},{wch:24},{wch:14},{wch:22},{wch:36},{wch:36},{wch:24},{wch:20}];
+ XLSX.utils.book_append_sheet(wb,qSheet,'题目');
+ XLSX.writeFile(wb,'飞飞老师的题库-'+new Date().toISOString().slice(0,10)+'.xlsx');
+}
+function resetBankImportDialog(){const inp=$('bankFileInput');if(inp)inp.value='';const name=$('bankFileName');if(name)name.textContent='未选择文件';}
+function showBankErrors(errors){
+ $('bankErrorIntro').textContent=`共 ${errors.length} 个问题，请修正 Excel 后重试：`;
+ $('bankErrorList').innerHTML=errors.slice(0,60).map(e=>`<li>${esc(e.sheet||'文件')}${e.row?' 第 '+e.row+' 行':''}：${esc(e.message)}</li>`).join('')+(errors.length>60?'<li>…还有 '+(errors.length-60)+' 个问题未显示</li>':'');
+ $('bankErrorDialog').showModal();
+}
+async function startBankImport(mode){
+ const file=$('bankFileInput')?.files?.[0];
+ if(!file){toast('请先选择 Excel 文件。');return;}
+ if(!window.XLSX){toast('Excel 组件未加载，请刷新页面后重试。');return;}
+ const buttons=[$('bankAppendBtn'),$('bankReplaceBtn')];
+ buttons.forEach(b=>{if(b)b.disabled=true;});
+ try{
+  const wb=XLSX.read(await file.arrayBuffer(),{type:'array'});
+  const parsed=parseBankWorkbook(wb);
+  if(parsed.errors.length){showBankErrors(parsed.errors);return;}
+  await applyImportedBank(parsed.bank,mode);
+  $('importBankDialog').close();
+  $('clearBankDialog').close();
+  toast((mode==='replace'?'已清空并导入题库：':'已追加题库：')+`${parsed.bank.chapters.length} 章 / ${parsed.bank.questions.length} 题`);
+ }catch(err){showBankErrors([{sheet:'文件',row:0,message:err?.message||String(err)}]);}
+ finally{buttons.forEach(b=>{if(b)b.disabled=false;});}
+}
+
 function initEvents(){
  $('chapterNav').addEventListener('click',e=>{const b=e.target.closest('[data-chapter]');if(b)changeChapter(b.dataset.chapter);});
  $('langEn').onclick=()=>changeLanguage('en');$('langZh').onclick=()=>changeLanguage('zh');
@@ -214,8 +392,18 @@ function initEvents(){
  $('noteInput').addEventListener('input',saveNote);
  $('exportBtn').onclick=()=>{saveDraft();download(JSON.stringify(saved,null,2),'飞飞编程学习记录-'+new Date().toISOString().slice(0,10)+'.json');toast('学习记录已导出，记得保管好。');};
  $('importInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>5000000)throw Error('文件过大');const data=JSON.parse(await f.text());if(data.version!==1||!data.records||!data.drafts)throw Error('文件格式不匹配');const ids=new Set(questions.map(q=>q.id));for(const [id,r]of Object.entries(data.records))if(ids.has(id)&&r&&typeof r==='object')saved.records[id]={...record(id),...r};for(const[id,code]of Object.entries(data.drafts))if(ids.has(id)&&typeof code==='string')saved.drafts[id]=code;for(const[id,note]of Object.entries(data.notes||{}))if(ids.has(id)&&typeof note==='string')saved.notes[id]=note;save();disposeEditor();render();toast('已合并导入学习记录。');}catch(err){toast('无法导入：'+err.message);}e.target.value='';};
+ $('importBankBtn').onclick=()=>{resetBankImportDialog();$('importBankDialog').showModal();};
+ $('closeBankImport').onclick=$('cancelBankImport').onclick=()=>$('importBankDialog').close();
+ $('bankFileInput').onchange=e=>{const f=e.target.files[0];$('bankFileName').textContent=f?f.name:'未选择文件';};
+ $('bankAppendBtn').onclick=()=>startBankImport('append');
+ $('bankReplaceBtn').onclick=()=>{if(!$('bankFileInput').files[0]){toast('请先选择 Excel 文件。');return;}$('clearBankDialog').showModal();};
+ $('closeClearBank').onclick=$('cancelClearBank').onclick=()=>$('clearBankDialog').close();
+ $('confirmClearBank').onclick=()=>{$('clearBankDialog').close();startBankImport('replace');};
+ $('closeBankErrors').onclick=$('confirmBankErrors').onclick=()=>$('bankErrorDialog').close();
+ $('downloadTemplateBtn').onclick=()=>{const a=document.createElement('a');a.href=BANK_TEMPLATE_PATH;a.download='飞飞老师的题库模板.xlsx';document.body.appendChild(a);a.click();a.remove();};
+ $('exportBankBtn').onclick=exportBankWorkbook;
  $('menuBtn').onclick=()=>{$('sidebar').classList.toggle('open');$('mobileShade').classList.toggle('active');};$('mobileShade').onclick=()=>{$('sidebar').classList.remove('open');$('mobileShade').classList.remove('active');};window.addEventListener('beforeunload',saveDraft);
 }
 function loadMonaco(){if(typeof require==='undefined')return;require.config({paths:{vs:'vendor/monaco/vs'}});window.MonacoEnvironment={getWorkerUrl:()=>new URL('vendor/monaco/vs/base/worker/workerMain.js',location.href).href};require(['vs/editor/editor.main'],()=>{monaco.editor.defineTheme('feifei',{base:'vs',inherit:true,rules:[{token:'comment',foreground:'7e8c6c',fontStyle:'italic'},{token:'keyword',foreground:'8d6ca7'},{token:'string',foreground:'6b8f52'},{token:'number',foreground:'b9793f'},{token:'identifier',foreground:'3f4a3e'},{token:'delimiter',foreground:'8a8068'}],colors:{'editor.background':'#fbf6ea','editor.foreground':'#3f4a3e','editorLineNumber.foreground':'#c2b7a0','editorLineNumber.activeForeground':'#8a7a5c','editor.lineHighlightBackground':'#f3ecdd','editorCursor.foreground':'#6e8f58','editor.selectionBackground':'#dce9cf','editor.inactiveSelectionBackground':'#eaf0df','editorIndentGuide.background1':'#e9dec9','editorWidget.background':'#fcf8ee'}});monaco.editor.setTheme('feifei');monacoReady=true;if(current?.type==='code'){saveDraft();disposeEditor();mountEditor(current);}colorize();},()=>toast('高亮编辑器未能加载，已使用基础输入框。'));}
-async function boot(){try{meta=await(await fetch('data/chapters.json')).json();const chunks=await Promise.all(meta.chapters.map(async c=>{const r=await fetch('data/'+c.id+'.json');if(!r.ok)throw Error(c.id+' 题目文件未找到');return r.json();}));questions=chunks.flat();if(!meta.chapters.some(c=>c.id===chapter))chapter='lecture1';initEvents();render();loadMonaco();}catch(e){$('questionCard').innerHTML='<div class="empty-state"><p>题库暂时未能载入。请刷新页面或检查网络后重试。</p><pre>'+esc(e.message)+'</pre><button class="button" onclick="location.reload()">重新载入</button></div>';}}
+async function boot(){try{let stored=null;try{stored=await loadStoredBank();}catch(e){}if(stored&&Array.isArray(stored.chapters)&&Array.isArray(stored.questions)&&stored.chapters.length&&stored.questions.length){meta={title:'飞飞老师的题库',chapters:stored.chapters};questions=stored.questions;bankIsCustom=true;}else{meta=await(await fetch('data/chapters.json')).json();const chunks=await Promise.all(meta.chapters.map(async c=>{const r=await fetch('data/'+c.id+'.json');if(!r.ok)throw Error(c.id+' 题目文件未找到');return r.json();}));questions=chunks.flat();}if(!meta.chapters.some(c=>c.id===chapter))chapter=meta.chapters[0]?.id||'lecture1';initEvents();updateBankMeta();render();loadMonaco();}catch(e){$('questionCard').innerHTML='<div class="empty-state"><p>题库暂时未能载入。请刷新页面或检查网络后重试。</p><pre>'+esc(e.message)+'</pre><button class="button" onclick="location.reload()">重新载入</button></div>';}}
 boot();
