@@ -1,0 +1,15 @@
+# Render Blueprint — static site for 飞飞老师的题库
+# Repo root is the publish directory: no build step required.
+services:
+  - type: web
+    name: feifei-python-practice
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: ./
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /app.js
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
