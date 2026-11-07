@@ -2,7 +2,7 @@
 
 按5份章节讲义和2份Tutorial编写的420道Python双语练习：每章60题，36道选择题、24道编程题。
 
-练习网站：https://pythonpra.netlify.app/ （同步发布：https://ahucslf.github.io/feifei-python-practice/）
+练习网站：https://feifei-python-practice.onrender.com/ （镜像：https://ahucslf.github.io/feifei-python-practice/）
 
 ## 功能
 - 默认英文题目，可切换中文题干、选项和解析；首页标题使用站酷快乐体（ZCOOL KuaiLe，OFL 1.1）子集字体，页头插画加高并完整显示 Python 标志。
