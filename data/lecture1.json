@@ -1,2842 +1,2842 @@
 [
-  {
-    "id": "L1-001",
-    "chapter": "lecture1",
-    "topic": "workflow",
-    "topicLabel": {
-      "en": "Computational thinking & tools",
-      "zh": "计算思维与开发工具"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Checking AI code",
-      "zh": "检查AI生成的代码"
-    },
-    "prompt": {
-      "en": "An AI tool generates a program for calculating a bill. What should you do before trusting it?",
-      "zh": "AI工具生成了计算账单的程序。在相信结果前，最合适的做法是什么？"
-    },
-    "explanation": {
-      "en": "Running without an error only means Python could execute the instructions. A wrong formula can still produce a plausible-looking number. Compare the result with a small bill you can calculate by hand.",
-      "zh": "能够运行只说明Python执行了这些指令，并不说明账算对了。公式写错也可能得到一个看似合理的数。先用可以手算的小账单核对，再看边界情况。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 1",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Understand the intended calculation and test known examples.",
-        "zh": "理解应该怎样计算，并用已知结果的例子测试。"
-      },
-      {
-        "en": "Trust it because it runs without an error.",
-        "zh": "只要不报错就相信它。"
-      },
-      {
-        "en": "Check only whether the code is long.",
-        "zh": "只检查代码是否足够长。"
-      },
-      {
-        "en": "Delete all comments to make it reliable.",
-        "zh": "删掉全部注释就能保证可靠。"
-      }
-    ],
-    "answer": 0
+ {
+  "id": "L1-001",
+  "chapter": "lecture1",
+  "topic": "workflow",
+  "topicLabel": {
+   "en": "Computational thinking & tools",
+   "zh": "计算思维与开发工具"
   },
-  {
-    "id": "L1-002",
-    "chapter": "lecture1",
-    "topic": "workflow",
-    "topicLabel": {
-      "en": "Computational thinking & tools",
-      "zh": "计算思维与开发工具"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "A useful first step",
-      "zh": "解决问题的第一步"
-    },
-    "prompt": {
-      "en": "You need a program to produce a greeting from a first name and a last name. Which plan is the clearest?",
-      "zh": "你要根据名和姓生成问候语，哪个计划最清楚？"
-    },
-    "explanation": {
-      "en": "First identify the input and the exact output. Then split the transformation into small steps. This is the same input-combine-display structure used in the lecture greeting example.",
-      "zh": "先说明输入是什么、希望输出什么，再把中间过程拆成小步骤。读入两个名字、加空格拼起来、显示问候语，就是讲义例题中的清晰流程。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 1",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Choose random output and hope it matches.",
-        "zh": "随机输出，希望恰好正确。"
-      },
-      {
-        "en": "Start importing every installed library.",
-        "zh": "先导入所有已经安装的库。"
-      },
-      {
-        "en": "Write many lines before deciding what the output should be.",
-        "zh": "还没确定输出就开始写很多代码。"
-      },
-      {
-        "en": "Read both names, combine them with a space, then display the greeting.",
-        "zh": "读入名和姓，用一个空格连接，再显示问候语。"
-      }
-    ],
-    "answer": 3
+  "difficulty": 1,
+  "title": {
+   "en": "Checking AI code",
+   "zh": "检查AI生成的代码"
   },
-  {
-    "id": "L1-003",
-    "chapter": "lecture1",
-    "topic": "workflow",
-    "topicLabel": {
-      "en": "Computational thinking & tools",
-      "zh": "计算思维与开发工具"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Source file",
-      "zh": "Python源文件"
-    },
-    "prompt": {
-      "en": "Which file normally stores a plain-text Python script?",
-      "zh": "哪种文件通常保存纯文本Python脚本？"
-    },
-    "explanation": {
-      "en": "A .py file stores Python source code as text. Images and sound files store different kinds of data. A .ipynb notebook is a different format containing cells and metadata.",
-      "zh": ".py文件保存文本形式的Python源代码，图片和音频文件保存的是其他数据。.ipynb也是Python学习中常见的文件，但它是包含单元格等信息的Notebook格式。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 2",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "lesson.csv",
-        "zh": "lesson.csv"
-      },
-      {
-        "en": "lesson.mp3",
-        "zh": "lesson.mp3"
-      },
-      {
-        "en": "lesson.py",
-        "zh": "lesson.py"
-      },
-      {
-        "en": "lesson.png",
-        "zh": "lesson.png"
-      }
-    ],
-    "answer": 2
+  "prompt": {
+   "en": "An AI tool generates a program for calculating a bill. What should you do before trusting it?",
+   "zh": "AI工具生成了计算账单的程序。在相信结果前，最合适的做法是什么？"
   },
-  {
-    "id": "L1-004",
-    "chapter": "lecture1",
-    "topic": "workflow",
-    "topicLabel": {
-      "en": "Computational thinking & tools",
-      "zh": "计算思维与开发工具"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Execution pipeline",
-      "zh": "Python的执行过程"
-    },
-    "prompt": {
-      "en": "In the simplified CPython pipeline shown in the lecture, what is the correct order?",
-      "zh": "按讲义中的简化CPython流程，执行顺序是什么？"
-    },
-    "explanation": {
-      "en": "The compiler translates the source into bytecode. The virtual machine then executes that bytecode. This is a simplified description of CPython, not a promise that every Python implementation works identically.",
-      "zh": "编译器先把源代码转换为字节码，再由虚拟机执行字节码。可以把它理解成先翻译指令，再执行指令。这里沿用讲义的CPython简化模型，并非声称所有Python实现的内部过程完全相同。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 2",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Compiler → spreadsheet → source code → audio",
-        "zh": "编译器 → 表格 → 源代码 → 音频"
-      },
-      {
-        "en": "Source code → compiler → bytecode → virtual machine",
-        "zh": "源代码 → 编译器 → 字节码 → 虚拟机"
-      },
-      {
-        "en": "Source code → virtual machine → photograph → compiler",
-        "zh": "源代码 → 虚拟机 → 图片 → 编译器"
-      },
-      {
-        "en": "Bytecode → source code → keyboard → compiler",
-        "zh": "字节码 → 源代码 → 键盘 → 编译器"
-      }
-    ],
-    "answer": 1
+  "explanation": {
+   "en": "Running without an error only means Python could execute the instructions. A wrong formula can still produce a plausible-looking number. Compare the result with a small bill you can calculate by hand.",
+   "zh": "能够运行只说明Python执行了这些指令，并不说明账算对了。公式写错也可能得到一个看似合理的数。先用可以手算的小账单核对，再看边界情况。"
   },
-  {
-    "id": "L1-005",
-    "chapter": "lecture1",
-    "topic": "workflow",
-    "topicLabel": {
-      "en": "Computational thinking & tools",
-      "zh": "计算思维与开发工具"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "What an IDE offers",
-      "zh": "IDE提供什么"
-    },
-    "prompt": {
-      "en": "Which task is a typical purpose of an integrated development environment (IDE)?",
-      "zh": "集成开发环境IDE通常用于哪项任务？"
-    },
-    "explanation": {
-      "en": "An IDE brings useful programming tools together, such as an editor and a way to run code. It helps you work, but it cannot guarantee that your reasoning is correct. Tests and understanding are still needed.",
-      "zh": "IDE把编辑、运行和检查代码的工具放在一起，方便开发。它能帮助发现问题，却不能保证你的业务公式和推理正确。因此仍然需要理解程序和设计测试。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 2",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Editing, running and inspecting program code",
-        "zh": "编辑、运行和检查程序代码"
-      },
-      {
-        "en": "Guaranteeing that every formula is correct",
-        "zh": "保证每一个公式都正确"
-      },
-      {
-        "en": "Replacing all programming knowledge",
-        "zh": "取代全部编程知识"
-      },
-      {
-        "en": "Converting every Python file into an image",
-        "zh": "把所有Python文件转换成图片"
-      }
-    ],
-    "answer": 0
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 1",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-006",
-    "chapter": "lecture1",
-    "topic": "notebook",
-    "topicLabel": {
-      "en": "Notebook execution",
-      "zh": "Notebook执行顺序"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Markdown or code",
-      "zh": "Markdown与代码单元"
-    },
-    "prompt": {
-      "en": "Which notebook cell is intended for explanatory text, headings and formulas?",
-      "zh": "Notebook中哪种单元格适合放说明文字、标题和公式？"
-    },
-    "explanation": {
-      "en": "Markdown cells describe and explain the work. Code cells contain instructions to execute. Keeping explanations in Markdown makes the notebook easier to read.",
-      "zh": "Markdown单元格负责说明、标题和公式，代码单元格负责执行指令。把说明与程序区分开，Notebook就更像一份能够运行的讲义。执行编号本身不是单元格类型。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Code cell only",
-        "zh": "只能用代码单元格"
-      },
-      {
-        "en": "The kernel process",
-        "zh": "内核进程"
-      },
-      {
-        "en": "An execution counter",
-        "zh": "执行编号"
-      },
-      {
-        "en": "Markdown cell",
-        "zh": "Markdown单元格"
-      }
-    ],
-    "answer": 3
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Understand the intended calculation and test known examples.",
+    "zh": "理解应该怎样计算，并用已知结果的例子测试。"
+   },
+   {
+    "en": "Trust it because it runs without an error.",
+    "zh": "只要不报错就相信它。"
+   },
+   {
+    "en": "Check only whether the code is long.",
+    "zh": "只检查代码是否足够长。"
+   },
+   {
+    "en": "Delete all comments to make it reliable.",
+    "zh": "删掉全部注释就能保证可靠。"
+   }
+  ],
+  "answer": 0
+ },
+ {
+  "id": "L1-002",
+  "chapter": "lecture1",
+  "topic": "workflow",
+  "topicLabel": {
+   "en": "Computational thinking & tools",
+   "zh": "计算思维与开发工具"
   },
-  {
-    "id": "L1-007",
-    "chapter": "lecture1",
-    "topic": "notebook",
-    "topicLabel": {
-      "en": "Notebook execution",
-      "zh": "Notebook执行顺序"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Execution order matters",
-      "zh": "执行顺序很重要"
-    },
-    "prompt": {
-      "en": "A fresh notebook kernel runs cell B (`print(score)`) before cell A (`score = 8`). What happens in B?",
-      "zh": "刚启动的Notebook内核先运行B单元格`print(score)`，之后才运行A单元格`score = 8`。B会怎样？"
-    },
-    "explanation": {
-      "en": "The kernel knows only the statements already executed. The visual position of a cell does not create its variables. Run the assignment before using score, or run all cells from the top.",
-      "zh": "内核只记得已经执行过的语句，不会因为赋值单元格放在上方就自动执行它。score还不存在，读取它会报NameError。先运行赋值，或从头依次运行全部单元格。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "It automatically runs A first.",
-        "zh": "会自动先运行A。"
-      },
-      {
-        "en": "It prints the word score.",
-        "zh": "会打印单词score。"
-      },
-      {
-        "en": "A NameError occurs because score is not defined yet.",
-        "zh": "score还没有定义，因此出现NameError。"
-      },
-      {
-        "en": "It prints 8 because A is visually above B.",
-        "zh": "A在页面上方，所以会打印8。"
-      }
-    ],
-    "answer": 2,
-    "verification": "try:\n exec('print(score)', {})\nexcept NameError:\n pass\nelse:\n raise AssertionError('Expected NameError')"
+  "difficulty": 1,
+  "title": {
+   "en": "A useful first step",
+   "zh": "解决问题的第一步"
   },
-  {
-    "id": "L1-008",
-    "chapter": "lecture1",
-    "topic": "notebook",
-    "topicLabel": {
-      "en": "Notebook execution",
-      "zh": "Notebook执行顺序"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "A stale notebook value",
-      "zh": "Notebook中的旧值"
-    },
-    "prompt": {
-      "en": "Run `price = 10`, then `total = price + 5`. Next run only `price = 20`. What is total now?",
-      "zh": "先运行`price = 10`，再运行`total = price + 5`，最后只运行`price = 20`。此时total是多少？"
-    },
-    "explanation": {
-      "en": "total was calculated when price was 10. Changing price later does not recalculate previous statements. To obtain 25, run the total assignment again.",
-      "zh": "计算total时price还是10，因此total保存的是15。变量之间不是电子表格那种自动更新的公式关系。后来改price不会重算旧语句，需要再次运行total的赋值语句。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "It no longer exists.",
-        "zh": "It no longer exists."
-      },
-      {
-        "en": "15",
-        "zh": "15"
-      },
-      {
-        "en": "25",
-        "zh": "25"
-      },
-      {
-        "en": "20",
-        "zh": "20"
-      }
-    ],
-    "answer": 1,
-    "verification": "price=10\ntotal=price+5\nprice=20\nassert total==15"
+  "prompt": {
+   "en": "You need a program to produce a greeting from a first name and a last name. Which plan is the clearest?",
+   "zh": "你要根据名和姓生成问候语，哪个计划最清楚？"
   },
-  {
-    "id": "L1-009",
-    "chapter": "lecture1",
-    "topic": "notebook",
-    "topicLabel": {
-      "en": "Notebook execution",
-      "zh": "Notebook执行顺序"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Restarting the kernel",
-      "zh": "重启内核"
-    },
-    "prompt": {
-      "en": "What normally happens to variables created in memory when a notebook kernel is restarted?",
-      "zh": "Notebook重启内核后，之前在内存中创建的变量通常怎样？"
-    },
-    "explanation": {
-      "en": "The kernel is the running interpreter holding the variables. Restarting it gives you a fresh interpreter. Saved code remains in the notebook, but its variables need to be recreated by execution.",
-      "zh": "内核就是正在运行并保管变量的解释器。重启相当于换成一个新的解释器，内存中的变量要重新创建。Notebook文件中的代码仍在，但需要再次执行才会产生这些变量。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "They disappear until the relevant cells are run again.",
-        "zh": "重新运行相关单元格之前，它们不再存在。"
-      },
-      {
-        "en": "They are permanently written into every cell.",
-        "zh": "它们会永久写进每个单元格。"
-      },
-      {
-        "en": "They all become zero.",
-        "zh": "它们都会变为0。"
-      },
-      {
-        "en": "They are converted into Markdown.",
-        "zh": "它们都会变成Markdown。"
-      }
-    ],
-    "answer": 0
+  "explanation": {
+   "en": "First identify the input and the exact output. Then split the transformation into small steps. This is the same input-combine-display structure used in the lecture greeting example.",
+   "zh": "先说明输入是什么、希望输出什么，再把中间过程拆成小步骤。读入两个名字、加空格拼起来、显示问候语，就是讲义例题中的清晰流程。"
   },
-  {
-    "id": "L1-010",
-    "chapter": "lecture1",
-    "topic": "notebook",
-    "topicLabel": {
-      "en": "Notebook execution",
-      "zh": "Notebook执行顺序"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Execution counters",
-      "zh": "执行编号的含义"
-    },
-    "prompt": {
-      "en": "What does `[12]` beside an executed notebook code cell normally indicate?",
-      "zh": "已执行代码单元格旁边的`[12]`通常表示什么？"
-    },
-    "explanation": {
-      "en": "The number records when the cell was executed in that kernel session. It is not a result, a line number or a duration. Out-of-order numbers are a useful clue when investigating stale values.",
-      "zh": "编号记录当前内核会话中的执行次序，不是输出结果，也不是代码行号或耗时。若编号顺序与页面上下顺序不同，排查问题时就要留意是否使用了旧变量。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Its row number in the notebook file",
-        "zh": "Notebook文件中的行号"
-      },
-      {
-        "en": "That its output equals 12",
-        "zh": "它的输出等于12"
-      },
-      {
-        "en": "That it ran for exactly 12 seconds",
-        "zh": "它恰好运行了12秒"
-      },
-      {
-        "en": "Its execution order in the current kernel session",
-        "zh": "当前内核会话中的执行次序"
-      }
-    ],
-    "answer": 3
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 1",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-011",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Spaces in print",
-      "zh": "print中的空格"
-    },
-    "prompt": {
-      "en": "What is printed?\n```python\nprint(\"Tea\", \"time\")\n```",
-      "zh": "下面代码打印什么？\n```python\nprint(\"Tea\", \"time\")\n```"
-    },
-    "explanation": {
-      "en": "With separate arguments, print inserts a space by default. The quotation marks describe strings in the source code and are not printed. Concatenation with + would need an explicit space.",
-      "zh": "print收到两个参数时，默认会在它们中间加一个空格。引号用来标明代码里的字符串，并不会跟着打印出来。若改用加号拼接，则要自己补上空格。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "\"Tea\" \"time\"",
-        "zh": "\"Tea\" \"time\""
-      },
-      {
-        "en": "Tea,time",
-        "zh": "Tea,time"
-      },
-      {
-        "en": "Tea time",
-        "zh": "Tea time"
-      },
-      {
-        "en": "Teatime",
-        "zh": "Teatime"
-      }
-    ],
-    "answer": 2,
-    "verification": "import io,contextlib\nb=io.StringIO()\nwith contextlib.redirect_stdout(b): print(\"Tea\",\"time\")\nassert b.getvalue()==\"Tea time\\n\""
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Choose random output and hope it matches.",
+    "zh": "随机输出，希望恰好正确。"
+   },
+   {
+    "en": "Start importing every installed library.",
+    "zh": "先导入所有已经安装的库。"
+   },
+   {
+    "en": "Write many lines before deciding what the output should be.",
+    "zh": "还没确定输出就开始写很多代码。"
+   },
+   {
+    "en": "Read both names, combine them with a space, then display the greeting.",
+    "zh": "读入名和姓，用一个空格连接，再显示问候语。"
+   }
+  ],
+  "answer": 3
+ },
+ {
+  "id": "L1-003",
+  "chapter": "lecture1",
+  "topic": "workflow",
+  "topicLabel": {
+   "en": "Computational thinking & tools",
+   "zh": "计算思维与开发工具"
   },
-  {
-    "id": "L1-012",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Concatenation has no separator",
-      "zh": "字符串拼接不会自动加空格"
-    },
-    "prompt": {
-      "en": "What is printed?\n```python\nprint(\"Blue\" + \"Bird\")\n```",
-      "zh": "下面代码打印什么？\n```python\nprint(\"Blue\" + \"Bird\")\n```"
-    },
-    "explanation": {
-      "en": "The + operator joins the two strings exactly as written. There is no space inside either string, so none appears in the result. Add \" \" explicitly when a separator is required.",
-      "zh": "加号会把两个字符串原样连接起来。两边都没有空格，结果当然也没有空格。需要空格时，应写成\"Blue\" + \" \" + \"Bird\"。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "\"BlueBird\"",
-        "zh": "\"BlueBird\""
-      },
-      {
-        "en": "BlueBird",
-        "zh": "BlueBird"
-      },
-      {
-        "en": "Blue Bird",
-        "zh": "Blue Bird"
-      },
-      {
-        "en": "Blue+Bird",
-        "zh": "Blue+Bird"
-      }
-    ],
-    "answer": 1,
-    "verification": "assert \"Blue\"+\"Bird\"==\"BlueBird\""
+  "difficulty": 1,
+  "title": {
+   "en": "Source file",
+   "zh": "Python源文件"
   },
-  {
-    "id": "L1-013",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Literal versus variable",
-      "zh": "字符串常量与变量"
-    },
-    "prompt": {
-      "en": "After `city = \"Leiden\"`, which statement prints the stored city name?",
-      "zh": "执行`city = \"Leiden\"`后，哪条语句会打印变量中保存的城市名？"
-    },
-    "explanation": {
-      "en": "Without quotes, city means look up the variable. With quotes, \"city\" is just the four-letter text. This distinction is one of the first things to check when a program prints the wrong words.",
-      "zh": "不加引号的city表示读取变量的值；加了引号的\"city\"只是四个字母组成的文本。程序打印出变量名字而不是内容时，先检查是不是误加了引号。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "print(city)",
-        "zh": "print(city)"
-      },
-      {
-        "en": "print(\"city\")",
-        "zh": "print(\"city\")"
-      },
-      {
-        "en": "print(\"Leiden = city\")",
-        "zh": "print(\"Leiden = city\")"
-      },
-      {
-        "en": "print(\"print(city)\")",
-        "zh": "print(\"print(city)\")"
-      }
-    ],
-    "answer": 0,
-    "verification": "city=\"Leiden\"\nassert city==\"Leiden\""
+  "prompt": {
+   "en": "Which file normally stores a plain-text Python script?",
+   "zh": "哪种文件通常保存纯文本Python脚本？"
   },
-  {
-    "id": "L1-014",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "What input returns",
-      "zh": "input返回什么"
-    },
-    "prompt": {
-      "en": "If the user types `42` at `answer = input()`, what type is answer immediately afterwards?",
-      "zh": "用户在`answer = input()`时输入`42`，刚读入的answer是什么类型？"
-    },
-    "explanation": {
-      "en": "input reads keyboard text and returns a string. Digits do not automatically make the result numeric. A later explicit conversion is needed before treating it as a number.",
-      "zh": "input读入的是键盘文本，返回字符串。看起来是数字的42也不会自动变成整数。后续若要进行数值计算，需要明确转换类型。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4; Python Fundamentals Challenges · Challenge 3: Seeing Data Types",
-      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "int",
-        "zh": "int"
-      },
-      {
-        "en": "float",
-        "zh": "float"
-      },
-      {
-        "en": "bool",
-        "zh": "bool"
-      },
-      {
-        "en": "str",
-        "zh": "str"
-      }
-    ],
-    "answer": 3
+  "explanation": {
+   "en": "A .py file stores Python source code as text. Images and sound files store different kinds of data. A .ipynb notebook is a different format containing cells and metadata.",
+   "zh": ".py文件保存文本形式的Python源代码，图片和音频文件保存的是其他数据。.ipynb也是Python学习中常见的文件，但它是包含单元格等信息的Notebook格式。"
   },
-  {
-    "id": "L1-015",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "A name with an apostrophe",
-      "zh": "名字中的撇号"
-    },
-    "prompt": {
-      "en": "Which line is valid and prints `I'm ready`?",
-      "zh": "哪一行语法正确，并打印`I'm ready`？"
-    },
-    "explanation": {
-      "en": "The apostrophe can appear safely inside a double-quoted string. With single quotes on the outside, an unescaped apostrophe would end the string too early. The opening and closing quotation marks must match.",
-      "zh": "外层用双引号时，里面的撇号不会结束字符串。如果外层也用单引号，这个撇号就可能使字符串提前结束。首先检查两端引号是否配对。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "print(I'm ready)",
-        "zh": "print(I'm ready)"
-      },
-      {
-        "en": "print(\"I'm ready')",
-        "zh": "print(\"I'm ready')"
-      },
-      {
-        "en": "print(\"I'm ready\")",
-        "zh": "print(\"I'm ready\")"
-      },
-      {
-        "en": "print('I'm ready')",
-        "zh": "print('I'm ready')"
-      }
-    ],
-    "answer": 2,
-    "verification": "compile('print(\"I\\'m ready\")',\"<check>\",\"exec\")"
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 2",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-016",
-    "chapter": "lecture1",
-    "topic": "statements",
-    "topicLabel": {
-      "en": "Statements & comments",
-      "zh": "语句与注释"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Comments are ignored",
-      "zh": "注释不参与执行"
-    },
-    "prompt": {
-      "en": "What is printed?\n```python\n# print(\"Monday\")\nprint(\"Tuesday\")  # current example\n```",
-      "zh": "下面代码打印什么？\n```python\n# print(\"Monday\")\nprint(\"Tuesday\")  # current example\n```"
-    },
-    "explanation": {
-      "en": "A # outside a string starts a comment that continues to the end of that line. The first print is entirely commented out. The second print still runs because its comment begins afterwards.",
-      "zh": "字符串外的#会让其后的本行内容变成注释。第一行的print整个被注释掉了；第二行先执行print，末尾的说明文字不参与执行，因此只打印Tuesday。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Nothing",
-        "zh": "Nothing"
-      },
-      {
-        "en": "Tuesday",
-        "zh": "Tuesday"
-      },
-      {
-        "en": "Monday",
-        "zh": "Monday"
-      },
-      {
-        "en": "Monday Tuesday",
-        "zh": "Monday Tuesday"
-      }
-    ],
-    "answer": 1
+  "type": "mcq",
+  "options": [
+   {
+    "en": "lesson.csv",
+    "zh": "lesson.csv"
+   },
+   {
+    "en": "lesson.mp3",
+    "zh": "lesson.mp3"
+   },
+   {
+    "en": "lesson.py",
+    "zh": "lesson.py"
+   },
+   {
+    "en": "lesson.png",
+    "zh": "lesson.png"
+   }
+  ],
+  "answer": 2
+ },
+ {
+  "id": "L1-004",
+  "chapter": "lecture1",
+  "topic": "workflow",
+  "topicLabel": {
+   "en": "Computational thinking & tools",
+   "zh": "计算思维与开发工具"
   },
-  {
-    "id": "L1-017",
-    "chapter": "lecture1",
-    "topic": "statements",
-    "topicLabel": {
-      "en": "Statements & comments",
-      "zh": "语句与注释"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "A hash inside text",
-      "zh": "文本里的井号"
-    },
-    "prompt": {
-      "en": "What is printed?\n```python\nprint(\"Room #4\")\n```",
-      "zh": "下面代码打印什么？\n```python\nprint(\"Room #4\")\n```"
-    },
-    "explanation": {
-      "en": "Inside quotation marks, # is an ordinary character. It only starts a comment outside a string. Reading quotes first prevents confusing data with Python instructions.",
-      "zh": "引号内部的#只是普通文本字符，不会开始注释。只有字符串外部的#才有注释作用。读代码时先看清引号范围，就不容易把数据误当成指令。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Room #4",
-        "zh": "Room #4"
-      },
-      {
-        "en": "Room ",
-        "zh": "Room "
-      },
-      {
-        "en": "4",
-        "zh": "4"
-      },
-      {
-        "en": "SyntaxError",
-        "zh": "SyntaxError"
-      }
-    ],
-    "answer": 0,
-    "verification": "assert \"Room #4\"==\"Room #4\""
+  "difficulty": 2,
+  "title": {
+   "en": "Execution pipeline",
+   "zh": "Python的执行过程"
   },
-  {
-    "id": "L1-018",
-    "chapter": "lecture1",
-    "topic": "statements",
-    "topicLabel": {
-      "en": "Statements & comments",
-      "zh": "语句与注释"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Two statements on one line",
-      "zh": "一行中的两条语句"
-    },
-    "prompt": {
-      "en": "Which separator allows two simple Python statements on one line, although one per line is clearer?",
-      "zh": "虽然每行一条语句更清晰，但Python允许用哪个符号在同一行分隔两条简单语句？"
-    },
-    "explanation": {
-      "en": "A semicolon can separate simple statements such as x = 1; print(x). The lecture recommends separate lines because they are easier to read and debug. A colon serves different syntax, such as introducing a block.",
-      "zh": "分号可以把x = 1; print(x)这样的简单语句放在一行。讲义仍建议每行一条，因为更容易读懂和定位错误。冒号通常用于引出代码块，不能在这里代替分号。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 6",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": ": ",
-        "zh": ": "
-      },
-      {
-        "en": ". ",
-        "zh": ". "
-      },
-      {
-        "en": "? ",
-        "zh": "? "
-      },
-      {
-        "en": "; ",
-        "zh": "; "
-      }
-    ],
-    "answer": 3,
-    "verification": "a={}\nexec(\"x=1; y=x+2\",a)\nassert a[\"y\"]==3"
+  "prompt": {
+   "en": "In the simplified CPython pipeline shown in the lecture, what is the correct order?",
+   "zh": "按讲义中的简化CPython流程，执行顺序是什么？"
   },
-  {
-    "id": "L1-019",
-    "chapter": "lecture1",
-    "topic": "modules",
-    "topicLabel": {
-      "en": "Using modules",
-      "zh": "模块的导入与使用"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Using a module constant",
-      "zh": "使用模块常量"
-    },
-    "prompt": {
-      "en": "After `import math`, which expression accesses π from that module?",
-      "zh": "执行`import math`后，哪个表达式读取该模块中的π？"
-    },
-    "explanation": {
-      "en": "The module name goes before the dot and the member name after it. import math creates the name math; it does not automatically create a bare name pi. The same pattern is used for module functions.",
-      "zh": "点号前面是模块名，后面是其中的成员名。import math创建了math这个名字，并不会单独创建pi变量。使用模块函数时也遵循“模块名.函数名”的形式。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "math(pi)",
-        "zh": "math(pi)"
-      },
-      {
-        "en": "import.pi",
-        "zh": "import.pi"
-      },
-      {
-        "en": "math.pi",
-        "zh": "math.pi"
-      },
-      {
-        "en": "pi.math",
-        "zh": "pi.math"
-      }
-    ],
-    "answer": 2,
-    "verification": "import math\nassert math.pi>3.14"
+  "explanation": {
+   "en": "The compiler translates the source into bytecode. The virtual machine then executes that bytecode. This is a simplified description of CPython, not a promise that every Python implementation works identically.",
+   "zh": "编译器先把源代码转换为字节码，再由虚拟机执行字节码。可以把它理解成先翻译指令，再执行指令。这里沿用讲义的CPython简化模型，并非声称所有Python实现的内部过程完全相同。"
   },
-  {
-    "id": "L1-020",
-    "chapter": "lecture1",
-    "topic": "modules",
-    "topicLabel": {
-      "en": "Using modules",
-      "zh": "模块的导入与使用"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Missing import",
-      "zh": "忘记导入模块"
-    },
-    "prompt": {
-      "en": "In a fresh kernel, `print(math.pi)` runs without any previous import. What is the likely error?",
-      "zh": "在新内核中，未导入任何模块便运行`print(math.pi)`，最可能出现什么错误？"
-    },
-    "explanation": {
-      "en": "The expression has valid syntax, but the name math has not been defined. Import the module before accessing it. This is a runtime name lookup problem, not a missing quotation mark.",
-      "zh": "这条语句的语法没有问题，但运行时找不到math这个名字。应先import math，再读取math.pi。这属于运行时的名字查找问题，不是引号没配好的语法问题。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "No error; every module is always imported.",
-        "zh": "No error; every module is always imported."
-      },
-      {
-        "en": "NameError",
-        "zh": "NameError"
-      },
-      {
-        "en": "SyntaxError",
-        "zh": "SyntaxError"
-      },
-      {
-        "en": "ZeroDivisionError",
-        "zh": "ZeroDivisionError"
-      }
-    ],
-    "answer": 1,
-    "verification": "try:\n exec(\"print(math.pi)\",{})\nexcept NameError: pass\nelse: raise AssertionError()"
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 2",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-021",
-    "chapter": "lecture1",
-    "topic": "modules",
-    "topicLabel": {
-      "en": "Using modules",
-      "zh": "模块的导入与使用"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Why use modules?",
-      "zh": "为什么使用模块"
-    },
-    "prompt": {
-      "en": "What is a main reason to import a library module?",
-      "zh": "导入库模块的主要目的是什么？"
-    },
-    "explanation": {
-      "en": "A module groups reusable code, such as mathematical functions. Reusing it saves you from writing every tool yourself. You still need to choose the right function and check the result.",
-      "zh": "模块把可重复使用的代码放在一起，例如数学函数。导入模块能避免把每个工具重新写一遍，但你仍需选对函数并检查结果，导入本身不会消除错误。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "To reuse existing functions and constants",
-        "zh": "重复使用现成的函数和常量"
-      },
-      {
-        "en": "To turn all variables into strings",
-        "zh": "把所有变量变成字符串"
-      },
-      {
-        "en": "To remove the need for testing",
-        "zh": "从此不需要测试"
-      },
-      {
-        "en": "To make syntax errors impossible",
-        "zh": "让语法错误不可能发生"
-      }
-    ],
-    "answer": 0
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Compiler → spreadsheet → source code → audio",
+    "zh": "编译器 → 表格 → 源代码 → 音频"
+   },
+   {
+    "en": "Source code → compiler → bytecode → virtual machine",
+    "zh": "源代码 → 编译器 → 字节码 → 虚拟机"
+   },
+   {
+    "en": "Source code → virtual machine → photograph → compiler",
+    "zh": "源代码 → 虚拟机 → 图片 → 编译器"
+   },
+   {
+    "en": "Bytecode → source code → keyboard → compiler",
+    "zh": "字节码 → 源代码 → 键盘 → 编译器"
+   }
+  ],
+  "answer": 1
+ },
+ {
+  "id": "L1-005",
+  "chapter": "lecture1",
+  "topic": "workflow",
+  "topicLabel": {
+   "en": "Computational thinking & tools",
+   "zh": "计算思维与开发工具"
   },
-  {
-    "id": "L1-022",
-    "chapter": "lecture1",
-    "topic": "errors",
-    "topicLabel": {
-      "en": "Recognising & fixing errors",
-      "zh": "识别与修复错误"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Broken quotation marks",
-      "zh": "引号未配对"
-    },
-    "prompt": {
-      "en": "What kind of problem is `label = \"Welcome`?",
-      "zh": "`label = \"Welcome`属于哪类问题？"
-    },
-    "explanation": {
-      "en": "The opening double quote has no matching closing quote. Python cannot finish parsing this statement. Fix its structure before investigating values or formulas.",
-      "zh": "双引号打开后没有关闭，Python无法把这条语句解析完整。这样的错误发生在语法结构层面，应该先补全引号，再讨论变量值和公式是否正确。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Logic error only",
-        "zh": "只有逻辑错误"
-      },
-      {
-        "en": "A correct assignment",
-        "zh": "正确赋值"
-      },
-      {
-        "en": "A random-number error",
-        "zh": "随机数错误"
-      },
-      {
-        "en": "Syntax error",
-        "zh": "语法错误"
-      }
-    ],
-    "answer": 3,
-    "verification": "try:\n compile('label = \"Welcome',\"<q>\",\"exec\")\nexcept SyntaxError: pass\nelse: raise AssertionError()"
+  "difficulty": 1,
+  "title": {
+   "en": "What an IDE offers",
+   "zh": "IDE提供什么"
   },
-  {
-    "id": "L1-023",
-    "chapter": "lecture1",
-    "topic": "errors",
-    "topicLabel": {
-      "en": "Recognising & fixing errors",
-      "zh": "识别与修复错误"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Division by zero",
-      "zh": "除以零"
-    },
-    "prompt": {
-      "en": "What best describes this failure?\n```python\nzero = 0\nresult = 5 / zero\n```",
-      "zh": "下面程序的错误最适合归为哪类？\n```python\nzero = 0\nresult = 5 / zero\n```"
-    },
-    "explanation": {
-      "en": "The statements are syntactically valid, so Python starts executing them. The second statement fails when division uses a zero denominator. The error therefore occurs at runtime.",
-      "zh": "这两条语句的写法符合Python语法，所以程序能够开始运行。但执行除法时发现分母是0，因而中断。这就是运行时错误，不是缺引号造成的语法错误。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Syntax error from missing quotes",
-        "zh": "缺少引号导致的语法错误"
-      },
-      {
-        "en": "No error; result becomes 0",
-        "zh": "没有错误，结果为0"
-      },
-      {
-        "en": "Runtime error",
-        "zh": "运行时错误"
-      },
-      {
-        "en": "Comment formatting only",
-        "zh": "只是注释排版问题"
-      }
-    ],
-    "answer": 2,
-    "verification": "try:\n x=5/0\nexcept ZeroDivisionError: pass\nelse: raise AssertionError()"
+  "prompt": {
+   "en": "Which task is a typical purpose of an integrated development environment (IDE)?",
+   "zh": "集成开发环境IDE通常用于哪项任务？"
   },
-  {
-    "id": "L1-024",
-    "chapter": "lecture1",
-    "topic": "errors",
-    "topicLabel": {
-      "en": "Recognising & fixing errors",
-      "zh": "识别与修复错误"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Wrong but runnable",
-      "zh": "能运行但算错了"
-    },
-    "prompt": {
-      "en": "A program should add 3 and 8, but uses `total = 3 - 8`. It runs and prints -5. What is wrong?",
-      "zh": "程序原本要把3和8相加，却写成`total = 3 - 8`，运行后输出-5。这是什么问题？"
-    },
-    "explanation": {
-      "en": "Subtraction is a valid Python operation, so no exception is required. The instruction simply does not match the intended task. Testing the expected result 11 reveals the logic error.",
-      "zh": "减法是合法操作，所以Python没有理由报错。问题是这条指令与“求和”的任务不一致。用已知应得11的例子测试，就能发现这种逻辑错误。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "The Python interpreter is missing.",
-        "zh": "没有安装Python解释器"
-      },
-      {
-        "en": "Logic error",
-        "zh": "逻辑错误"
-      },
-      {
-        "en": "Syntax error",
-        "zh": "语法错误"
-      },
-      {
-        "en": "NameError",
-        "zh": "NameError"
-      }
-    ],
-    "answer": 1,
-    "verification": "assert 3-8==-5 and 3+8==11"
+  "explanation": {
+   "en": "An IDE brings useful programming tools together, such as an editor and a way to run code. It helps you work, but it cannot guarantee that your reasoning is correct. Tests and understanding are still needed.",
+   "zh": "IDE把编辑、运行和检查代码的工具放在一起，方便开发。它能帮助发现问题，却不能保证你的业务公式和推理正确。因此仍然需要理解程序和设计测试。"
   },
-  {
-    "id": "L1-025",
-    "chapter": "lecture1",
-    "topic": "errors",
-    "topicLabel": {
-      "en": "Recognising & fixing errors",
-      "zh": "识别与修复错误"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Testing a logic error",
-      "zh": "如何发现逻辑错误"
-    },
-    "prompt": {
-      "en": "Which check is most useful for a program that runs but may calculate the wrong total?",
-      "zh": "程序能运行，但可能把总额算错，哪种检查最有帮助？"
-    },
-    "explanation": {
-      "en": "Logic errors may produce no error message at all. A small case with a known answer checks what the program actually computes. Blank lines and file names cannot establish arithmetic correctness.",
-      "zh": "逻辑错误可能完全没有报错提示。用一个可以手算、答案已知的小例子比较，才能检查程序实际算了什么。空行数量和文件名无法证明总额计算正确。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Compare its output with a manually calculated example.",
-        "zh": "用手算结果已知的例子核对输出。"
-      },
-      {
-        "en": "Look only for red error messages.",
-        "zh": "只寻找红色错误信息。"
-      },
-      {
-        "en": "Count the number of blank lines.",
-        "zh": "统计空行数量。"
-      },
-      {
-        "en": "Check only the file name.",
-        "zh": "只检查文件名。"
-      }
-    ],
-    "answer": 0
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 2",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-026",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "A valid variable name",
-      "zh": "合法变量名"
-    },
-    "prompt": {
-      "en": "Which is a valid variable name for storing a ticket price?",
-      "zh": "以下哪个可以用作保存票价的变量名？"
-    },
-    "explanation": {
-      "en": "An underscore is allowed inside an identifier, but a space or hyphen is not. A name also cannot begin with a digit. ticket_price is both valid and descriptive.",
-      "zh": "变量名可以含下划线，但不能含空格或把连字符当作名字的一部分，也不能以数字开头。ticket_price既符合规则，又能说明这个变量保存的是票价。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "2tickets",
-        "zh": "2tickets"
-      },
-      {
-        "en": "ticket-price",
-        "zh": "ticket-price"
-      },
-      {
-        "en": "ticket price",
-        "zh": "ticket price"
-      },
-      {
-        "en": "ticket_price",
-        "zh": "ticket_price"
-      }
-    ],
-    "answer": 3
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Editing, running and inspecting program code",
+    "zh": "编辑、运行和检查程序代码"
+   },
+   {
+    "en": "Guaranteeing that every formula is correct",
+    "zh": "保证每一个公式都正确"
+   },
+   {
+    "en": "Replacing all programming knowledge",
+    "zh": "取代全部编程知识"
+   },
+   {
+    "en": "Converting every Python file into an image",
+    "zh": "把所有Python文件转换成图片"
+   }
+  ],
+  "answer": 0
+ },
+ {
+  "id": "L1-006",
+  "chapter": "lecture1",
+  "topic": "notebook",
+  "topicLabel": {
+   "en": "Notebook execution",
+   "zh": "Notebook执行顺序"
   },
-  {
-    "id": "L1-027",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Assignment runs right to left",
-      "zh": "先计算右边再赋值"
-    },
-    "prompt": {
-      "en": "What is x after this code?\n```python\nx = 7\nx = x + 4\n```",
-      "zh": "以下代码执行后x是多少？\n```python\nx = 7\nx = x + 4\n```"
-    },
-    "explanation": {
-      "en": "Python first reads the old value of x, which is 7, and adds 4. It then assigns the result 11 back to x. Assignment updates a name; it is not a mathematical equation that must be true forever.",
-      "zh": "Python先读取右侧旧的x，也就是7，再加4，最后把结果11赋给左侧的x。赋值是在更新一个名字所引用的值，并不是要求x永远等于x+4的数学等式。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14; Python Fundamentals Challenges · Challenge 1: Check Your Understanding",
-      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "4",
-        "zh": "4"
-      },
-      {
-        "en": "SyntaxError",
-        "zh": "SyntaxError"
-      },
-      {
-        "en": "11",
-        "zh": "11"
-      },
-      {
-        "en": "7",
-        "zh": "7"
-      }
-    ],
-    "answer": 2,
-    "verification": "x=7\nx=x+4\nassert x==11"
+  "difficulty": 1,
+  "title": {
+   "en": "Markdown or code",
+   "zh": "Markdown与代码单元"
   },
-  {
-    "id": "L1-028",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Letter case matters",
-      "zh": "变量名区分大小写"
-    },
-    "prompt": {
-      "en": "What is printed?\n```python\ncity = \"Delft\"\nCity = \"Utrecht\"\nprint(city)\n```",
-      "zh": "下面代码打印什么？\n```python\ncity = \"Delft\"\nCity = \"Utrecht\"\nprint(city)\n```"
-    },
-    "explanation": {
-      "en": "Python treats city and City as different names. Assigning to City does not overwrite city. Consistent naming prevents hard-to-see mistakes involving capital letters.",
-      "zh": "Python区分大小写，city和City是两个不同的名字。给City赋值不会改掉city。变量命名风格保持一致，能减少这类不容易看出来的错误。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "NameError",
-        "zh": "NameError"
-      },
-      {
-        "en": "Delft",
-        "zh": "Delft"
-      },
-      {
-        "en": "Utrecht",
-        "zh": "Utrecht"
-      },
-      {
-        "en": "Delft Utrecht",
-        "zh": "Delft Utrecht"
-      }
-    ],
-    "answer": 1,
-    "verification": "city=\"Delft\"\nCity=\"Utrecht\"\nassert city==\"Delft\""
+  "prompt": {
+   "en": "Which notebook cell is intended for explanatory text, headings and formulas?",
+   "zh": "Notebook中哪种单元格适合放说明文字、标题和公式？"
   },
-  {
-    "id": "L1-029",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Decimal notation",
-      "zh": "小数点的写法"
-    },
-    "prompt": {
-      "en": "Which assignment stores a floating-point number with value twelve and a half?",
-      "zh": "哪条赋值语句会保存数值为十二点五的浮点数？"
-    },
-    "explanation": {
-      "en": "A decimal point belongs inside a Python floating-point literal. Quotation marks would instead make text. The comma in 12,5 separates values rather than acting as a decimal separator.",
-      "zh": "Python中的浮点数字面量使用小数点。写上引号会变成字符串，而12,5中的逗号是在分隔两个值，不表示十二点五。输入习惯和代码中的数字写法要分清。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "amount = 12.5",
-        "zh": "amount = 12.5"
-      },
-      {
-        "en": "amount = \"12.5\"",
-        "zh": "amount = \"12.5\""
-      },
-      {
-        "en": "amount = 12,5",
-        "zh": "amount = 12,5"
-      },
-      {
-        "en": "amount = twelve.five",
-        "zh": "amount = twelve.five"
-      }
-    ],
-    "answer": 0,
-    "verification": "amount=12.5\nassert type(amount) is float"
+  "explanation": {
+   "en": "Markdown cells describe and explain the work. Code cells contain instructions to execute. Keeping explanations in Markdown makes the notebook easier to read.",
+   "zh": "Markdown单元格负责说明、标题和公式，代码单元格负责执行指令。把说明与程序区分开，Notebook就更像一份能够运行的讲义。执行编号本身不是单元格类型。"
   },
-  {
-    "id": "L1-030",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "The later assignment wins",
-      "zh": "重新赋值后的值"
-    },
-    "prompt": {
-      "en": "What is printed?\n```python\nfirst = \"Mila\"\nsecond = first\nfirst = \"Noah\"\nprint(second)\n```",
-      "zh": "下面代码打印什么？\n```python\nfirst = \"Mila\"\nsecond = first\nfirst = \"Noah\"\nprint(second)\n```"
-    },
-    "explanation": {
-      "en": "second keeps its reference to the original string. Reassigning first points first at a different string; it does not rewrite the old string. This is why second still contains Mila.",
-      "zh": "second仍引用原来的字符串Mila。后来给first重新赋值，只是让first指向另一个字符串，并没有改写原来的字符串。因此second仍然是Mila。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16; Python Fundamentals Challenges · Challenge 2: Sorting Out References",
-      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Noah",
-        "zh": "Noah"
-      },
-      {
-        "en": "MilaNoah",
-        "zh": "MilaNoah"
-      },
-      {
-        "en": "NameError",
-        "zh": "NameError"
-      },
-      {
-        "en": "Mila",
-        "zh": "Mila"
-      }
-    ],
-    "answer": 3,
-    "verification": "first=\"Mila\"\nsecond=first\nfirst=\"Noah\"\nassert second==\"Mila\""
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-031",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Looking up a type",
-      "zh": "查看数据类型"
-    },
-    "prompt": {
-      "en": "Which call reports the type of the object currently referenced by value?",
-      "zh": "哪个调用能查看变量value当前所引用对象的类型？"
-    },
-    "explanation": {
-      "en": "type answers what kind of object this is. id answers which particular object it is during its lifetime. A name such as value does not itself force a fixed type.",
-      "zh": "type回答“这是什么类型的对象”，id回答“这是哪一个具体对象”。value这样的变量名本身并不会强迫对象保持某一种类型，类型要看它当前引用的对象。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 18; Python Fundamentals Challenges · Challenge 3: Seeing Data Types",
-      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "print(\"type\")",
-        "zh": "print(\"type\")"
-      },
-      {
-        "en": "input(value)",
-        "zh": "input(value)"
-      },
-      {
-        "en": "type(value)",
-        "zh": "type(value)"
-      },
-      {
-        "en": "id(value)",
-        "zh": "id(value)"
-      }
-    ],
-    "answer": 2
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Code cell only",
+    "zh": "只能用代码单元格"
+   },
+   {
+    "en": "The kernel process",
+    "zh": "内核进程"
+   },
+   {
+    "en": "An execution counter",
+    "zh": "执行编号"
+   },
+   {
+    "en": "Markdown cell",
+    "zh": "Markdown单元格"
+   }
+  ],
+  "answer": 3
+ },
+ {
+  "id": "L1-007",
+  "chapter": "lecture1",
+  "topic": "notebook",
+  "topicLabel": {
+   "en": "Notebook execution",
+   "zh": "Notebook执行顺序"
   },
-  {
-    "id": "L1-032",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Changing a referenced type",
-      "zh": "同名变量可以换类型"
-    },
-    "prompt": {
-      "en": "What is the final type of item?\n```python\nitem = 12\nitem = \"twelve\"\n```",
-      "zh": "下面代码执行完后，item的类型是什么？\n```python\nitem = 12\nitem = \"twelve\"\n```"
-    },
-    "explanation": {
-      "en": "The second assignment makes item refer to a string object. Python names are not permanently tied to their first assigned type. The earlier integer is not converted in place; the name is rebound.",
-      "zh": "第二次赋值让item改为引用一个字符串。Python变量名并不永久绑定第一次赋值时的类型。这里不是把原来的整数原地改成字符串，而是让名字指向另一个对象。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 18",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "It is invalid to change the type.",
-        "zh": "It is invalid to change the type."
-      },
-      {
-        "en": "str",
-        "zh": "str"
-      },
-      {
-        "en": "int",
-        "zh": "int"
-      },
-      {
-        "en": "float",
-        "zh": "float"
-      }
-    ],
-    "answer": 1,
-    "verification": "item=12\nitem=\"twelve\"\nassert type(item) is str"
+  "difficulty": 2,
+  "title": {
+   "en": "Execution order matters",
+   "zh": "执行顺序很重要"
   },
-  {
-    "id": "L1-033",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "An object identity",
-      "zh": "对象身份"
-    },
-    "prompt": {
-      "en": "What can you safely say about id(obj) while that same object remains alive?",
-      "zh": "同一个对象持续存在期间，关于id(obj)可以确定什么？"
-    },
-    "explanation": {
-      "en": "Identity distinguishes a particular live object and stays fixed during that object’s lifetime. It is not the stored value and should not be predicted as a fixed number. After objects are destroyed, an identity value may be reused.",
-      "zh": "身份用于区分正在存在的具体对象，在该对象的一生中保持不变。它不是对象的业务数值，也不应被猜成某个固定数字。对象销毁后，身份值还可能被后来创建的对象重复使用。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Its identity value stays constant.",
-        "zh": "身份值在该对象的一生中保持不变。"
-      },
-      {
-        "en": "It must equal the object's numeric value.",
-        "zh": "身份值一定等于它保存的数值。"
-      },
-      {
-        "en": "It is the same on every computer.",
-        "zh": "身份值在所有电脑上都一样。"
-      },
-      {
-        "en": "It always increases after every print.",
-        "zh": "每次print后身份值都会增大。"
-      }
-    ],
-    "answer": 0
+  "prompt": {
+   "en": "A fresh notebook kernel runs cell B (`print(score)`) before cell A (`score = 8`). What happens in B?",
+   "zh": "刚启动的Notebook内核先运行B单元格`print(score)`，之后才运行A单元格`score = 8`。B会怎样？"
   },
-  {
-    "id": "L1-034",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 3,
-    "title": {
-      "en": "Equality is not identity",
-      "zh": "值相等不等于身份相同"
-    },
-    "prompt": {
-      "en": "You only know `a == b` is True for two separately created values. What can you conclude about `id(a) == id(b)` in general?",
-      "zh": "只知道两个分别创建的值满足`a == b`为True，一般能否断定`id(a) == id(b)`也为True？"
-    },
-    "explanation": {
-      "en": "Equality compares values, while identity compares particular objects. Python may reuse some immutable objects, so an example can sometimes show the same identity. Do not generalise that optimisation into a rule about all equal values.",
-      "zh": "相等比较的是值，身份比较的是具体对象。Python有时会复用某些不可变对象，所以个别实验可能恰好显示身份相同。但这不是所有相等值都必须遵守的规则。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "Yes; equality always guarantees the same identity.",
-        "zh": "能；相等永远保证身份相同。"
-      },
-      {
-        "en": "No; equal values can never share an identity.",
-        "zh": "不能；相等值永远不可能共享身份。"
-      },
-      {
-        "en": "Yes; id() returns the length of each value.",
-        "zh": "能；id()返回的是各值的长度。"
-      },
-      {
-        "en": "No; equal values need not be the same object.",
-        "zh": "不能；值相等并不要求它们是同一个对象。"
-      }
-    ],
-    "answer": 3
+  "explanation": {
+   "en": "The kernel knows only the statements already executed. The visual position of a cell does not create its variables. Run the assignment before using score, or run all cells from the top.",
+   "zh": "内核只记得已经执行过的语句，不会因为赋值单元格放在上方就自动执行它。score还不存在，读取它会报NameError。先运行赋值，或从头依次运行全部单元格。"
   },
-  {
-    "id": "L1-035",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Deleting one name",
-      "zh": "删除一个变量名"
-    },
-    "prompt": {
-      "en": "What is printed?\n```python\na = 1200\nb = a\ndel a\nprint(b)\n```",
-      "zh": "下面代码打印什么？\n```python\na = 1200\nb = a\ndel a\nprint(b)\n```"
-    },
-    "explanation": {
-      "en": "del a removes the name a, not every reference to its object. b still refers to the integer and remains usable. Reading a afterwards would fail, but reading b does not.",
-      "zh": "del a删除的是名字a，不是把指向该对象的所有名字一并删除。b仍引用这个整数，所以能够正常读取。此后再读取a会报错，但读取b不会。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "NameError",
-        "zh": "NameError"
-      },
-      {
-        "en": "The identity number of a",
-        "zh": "The identity number of a"
-      },
-      {
-        "en": "1200",
-        "zh": "1200"
-      },
-      {
-        "en": "0",
-        "zh": "0"
-      }
-    ],
-    "answer": 2,
-    "verification": "a=1200\nb=a\ndel a\nassert b==1200"
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-036",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 3,
-    "title": {
-      "en": "The lecture assignment",
-      "zh": "讲义综合赋值题"
-    },
-    "prompt": {
-      "en": "After `x = 123.7` and `x = x + 100.5`, which statement is guaranteed on normal Python floating-point arithmetic?",
-      "zh": "执行`x = 123.7`和`x = x + 100.5`后，哪项结论可以确定？"
-    },
-    "explanation": {
-      "en": "The addition produces a floating-point result near 224.2. Its identity is not a meaningful business number and cannot be predicted here. The lecture asks you to inspect value, type and identity as three different properties.",
-      "zh": "浮点加法得到接近224.2的结果，类型仍为float。身份值不代表业务金额，也无法在题目中提前猜定。这个例题就是要区分值、类型和身份这三个不同的属性。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 26",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "mcq",
-    "options": [
-      {
-        "en": "x is still exactly the original object because names never change references.",
-        "zh": "变量名不能换引用，因此x仍是原对象。"
-      },
-      {
-        "en": "x is a float approximately equal to 224.2.",
-        "zh": "x是float，数值约等于224.2。"
-      },
-      {
-        "en": "id(x) must be 2242.",
-        "zh": "id(x)一定是2242。"
-      },
-      {
-        "en": "x is the string \"224.2\".",
-        "zh": "x是字符串\"224.2\"。"
-      }
-    ],
-    "answer": 1,
-    "verification": "x=123.7\nx=x+100.5\nassert type(x) is float and abs(x-224.2)<1e-9"
+  "type": "mcq",
+  "options": [
+   {
+    "en": "It automatically runs A first.",
+    "zh": "会自动先运行A。"
+   },
+   {
+    "en": "It prints the word score.",
+    "zh": "会打印单词score。"
+   },
+   {
+    "en": "A NameError occurs because score is not defined yet.",
+    "zh": "score还没有定义，因此出现NameError。"
+   },
+   {
+    "en": "It prints 8 because A is visually above B.",
+    "zh": "A在页面上方，所以会打印8。"
+   }
+  ],
+  "answer": 2,
+  "verification": "try:\n exec('print(score)', {})\nexcept NameError:\n pass\nelse:\n raise AssertionError('Expected NameError')"
+ },
+ {
+  "id": "L1-008",
+  "chapter": "lecture1",
+  "topic": "notebook",
+  "topicLabel": {
+   "en": "Notebook execution",
+   "zh": "Notebook执行顺序"
   },
-  {
-    "id": "L1-037",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "A friendly greeting",
-      "zh": "友好的问候"
-    },
-    "prompt": {
-      "en": "Complete greeting(name), returning \"Hello, \" followed by name and \"!\". Example: greeting(\"Mila\") returns \"Hello, Mila!\". Do not print instead of returning.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全greeting(name)，返回\"Hello, \"、name和\"!\"拼接的字符串。例如greeting(\"Mila\")返回\"Hello, Mila!\"。请返回结果，不要只打印。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Build the result by joining three strings. The space belongs after the comma inside \"Hello, \". Returning the string lets the caller use it; printing it would only display it.",
-      "zh": "把三段字符串按顺序连接即可。空格要写在\"Hello, \"里的逗号后面。return会把结果交还给调用者，print只是显示，所以两者不能在检查中互相代替。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 5; Sweigart · Exercise 1: Hello, World!",
-      "url": "https://inventwithpython.com/pythongently/",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def greeting(name):\n    # Write your code here\n    pass\n",
-    "solution": "def greeting(name):\n    return \"Hello, \" + name + \"!\"\n",
-    "tests": "assert greeting(\"Mila\")==\"Hello, Mila!\"\nassert greeting(\"\")==\"Hello, !\"\nassert greeting(\"飞飞\")==\"Hello, 飞飞!\"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "difficulty": 2,
+  "title": {
+   "en": "A stale notebook value",
+   "zh": "Notebook中的旧值"
   },
-  {
-    "id": "L1-038",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "First name then last name",
-      "zh": "组合完整姓名"
-    },
-    "prompt": {
-      "en": "Complete full_name(first, last). Return first and last separated by exactly one space, even if either input is empty.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全full_name(first,last)，返回名与姓，中间固定放一个空格。即使某个输入为空，也仍保留这个分隔空格。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "The separator is data too: write it explicitly between the names. Using + alone does not insert a space. Keep the stated rule for empty inputs rather than adding extra cleanup not requested by the task.",
-      "zh": "分隔空格也是结果的一部分，要明确放在两个名字中间。加号不会自动补空格。空输入也应按题目指定的规则处理，不必额外删空格，否则反而改变了要求。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 5",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def full_name(first, last):\n    # Write your code here\n    pass\n",
-    "solution": "def full_name(first, last):\n    result = first + \" \" + last\n    return result\n",
-    "tests": "assert full_name(\"Ada\",\"Lovelace\")==\"Ada Lovelace\"\nassert full_name(\"\",\"Li\")==\" Li\"\nassert full_name(\"Feifei\",\"\")==\"Feifei \"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "prompt": {
+   "en": "Run `price = 10`, then `total = price + 5`. Next run only `price = 20`. What is total now?",
+   "zh": "先运行`price = 10`，再运行`total = price + 5`，最后只运行`price = 20`。此时total是多少？"
   },
-  {
-    "id": "L1-039",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "A balance update",
-      "zh": "更新余额"
-    },
-    "prompt": {
-      "en": "Complete add_credit(balance, credit). Store balance + credit in a variable named updated and return updated. Both inputs are numbers.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全add_credit(balance,credit)，把balance + credit保存到变量updated，再返回updated。两个输入都是数值。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Read both input values on the right side, calculate their sum, then bind updated to that result. Returning updated reads the stored result. Use = for assignment; it is not a command to compare values.",
-      "zh": "先读取右侧的两个数并求和，再把结果赋给updated。return updated读取的是已经保存好的结果。赋值用一个等号，它表示保存结果，不是在比较两个值。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14; Python Fundamentals Challenges · Challenge 1: Check Your Understanding",
-      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def add_credit(balance, credit):\n    # Write your code here\n    pass\n",
-    "solution": "def add_credit(balance, credit):\n    updated = balance + credit\n    return updated\n",
-    "tests": "assert add_credit(20,5)==25\nassert add_credit(0,0)==0\nassert abs(add_credit(2.5,0.5)-3)<1e-9\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "explanation": {
+   "en": "total was calculated when price was 10. Changing price later does not recalculate previous statements. To obtain 25, run the total assignment again.",
+   "zh": "计算total时price还是10，因此total保存的是15。变量之间不是电子表格那种自动更新的公式关系。后来改price不会重算旧语句，需要再次运行total的赋值语句。"
   },
-  {
-    "id": "L1-040",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "A two-line message",
-      "zh": "两行消息"
-    },
-    "prompt": {
-      "en": "Complete two_lines(first, second). Return one string containing first, a newline character (`\\n`), then second. Do not add a final newline.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全two_lines(first,second)，返回一个字符串，内容依次是first、换行符（`\\n`）、second。末尾不要再加换行。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Use the escape sequence \"\\n\" to put a line break inside a string. This is one character even though the source displays a backslash and n. Returning two separate strings would not satisfy the required single-string result.",
-      "zh": "字符串中的\"\\n\"代表一个换行字符，虽然代码里看起来有反斜杠和n两个符号。把它夹在两段文本之间即可。题目需要返回一整个字符串，不能返回两个分开的结果。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def two_lines(first, second):\n    # Write your code here\n    pass\n",
-    "solution": "def two_lines(first, second):\n    return first + \"\\n\" + second\n",
-    "tests": "assert two_lines(\"Tea\",\"Time\")==\"Tea\\nTime\"\nassert two_lines(\"\",\"B\")==\"\\nB\"\nassert two_lines(\"A\",\"\")==\"A\\n\"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-041",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Preserve the earlier value",
-      "zh": "保留更新前的值"
-    },
-    "prompt": {
-      "en": "Complete old_balance(start, increase). First assign start to current, then current to previous, then replace current with current + increase. Return previous.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全old_balance(start,increase)：先把start赋给current，再把current赋给previous，然后把current更新成current + increase。最后返回previous。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "previous refers to the earlier numeric object. Reassigning current points current at a new result, so previous still has the old value. Variables are names referring to objects, not linked spreadsheet formulas.",
-      "zh": "previous引用的是更新前的数值对象。current重新赋值后指向新的结果，previous并不会跟着变化。变量引用对象，不会像电子表格中的公式那样自动追踪别的变量。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def old_balance(start, increase):\n    # Write your code here\n    pass\n",
-    "solution": "def old_balance(start, increase):\n    current = start\n    previous = current\n    current = current + increase\n    return previous\n",
-    "tests": "assert old_balance(10,5)==10\nassert old_balance(0,8)==0\nassert old_balance(-4,4)==-4\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "type": "mcq",
+  "options": [
+   {
+    "en": "It no longer exists.",
+    "zh": "It no longer exists."
+   },
+   {
+    "en": "15",
+    "zh": "15"
+   },
+   {
+    "en": "25",
+    "zh": "25"
+   },
+   {
+    "en": "20",
+    "zh": "20"
+   }
+  ],
+  "answer": 1,
+  "verification": "price=10\ntotal=price+5\nprice=20\nassert total==15"
+ },
+ {
+  "id": "L1-009",
+  "chapter": "lecture1",
+  "topic": "notebook",
+  "topicLabel": {
+   "en": "Notebook execution",
+   "zh": "Notebook执行顺序"
   },
-  {
-    "id": "L1-042",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Three quantities",
-      "zh": "合计三个数量"
-    },
-    "prompt": {
-      "en": "Complete combined(a, b, c). Use two assignment statements to add a and b, then add c, and return the total.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全combined(a,b,c)，用两条赋值语句先求a与b的和，再加上c，最后返回总和。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "The first assignment creates an intermediate result. The second reads that result before replacing it. Breaking the calculation into named steps makes it easier to inspect each stage while debugging.",
-      "zh": "第一条赋值保存中间结果，第二条先读取这个结果，再把更新后的值保存回去。把运算拆成有名字的步骤，排错时就能逐步观察，而不是只盯着最后的输出。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 6",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def combined(a, b, c):\n    # Write your code here\n    pass\n",
-    "solution": "def combined(a, b, c):\n    total = a + b\n    total = total + c\n    return total\n",
-    "tests": "assert combined(2,3,4)==9\nassert combined(0,0,0)==0\nassert combined(-2,3,-1)==0\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "difficulty": 1,
+  "title": {
+   "en": "Restarting the kernel",
+   "zh": "重启内核"
   },
-  {
-    "id": "L1-043",
-    "chapter": "lecture1",
-    "topic": "modules",
-    "topicLabel": {
-      "en": "Using modules",
-      "zh": "模块的导入与使用"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Return pi",
-      "zh": "读取圆周率"
-    },
-    "prompt": {
-      "en": "Complete circle_constant(). Import math inside the function and return math.pi, rather than a manually typed approximation.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全circle_constant()，在函数内导入math，并返回math.pi，不要手写一个近似小数代替。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "import math makes the module available under its name. The dot accesses its pi constant. Using the supplied constant avoids losing precision by typing only a few decimal places.",
-      "zh": "import math让math这个模块名可用，点号再读取其中的pi常量。使用现成常量能保留比手打3.14更多的精度，也避免自己抄错数字。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def circle_constant():\n    # Write your code here\n    pass\n",
-    "solution": "def circle_constant():\n    import math\n    return math.pi\n",
-    "tests": "import math\nassert circle_constant()==math.pi\nassert 3.14<circle_constant()<3.15\nassert type(circle_constant()) is float\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "prompt": {
+   "en": "What normally happens to variables created in memory when a notebook kernel is restarted?",
+   "zh": "Notebook重启内核后，之前在内存中创建的变量通常怎样？"
   },
-  {
-    "id": "L1-044",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "A printable tag",
-      "zh": "生成标签文本"
-    },
-    "prompt": {
-      "en": "Complete make_tag(label, value). Both inputs are strings. Return label + \": \" + value. Example: make_tag(\"City\", \"Delft\") returns \"City: Delft\".\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全make_tag(label,value)。两个参数都是字符串，返回label + \": \" + value，例如make_tag(\"City\",\"Delft\")返回\"City: Delft\"。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "The colon and following space belong to the separator string. Joining exactly those three parts preserves values such as \"007\" as text. No numeric conversion is needed because the task is about labels.",
-      "zh": "冒号和它后面的空格一起构成分隔字符串。按照三段文本连接，就能保留\"007\"这样的文本原貌。这道题只处理标签，无须把内容转换为数值。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def make_tag(label, value):\n    # Write your code here\n    pass\n",
-    "solution": "def make_tag(label, value):\n    return label + \": \" + value\n",
-    "tests": "assert make_tag(\"City\",\"Delft\")==\"City: Delft\"\nassert make_tag(\"Code\",\"007\")==\"Code: 007\"\nassert make_tag(\"\",\"\")==\": \"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "explanation": {
+   "en": "The kernel is the running interpreter holding the variables. Restarting it gives you a fresh interpreter. Saved code remains in the notebook, but its variables need to be recreated by execution.",
+   "zh": "内核就是正在运行并保管变量的解释器。重启相当于换成一个新的解释器，内存中的变量要重新创建。Notebook文件中的代码仍在，但需要再次执行才会产生这些变量。"
   },
-  {
-    "id": "L1-045",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Report the type",
-      "zh": "报告对象类型"
-    },
-    "prompt": {
-      "en": "Complete object_type(value), returning the result of type(value). Return the type object itself, not the string name of that type.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全object_type(value)，返回type(value)的结果。返回类型对象本身，不要返回写着类型名称的字符串。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Call type on the supplied value, then return what it produces. The number 5, the text \"5\" and the number 5.0 have different types. Quoting \"int\" would create text instead of reporting a type.",
-      "zh": "对传入值调用type，再把得到的类型对象返回即可。数字5、文本\"5\"和浮点数5.0虽然看起来相似，但类型不同。写成\"int\"只会得到字符串，并不是类型对象。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 18; Python Fundamentals Challenges · Challenge 3: Seeing Data Types",
-      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def object_type(value):\n    # Write your code here\n    pass\n",
-    "solution": "def object_type(value):\n    return type(value)\n",
-    "tests": "assert object_type(5) is int\nassert object_type(\"5\") is str\nassert object_type(5.0) is float\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-046",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Keep an alias alive",
-      "zh": "删除名字后保留引用"
-    },
-    "prompt": {
-      "en": "Complete surviving_value(value). Assign value to backup, delete the local name value with del, then return backup.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全surviving_value(value)，先将value赋给backup，用del删除本地名字value，再返回backup。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Two names can refer to the same object. Deleting one name does not remove the other name or destroy an object it still refers to. Read backup after the deletion, rather than trying to read value again.",
-      "zh": "两个名字可以引用同一个对象。删掉value这个名字，不会顺便删除backup，也不会把backup仍然引用的对象销毁。删除后要读取backup，而不是再次读取已删除的value。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def surviving_value(value):\n    # Write your code here\n    pass\n",
-    "solution": "def surviving_value(value):\n    backup = value\n    del value\n    return backup\n",
-    "tests": "assert surviving_value(1200)==1200\nassert surviving_value(\"hello\")==\"hello\"\nassert surviving_value(0)==0\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "type": "mcq",
+  "options": [
+   {
+    "en": "They disappear until the relevant cells are run again.",
+    "zh": "重新运行相关单元格之前，它们不再存在。"
+   },
+   {
+    "en": "They are permanently written into every cell.",
+    "zh": "它们会永久写进每个单元格。"
+   },
+   {
+    "en": "They all become zero.",
+    "zh": "它们都会变为0。"
+   },
+   {
+    "en": "They are converted into Markdown.",
+    "zh": "它们都会变成Markdown。"
+   }
+  ],
+  "answer": 0
+ },
+ {
+  "id": "L1-010",
+  "chapter": "lecture1",
+  "topic": "notebook",
+  "topicLabel": {
+   "en": "Notebook execution",
+   "zh": "Notebook执行顺序"
   },
-  {
-    "id": "L1-047",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Print the stored city",
-      "zh": "打印变量中的城市"
-    },
-    "prompt": {
-      "en": "Complete show_city(city). Print the supplied city exactly once on one line. Return no special value; ordinary print already adds the newline.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全show_city(city)，把传入的城市打印一行、只打印一次。无需返回特殊值，普通print会自动添加行末换行。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Print the variable city without quotation marks. print(\"city\") would always display the literal word city. Do not add another print or an extra newline because that would create an unwanted blank line.",
-      "zh": "直接print(city)，不要给变量名加引号。print(\"city\")不管输入什么都会显示单词city。也不必额外打印一次或追加换行，否则会多出空行。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def show_city(city):\n    # Write your code here\n    pass\n",
-    "solution": "def show_city(city):\n    print(city)\n",
-    "tests": "import io, contextlib\ndef capture(f,*a):\n    b=io.StringIO()\n    with contextlib.redirect_stdout(b): f(*a)\n    return b.getvalue()\nassert capture(show_city,\"Delft\")==\"Delft\\n\"\nassert capture(show_city,\"Amsterdam\")==\"Amsterdam\\n\"\nassert capture(show_city,\"\")==\"\\n\"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "difficulty": 1,
+  "title": {
+   "en": "Execution counters",
+   "zh": "执行编号的含义"
   },
-  {
-    "id": "L1-048",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Print two fields",
-      "zh": "用print分隔两个字段"
-    },
-    "prompt": {
-      "en": "Complete show_pair(first, second). Use one print call with the two strings as separate arguments. Output must contain exactly one separating space and the normal final newline.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全show_pair(first,second)，用一次print调用将两个字符串作为独立参数打印。输出中间应有一个分隔空格，并以正常换行结尾。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Separate print arguments are joined by its default separator, a space. The output ends with one newline. This differs from concatenating first + second, which would not provide the required space.",
-      "zh": "print的多个独立参数默认用一个空格连接，并在末尾加一个换行。这与first + second不同，直接加号连接不会自动补上题目要求的分隔空格。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def show_pair(first, second):\n    # Write your code here\n    pass\n",
-    "solution": "def show_pair(first, second):\n    print(first, second)\n",
-    "tests": "import io,contextlib\ndef cap(f,*a):\n b=io.StringIO()\n with contextlib.redirect_stdout(b): f(*a)\n return b.getvalue()\nassert cap(show_pair,\"Blue\",\"Bird\")==\"Blue Bird\\n\"\nassert cap(show_pair,\"\", \"A\")==\" A\\n\"\nassert cap(show_pair,\"A\", \"\")==\"A \\n\"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "prompt": {
+   "en": "What does `[12]` beside an executed notebook code cell normally indicate?",
+   "zh": "已执行代码单元格旁边的`[12]`通常表示什么？"
   },
-  {
-    "id": "L1-049",
-    "chapter": "lecture1",
-    "topic": "errors",
-    "topicLabel": {
-      "en": "Recognising & fixing errors",
-      "zh": "识别与修复错误"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "Repair the greeting",
-      "zh": "修正问候语的引号"
-    },
-    "prompt": {
-      "en": "The broken idea is `return \"I'm \" + name + \"` (the final quotation marks are missing). Complete ready(name) to return \"I'm \" followed by name, without any extra ending punctuation.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "原思路`return \"I'm \" + name + \"`缺少结尾引号。请补全ready(name)，返回\"I'm \"与name的拼接结果，不要额外添加结尾标点。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Only the first part needs to be a quoted literal. name is already the variable holding the rest of the text. Using double quotes around the literal makes the apostrophe safe.",
-      "zh": "只有固定开头需要写成带引号的字符串，name本来就是保存文本的变量。外层使用双引号可以自然容纳内部撇号，且不必在末尾再拼一个没有内容的字符串。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def ready(name):\n    # Write your code here\n    pass\n",
-    "solution": "def ready(name):\n    return \"I'm \" + name\n",
-    "tests": "assert ready(\"Mila\")==\"I'm Mila\"\nassert ready(\"Feifei\")==\"I'm Feifei\"\nassert ready(\"\")==\"I'm \"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "explanation": {
+   "en": "The number records when the cell was executed in that kernel session. It is not a result, a line number or a duration. Out-of-order numbers are a useful clue when investigating stale values.",
+   "zh": "编号记录当前内核会话中的执行次序，不是输出结果，也不是代码行号或耗时。若编号顺序与页面上下顺序不同，排查问题时就要留意是否使用了旧变量。"
   },
-  {
-    "id": "L1-050",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Swap two numeric names",
-      "zh": "交换两个数值"
-    },
-    "prompt": {
-      "en": "Complete first_after_swap(a, b). Use a temporary variable to exchange the local values of a and b, then return a. Do not use tuple unpacking.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全first_after_swap(a,b)，用一个临时变量交换a与b在函数中的值，最后返回a。不要使用元组解包。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Store the old a before overwriting it. Then a can take b’s value and b can take the saved value. Writing a = b followed by b = a without a temporary would lose the original a.",
-      "zh": "在覆盖a之前，先用临时变量保存旧a。然后让a接收b，再让b接收临时保存的值。若直接a = b后再b = a，原来的a就已经丢失，两个名字会得到同一个值。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16; Python Fundamentals Challenges · Challenge 2: Sorting Out References",
-      "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
-        "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def first_after_swap(a, b):\n    # Write your code here\n    pass\n",
-    "solution": "def first_after_swap(a, b):\n    temporary = a\n    a = b\n    b = temporary\n    return a\n",
-    "tests": "assert first_after_swap(3,9)==9\nassert first_after_swap(0,-2)==-2\nassert first_after_swap(4.5,1.5)==1.5\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-051",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Rebinding text",
-      "zh": "字符串变量的重新绑定"
-    },
-    "prompt": {
-      "en": "Complete original_label(label, suffix). Store label in old_label, assign label + suffix back to label, then return old_label.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全original_label(label,suffix)，先用old_label保存label，再把label + suffix赋回label，最后返回old_label。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Concatenation produces the new text that label refers to. old_label still refers to the original string. The assignment to label does not rewrite every other name that once had the same value.",
-      "zh": "拼接结果成为label的新引用，但old_label仍保存原字符串。给label赋新值不会把所有曾经与它相同的变量一起改掉。可以把变量名想成指向对象的标签。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def original_label(label, suffix):\n    # Write your code here\n    pass\n",
-    "solution": "def original_label(label, suffix):\n    old_label = label\n    label = label + suffix\n    return old_label\n",
-    "tests": "assert original_label(\"Amster\",\"dam\")==\"Amster\"\nassert original_label(\"A\",\"\")==\"A\"\nassert original_label(\"\",\"new\")==\"\"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Its row number in the notebook file",
+    "zh": "Notebook文件中的行号"
+   },
+   {
+    "en": "That its output equals 12",
+    "zh": "它的输出等于12"
+   },
+   {
+    "en": "That it ran for exactly 12 seconds",
+    "zh": "它恰好运行了12秒"
+   },
+   {
+    "en": "Its execution order in the current kernel session",
+    "zh": "当前内核会话中的执行次序"
+   }
+  ],
+  "answer": 3
+ },
+ {
+  "id": "L1-011",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
   },
-  {
-    "id": "L1-052",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Inspect identity through an alias",
-      "zh": "通过别名查看身份"
-    },
-    "prompt": {
-      "en": "Complete alias_identity(value). Assign value to alias and return id(alias). Tests will compare this with the identity of the original supplied object; do not guess a numeric identity.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全alias_identity(value)，将value赋给alias，并返回id(alias)。测试会与传入对象的身份比较，不要猜测某个固定身份数字。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Assignment creates another reference to the same supplied object. Therefore id(alias) matches id(value) during that object’s lifetime. The specific integer identity depends on the execution and is not a business value.",
-      "zh": "赋值让alias成为指向同一个传入对象的另一个名字，因此二者身份相同。具体的身份整数依运行情况而定，没有“金额”或“编号长度”这样的业务含义，不能写死。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def alias_identity(value):\n    # Write your code here\n    pass\n",
-    "solution": "def alias_identity(value):\n    alias = value\n    return id(alias)\n",
-    "tests": "a=\"unique test string\"\nb=1300\nc=9.25\nassert alias_identity(a)==id(a)\nassert alias_identity(b)==id(b)\nassert alias_identity(c)==id(c)\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "difficulty": 1,
+  "title": {
+   "en": "Spaces in print",
+   "zh": "print中的空格"
   },
-  {
-    "id": "L1-053",
-    "chapter": "lecture1",
-    "topic": "statements",
-    "topicLabel": {
-      "en": "Statements & comments",
-      "zh": "语句与注释"
-    },
-    "difficulty": 1,
-    "title": {
-      "en": "A readable total",
-      "zh": "用清晰步骤求总值"
-    },
-    "prompt": {
-      "en": "Complete labeled_total(base, extra). Use a comment describing the addition, assign base + extra to total on its own line, and return total.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全labeled_total(base,extra)，写一条说明加法的注释，另起一行把base + extra赋给total，再返回total。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "The comment explains the intent and does not change execution. Keeping one statement per line makes the calculation easy to follow. Correctness still comes from the actual addition, not from what the comment claims.",
-      "zh": "注释说明意图，但不会改变程序实际执行的运算。每行一条语句可以清楚看到求和与返回两个步骤。最终是否算对仍取决于加法代码，注释写“求和”并不能让错误的公式自动正确。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 10",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def labeled_total(base, extra):\n    # Write your code here\n    pass\n",
-    "solution": "def labeled_total(base, extra):\n    # Add the extra amount to the base amount.\n    total = base + extra\n    return total\n",
-    "tests": "assert labeled_total(5,7)==12\nassert labeled_total(0,2)==2\nassert labeled_total(-3,3)==0\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "prompt": {
+   "en": "What is printed?\n```python\nprint(\"Tea\", \"time\")\n```",
+   "zh": "下面代码打印什么？\n```python\nprint(\"Tea\", \"time\")\n```"
   },
-  {
-    "id": "L1-054",
-    "chapter": "lecture1",
-    "topic": "modules",
-    "topicLabel": {
-      "en": "Using modules",
-      "zh": "模块的导入与使用"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "A module function",
-      "zh": "调用模块函数"
-    },
-    "prompt": {
-      "en": "Complete square_root(value). The argument is a non-negative number. Import math and use its sqrt function to return the square root. The required call is math.sqrt(value).\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全square_root(value)，输入为非负数。导入math，并调用math.sqrt(value)返回平方根。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "The import gives access to math, and math.sqrt calls a function belonging to that module. The argument goes inside parentheses. Do not confuse accessing the function with calling it on value.",
-      "zh": "先导入math，再用math.sqrt调用模块中的函数，把value放进括号作为输入。只写math.sqrt是取到函数本身，而加上(value)才是让函数计算这个数的平方根。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def square_root(value):\n    # Write your code here\n    pass\n",
-    "solution": "def square_root(value):\n    import math\n    return math.sqrt(value)\n",
-    "tests": "assert square_root(0)==0\nassert square_root(25)==5\nassert abs(square_root(2)-2**0.5)<1e-12\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "explanation": {
+   "en": "With separate arguments, print inserts a space by default. The quotation marks describe strings in the source code and are not printed. Concatenation with + would need an explicit space.",
+   "zh": "print收到两个参数时，默认会在它们中间加一个空格。引号用来标明代码里的字符串，并不会跟着打印出来。若改用加号拼接，则要自己补上空格。"
   },
-  {
-    "id": "L1-055",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "A sign-off line",
-      "zh": "生成署名行"
-    },
-    "prompt": {
-      "en": "Complete sign_off(name, course). Return exactly \"From \" + name + \" — \" + course, using the long dash shown here and one space on each side.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全sign_off(name,course)，返回\"From \" + name + \" — \" + course。请使用这里的长破折号，两侧各一个空格。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "This is an exact text-building task. Copy the fixed prefix and separator carefully, then insert the two supplied values. A short hyphen or missing space would produce a different string even if it looked similar.",
-      "zh": "这道题练习按要求精确拼接文本。先保留固定前缀和分隔符，再插入两个输入。短横线、长破折号和空格都是不同字符，视觉相似也不代表结果相同。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def sign_off(name, course):\n    # Write your code here\n    pass\n",
-    "solution": "def sign_off(name, course):\n    return \"From \" + name + \" — \" + course\n",
-    "tests": "assert sign_off(\"Feifei\",\"Python\")==\"From Feifei — Python\"\nassert sign_off(\"A\",\"B\")==\"From A — B\"\nassert sign_off(\"\",\"\")==\"From  — \"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
   },
-  {
-    "id": "L1-056",
-    "chapter": "lecture1",
-    "topic": "errors",
-    "topicLabel": {
-      "en": "Recognising & fixing errors",
-      "zh": "识别与修复错误"
-    },
-    "difficulty": 2,
-    "title": {
-      "en": "Repair a wrong sum",
-      "zh": "修正错误的求和公式"
-    },
-    "prompt": {
-      "en": "Complete correct_total(left, right). A previous version used left - right, although the requirement was to add both numbers. Fix the logic and return the total.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全correct_total(left,right)。旧版错误地使用left - right，但需求是把两个数相加。请修正逻辑并返回总和。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Match the operator to the requirement: adding uses +. Both the old and repaired expressions are valid Python, so syntax checking alone cannot detect this mistake. The unequal-input tests distinguish addition from subtraction.",
-      "zh": "先把业务要求“相加”对应到加号。旧表达式和正确表达式都是合法Python，因此只看语法是否通过发现不了问题。使用两个不同的输入值测试，能明显区分加法与减法。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def correct_total(left, right):\n    # Write your code here\n    pass\n",
-    "solution": "def correct_total(left, right):\n    return left + right\n",
-    "tests": "assert correct_total(3,8)==11\nassert correct_total(0,5)==5\nassert correct_total(-4,4)==0\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "type": "mcq",
+  "options": [
+   {
+    "en": "\"Tea\" \"time\"",
+    "zh": "\"Tea\" \"time\""
+   },
+   {
+    "en": "Tea,time",
+    "zh": "Tea,time"
+   },
+   {
+    "en": "Tea time",
+    "zh": "Tea time"
+   },
+   {
+    "en": "Teatime",
+    "zh": "Teatime"
+   }
+  ],
+  "answer": 2,
+  "verification": "import io,contextlib\nb=io.StringIO()\nwith contextlib.redirect_stdout(b): print(\"Tea\",\"time\")\nassert b.getvalue()==\"Tea time\\n\""
+ },
+ {
+  "id": "L1-012",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
   },
-  {
-    "id": "L1-057",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 3,
-    "title": {
-      "en": "Two-line introduction",
-      "zh": "打印两行自我介绍"
-    },
-    "prompt": {
-      "en": "Complete introduce(name, city). Print exactly two lines: \"Hello \" + name on the first, then \"City \" + city on the second. Use two print calls.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全introduce(name,city)，恰好打印两行：第一行为\"Hello \" + name，第二行为\"City \" + city。请使用两次print。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "Each print call adds its own newline, so the two calls create two lines. Include the space inside each fixed prefix. Returning a combined string would not produce the requested console output.",
-      "zh": "每次print会自动在末尾换行，所以两次调用正好得到两行。固定前缀后面的空格也要保留。这里要求的是控制台输出，不能只返回拼接好的字符串而不打印。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 5",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def introduce(name, city):\n    # Write your code here\n    pass\n",
-    "solution": "def introduce(name, city):\n    print(\"Hello \" + name)\n    print(\"City \" + city)\n",
-    "tests": "import io,contextlib\ndef cap(f,*a):\n b=io.StringIO()\n with contextlib.redirect_stdout(b): f(*a)\n return b.getvalue()\nassert cap(introduce,\"Mila\",\"Delft\")==\"Hello Mila\\nCity Delft\\n\"\nassert cap(introduce,\"A\",\"B\")==\"Hello A\\nCity B\\n\"\nassert cap(introduce,\"\",\"\")==\"Hello \\nCity \\n\"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "difficulty": 1,
+  "title": {
+   "en": "Concatenation has no separator",
+   "zh": "字符串拼接不会自动加空格"
   },
-  {
-    "id": "L1-058",
-    "chapter": "lecture1",
-    "topic": "variables",
-    "topicLabel": {
-      "en": "Variables & assignment",
-      "zh": "变量与赋值"
-    },
-    "difficulty": 3,
-    "title": {
-      "en": "Notebook replay as straight-line code",
-      "zh": "按实际运行顺序重放Notebook"
-    },
-    "prompt": {
-      "en": "Complete replay(). Model this exact execution order using local assignments: price = 10; total = price + 5; price = 20. Return total. Do not recalculate total after the last assignment.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全replay()，用本地赋值模拟这一实际执行顺序：price = 10；total = price + 5；price = 20。返回total，最后一次赋值后不要重新计算total。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "A saved total is the result of a calculation at one moment. Rebinding price later does not automatically rerun that calculation. This small replay makes the hidden state problem of notebook execution visible.",
-      "zh": "total保存的是某个时刻计算出的结果，不是持续引用price的自动公式。后来给price赋新值，并不会重做total那条赋值。这个顺序程序能直观演示Notebook旧状态造成的误解。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def replay():\n    # Write your code here\n    pass\n",
-    "solution": "def replay():\n    price = 10\n    total = price + 5\n    price = 20\n    return total\n",
-    "tests": "assert replay()==15\nassert type(replay()) is int\nassert replay()!=25\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "prompt": {
+   "en": "What is printed?\n```python\nprint(\"Blue\" + \"Bird\")\n```",
+   "zh": "下面代码打印什么？\n```python\nprint(\"Blue\" + \"Bird\")\n```"
   },
-  {
-    "id": "L1-059",
-    "chapter": "lecture1",
-    "topic": "identity",
-    "topicLabel": {
-      "en": "References, identity & type",
-      "zh": "引用、身份与类型"
-    },
-    "difficulty": 3,
-    "title": {
-      "en": "Type after replacement",
-      "zh": "替换值之后查看类型"
-    },
-    "prompt": {
-      "en": "Complete replacement_type(value). First store value in item, then replace item with the literal string \"done\", and return type(item).\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全replacement_type(value)，先将value赋给item，再把字符串\"done\"赋给item，最后返回type(item)。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "The final assignment determines what item currently refers to. Regardless of the original input type, item now refers to the string \"done\". A variable name does not keep a permanent memory of its first type.",
-      "zh": "查看类型时，要看item当前引用的对象，而不是它曾经保存过什么。最后已经把\"done\"赋给item，所以无论原输入是整数、浮点数还是字符串，当前类型都是str。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 24",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def replacement_type(value):\n    # Write your code here\n    pass\n",
-    "solution": "def replacement_type(value):\n    item = value\n    item = \"done\"\n    return type(item)\n",
-    "tests": "assert replacement_type(99) is str\nassert replacement_type(2.5) is str\nassert replacement_type(\"old\") is str\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "explanation": {
+   "en": "The + operator joins the two strings exactly as written. There is no space inside either string, so none appears in the result. Add \" \" explicitly when a separator is required.",
+   "zh": "加号会把两个字符串原样连接起来。两边都没有空格，结果当然也没有空格。需要空格时，应写成\"Blue\" + \" \" + \"Bird\"。"
   },
-  {
-    "id": "L1-060",
-    "chapter": "lecture1",
-    "topic": "output",
-    "topicLabel": {
-      "en": "Text, input & output",
-      "zh": "文本、输入与输出"
-    },
-    "difficulty": 3,
-    "title": {
-      "en": "Text captured from input",
-      "zh": "理解输入文本的保留"
-    },
-    "prompt": {
-      "en": "Complete echoed_input(raw). raw is the text already read from input(). Return \"You entered: \" + raw exactly. Preserve leading zeros and any existing spaces.\n\nThe function shell is provided for checking. Focus on the straight-line statements in its body; function design is covered in Lecture 4.",
-      "zh": "补全echoed_input(raw)。raw是已经由input()读入的文本。原样返回\"You entered: \" + raw，保留输入中的前导零及已有空格。\n\n函数外壳用于自动检查；本题只练习函数体内的顺序语句，函数设计将在第4讲学习。"
-    },
-    "explanation": {
-      "en": "input supplies text, so concatenate it as text when the task asks for an exact echo. Converting \"007\" into a number would discard the leading zeros. Unrequested trimming would also change what the user entered.",
-      "zh": "input提供文本；要求原样回显时，就按文本拼接。把\"007\"转成数字会丢掉前导零，随意去掉空格也会改变用户输入。程序应该遵守“原样保留”的需求，而不是自作主张清理。"
-    },
-    "source": {
-      "kind": "adapted",
-      "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
-      "url": "",
-      "note": {
-        "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
-        "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
-      }
-    },
-    "type": "code",
-    "starter": "def echoed_input(raw):\n    # Write your code here\n    pass\n",
-    "solution": "def echoed_input(raw):\n    return \"You entered: \" + raw\n",
-    "tests": "assert echoed_input(\"007\")==\"You entered: 007\"\nassert echoed_input(\"  A \")==\"You entered:   A \"\nassert echoed_input(\"\")==\"You entered: \"\n",
-    "setup": "",
-    "packages": [],
-    "testHint": {
-      "en": "Checks three or more examples, including a boundary or alternative input.",
-      "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
-    }
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "\"BlueBird\"",
+    "zh": "\"BlueBird\""
+   },
+   {
+    "en": "BlueBird",
+    "zh": "BlueBird"
+   },
+   {
+    "en": "Blue Bird",
+    "zh": "Blue Bird"
+   },
+   {
+    "en": "Blue+Bird",
+    "zh": "Blue+Bird"
+   }
+  ],
+  "answer": 1,
+  "verification": "assert \"Blue\"+\"Bird\"==\"BlueBird\""
+ },
+ {
+  "id": "L1-013",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Literal versus variable",
+   "zh": "字符串常量与变量"
+  },
+  "prompt": {
+   "en": "After `city = \"Leiden\"`, which statement prints the stored city name?",
+   "zh": "执行`city = \"Leiden\"`后，哪条语句会打印变量中保存的城市名？"
+  },
+  "explanation": {
+   "en": "Without quotes, city means look up the variable. With quotes, \"city\" is just the four-letter text. This distinction is one of the first things to check when a program prints the wrong words.",
+   "zh": "不加引号的city表示读取变量的值；加了引号的\"city\"只是四个字母组成的文本。程序打印出变量名字而不是内容时，先检查是不是误加了引号。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "print(city)",
+    "zh": "print(city)"
+   },
+   {
+    "en": "print(\"city\")",
+    "zh": "print(\"city\")"
+   },
+   {
+    "en": "print(\"Leiden = city\")",
+    "zh": "print(\"Leiden = city\")"
+   },
+   {
+    "en": "print(\"print(city)\")",
+    "zh": "print(\"print(city)\")"
+   }
+  ],
+  "answer": 0,
+  "verification": "city=\"Leiden\"\nassert city==\"Leiden\""
+ },
+ {
+  "id": "L1-014",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "What input returns",
+   "zh": "input返回什么"
+  },
+  "prompt": {
+   "en": "If the user types `42` at `answer = input()`, what type is answer immediately afterwards?",
+   "zh": "用户在`answer = input()`时输入`42`，刚读入的answer是什么类型？"
+  },
+  "explanation": {
+   "en": "input reads keyboard text and returns a string. Digits do not automatically make the result numeric. A later explicit conversion is needed before treating it as a number.",
+   "zh": "input读入的是键盘文本，返回字符串。看起来是数字的42也不会自动变成整数。后续若要进行数值计算，需要明确转换类型。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4; Python Fundamentals Challenges · Challenge 3: Seeing Data Types",
+   "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "int",
+    "zh": "int"
+   },
+   {
+    "en": "float",
+    "zh": "float"
+   },
+   {
+    "en": "bool",
+    "zh": "bool"
+   },
+   {
+    "en": "str",
+    "zh": "str"
+   }
+  ],
+  "answer": 3
+ },
+ {
+  "id": "L1-015",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "A name with an apostrophe",
+   "zh": "名字中的撇号"
+  },
+  "prompt": {
+   "en": "Which line is valid and prints `I'm ready`?",
+   "zh": "哪一行语法正确，并打印`I'm ready`？"
+  },
+  "explanation": {
+   "en": "The apostrophe can appear safely inside a double-quoted string. With single quotes on the outside, an unescaped apostrophe would end the string too early. The opening and closing quotation marks must match.",
+   "zh": "外层用双引号时，里面的撇号不会结束字符串。如果外层也用单引号，这个撇号就可能使字符串提前结束。首先检查两端引号是否配对。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "print(I'm ready)",
+    "zh": "print(I'm ready)"
+   },
+   {
+    "en": "print(\"I'm ready')",
+    "zh": "print(\"I'm ready')"
+   },
+   {
+    "en": "print(\"I'm ready\")",
+    "zh": "print(\"I'm ready\")"
+   },
+   {
+    "en": "print('I'm ready')",
+    "zh": "print('I'm ready')"
+   }
+  ],
+  "answer": 2,
+  "verification": "compile('print(\"I\\'m ready\")',\"<check>\",\"exec\")"
+ },
+ {
+  "id": "L1-016",
+  "chapter": "lecture1",
+  "topic": "statements",
+  "topicLabel": {
+   "en": "Statements & comments",
+   "zh": "语句与注释"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Comments are ignored",
+   "zh": "注释不参与执行"
+  },
+  "prompt": {
+   "en": "What is printed?\n```python\n# print(\"Monday\")\nprint(\"Tuesday\")  # current example\n```",
+   "zh": "下面代码打印什么？\n```python\n# print(\"Monday\")\nprint(\"Tuesday\")  # current example\n```"
+  },
+  "explanation": {
+   "en": "A # outside a string starts a comment that continues to the end of that line. The first print is entirely commented out. The second print still runs because its comment begins afterwards.",
+   "zh": "字符串外的#会让其后的本行内容变成注释。第一行的print整个被注释掉了；第二行先执行print，末尾的说明文字不参与执行，因此只打印Tuesday。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Nothing",
+    "zh": "Nothing"
+   },
+   {
+    "en": "Tuesday",
+    "zh": "Tuesday"
+   },
+   {
+    "en": "Monday",
+    "zh": "Monday"
+   },
+   {
+    "en": "Monday Tuesday",
+    "zh": "Monday Tuesday"
+   }
+  ],
+  "answer": 1
+ },
+ {
+  "id": "L1-017",
+  "chapter": "lecture1",
+  "topic": "statements",
+  "topicLabel": {
+   "en": "Statements & comments",
+   "zh": "语句与注释"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "A hash inside text",
+   "zh": "文本里的井号"
+  },
+  "prompt": {
+   "en": "What is printed?\n```python\nprint(\"Room #4\")\n```",
+   "zh": "下面代码打印什么？\n```python\nprint(\"Room #4\")\n```"
+  },
+  "explanation": {
+   "en": "Inside quotation marks, # is an ordinary character. It only starts a comment outside a string. Reading quotes first prevents confusing data with Python instructions.",
+   "zh": "引号内部的#只是普通文本字符，不会开始注释。只有字符串外部的#才有注释作用。读代码时先看清引号范围，就不容易把数据误当成指令。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Room #4",
+    "zh": "Room #4"
+   },
+   {
+    "en": "Room ",
+    "zh": "Room "
+   },
+   {
+    "en": "4",
+    "zh": "4"
+   },
+   {
+    "en": "SyntaxError",
+    "zh": "SyntaxError"
+   }
+  ],
+  "answer": 0,
+  "verification": "assert \"Room #4\"==\"Room #4\""
+ },
+ {
+  "id": "L1-018",
+  "chapter": "lecture1",
+  "topic": "statements",
+  "topicLabel": {
+   "en": "Statements & comments",
+   "zh": "语句与注释"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Two statements on one line",
+   "zh": "一行中的两条语句"
+  },
+  "prompt": {
+   "en": "Which separator allows two simple Python statements on one line, although one per line is clearer?",
+   "zh": "虽然每行一条语句更清晰，但Python允许用哪个符号在同一行分隔两条简单语句？"
+  },
+  "explanation": {
+   "en": "A semicolon can separate simple statements such as x = 1; print(x). The lecture recommends separate lines because they are easier to read and debug. A colon serves different syntax, such as introducing a block.",
+   "zh": "分号可以把x = 1; print(x)这样的简单语句放在一行。讲义仍建议每行一条，因为更容易读懂和定位错误。冒号通常用于引出代码块，不能在这里代替分号。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 6",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": ": ",
+    "zh": ": "
+   },
+   {
+    "en": ". ",
+    "zh": ". "
+   },
+   {
+    "en": "? ",
+    "zh": "? "
+   },
+   {
+    "en": "; ",
+    "zh": "; "
+   }
+  ],
+  "answer": 3,
+  "verification": "a={}\nexec(\"x=1; y=x+2\",a)\nassert a[\"y\"]==3"
+ },
+ {
+  "id": "L1-019",
+  "chapter": "lecture1",
+  "topic": "modules",
+  "topicLabel": {
+   "en": "Using modules",
+   "zh": "模块的导入与使用"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Using a module constant",
+   "zh": "使用模块常量"
+  },
+  "prompt": {
+   "en": "After `import math`, which expression accesses π from that module?",
+   "zh": "执行`import math`后，哪个表达式读取该模块中的π？"
+  },
+  "explanation": {
+   "en": "The module name goes before the dot and the member name after it. import math creates the name math; it does not automatically create a bare name pi. The same pattern is used for module functions.",
+   "zh": "点号前面是模块名，后面是其中的成员名。import math创建了math这个名字，并不会单独创建pi变量。使用模块函数时也遵循“模块名.函数名”的形式。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "math(pi)",
+    "zh": "math(pi)"
+   },
+   {
+    "en": "import.pi",
+    "zh": "import.pi"
+   },
+   {
+    "en": "math.pi",
+    "zh": "math.pi"
+   },
+   {
+    "en": "pi.math",
+    "zh": "pi.math"
+   }
+  ],
+  "answer": 2,
+  "verification": "import math\nassert math.pi>3.14"
+ },
+ {
+  "id": "L1-020",
+  "chapter": "lecture1",
+  "topic": "modules",
+  "topicLabel": {
+   "en": "Using modules",
+   "zh": "模块的导入与使用"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Missing import",
+   "zh": "忘记导入模块"
+  },
+  "prompt": {
+   "en": "In a fresh kernel, `print(math.pi)` runs without any previous import. What is the likely error?",
+   "zh": "在新内核中，未导入任何模块便运行`print(math.pi)`，最可能出现什么错误？"
+  },
+  "explanation": {
+   "en": "The expression has valid syntax, but the name math has not been defined. Import the module before accessing it. This is a runtime name lookup problem, not a missing quotation mark.",
+   "zh": "这条语句的语法没有问题，但运行时找不到math这个名字。应先import math，再读取math.pi。这属于运行时的名字查找问题，不是引号没配好的语法问题。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "No error; every module is always imported.",
+    "zh": "No error; every module is always imported."
+   },
+   {
+    "en": "NameError",
+    "zh": "NameError"
+   },
+   {
+    "en": "SyntaxError",
+    "zh": "SyntaxError"
+   },
+   {
+    "en": "ZeroDivisionError",
+    "zh": "ZeroDivisionError"
+   }
+  ],
+  "answer": 1,
+  "verification": "try:\n exec(\"print(math.pi)\",{})\nexcept NameError: pass\nelse: raise AssertionError()"
+ },
+ {
+  "id": "L1-021",
+  "chapter": "lecture1",
+  "topic": "modules",
+  "topicLabel": {
+   "en": "Using modules",
+   "zh": "模块的导入与使用"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Why use modules?",
+   "zh": "为什么使用模块"
+  },
+  "prompt": {
+   "en": "What is a main reason to import a library module?",
+   "zh": "导入库模块的主要目的是什么？"
+  },
+  "explanation": {
+   "en": "A module groups reusable code, such as mathematical functions. Reusing it saves you from writing every tool yourself. You still need to choose the right function and check the result.",
+   "zh": "模块把可重复使用的代码放在一起，例如数学函数。导入模块能避免把每个工具重新写一遍，但你仍需选对函数并检查结果，导入本身不会消除错误。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "To reuse existing functions and constants",
+    "zh": "重复使用现成的函数和常量"
+   },
+   {
+    "en": "To turn all variables into strings",
+    "zh": "把所有变量变成字符串"
+   },
+   {
+    "en": "To remove the need for testing",
+    "zh": "从此不需要测试"
+   },
+   {
+    "en": "To make syntax errors impossible",
+    "zh": "让语法错误不可能发生"
+   }
+  ],
+  "answer": 0
+ },
+ {
+  "id": "L1-022",
+  "chapter": "lecture1",
+  "topic": "errors",
+  "topicLabel": {
+   "en": "Recognising & fixing errors",
+   "zh": "识别与修复错误"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Broken quotation marks",
+   "zh": "引号未配对"
+  },
+  "prompt": {
+   "en": "What kind of problem is `label = \"Welcome`?",
+   "zh": "`label = \"Welcome`属于哪类问题？"
+  },
+  "explanation": {
+   "en": "The opening double quote has no matching closing quote. Python cannot finish parsing this statement. Fix its structure before investigating values or formulas.",
+   "zh": "双引号打开后没有关闭，Python无法把这条语句解析完整。这样的错误发生在语法结构层面，应该先补全引号，再讨论变量值和公式是否正确。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Logic error only",
+    "zh": "只有逻辑错误"
+   },
+   {
+    "en": "A correct assignment",
+    "zh": "正确赋值"
+   },
+   {
+    "en": "A random-number error",
+    "zh": "随机数错误"
+   },
+   {
+    "en": "Syntax error",
+    "zh": "语法错误"
+   }
+  ],
+  "answer": 3,
+  "verification": "try:\n compile('label = \"Welcome',\"<q>\",\"exec\")\nexcept SyntaxError: pass\nelse: raise AssertionError()"
+ },
+ {
+  "id": "L1-023",
+  "chapter": "lecture1",
+  "topic": "errors",
+  "topicLabel": {
+   "en": "Recognising & fixing errors",
+   "zh": "识别与修复错误"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Division by zero",
+   "zh": "除以零"
+  },
+  "prompt": {
+   "en": "What best describes this failure?\n```python\nzero = 0\nresult = 5 / zero\n```",
+   "zh": "下面程序的错误最适合归为哪类？\n```python\nzero = 0\nresult = 5 / zero\n```"
+  },
+  "explanation": {
+   "en": "The statements are syntactically valid, so Python starts executing them. The second statement fails when division uses a zero denominator. The error therefore occurs at runtime.",
+   "zh": "这两条语句的写法符合Python语法，所以程序能够开始运行。但执行除法时发现分母是0，因而中断。这就是运行时错误，不是缺引号造成的语法错误。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Syntax error from missing quotes",
+    "zh": "缺少引号导致的语法错误"
+   },
+   {
+    "en": "No error; result becomes 0",
+    "zh": "没有错误，结果为0"
+   },
+   {
+    "en": "Runtime error",
+    "zh": "运行时错误"
+   },
+   {
+    "en": "Comment formatting only",
+    "zh": "只是注释排版问题"
+   }
+  ],
+  "answer": 2,
+  "verification": "try:\n x=5/0\nexcept ZeroDivisionError: pass\nelse: raise AssertionError()"
+ },
+ {
+  "id": "L1-024",
+  "chapter": "lecture1",
+  "topic": "errors",
+  "topicLabel": {
+   "en": "Recognising & fixing errors",
+   "zh": "识别与修复错误"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Wrong but runnable",
+   "zh": "能运行但算错了"
+  },
+  "prompt": {
+   "en": "A program should add 3 and 8, but uses `total = 3 - 8`. It runs and prints -5. What is wrong?",
+   "zh": "程序原本要把3和8相加，却写成`total = 3 - 8`，运行后输出-5。这是什么问题？"
+  },
+  "explanation": {
+   "en": "Subtraction is a valid Python operation, so no exception is required. The instruction simply does not match the intended task. Testing the expected result 11 reveals the logic error.",
+   "zh": "减法是合法操作，所以Python没有理由报错。问题是这条指令与“求和”的任务不一致。用已知应得11的例子测试，就能发现这种逻辑错误。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "The Python interpreter is missing.",
+    "zh": "没有安装Python解释器"
+   },
+   {
+    "en": "Logic error",
+    "zh": "逻辑错误"
+   },
+   {
+    "en": "Syntax error",
+    "zh": "语法错误"
+   },
+   {
+    "en": "NameError",
+    "zh": "NameError"
+   }
+  ],
+  "answer": 1,
+  "verification": "assert 3-8==-5 and 3+8==11"
+ },
+ {
+  "id": "L1-025",
+  "chapter": "lecture1",
+  "topic": "errors",
+  "topicLabel": {
+   "en": "Recognising & fixing errors",
+   "zh": "识别与修复错误"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Testing a logic error",
+   "zh": "如何发现逻辑错误"
+  },
+  "prompt": {
+   "en": "Which check is most useful for a program that runs but may calculate the wrong total?",
+   "zh": "程序能运行，但可能把总额算错，哪种检查最有帮助？"
+  },
+  "explanation": {
+   "en": "Logic errors may produce no error message at all. A small case with a known answer checks what the program actually computes. Blank lines and file names cannot establish arithmetic correctness.",
+   "zh": "逻辑错误可能完全没有报错提示。用一个可以手算、答案已知的小例子比较，才能检查程序实际算了什么。空行数量和文件名无法证明总额计算正确。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Compare its output with a manually calculated example.",
+    "zh": "用手算结果已知的例子核对输出。"
+   },
+   {
+    "en": "Look only for red error messages.",
+    "zh": "只寻找红色错误信息。"
+   },
+   {
+    "en": "Count the number of blank lines.",
+    "zh": "统计空行数量。"
+   },
+   {
+    "en": "Check only the file name.",
+    "zh": "只检查文件名。"
+   }
+  ],
+  "answer": 0
+ },
+ {
+  "id": "L1-026",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "A valid variable name",
+   "zh": "合法变量名"
+  },
+  "prompt": {
+   "en": "Which is a valid variable name for storing a ticket price?",
+   "zh": "以下哪个可以用作保存票价的变量名？"
+  },
+  "explanation": {
+   "en": "An underscore is allowed inside an identifier, but a space or hyphen is not. A name also cannot begin with a digit. ticket_price is both valid and descriptive.",
+   "zh": "变量名可以含下划线，但不能含空格或把连字符当作名字的一部分，也不能以数字开头。ticket_price既符合规则，又能说明这个变量保存的是票价。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "2tickets",
+    "zh": "2tickets"
+   },
+   {
+    "en": "ticket-price",
+    "zh": "ticket-price"
+   },
+   {
+    "en": "ticket price",
+    "zh": "ticket price"
+   },
+   {
+    "en": "ticket_price",
+    "zh": "ticket_price"
+   }
+  ],
+  "answer": 3
+ },
+ {
+  "id": "L1-027",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Assignment runs right to left",
+   "zh": "先计算右边再赋值"
+  },
+  "prompt": {
+   "en": "What is x after this code?\n```python\nx = 7\nx = x + 4\n```",
+   "zh": "以下代码执行后x是多少？\n```python\nx = 7\nx = x + 4\n```"
+  },
+  "explanation": {
+   "en": "Python first reads the old value of x, which is 7, and adds 4. It then assigns the result 11 back to x. Assignment updates a name; it is not a mathematical equation that must be true forever.",
+   "zh": "Python先读取右侧旧的x，也就是7，再加4，最后把结果11赋给左侧的x。赋值是在更新一个名字所引用的值，并不是要求x永远等于x+4的数学等式。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14; Python Fundamentals Challenges · Challenge 1: Check Your Understanding",
+   "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "4",
+    "zh": "4"
+   },
+   {
+    "en": "SyntaxError",
+    "zh": "SyntaxError"
+   },
+   {
+    "en": "11",
+    "zh": "11"
+   },
+   {
+    "en": "7",
+    "zh": "7"
+   }
+  ],
+  "answer": 2,
+  "verification": "x=7\nx=x+4\nassert x==11"
+ },
+ {
+  "id": "L1-028",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Letter case matters",
+   "zh": "变量名区分大小写"
+  },
+  "prompt": {
+   "en": "What is printed?\n```python\ncity = \"Delft\"\nCity = \"Utrecht\"\nprint(city)\n```",
+   "zh": "下面代码打印什么？\n```python\ncity = \"Delft\"\nCity = \"Utrecht\"\nprint(city)\n```"
+  },
+  "explanation": {
+   "en": "Python treats city and City as different names. Assigning to City does not overwrite city. Consistent naming prevents hard-to-see mistakes involving capital letters.",
+   "zh": "Python区分大小写，city和City是两个不同的名字。给City赋值不会改掉city。变量命名风格保持一致，能减少这类不容易看出来的错误。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "NameError",
+    "zh": "NameError"
+   },
+   {
+    "en": "Delft",
+    "zh": "Delft"
+   },
+   {
+    "en": "Utrecht",
+    "zh": "Utrecht"
+   },
+   {
+    "en": "Delft Utrecht",
+    "zh": "Delft Utrecht"
+   }
+  ],
+  "answer": 1,
+  "verification": "city=\"Delft\"\nCity=\"Utrecht\"\nassert city==\"Delft\""
+ },
+ {
+  "id": "L1-029",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Decimal notation",
+   "zh": "小数点的写法"
+  },
+  "prompt": {
+   "en": "Which assignment stores a floating-point number with value twelve and a half?",
+   "zh": "哪条赋值语句会保存数值为十二点五的浮点数？"
+  },
+  "explanation": {
+   "en": "A decimal point belongs inside a Python floating-point literal. Quotation marks would instead make text. The comma in 12,5 separates values rather than acting as a decimal separator.",
+   "zh": "Python中的浮点数字面量使用小数点。写上引号会变成字符串，而12,5中的逗号是在分隔两个值，不表示十二点五。输入习惯和代码中的数字写法要分清。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "amount = 12.5",
+    "zh": "amount = 12.5"
+   },
+   {
+    "en": "amount = \"12.5\"",
+    "zh": "amount = \"12.5\""
+   },
+   {
+    "en": "amount = 12,5",
+    "zh": "amount = 12,5"
+   },
+   {
+    "en": "amount = twelve.five",
+    "zh": "amount = twelve.five"
+   }
+  ],
+  "answer": 0,
+  "verification": "amount=12.5\nassert type(amount) is float"
+ },
+ {
+  "id": "L1-030",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "The later assignment wins",
+   "zh": "重新赋值后的值"
+  },
+  "prompt": {
+   "en": "What is printed?\n```python\nfirst = \"Mila\"\nsecond = first\nfirst = \"Noah\"\nprint(second)\n```",
+   "zh": "下面代码打印什么？\n```python\nfirst = \"Mila\"\nsecond = first\nfirst = \"Noah\"\nprint(second)\n```"
+  },
+  "explanation": {
+   "en": "second keeps its reference to the original string. Reassigning first points first at a different string; it does not rewrite the old string. This is why second still contains Mila.",
+   "zh": "second仍引用原来的字符串Mila。后来给first重新赋值，只是让first指向另一个字符串，并没有改写原来的字符串。因此second仍然是Mila。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16; Python Fundamentals Challenges · Challenge 2: Sorting Out References",
+   "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Noah",
+    "zh": "Noah"
+   },
+   {
+    "en": "MilaNoah",
+    "zh": "MilaNoah"
+   },
+   {
+    "en": "NameError",
+    "zh": "NameError"
+   },
+   {
+    "en": "Mila",
+    "zh": "Mila"
+   }
+  ],
+  "answer": 3,
+  "verification": "first=\"Mila\"\nsecond=first\nfirst=\"Noah\"\nassert second==\"Mila\""
+ },
+ {
+  "id": "L1-031",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Looking up a type",
+   "zh": "查看数据类型"
+  },
+  "prompt": {
+   "en": "Which call reports the type of the object currently referenced by value?",
+   "zh": "哪个调用能查看变量value当前所引用对象的类型？"
+  },
+  "explanation": {
+   "en": "type answers what kind of object this is. id answers which particular object it is during its lifetime. A name such as value does not itself force a fixed type.",
+   "zh": "type回答“这是什么类型的对象”，id回答“这是哪一个具体对象”。value这样的变量名本身并不会强迫对象保持某一种类型，类型要看它当前引用的对象。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 18; Python Fundamentals Challenges · Challenge 3: Seeing Data Types",
+   "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "print(\"type\")",
+    "zh": "print(\"type\")"
+   },
+   {
+    "en": "input(value)",
+    "zh": "input(value)"
+   },
+   {
+    "en": "type(value)",
+    "zh": "type(value)"
+   },
+   {
+    "en": "id(value)",
+    "zh": "id(value)"
+   }
+  ],
+  "answer": 2
+ },
+ {
+  "id": "L1-032",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Changing a referenced type",
+   "zh": "同名变量可以换类型"
+  },
+  "prompt": {
+   "en": "What is the final type of item?\n```python\nitem = 12\nitem = \"twelve\"\n```",
+   "zh": "下面代码执行完后，item的类型是什么？\n```python\nitem = 12\nitem = \"twelve\"\n```"
+  },
+  "explanation": {
+   "en": "The second assignment makes item refer to a string object. Python names are not permanently tied to their first assigned type. The earlier integer is not converted in place; the name is rebound.",
+   "zh": "第二次赋值让item改为引用一个字符串。Python变量名并不永久绑定第一次赋值时的类型。这里不是把原来的整数原地改成字符串，而是让名字指向另一个对象。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 18",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "It is invalid to change the type.",
+    "zh": "It is invalid to change the type."
+   },
+   {
+    "en": "str",
+    "zh": "str"
+   },
+   {
+    "en": "int",
+    "zh": "int"
+   },
+   {
+    "en": "float",
+    "zh": "float"
+   }
+  ],
+  "answer": 1,
+  "verification": "item=12\nitem=\"twelve\"\nassert type(item) is str"
+ },
+ {
+  "id": "L1-033",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "An object identity",
+   "zh": "对象身份"
+  },
+  "prompt": {
+   "en": "What can you safely say about id(obj) while that same object remains alive?",
+   "zh": "同一个对象持续存在期间，关于id(obj)可以确定什么？"
+  },
+  "explanation": {
+   "en": "Identity distinguishes a particular live object and stays fixed during that object’s lifetime. It is not the stored value and should not be predicted as a fixed number. After objects are destroyed, an identity value may be reused.",
+   "zh": "身份用于区分正在存在的具体对象，在该对象的一生中保持不变。它不是对象的业务数值，也不应被猜成某个固定数字。对象销毁后，身份值还可能被后来创建的对象重复使用。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Its identity value stays constant.",
+    "zh": "身份值在该对象的一生中保持不变。"
+   },
+   {
+    "en": "It must equal the object's numeric value.",
+    "zh": "身份值一定等于它保存的数值。"
+   },
+   {
+    "en": "It is the same on every computer.",
+    "zh": "身份值在所有电脑上都一样。"
+   },
+   {
+    "en": "It always increases after every print.",
+    "zh": "每次print后身份值都会增大。"
+   }
+  ],
+  "answer": 0
+ },
+ {
+  "id": "L1-034",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 3,
+  "title": {
+   "en": "Equality is not identity",
+   "zh": "值相等不等于身份相同"
+  },
+  "prompt": {
+   "en": "You only know `a == b` is True for two separately created values. What can you conclude about `id(a) == id(b)` in general?",
+   "zh": "只知道两个分别创建的值满足`a == b`为True，一般能否断定`id(a) == id(b)`也为True？"
+  },
+  "explanation": {
+   "en": "Equality compares values, while identity compares particular objects. Python may reuse some immutable objects, so an example can sometimes show the same identity. Do not generalise that optimisation into a rule about all equal values.",
+   "zh": "相等比较的是值，身份比较的是具体对象。Python有时会复用某些不可变对象，所以个别实验可能恰好显示身份相同。但这不是所有相等值都必须遵守的规则。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "Yes; equality always guarantees the same identity.",
+    "zh": "能；相等永远保证身份相同。"
+   },
+   {
+    "en": "No; equal values can never share an identity.",
+    "zh": "不能；相等值永远不可能共享身份。"
+   },
+   {
+    "en": "Yes; id() returns the length of each value.",
+    "zh": "能；id()返回的是各值的长度。"
+   },
+   {
+    "en": "No; equal values need not be the same object.",
+    "zh": "不能；值相等并不要求它们是同一个对象。"
+   }
+  ],
+  "answer": 3
+ },
+ {
+  "id": "L1-035",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Deleting one name",
+   "zh": "删除一个变量名"
+  },
+  "prompt": {
+   "en": "What is printed?\n```python\na = 1200\nb = a\ndel a\nprint(b)\n```",
+   "zh": "下面代码打印什么？\n```python\na = 1200\nb = a\ndel a\nprint(b)\n```"
+  },
+  "explanation": {
+   "en": "del a removes the name a, not every reference to its object. b still refers to the integer and remains usable. Reading a afterwards would fail, but reading b does not.",
+   "zh": "del a删除的是名字a，不是把指向该对象的所有名字一并删除。b仍引用这个整数，所以能够正常读取。此后再读取a会报错，但读取b不会。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "NameError",
+    "zh": "NameError"
+   },
+   {
+    "en": "The identity number of a",
+    "zh": "The identity number of a"
+   },
+   {
+    "en": "1200",
+    "zh": "1200"
+   },
+   {
+    "en": "0",
+    "zh": "0"
+   }
+  ],
+  "answer": 2,
+  "verification": "a=1200\nb=a\ndel a\nassert b==1200"
+ },
+ {
+  "id": "L1-036",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 3,
+  "title": {
+   "en": "The lecture assignment",
+   "zh": "讲义综合赋值题"
+  },
+  "prompt": {
+   "en": "After `x = 123.7` and `x = x + 100.5`, which statement is guaranteed on normal Python floating-point arithmetic?",
+   "zh": "执行`x = 123.7`和`x = x + 100.5`后，哪项结论可以确定？"
+  },
+  "explanation": {
+   "en": "The addition produces a floating-point result near 224.2. Its identity is not a meaningful business number and cannot be predicted here. The lecture asks you to inspect value, type and identity as three different properties.",
+   "zh": "浮点加法得到接近224.2的结果，类型仍为float。身份值不代表业务金额，也无法在题目中提前猜定。这个例题就是要区分值、类型和身份这三个不同的属性。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 26",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "mcq",
+  "options": [
+   {
+    "en": "x is still exactly the original object because names never change references.",
+    "zh": "变量名不能换引用，因此x仍是原对象。"
+   },
+   {
+    "en": "x is a float approximately equal to 224.2.",
+    "zh": "x是float，数值约等于224.2。"
+   },
+   {
+    "en": "id(x) must be 2242.",
+    "zh": "id(x)一定是2242。"
+   },
+   {
+    "en": "x is the string \"224.2\".",
+    "zh": "x是字符串\"224.2\"。"
+   }
+  ],
+  "answer": 1,
+  "verification": "x=123.7\nx=x+100.5\nassert type(x) is float and abs(x-224.2)<1e-9"
+ },
+ {
+  "id": "L1-037",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "A friendly greeting",
+   "zh": "友好的问候"
+  },
+  "prompt": {
+   "en": "Complete greeting(name), returning \"Hello, \" followed by name and \"!\". Example: greeting(\"Mila\") returns \"Hello, Mila!\". Do not print instead of returning.",
+   "zh": "补全greeting(name)，返回\"Hello, \"、name和\"!\"拼接的字符串。例如greeting(\"Mila\")返回\"Hello, Mila!\"。请返回结果，不要只打印。"
+  },
+  "explanation": {
+   "en": "Build the result by joining three strings. The space belongs after the comma inside \"Hello, \". Returning the string lets the caller use it; printing it would only display it.",
+   "zh": "把三段字符串按顺序连接即可。空格要写在\"Hello, \"里的逗号后面。return会把结果交还给调用者，print只是显示，所以两者不能在检查中互相代替。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 5; Sweigart · Exercise 1: Hello, World!",
+   "url": "https://inventwithpython.com/pythongently/",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def greeting(name):\n    # Write your code here\n    pass\n",
+  "solution": "def greeting(name):\n    return \"Hello, \" + name + \"!\"\n",
+  "tests": "assert greeting(\"Mila\")==\"Hello, Mila!\"\nassert greeting(\"\")==\"Hello, !\"\nassert greeting(\"飞飞\")==\"Hello, 飞飞!\"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
   }
+ },
+ {
+  "id": "L1-038",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "First name then last name",
+   "zh": "组合完整姓名"
+  },
+  "prompt": {
+   "en": "Complete full_name(first, last). Return first and last separated by exactly one space, even if either input is empty.",
+   "zh": "补全full_name(first,last)，返回名与姓，中间固定放一个空格。即使某个输入为空，也仍保留这个分隔空格。"
+  },
+  "explanation": {
+   "en": "The separator is data too: write it explicitly between the names. Using + alone does not insert a space. Keep the stated rule for empty inputs rather than adding extra cleanup not requested by the task.",
+   "zh": "分隔空格也是结果的一部分，要明确放在两个名字中间。加号不会自动补空格。空输入也应按题目指定的规则处理，不必额外删空格，否则反而改变了要求。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 5",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def full_name(first, last):\n    # Write your code here\n    pass\n",
+  "solution": "def full_name(first, last):\n    result = first + \" \" + last\n    return result\n",
+  "tests": "assert full_name(\"Ada\",\"Lovelace\")==\"Ada Lovelace\"\nassert full_name(\"\",\"Li\")==\" Li\"\nassert full_name(\"Feifei\",\"\")==\"Feifei \"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-039",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "A balance update",
+   "zh": "更新余额"
+  },
+  "prompt": {
+   "en": "Complete add_credit(balance, credit). Store balance + credit in a variable named updated and return updated. Both inputs are numbers.",
+   "zh": "补全add_credit(balance,credit)，把balance + credit保存到变量updated，再返回updated。两个输入都是数值。"
+  },
+  "explanation": {
+   "en": "Read both input values on the right side, calculate their sum, then bind updated to that result. Returning updated reads the stored result. Use = for assignment; it is not a command to compare values.",
+   "zh": "先读取右侧的两个数并求和，再把结果赋给updated。return updated读取的是已经保存好的结果。赋值用一个等号，它表示保存结果，不是在比较两个值。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 14; Python Fundamentals Challenges · Challenge 1: Check Your Understanding",
+   "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def add_credit(balance, credit):\n    # Write your code here\n    pass\n",
+  "solution": "def add_credit(balance, credit):\n    updated = balance + credit\n    return updated\n",
+  "tests": "assert add_credit(20,5)==25\nassert add_credit(0,0)==0\nassert abs(add_credit(2.5,0.5)-3)<1e-9\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-040",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "A two-line message",
+   "zh": "两行消息"
+  },
+  "prompt": {
+   "en": "Complete two_lines(first, second). Return one string containing first, a newline character (`\\n`), then second. Do not add a final newline.",
+   "zh": "补全two_lines(first,second)，返回一个字符串，内容依次是first、换行符（`\\n`）、second。末尾不要再加换行。"
+  },
+  "explanation": {
+   "en": "Use the escape sequence \"\\n\" to put a line break inside a string. This is one character even though the source displays a backslash and n. Returning two separate strings would not satisfy the required single-string result.",
+   "zh": "字符串中的\"\\n\"代表一个换行字符，虽然代码里看起来有反斜杠和n两个符号。把它夹在两段文本之间即可。题目需要返回一整个字符串，不能返回两个分开的结果。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def two_lines(first, second):\n    # Write your code here\n    pass\n",
+  "solution": "def two_lines(first, second):\n    return first + \"\\n\" + second\n",
+  "tests": "assert two_lines(\"Tea\",\"Time\")==\"Tea\\nTime\"\nassert two_lines(\"\",\"B\")==\"\\nB\"\nassert two_lines(\"A\",\"\")==\"A\\n\"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-041",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Preserve the earlier value",
+   "zh": "保留更新前的值"
+  },
+  "prompt": {
+   "en": "Complete old_balance(start, increase). First assign start to current, then current to previous, then replace current with current + increase. Return previous.",
+   "zh": "补全old_balance(start,increase)：先把start赋给current，再把current赋给previous，然后把current更新成current + increase。最后返回previous。"
+  },
+  "explanation": {
+   "en": "previous refers to the earlier numeric object. Reassigning current points current at a new result, so previous still has the old value. Variables are names referring to objects, not linked spreadsheet formulas.",
+   "zh": "previous引用的是更新前的数值对象。current重新赋值后指向新的结果，previous并不会跟着变化。变量引用对象，不会像电子表格中的公式那样自动追踪别的变量。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def old_balance(start, increase):\n    # Write your code here\n    pass\n",
+  "solution": "def old_balance(start, increase):\n    current = start\n    previous = current\n    current = current + increase\n    return previous\n",
+  "tests": "assert old_balance(10,5)==10\nassert old_balance(0,8)==0\nassert old_balance(-4,4)==-4\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-042",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Three quantities",
+   "zh": "合计三个数量"
+  },
+  "prompt": {
+   "en": "Complete combined(a, b, c). Use two assignment statements to add a and b, then add c, and return the total.",
+   "zh": "补全combined(a,b,c)，用两条赋值语句先求a与b的和，再加上c，最后返回总和。"
+  },
+  "explanation": {
+   "en": "The first assignment creates an intermediate result. The second reads that result before replacing it. Breaking the calculation into named steps makes it easier to inspect each stage while debugging.",
+   "zh": "第一条赋值保存中间结果，第二条先读取这个结果，再把更新后的值保存回去。把运算拆成有名字的步骤，排错时就能逐步观察，而不是只盯着最后的输出。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 6",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def combined(a, b, c):\n    # Write your code here\n    pass\n",
+  "solution": "def combined(a, b, c):\n    total = a + b\n    total = total + c\n    return total\n",
+  "tests": "assert combined(2,3,4)==9\nassert combined(0,0,0)==0\nassert combined(-2,3,-1)==0\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-043",
+  "chapter": "lecture1",
+  "topic": "modules",
+  "topicLabel": {
+   "en": "Using modules",
+   "zh": "模块的导入与使用"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Return pi",
+   "zh": "读取圆周率"
+  },
+  "prompt": {
+   "en": "Complete circle_constant(). Import math inside the function and return math.pi, rather than a manually typed approximation.",
+   "zh": "补全circle_constant()，在函数内导入math，并返回math.pi，不要手写一个近似小数代替。"
+  },
+  "explanation": {
+   "en": "import math makes the module available under its name. The dot accesses its pi constant. Using the supplied constant avoids losing precision by typing only a few decimal places.",
+   "zh": "import math让math这个模块名可用，点号再读取其中的pi常量。使用现成常量能保留比手打3.14更多的精度，也避免自己抄错数字。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def circle_constant():\n    # Write your code here\n    pass\n",
+  "solution": "def circle_constant():\n    import math\n    return math.pi\n",
+  "tests": "import math\nassert circle_constant()==math.pi\nassert 3.14<circle_constant()<3.15\nassert type(circle_constant()) is float\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-044",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "A printable tag",
+   "zh": "生成标签文本"
+  },
+  "prompt": {
+   "en": "Complete make_tag(label, value). Both inputs are strings. Return label + \": \" + value. Example: make_tag(\"City\", \"Delft\") returns \"City: Delft\".",
+   "zh": "补全make_tag(label,value)。两个参数都是字符串，返回label + \": \" + value，例如make_tag(\"City\",\"Delft\")返回\"City: Delft\"。"
+  },
+  "explanation": {
+   "en": "The colon and following space belong to the separator string. Joining exactly those three parts preserves values such as \"007\" as text. No numeric conversion is needed because the task is about labels.",
+   "zh": "冒号和它后面的空格一起构成分隔字符串。按照三段文本连接，就能保留\"007\"这样的文本原貌。这道题只处理标签，无须把内容转换为数值。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def make_tag(label, value):\n    # Write your code here\n    pass\n",
+  "solution": "def make_tag(label, value):\n    return label + \": \" + value\n",
+  "tests": "assert make_tag(\"City\",\"Delft\")==\"City: Delft\"\nassert make_tag(\"Code\",\"007\")==\"Code: 007\"\nassert make_tag(\"\",\"\")==\": \"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-045",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Report the type",
+   "zh": "报告对象类型"
+  },
+  "prompt": {
+   "en": "Complete object_type(value), returning the result of type(value). Return the type object itself, not the string name of that type.",
+   "zh": "补全object_type(value)，返回type(value)的结果。返回类型对象本身，不要返回写着类型名称的字符串。"
+  },
+  "explanation": {
+   "en": "Call type on the supplied value, then return what it produces. The number 5, the text \"5\" and the number 5.0 have different types. Quoting \"int\" would create text instead of reporting a type.",
+   "zh": "对传入值调用type，再把得到的类型对象返回即可。数字5、文本\"5\"和浮点数5.0虽然看起来相似，但类型不同。写成\"int\"只会得到字符串，并不是类型对象。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 18; Python Fundamentals Challenges · Challenge 3: Seeing Data Types",
+   "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def object_type(value):\n    # Write your code here\n    pass\n",
+  "solution": "def object_type(value):\n    return type(value)\n",
+  "tests": "assert object_type(5) is int\nassert object_type(\"5\") is str\nassert object_type(5.0) is float\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-046",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Keep an alias alive",
+   "zh": "删除名字后保留引用"
+  },
+  "prompt": {
+   "en": "Complete surviving_value(value). Assign value to backup, delete the local name value with del, then return backup.",
+   "zh": "补全surviving_value(value)，先将value赋给backup，用del删除本地名字value，再返回backup。"
+  },
+  "explanation": {
+   "en": "Two names can refer to the same object. Deleting one name does not remove the other name or destroy an object it still refers to. Read backup after the deletion, rather than trying to read value again.",
+   "zh": "两个名字可以引用同一个对象。删掉value这个名字，不会顺便删除backup，也不会把backup仍然引用的对象销毁。删除后要读取backup，而不是再次读取已删除的value。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def surviving_value(value):\n    # Write your code here\n    pass\n",
+  "solution": "def surviving_value(value):\n    backup = value\n    del value\n    return backup\n",
+  "tests": "assert surviving_value(1200)==1200\nassert surviving_value(\"hello\")==\"hello\"\nassert surviving_value(0)==0\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-047",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Print the stored city",
+   "zh": "打印变量中的城市"
+  },
+  "prompt": {
+   "en": "Complete show_city(city). Print the supplied city exactly once on one line. Return no special value; ordinary print already adds the newline.",
+   "zh": "补全show_city(city)，把传入的城市打印一行、只打印一次。无需返回特殊值，普通print会自动添加行末换行。"
+  },
+  "explanation": {
+   "en": "Print the variable city without quotation marks. print(\"city\") would always display the literal word city. Do not add another print or an extra newline because that would create an unwanted blank line.",
+   "zh": "直接print(city)，不要给变量名加引号。print(\"city\")不管输入什么都会显示单词city。也不必额外打印一次或追加换行，否则会多出空行。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def show_city(city):\n    # Write your code here\n    pass\n",
+  "solution": "def show_city(city):\n    print(city)\n",
+  "tests": "import io, contextlib\ndef capture(f,*a):\n    b=io.StringIO()\n    with contextlib.redirect_stdout(b): f(*a)\n    return b.getvalue()\nassert capture(show_city,\"Delft\")==\"Delft\\n\"\nassert capture(show_city,\"Amsterdam\")==\"Amsterdam\\n\"\nassert capture(show_city,\"\")==\"\\n\"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-048",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Print two fields",
+   "zh": "用print分隔两个字段"
+  },
+  "prompt": {
+   "en": "Complete show_pair(first, second). Use one print call with the two strings as separate arguments. Output must contain exactly one separating space and the normal final newline.",
+   "zh": "补全show_pair(first,second)，用一次print调用将两个字符串作为独立参数打印。输出中间应有一个分隔空格，并以正常换行结尾。"
+  },
+  "explanation": {
+   "en": "Separate print arguments are joined by its default separator, a space. The output ends with one newline. This differs from concatenating first + second, which would not provide the required space.",
+   "zh": "print的多个独立参数默认用一个空格连接，并在末尾加一个换行。这与first + second不同，直接加号连接不会自动补上题目要求的分隔空格。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def show_pair(first, second):\n    # Write your code here\n    pass\n",
+  "solution": "def show_pair(first, second):\n    print(first, second)\n",
+  "tests": "import io,contextlib\ndef cap(f,*a):\n b=io.StringIO()\n with contextlib.redirect_stdout(b): f(*a)\n return b.getvalue()\nassert cap(show_pair,\"Blue\",\"Bird\")==\"Blue Bird\\n\"\nassert cap(show_pair,\"\", \"A\")==\" A\\n\"\nassert cap(show_pair,\"A\", \"\")==\"A \\n\"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-049",
+  "chapter": "lecture1",
+  "topic": "errors",
+  "topicLabel": {
+   "en": "Recognising & fixing errors",
+   "zh": "识别与修复错误"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "Repair the greeting",
+   "zh": "修正问候语的引号"
+  },
+  "prompt": {
+   "en": "The broken idea is `return \"I'm \" + name + \"` (the final quotation marks are missing). Complete ready(name) to return \"I'm \" followed by name, without any extra ending punctuation.",
+   "zh": "原思路`return \"I'm \" + name + \"`缺少结尾引号。请补全ready(name)，返回\"I'm \"与name的拼接结果，不要额外添加结尾标点。"
+  },
+  "explanation": {
+   "en": "Only the first part needs to be a quoted literal. name is already the variable holding the rest of the text. Using double quotes around the literal makes the apostrophe safe.",
+   "zh": "只有固定开头需要写成带引号的字符串，name本来就是保存文本的变量。外层使用双引号可以自然容纳内部撇号，且不必在末尾再拼一个没有内容的字符串。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def ready(name):\n    # Write your code here\n    pass\n",
+  "solution": "def ready(name):\n    return \"I'm \" + name\n",
+  "tests": "assert ready(\"Mila\")==\"I'm Mila\"\nassert ready(\"Feifei\")==\"I'm Feifei\"\nassert ready(\"\")==\"I'm \"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-050",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Swap two numeric names",
+   "zh": "交换两个数值"
+  },
+  "prompt": {
+   "en": "Complete first_after_swap(a, b). Use a temporary variable to exchange the local values of a and b, then return a. Do not use tuple unpacking.",
+   "zh": "补全first_after_swap(a,b)，用一个临时变量交换a与b在函数中的值，最后返回a。不要使用元组解包。"
+  },
+  "explanation": {
+   "en": "Store the old a before overwriting it. Then a can take b’s value and b can take the saved value. Writing a = b followed by b = a without a temporary would lose the original a.",
+   "zh": "在覆盖a之前，先用临时变量保存旧a。然后让a接收b，再让b接收临时保存的值。若直接a = b后再b = a，原来的a就已经丢失，两个名字会得到同一个值。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16; Python Fundamentals Challenges · Challenge 2: Sorting Out References",
+   "url": "https://github.com/ubvu/Python-Software-Carpentry/tree/main/Introductory/Code/2026/March",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts and public exercises; not an official exam question.",
+    "zh": "依据所标讲义知识点及公开练习编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def first_after_swap(a, b):\n    # Write your code here\n    pass\n",
+  "solution": "def first_after_swap(a, b):\n    temporary = a\n    a = b\n    b = temporary\n    return a\n",
+  "tests": "assert first_after_swap(3,9)==9\nassert first_after_swap(0,-2)==-2\nassert first_after_swap(4.5,1.5)==1.5\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-051",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Rebinding text",
+   "zh": "字符串变量的重新绑定"
+  },
+  "prompt": {
+   "en": "Complete original_label(label, suffix). Store label in old_label, assign label + suffix back to label, then return old_label.",
+   "zh": "补全original_label(label,suffix)，先用old_label保存label，再把label + suffix赋回label，最后返回old_label。"
+  },
+  "explanation": {
+   "en": "Concatenation produces the new text that label refers to. old_label still refers to the original string. The assignment to label does not rewrite every other name that once had the same value.",
+   "zh": "拼接结果成为label的新引用，但old_label仍保存原字符串。给label赋新值不会把所有曾经与它相同的变量一起改掉。可以把变量名想成指向对象的标签。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 16",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def original_label(label, suffix):\n    # Write your code here\n    pass\n",
+  "solution": "def original_label(label, suffix):\n    old_label = label\n    label = label + suffix\n    return old_label\n",
+  "tests": "assert original_label(\"Amster\",\"dam\")==\"Amster\"\nassert original_label(\"A\",\"\")==\"A\"\nassert original_label(\"\",\"new\")==\"\"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-052",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Inspect identity through an alias",
+   "zh": "通过别名查看身份"
+  },
+  "prompt": {
+   "en": "Complete alias_identity(value). Assign value to alias and return id(alias). Tests will compare this with the identity of the original supplied object; do not guess a numeric identity.",
+   "zh": "补全alias_identity(value)，将value赋给alias，并返回id(alias)。测试会与传入对象的身份比较，不要猜测某个固定身份数字。"
+  },
+  "explanation": {
+   "en": "Assignment creates another reference to the same supplied object. Therefore id(alias) matches id(value) during that object’s lifetime. The specific integer identity depends on the execution and is not a business value.",
+   "zh": "赋值让alias成为指向同一个传入对象的另一个名字，因此二者身份相同。具体的身份整数依运行情况而定，没有“金额”或“编号长度”这样的业务含义，不能写死。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 20",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def alias_identity(value):\n    # Write your code here\n    pass\n",
+  "solution": "def alias_identity(value):\n    alias = value\n    return id(alias)\n",
+  "tests": "a=\"unique test string\"\nb=1300\nc=9.25\nassert alias_identity(a)==id(a)\nassert alias_identity(b)==id(b)\nassert alias_identity(c)==id(c)\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-053",
+  "chapter": "lecture1",
+  "topic": "statements",
+  "topicLabel": {
+   "en": "Statements & comments",
+   "zh": "语句与注释"
+  },
+  "difficulty": 1,
+  "title": {
+   "en": "A readable total",
+   "zh": "用清晰步骤求总值"
+  },
+  "prompt": {
+   "en": "Complete labeled_total(base, extra). Use a comment describing the addition, assign base + extra to total on its own line, and return total.",
+   "zh": "补全labeled_total(base,extra)，写一条说明加法的注释，另起一行把base + extra赋给total，再返回total。"
+  },
+  "explanation": {
+   "en": "The comment explains the intent and does not change execution. Keeping one statement per line makes the calculation easy to follow. Correctness still comes from the actual addition, not from what the comment claims.",
+   "zh": "注释说明意图，但不会改变程序实际执行的运算。每行一条语句可以清楚看到求和与返回两个步骤。最终是否算对仍取决于加法代码，注释写“求和”并不能让错误的公式自动正确。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 10",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def labeled_total(base, extra):\n    # Write your code here\n    pass\n",
+  "solution": "def labeled_total(base, extra):\n    # Add the extra amount to the base amount.\n    total = base + extra\n    return total\n",
+  "tests": "assert labeled_total(5,7)==12\nassert labeled_total(0,2)==2\nassert labeled_total(-3,3)==0\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-054",
+  "chapter": "lecture1",
+  "topic": "modules",
+  "topicLabel": {
+   "en": "Using modules",
+   "zh": "模块的导入与使用"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "A module function",
+   "zh": "调用模块函数"
+  },
+  "prompt": {
+   "en": "Complete square_root(value). The argument is a non-negative number. Import math and use its sqrt function to return the square root. The required call is math.sqrt(value).",
+   "zh": "补全square_root(value)，输入为非负数。导入math，并调用math.sqrt(value)返回平方根。"
+  },
+  "explanation": {
+   "en": "The import gives access to math, and math.sqrt calls a function belonging to that module. The argument goes inside parentheses. Do not confuse accessing the function with calling it on value.",
+   "zh": "先导入math，再用math.sqrt调用模块中的函数，把value放进括号作为输入。只写math.sqrt是取到函数本身，而加上(value)才是让函数计算这个数的平方根。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 8",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def square_root(value):\n    # Write your code here\n    pass\n",
+  "solution": "def square_root(value):\n    import math\n    return math.sqrt(value)\n",
+  "tests": "assert square_root(0)==0\nassert square_root(25)==5\nassert abs(square_root(2)-2**0.5)<1e-12\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-055",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "A sign-off line",
+   "zh": "生成署名行"
+  },
+  "prompt": {
+   "en": "Complete sign_off(name, course). Return exactly \"From \" + name + \" — \" + course, using the long dash shown here and one space on each side.",
+   "zh": "补全sign_off(name,course)，返回\"From \" + name + \" — \" + course。请使用这里的长破折号，两侧各一个空格。"
+  },
+  "explanation": {
+   "en": "This is an exact text-building task. Copy the fixed prefix and separator carefully, then insert the two supplied values. A short hyphen or missing space would produce a different string even if it looked similar.",
+   "zh": "这道题练习按要求精确拼接文本。先保留固定前缀和分隔符，再插入两个输入。短横线、长破折号和空格都是不同字符，视觉相似也不代表结果相同。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def sign_off(name, course):\n    # Write your code here\n    pass\n",
+  "solution": "def sign_off(name, course):\n    return \"From \" + name + \" — \" + course\n",
+  "tests": "assert sign_off(\"Feifei\",\"Python\")==\"From Feifei — Python\"\nassert sign_off(\"A\",\"B\")==\"From A — B\"\nassert sign_off(\"\",\"\")==\"From  — \"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-056",
+  "chapter": "lecture1",
+  "topic": "errors",
+  "topicLabel": {
+   "en": "Recognising & fixing errors",
+   "zh": "识别与修复错误"
+  },
+  "difficulty": 2,
+  "title": {
+   "en": "Repair a wrong sum",
+   "zh": "修正错误的求和公式"
+  },
+  "prompt": {
+   "en": "Complete correct_total(left, right). A previous version used left - right, although the requirement was to add both numbers. Fix the logic and return the total.",
+   "zh": "补全correct_total(left,right)。旧版错误地使用left - right，但需求是把两个数相加。请修正逻辑并返回总和。"
+  },
+  "explanation": {
+   "en": "Match the operator to the requirement: adding uses +. Both the old and repaired expressions are valid Python, so syntax checking alone cannot detect this mistake. The unequal-input tests distinguish addition from subtraction.",
+   "zh": "先把业务要求“相加”对应到加号。旧表达式和正确表达式都是合法Python，因此只看语法是否通过发现不了问题。使用两个不同的输入值测试，能明显区分加法与减法。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 11",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def correct_total(left, right):\n    # Write your code here\n    pass\n",
+  "solution": "def correct_total(left, right):\n    return left + right\n",
+  "tests": "assert correct_total(3,8)==11\nassert correct_total(0,5)==5\nassert correct_total(-4,4)==0\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-057",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 3,
+  "title": {
+   "en": "Two-line introduction",
+   "zh": "打印两行自我介绍"
+  },
+  "prompt": {
+   "en": "Complete introduce(name, city). Print exactly two lines: \"Hello \" + name on the first, then \"City \" + city on the second. Use two print calls.",
+   "zh": "补全introduce(name,city)，恰好打印两行：第一行为\"Hello \" + name，第二行为\"City \" + city。请使用两次print。"
+  },
+  "explanation": {
+   "en": "Each print call adds its own newline, so the two calls create two lines. Include the space inside each fixed prefix. Returning a combined string would not produce the requested console output.",
+   "zh": "每次print会自动在末尾换行，所以两次调用正好得到两行。固定前缀后面的空格也要保留。这里要求的是控制台输出，不能只返回拼接好的字符串而不打印。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 5",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def introduce(name, city):\n    # Write your code here\n    pass\n",
+  "solution": "def introduce(name, city):\n    print(\"Hello \" + name)\n    print(\"City \" + city)\n",
+  "tests": "import io,contextlib\ndef cap(f,*a):\n b=io.StringIO()\n with contextlib.redirect_stdout(b): f(*a)\n return b.getvalue()\nassert cap(introduce,\"Mila\",\"Delft\")==\"Hello Mila\\nCity Delft\\n\"\nassert cap(introduce,\"A\",\"B\")==\"Hello A\\nCity B\\n\"\nassert cap(introduce,\"\",\"\")==\"Hello \\nCity \\n\"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-058",
+  "chapter": "lecture1",
+  "topic": "variables",
+  "topicLabel": {
+   "en": "Variables & assignment",
+   "zh": "变量与赋值"
+  },
+  "difficulty": 3,
+  "title": {
+   "en": "Notebook replay as straight-line code",
+   "zh": "按实际运行顺序重放Notebook"
+  },
+  "prompt": {
+   "en": "Complete replay(). Model this exact execution order using local assignments: price = 10; total = price + 5; price = 20. Return total. Do not recalculate total after the last assignment.",
+   "zh": "补全replay()，用本地赋值模拟这一实际执行顺序：price = 10；total = price + 5；price = 20。返回total，最后一次赋值后不要重新计算total。"
+  },
+  "explanation": {
+   "en": "A saved total is the result of a calculation at one moment. Rebinding price later does not automatically rerun that calculation. This small replay makes the hidden state problem of notebook execution visible.",
+   "zh": "total保存的是某个时刻计算出的结果，不是持续引用price的自动公式。后来给price赋新值，并不会重做total那条赋值。这个顺序程序能直观演示Notebook旧状态造成的误解。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 3",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def replay():\n    # Write your code here\n    pass\n",
+  "solution": "def replay():\n    price = 10\n    total = price + 5\n    price = 20\n    return total\n",
+  "tests": "assert replay()==15\nassert type(replay()) is int\nassert replay()!=25\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-059",
+  "chapter": "lecture1",
+  "topic": "identity",
+  "topicLabel": {
+   "en": "References, identity & type",
+   "zh": "引用、身份与类型"
+  },
+  "difficulty": 3,
+  "title": {
+   "en": "Type after replacement",
+   "zh": "替换值之后查看类型"
+  },
+  "prompt": {
+   "en": "Complete replacement_type(value). First store value in item, then replace item with the literal string \"done\", and return type(item).",
+   "zh": "补全replacement_type(value)，先将value赋给item，再把字符串\"done\"赋给item，最后返回type(item)。"
+  },
+  "explanation": {
+   "en": "The final assignment determines what item currently refers to. Regardless of the original input type, item now refers to the string \"done\". A variable name does not keep a permanent memory of its first type.",
+   "zh": "查看类型时，要看item当前引用的对象，而不是它曾经保存过什么。最后已经把\"done\"赋给item，所以无论原输入是整数、浮点数还是字符串，当前类型都是str。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 24",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def replacement_type(value):\n    # Write your code here\n    pass\n",
+  "solution": "def replacement_type(value):\n    item = value\n    item = \"done\"\n    return type(item)\n",
+  "tests": "assert replacement_type(99) is str\nassert replacement_type(2.5) is str\nassert replacement_type(\"old\") is str\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ },
+ {
+  "id": "L1-060",
+  "chapter": "lecture1",
+  "topic": "output",
+  "topicLabel": {
+   "en": "Text, input & output",
+   "zh": "文本、输入与输出"
+  },
+  "difficulty": 3,
+  "title": {
+   "en": "Text captured from input",
+   "zh": "理解输入文本的保留"
+  },
+  "prompt": {
+   "en": "Complete echoed_input(raw). raw is the text already read from input(). Return \"You entered: \" + raw exactly. Preserve leading zeros and any existing spaces.",
+   "zh": "补全echoed_input(raw)。raw是已经由input()读入的文本。原样返回\"You entered: \" + raw，保留输入中的前导零及已有空格。"
+  },
+  "explanation": {
+   "en": "input supplies text, so concatenate it as text when the task asks for an exact echo. Converting \"007\" into a number would discard the leading zeros. Unrequested trimming would also change what the user entered.",
+   "zh": "input提供文本；要求原样回显时，就按文本拼接。把\"007\"转成数字会丢掉前导零，随意去掉空格也会改变用户输入。程序应该遵守“原样保留”的需求，而不是自作主张清理。"
+  },
+  "source": {
+   "kind": "adapted",
+   "label": "Lecture 1 · 1_Introduction_filled.ipynb · cell 4",
+   "url": "",
+   "note": {
+    "en": "New practice variant based on the cited lecture concepts; not an official exam question.",
+    "zh": "依据所标讲义知识点编写的练习变式，并非官方试题。"
+   }
+  },
+  "type": "code",
+  "starter": "def echoed_input(raw):\n    # Write your code here\n    pass\n",
+  "solution": "def echoed_input(raw):\n    return \"You entered: \" + raw\n",
+  "tests": "assert echoed_input(\"007\")==\"You entered: 007\"\nassert echoed_input(\"  A \")==\"You entered:   A \"\nassert echoed_input(\"\")==\"You entered: \"\n",
+  "setup": "",
+  "packages": [],
+  "testHint": {
+   "en": "Checks three or more examples, including a boundary or alternative input.",
+   "zh": "检查至少三个样例，包含边界值或不同类型的输入。"
+  }
+ }
 ]
